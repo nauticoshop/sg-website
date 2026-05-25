@@ -49,7 +49,7 @@ export function ServicesGrid() {
         {/* Section header */}
         <header className="text-center mb-16 lg:mb-24 max-w-3xl mx-auto">
           <p className="caption text-gold mb-6">WHAT WE DO</p>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight text-ink mb-6 text-balance">
+          <h2 className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight text-ink mb-6 text-balance">
             Six disciplines, one in-house team.
           </h2>
           <p className="text-base lg:text-lg text-neutral-600 leading-relaxed">
@@ -121,7 +121,7 @@ function ServiceCard({
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 h-full items-end pt-12">
             <div className="lg:col-span-6">
-              <span className="font-serif leading-none tracking-tight text-[clamp(2.75rem,9cqi,6rem)]">
+              <span className="font-sans font-extrabold leading-none tracking-tight text-[clamp(2.75rem,9cqi,6rem)]">
                 {service.name}
               </span>
             </div>
@@ -161,7 +161,7 @@ function ServiceCard({
 
         <div>
           <span
-            className={`font-serif text-canvas leading-none tracking-tight block mb-6 ${
+            className={`font-sans font-extrabold text-canvas leading-none tracking-tight block mb-6 ${
               variant === "tall"
                 ? "text-[clamp(3rem,10cqi,7rem)]"
                 : "text-[clamp(2.75rem,9cqi,5.5rem)]"

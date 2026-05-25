@@ -41,7 +41,7 @@ export function FloatingContact() {
       >
         <div className="p-6 lg:p-7">
           <p className="caption text-gold mb-2">GET IN TOUCH</p>
-          <h3 className="font-serif text-2xl mb-2">How can we help?</h3>
+          <h3 className="font-sans font-extrabold text-2xl mb-2">How can we help?</h3>
           <p className="text-sm text-canvas/70 leading-relaxed mb-6">
             Real humans, fast responses. Pick whatever&apos;s easiest.
           </p>

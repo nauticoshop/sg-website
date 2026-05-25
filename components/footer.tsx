@@ -17,7 +17,7 @@ export function Footer() {
             <Link href="/" className="caption tracking-[0.18em] font-medium">
               {site.wordmark}
             </Link>
-            <p className="font-serif text-lg lg:text-xl text-canvas/80 mt-6 leading-snug text-balance">
+            <p className="font-sans font-extrabold text-lg lg:text-xl text-canvas/80 mt-6 leading-snug text-balance">
               An award-winning creative agency for premium markets.
             </p>
             <address className="not-italic text-sm text-canvas/60 mt-6 leading-relaxed space-y-1">

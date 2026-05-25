@@ -17,7 +17,7 @@ export function FeaturedWork() {
         <header className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 lg:mb-16 max-w-5xl">
           <div>
             <p className="caption text-gold mb-4">WHAT WE&apos;RE UP TO</p>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight text-ink text-balance">
+            <h2 className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight text-ink text-balance">
               Recent work for brands at the top of their categories.
             </h2>
           </div>
@@ -98,7 +98,7 @@ function ProjectCard({
 
         {/* Client name + headline */}
         <h3
-          className={`font-serif leading-[1.1] tracking-tight text-balance mb-4 ${
+          className={`font-sans font-extrabold leading-[1.1] tracking-tight text-balance mb-4 ${
             isLead ? "text-3xl lg:text-5xl" : "text-2xl lg:text-3xl"
           }`}
         >

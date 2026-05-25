@@ -47,7 +47,7 @@ export function PowerInNumbers() {
       <div className="max-w-[1440px] mx-auto">
         <header className="text-center mb-12 lg:mb-16">
           <p className="caption text-gold mb-4">BUILT ON A FOUNDATION OF PROVEN REACH</p>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl leading-tight tracking-tight text-ink text-balance max-w-3xl mx-auto">
+          <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl leading-tight tracking-tight text-ink text-balance max-w-3xl mx-auto">
             The numbers that separate us from everyone else pitching luxury.
           </h2>
         </header>
@@ -58,7 +58,7 @@ export function PowerInNumbers() {
               key={i}
               className="px-6 py-10 lg:px-8 lg:py-12 text-center flex flex-col justify-center min-h-[180px]"
             >
-              <p className="font-serif text-5xl md:text-6xl lg:text-7xl text-ink leading-none mb-4 tracking-tight">
+              <p className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl text-ink leading-none mb-4 tracking-tight">
                 {stat.value}
               </p>
               <p className="text-sm lg:text-base text-neutral-600 leading-snug max-w-[220px] mx-auto">

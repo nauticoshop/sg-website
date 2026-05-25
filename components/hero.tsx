@@ -62,7 +62,7 @@ export function Hero({
       <div className="relative z-20 flex flex-col items-center justify-center min-h-screen px-6 lg:px-12 text-center text-canvas pt-20">
         <p className="caption tracking-[0.2em] text-gold mb-8">{eyebrow}</p>
 
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight max-w-5xl text-balance mb-10">
+        <h1 className="font-sans font-extrabold text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight max-w-5xl text-balance mb-10">
           {headline}
         </h1>
 

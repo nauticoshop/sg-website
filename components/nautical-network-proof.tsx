@@ -13,7 +13,7 @@ export function NauticalNetworkProof() {
           {/* Copy column */}
           <div className="lg:col-span-7">
             <p className="caption text-gold mb-6">OWNED DISTRIBUTION</p>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-ink mb-8 text-balance">
+            <h2 className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-ink mb-8 text-balance">
               We don&apos;t just make content. We have the audience.
             </h2>
             <p className="text-base lg:text-lg text-neutral-700 leading-relaxed mb-6">
@@ -68,7 +68,7 @@ export function NauticalNetworkProof() {
 function StatBlock({ value, label }: { value: string; label: string }) {
   return (
     <li className="border-t border-neutral-200 pt-6">
-      <p className="font-serif text-5xl lg:text-6xl text-ink leading-none mb-3 tracking-tight">
+      <p className="font-sans font-extrabold text-5xl lg:text-6xl text-ink leading-none mb-3 tracking-tight">
         {value}
       </p>
       <p className="text-sm lg:text-base text-neutral-600 leading-snug">

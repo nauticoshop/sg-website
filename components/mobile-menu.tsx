@@ -159,7 +159,7 @@ function MenuLink({
       <Link
         href={href}
         onClick={onClick}
-        className="font-serif text-2xl lg:text-3xl text-canvas hover:text-gold transition-colors duration-300"
+        className="font-sans font-extrabold text-2xl lg:text-3xl text-canvas hover:text-gold transition-colors duration-300"
       >
         {children}
       </Link>

@@ -12,7 +12,7 @@ export function VerticalsGrid() {
       <div className="max-w-[1440px] mx-auto">
         <header className="text-center mb-16 lg:mb-20 max-w-3xl mx-auto">
           <p className="caption text-gold mb-6">INDUSTRIES WE SERVE</p>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight mb-6 text-balance">
+          <h2 className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight mb-6 text-balance">
             Vertical-focused. Never generalist.
           </h2>
           <p className="text-base lg:text-lg text-canvas/70 leading-relaxed">
@@ -44,7 +44,7 @@ function VerticalCard({ vertical }: { vertical: (typeof verticals)[number] }) {
             FEATURED
           </span>
         )}
-        <h3 className="font-serif text-2xl lg:text-3xl leading-tight text-balance mb-3 group-hover:text-gold transition-colors duration-300">
+        <h3 className="font-sans font-extrabold text-2xl lg:text-3xl leading-tight text-balance mb-3 group-hover:text-gold transition-colors duration-300">
           {vertical.name}
         </h3>
         <p className="text-sm lg:text-base text-canvas/70 leading-relaxed">

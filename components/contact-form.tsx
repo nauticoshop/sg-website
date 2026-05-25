@@ -30,7 +30,7 @@ export function ContactForm() {
     return (
       <div className="bg-canvas border border-neutral-200 p-10 lg:p-12 text-center">
         <p className="caption text-gold mb-4">RECEIVED</p>
-        <h3 className="font-serif text-3xl lg:text-4xl text-ink mb-4">
+        <h3 className="font-sans font-extrabold text-3xl lg:text-4xl text-ink mb-4">
           Thanks. We&apos;ll be in touch shortly.
         </h3>
         <p className="text-neutral-600 leading-relaxed">

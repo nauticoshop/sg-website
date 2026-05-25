@@ -10,7 +10,7 @@ export function CtaBanner() {
     <section className="py-24 lg:py-32 px-6 lg:px-12 bg-ink text-canvas">
       <div className="max-w-[1000px] mx-auto text-center">
         <p className="caption text-gold mb-6">READY WHEN YOU ARE</p>
-        <h2 className="font-serif text-4xl md:text-5xl lg:text-7xl leading-[1.05] tracking-tight mb-6 text-balance">
+        <h2 className="font-sans font-extrabold text-4xl md:text-5xl lg:text-7xl leading-[1.05] tracking-tight mb-6 text-balance">
           Let&apos;s build something worth talking about.
         </h2>
         <p className="text-base lg:text-lg text-canvas/70 max-w-2xl mx-auto leading-relaxed mb-10">
