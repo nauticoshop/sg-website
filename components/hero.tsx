@@ -16,10 +16,8 @@ interface HeroProps {
  * Cinematic full-bleed video hero.
  *
  * Vimeo iframe in background mode (autoplay, muted, looping, no controls).
- * Dark overlay tint for text readability. Min-height 90vh.
- *
- * Replicates and improves on the Webflow version: no Relume wrapper bloat,
- * no Code Embed gymnastics, full responsive control.
+ * Uses the "always-cover" CSS pattern: iframe sized to fill the section
+ * regardless of aspect ratio mismatch between video and viewport.
  */
 export function Hero({
   vimeoId = site.hero.vimeoId,
@@ -31,21 +29,37 @@ export function Hero({
 
   return (
     <section className="relative w-full min-h-[90vh] overflow-hidden bg-ink">
-      {/* Background video — scaled to always cover */}
+      {/* Background video wrapper — fills section, hides overflow */}
       <div className="absolute inset-0 overflow-hidden">
         <iframe
           src={vimeoSrc}
           title="Surroundings Group reel"
           allow="autoplay; fullscreen; picture-in-picture"
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full"
-          style={{ transform: "translate(-50%, -50%) scale(1.5)" }}
+          aria-hidden="true"
+          tabIndex={-1}
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            // Force iframe to be larger than the section in BOTH dimensions
+            // so Vimeo's player has no room to letterbox.
+            // - Width is whichever is larger: 100% of parent, or 16:9 of viewport height
+            // - Height is whichever is larger: 100% of parent, or 9:16 of viewport width
+            width: "max(100%, calc(100vh * 16 / 9))",
+            height: "max(100%, calc(100vw * 9 / 16))",
+            minWidth: "100%",
+            minHeight: "100%",
+            transform: "translate(-50%, -50%)",
+            pointerEvents: "none",
+            border: 0,
+          }}
         />
       </div>
 
       {/* Dark overlay tint for text readability */}
       <div className="absolute inset-0 bg-ink/40 z-10" />
 
-      {/* Content */}
+      {/* Content layer */}
       <div className="relative z-20 flex flex-col items-center justify-center min-h-[90vh] px-6 lg:px-12 text-center text-canvas">
         <p className="caption tracking-[0.2em] text-gold mb-8">{eyebrow}</p>
 
