@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  /* ============================================
+     SURROUNDINGS GROUP — DESIGN TOKENS
+     Source of truth: SG Website/design-system.md
+     ============================================ */
+
+  /* Brand */
+  --color-canvas: #f7f4f0;
+  --color-ink: #0f0f0f;
+  --color-gold: #ffbd84;
+  --color-deep: #1a2a3a;
+
+  /* Neutral scale (warm-tinted, complements cream canvas) */
+  --color-neutral-50: #faf8f5;
+  --color-neutral-100: #f0ede8;
+  --color-neutral-200: #e5e1da;
+  --color-neutral-300: #c9c3b8;
+  --color-neutral-400: #9b9489;
+  --color-neutral-500: #6d6760;
+  --color-neutral-600: #4d4842;
+  --color-neutral-700: #2e2b27;
+  --color-neutral-800: #1c1a18;
+  --color-neutral-900: #0f0f0f;
+
+  /* State */
+  --color-success: #2d5f3f;
+  --color-error: #8b2c2c;
+  --color-info: #2a4d6e;
+
+  /* Typography families */
+  --font-sans: var(--font-dm-sans), system-ui, -apple-system, sans-serif;
+  --font-serif: var(--font-castoro), Georgia, serif;
+
+  /* Display type scale (Castoro serif, for editorial moments) */
+  --text-display-xl: 6rem;
+  --text-display-xl--line-height: 1.05;
+  --text-display-xl--letter-spacing: -0.02em;
+  --text-display-l: 4.5rem;
+  --text-display-l--line-height: 1.1;
+  --text-display-l--letter-spacing: -0.02em;
+  --text-display-m: 3.5rem;
+  --text-display-m--line-height: 1.15;
+  --text-display-m--letter-spacing: -0.01em;
+}
+
+/* Base body styles */
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Editorial caption pattern (uppercase eyebrows) */
+.caption {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.4;
+}
