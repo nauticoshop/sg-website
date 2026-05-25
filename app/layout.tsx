@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, Castoro } from "next/font/google";
 import "./globals.css";
+import { FloatingContact } from "@/components/floating-contact";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -26,8 +27,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://surroundingsgroup.com"),
   openGraph: {
     title: "Surroundings Group",
-    description:
-      "An award-winning creative agency for premium markets.",
+    description: "An award-winning creative agency for premium markets.",
     url: "https://surroundingsgroup.com",
     siteName: "Surroundings Group",
     locale: "en_US",
@@ -47,6 +47,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-canvas text-ink">
         {children}
+        <FloatingContact />
       </body>
     </html>
   );

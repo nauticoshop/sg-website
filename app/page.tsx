@@ -11,7 +11,7 @@ import { Footer } from "@/components/footer";
 export default function Home() {
   return (
     <>
-      <Nav variant="dark" />
+      <Nav />
       <Hero />
       <ServicesGrid />
       <PowerInNumbers />

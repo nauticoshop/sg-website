@@ -8,28 +8,31 @@ interface HeroProps {
   eyebrow?: string;
   /** Headline override (defaults to site tagline) */
   headline?: string;
-  /** Subhead override (defaults to site description) */
-  subhead?: string;
+  /** Three-pillar positioning under the headline, e.g. "Full-Service | Vertical-focused | Creatively Connected" */
+  pillars?: string[];
 }
 
 /**
  * Cinematic full-bleed video hero.
  *
  * Vimeo iframe in background mode (autoplay, muted, looping, no controls).
- * Uses the "always-cover" CSS pattern: iframe sized to fill the section
- * regardless of aspect ratio mismatch between video and viewport.
+ * Uses the "always-cover" CSS pattern so the video fills the section
+ * regardless of viewport aspect ratio.
+ *
+ * Three-pillar subhead replaces a longer description — quicker to scan,
+ * sharper premium positioning (carried forward from the current SG site).
  */
 export function Hero({
   vimeoId = site.hero.vimeoId,
   eyebrow = site.wordmark,
   headline = site.tagline,
-  subhead = site.description,
+  pillars = ["Full-Service", "Vertical-focused", "Creatively Connected"],
 }: HeroProps) {
   const vimeoSrc = `https://player.vimeo.com/video/${vimeoId}?background=1&autoplay=1&loop=1&muted=1`;
 
   return (
-    <section className="relative w-full min-h-[90vh] overflow-hidden bg-ink">
-      {/* Background video wrapper — fills section, hides overflow */}
+    <section className="relative w-full min-h-screen overflow-hidden bg-ink">
+      {/* Background video — sized to always cover the section */}
       <div className="absolute inset-0 overflow-hidden">
         <iframe
           src={vimeoSrc}
@@ -41,10 +44,6 @@ export function Hero({
             position: "absolute",
             top: "50%",
             left: "50%",
-            // Force iframe to be larger than the section in BOTH dimensions
-            // so Vimeo's player has no room to letterbox.
-            // - Width is whichever is larger: 100% of parent, or 16:9 of viewport height
-            // - Height is whichever is larger: 100% of parent, or 9:16 of viewport width
             width: "max(100%, calc(100vh * 16 / 9))",
             height: "max(100%, calc(100vw * 9 / 16))",
             minWidth: "100%",
@@ -56,21 +55,32 @@ export function Hero({
         />
       </div>
 
-      {/* Dark overlay tint for text readability */}
-      <div className="absolute inset-0 bg-ink/40 z-10" />
+      {/* Dark overlay tint */}
+      <div className="absolute inset-0 bg-ink/45 z-10" />
 
-      {/* Content layer */}
-      <div className="relative z-20 flex flex-col items-center justify-center min-h-[90vh] px-6 lg:px-12 text-center text-canvas">
+      {/* Content */}
+      <div className="relative z-20 flex flex-col items-center justify-center min-h-screen px-6 lg:px-12 text-center text-canvas pt-20">
         <p className="caption tracking-[0.2em] text-gold mb-8">{eyebrow}</p>
 
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight max-w-5xl text-balance mb-8">
+        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight max-w-5xl text-balance mb-10">
           {headline}
         </h1>
 
-        <p className="text-base md:text-lg lg:text-xl max-w-2xl text-canvas/90 leading-relaxed mb-12">
-          {subhead}
+        {/* Three-pillar positioning */}
+        <p className="caption tracking-[0.2em] text-gold mb-12 flex items-center flex-wrap justify-center gap-x-3 gap-y-1">
+          {pillars.map((pillar, i) => (
+            <span key={pillar} className="inline-flex items-center gap-3">
+              {pillar}
+              {i < pillars.length - 1 && (
+                <span className="text-gold/40" aria-hidden>
+                  |
+                </span>
+              )}
+            </span>
+          ))}
         </p>
 
+        {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4">
           <Link
             href={site.cta.primary.href}

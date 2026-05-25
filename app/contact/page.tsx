@@ -13,10 +13,10 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <Nav variant="light" />
+      <Nav />
 
-      {/* Hero */}
-      <section className="bg-canvas pt-32 lg:pt-40 pb-16 lg:pb-20 px-6 lg:px-12">
+      {/* Hero — offset for fixed nav */}
+      <section className="bg-canvas pt-36 lg:pt-44 pb-16 lg:pb-20 px-6 lg:px-12">
         <div className="max-w-[1200px] mx-auto">
           <p className="caption text-gold mb-6">CONTACT</p>
           <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-ink max-w-3xl text-balance">
