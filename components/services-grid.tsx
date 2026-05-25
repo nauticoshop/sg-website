@@ -47,8 +47,9 @@ function ServiceCard({
 
   return (
     <Link href={service.href} className="group block">
-      {/* Chapter-number hero area (image will replace later) */}
-      <div className="aspect-[4/5] mb-6 overflow-hidden bg-ink relative flex items-end p-8 lg:p-10 transition-transform duration-500 group-hover:scale-[1.01]">
+      {/* Chapter-number hero area (image will replace later).
+          @container so the inner serif name can scale with card width via cqi. */}
+      <div className="@container aspect-[4/5] mb-6 overflow-hidden bg-ink relative flex items-end p-8 lg:p-10 transition-transform duration-500 group-hover:scale-[1.01]">
         {/* Subtle texture: gold diagonal accent line top-right */}
         <div
           className="absolute top-0 right-0 w-24 h-px bg-gold/40"
@@ -58,8 +59,9 @@ function ServiceCard({
         <span className="absolute top-8 left-8 caption text-canvas/40">
           {num} / Service
         </span>
-        {/* Large chapter number bottom-left */}
-        <span className="font-serif text-7xl lg:text-8xl text-canvas/90 leading-none">
+        {/* Large chapter number bottom-left — uses fluid sizing so longer
+            names (Experiences, Intelligence) don't clip on narrower cards */}
+        <span className="font-serif text-canvas/90 leading-none tracking-tight text-[clamp(2.75rem,7cqi,5.5rem)]">
           {service.name}
         </span>
       </div>
