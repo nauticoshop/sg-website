@@ -53,6 +53,25 @@ export default function RootLayout({
       lang="en"
       className={`${dmSans.variable} ${castoro.variable} ${inter.variable} h-full antialiased`}
     >
+      <head>
+        {/* Fontshare CDN — Clash Display + Satoshi for the /fonts-preview
+            comparison page. Will be swapped to next/font/local once a
+            choice is committed. */}
+        <link
+          rel="preconnect"
+          href="https://api.fontshare.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preconnect"
+          href="https://cdn.fontshare.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-canvas text-ink">
         <SmoothScroll />
         {children}

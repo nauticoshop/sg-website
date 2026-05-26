@@ -1,10 +1,9 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-/* Fontshare fonts loaded for the /fonts-preview comparison page.
-   If we commit to Clash Display or Satoshi, switch to proper next/font
-   loading in layout.tsx for performance. */
-@import url("https://api.fontshare.com/v2/css?f[]=clash-display@700,800,900&f[]=satoshi@400,500,700,900&display=swap");
+/* Fontshare fonts (Clash Display, Satoshi) loaded via <link> in
+   app/layout.tsx — more reliable than @import which can be blocked
+   or silently fail. */
 
 @theme {
   /* ============================================
