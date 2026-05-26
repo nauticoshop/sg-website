@@ -64,7 +64,7 @@ function ProjectCard({
 }) {
   return (
     <Link href={project.href} className="group block h-full">
-      <article className="relative h-full overflow-hidden bg-ink text-canvas transition-all duration-500 group-hover:bg-deep flex flex-col">
+      <article className="relative h-full overflow-hidden bg-ink text-canvas transition-all duration-500 group-hover:bg-neutral-800 flex flex-col">
         {/* Image area — placeholder with client name */}
         <div className="aspect-[4/3] relative overflow-hidden border-b border-canvas/10">
           <div className="absolute inset-0 flex items-center justify-center px-6">

@@ -64,7 +64,7 @@ function VerticalCard({
     <li>
       <Link
         href={vertical.href}
-        className="group block bg-ink hover:bg-deep transition-colors duration-500 p-8 lg:p-10 min-h-[280px] lg:min-h-[320px] flex flex-col justify-between h-full"
+        className="group block bg-ink hover:bg-neutral-800 transition-colors duration-500 p-8 lg:p-10 min-h-[280px] lg:min-h-[320px] flex flex-col justify-between h-full"
       >
         <div>
           <h3 className="font-sans font-extrabold text-2xl lg:text-3xl xl:text-4xl leading-[1.1] text-balance mb-4 group-hover:text-gold transition-colors duration-300">

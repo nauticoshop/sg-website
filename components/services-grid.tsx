@@ -68,7 +68,7 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
 
   return (
     <Link href={service.href} className="group block h-full">
-      <article className="relative h-full overflow-hidden bg-ink text-canvas p-10 lg:p-12 transition-all duration-500 group-hover:bg-deep flex flex-col min-h-[480px]">
+      <article className="relative h-full overflow-hidden bg-ink text-canvas p-10 lg:p-12 transition-all duration-500 group-hover:bg-neutral-800 flex flex-col min-h-[480px]">
         {/* Gold accent corner */}
         <div
           className="absolute top-0 right-0 w-20 h-px bg-gold/40"
