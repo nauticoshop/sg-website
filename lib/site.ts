@@ -13,8 +13,9 @@ export const site = {
 
   contact: {
     email: "hello@surroundingsgroup.com",
-    phone: "1-813-869-0162",
-    city: "Tampa, FL",
+    phone: "727-810-1770",
+    address: "4600 W Cypress St. Suite 500",
+    city: "Tampa, FL 33607",
   },
 
   social: {
