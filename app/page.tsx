@@ -1,5 +1,6 @@
 import { Nav } from "@/components/nav";
 import { Hero } from "@/components/hero";
+import { EditorialBillboard } from "@/components/editorial-billboard";
 import { AboutSummary } from "@/components/about-summary";
 import { ServicesGrid } from "@/components/services-grid";
 import { VerticalsGrid } from "@/components/verticals-grid";
@@ -16,6 +17,10 @@ export default function Home() {
     <>
       <Nav />
       <Hero />
+      <EditorialBillboard
+        eyebrow="STUDIO WORK"
+        caption="Cinematic content built for brands at the top of their categories."
+      />
       <AboutSummary />
       <ServicesGrid />
       <VerticalsGrid />
