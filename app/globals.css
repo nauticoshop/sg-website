@@ -10,7 +10,8 @@
   /* Brand */
   --color-canvas: #f7f4f0;
   --color-ink: #0f0f0f;
-  --color-gold: #ffbd84;
+  --color-gold: #ffbd84;        /* primary gold — use on DARK backgrounds */
+  --color-gold-deep: #8b6118;   /* darker amber — use on LIGHT backgrounds (cream) for readability */
   --color-deep: #1a2a3a;
 
   /* Neutral scale (warm-tinted, complements cream canvas) */
@@ -56,11 +57,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Editorial caption pattern (uppercase eyebrows) */
+/* Editorial caption pattern (uppercase eyebrows) — bumped from 12px → 13px
+   for readability per Billy feedback. */
 .caption {
-  font-size: 0.75rem;
-  font-weight: 500;
+  font-size: 0.8125rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   line-height: 1.4;
 }

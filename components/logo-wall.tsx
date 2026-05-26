@@ -15,7 +15,7 @@ export function LogoWall() {
   return (
     <section className="bg-canvas py-16 lg:py-20 px-6 lg:px-12 border-y border-neutral-200">
       <div className="max-w-[1440px] mx-auto">
-        <p className="caption text-gold text-center mb-10 lg:mb-12">
+        <p className="caption text-gold-deep text-center mb-10 lg:mb-12">
           TRUSTED BY THE BRANDS BUILDING AT THE TOP OF THEIR CATEGORIES
         </p>
 

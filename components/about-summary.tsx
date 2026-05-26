@@ -17,7 +17,7 @@ export function AboutSummary() {
       <div className="max-w-[1200px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           <div className="lg:col-span-4">
-            <p className="caption text-gold mb-6">ABOUT</p>
+            <p className="caption text-gold-deep mb-6">ABOUT</p>
             <h2 className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-ink text-balance">
               More than a media company.
             </h2>
@@ -38,7 +38,7 @@ export function AboutSummary() {
             <div className="pt-4">
               <Link
                 href="/about"
-                className="caption inline-flex items-center gap-2 text-ink hover:text-gold transition-colors duration-300"
+                className="caption inline-flex items-center gap-2 text-ink hover:text-gold-deep transition-colors duration-300"
               >
                 Read the full story
                 <svg

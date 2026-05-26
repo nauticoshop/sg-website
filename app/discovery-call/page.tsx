@@ -18,7 +18,7 @@ export default function DiscoveryCallPage() {
       {/* Hero — offset for fixed nav */}
       <section className="bg-canvas pt-36 lg:pt-44 pb-16 lg:pb-20 px-6 lg:px-12">
         <div className="max-w-[1200px] mx-auto">
-          <p className="caption text-gold mb-6">DISCOVERY CALL</p>
+          <p className="caption text-gold-deep mb-6">DISCOVERY CALL</p>
           <h1 className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-ink max-w-3xl text-balance">
             Let&apos;s talk about what you&apos;re building.
           </h1>
@@ -36,7 +36,7 @@ export default function DiscoveryCallPage() {
           <aside className="lg:col-span-4 order-2 lg:order-1">
             <div className="lg:sticky lg:top-32 space-y-10">
               <div>
-                <h2 className="caption text-gold mb-4">WHAT TO EXPECT</h2>
+                <h2 className="caption text-gold-deep mb-4">WHAT TO EXPECT</h2>
                 <ol className="space-y-6">
                   <ExpectationStep
                     num="01"
@@ -62,10 +62,10 @@ export default function DiscoveryCallPage() {
               </div>
 
               <div className="pt-8 border-t border-neutral-200">
-                <h2 className="caption text-gold mb-4">PREFER TO CALL?</h2>
+                <h2 className="caption text-gold-deep mb-4">PREFER TO CALL?</h2>
                 <a
                   href={`tel:${site.contact.phone.replace(/-/g, "")}`}
-                  className="font-sans font-extrabold text-2xl lg:text-3xl text-ink hover:text-gold transition-colors block"
+                  className="font-sans font-extrabold text-2xl lg:text-3xl text-ink hover:text-gold-deep transition-colors block"
                 >
                   {site.contact.phone}
                 </a>
@@ -104,7 +104,7 @@ function ExpectationStep({
 }) {
   return (
     <li className="flex gap-4">
-      <span className="caption text-gold shrink-0 w-6 pt-1">{num}</span>
+      <span className="caption text-gold-deep shrink-0 w-6 pt-1">{num}</span>
       <div>
         <p className="font-sans font-extrabold text-base text-ink mb-1">
           {title}

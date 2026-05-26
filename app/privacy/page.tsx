@@ -24,7 +24,7 @@ export default function PrivacyPage() {
       />
 
       <section className="bg-canvas pb-24 lg:pb-32 px-6 lg:px-12">
-        <article className="max-w-[800px] mx-auto prose prose-neutral prose-headings:font-sans prose-headings:font-extrabold prose-headings:tracking-tight prose-headings:text-ink prose-h2:text-2xl prose-h2:lg:text-3xl prose-h2:mt-12 prose-h2:mb-4 prose-p:text-base prose-p:text-neutral-700 prose-p:leading-relaxed prose-a:text-ink prose-a:underline hover:prose-a:text-gold">
+        <article className="max-w-[800px] mx-auto prose prose-neutral prose-headings:font-sans prose-headings:font-extrabold prose-headings:tracking-tight prose-headings:text-ink prose-h2:text-2xl prose-h2:lg:text-3xl prose-h2:mt-12 prose-h2:mb-4 prose-p:text-base prose-p:text-neutral-700 prose-p:leading-relaxed prose-a:text-ink prose-a:underline hover:prose-a:text-gold-deep">
           <h2>Information we collect</h2>
           <p>
             We collect information you provide directly to us when you fill out

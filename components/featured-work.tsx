@@ -17,14 +17,14 @@ export function FeaturedWork() {
       <div className="max-w-[1440px] mx-auto">
         <header className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 lg:mb-16 max-w-5xl">
           <div>
-            <p className="caption text-gold mb-4">WHAT WE&apos;RE UP TO</p>
+            <p className="caption text-gold-deep mb-4">WHAT WE&apos;RE UP TO</p>
             <h2 className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] tracking-tight text-ink text-balance">
               Recent work for brands at the top of their categories.
             </h2>
           </div>
           <Link
             href="/case-studies"
-            className="caption inline-flex items-center gap-2 text-ink hover:text-gold transition-colors duration-300 shrink-0"
+            className="caption inline-flex items-center gap-2 text-ink hover:text-gold-deep transition-colors duration-300 shrink-0"
           >
             View all case studies
             <svg
@@ -74,7 +74,7 @@ function ProjectCard({
           </div>
           {/* Subtle gold accent corner */}
           <div
-            className="absolute top-0 right-0 w-16 h-px bg-gold/40"
+            className="absolute top-0 right-0 w-16 h-px bg-gold-deep/40"
             aria-hidden
           />
         </div>
@@ -91,7 +91,7 @@ function ProjectCard({
             )}
           </div>
 
-          <h3 className="font-sans font-extrabold text-2xl lg:text-3xl leading-tight mb-4 text-balance group-hover:text-gold transition-colors duration-300">
+          <h3 className="font-sans font-extrabold text-2xl lg:text-3xl leading-tight mb-4 text-balance group-hover:text-gold-deep transition-colors duration-300">
             {project.client}
           </h3>
 
@@ -99,7 +99,7 @@ function ProjectCard({
             {project.headline}
           </p>
 
-          <span className="caption inline-flex items-center gap-2 text-canvas group-hover:text-gold transition-colors duration-300">
+          <span className="caption inline-flex items-center gap-2 text-canvas group-hover:text-gold-deep transition-colors duration-300">
             Read case study
             <svg
               width="14"

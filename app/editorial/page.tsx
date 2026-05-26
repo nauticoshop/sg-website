@@ -60,7 +60,7 @@ export default function EditorialPage() {
                     {c.description}
                   </p>
                 </div>
-                <p className="caption text-gold/70 mt-8">COMING SOON</p>
+                <p className="caption text-gold-deep/70 mt-8">COMING SOON</p>
               </li>
             ))}
           </ul>
@@ -85,7 +85,7 @@ export default function EditorialPage() {
             </p>
             <Link
               href="/contact"
-              className="caption inline-flex items-center gap-2 text-ink hover:text-gold transition-colors"
+              className="caption inline-flex items-center gap-2 text-ink hover:text-gold-deep transition-colors"
             >
               Pitch a story or contribute
               <svg

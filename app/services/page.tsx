@@ -44,7 +44,7 @@ export default function ServicesIndexPage() {
                   <p className="text-sm text-canvas/70 leading-relaxed mb-6 line-clamp-3">
                     {s.description}
                   </p>
-                  <span className="caption inline-flex items-center gap-2 group-hover:text-gold transition-colors duration-300">
+                  <span className="caption inline-flex items-center gap-2 group-hover:text-gold-deep transition-colors duration-300">
                     Explore {s.name}
                     <svg
                       width="14"

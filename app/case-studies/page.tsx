@@ -50,13 +50,13 @@ export default function CaseStudiesPage() {
                         </>
                       )}
                     </div>
-                    <h2 className="font-sans font-extrabold text-2xl lg:text-3xl leading-tight mb-3 group-hover:text-gold transition-colors duration-300 text-balance">
+                    <h2 className="font-sans font-extrabold text-2xl lg:text-3xl leading-tight mb-3 group-hover:text-gold-deep transition-colors duration-300 text-balance">
                       {p.client}
                     </h2>
                     <p className="text-sm lg:text-base text-canvas/80 leading-snug mb-4">
                       {p.headline}
                     </p>
-                    <span className="caption inline-flex items-center gap-2 group-hover:text-gold transition-colors duration-300">
+                    <span className="caption inline-flex items-center gap-2 group-hover:text-gold-deep transition-colors duration-300">
                       Read case study
                       <svg
                         width="14"

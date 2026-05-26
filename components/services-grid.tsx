@@ -22,7 +22,7 @@ export function ServicesGrid() {
     <section className="py-24 lg:py-36 px-6 lg:px-12 bg-canvas">
       <div className="max-w-[1440px] mx-auto">
         <header className="text-center mb-16 lg:mb-24 max-w-4xl mx-auto">
-          <p className="caption text-gold mb-6">WHAT WE DO</p>
+          <p className="caption text-gold-deep mb-6">WHAT WE DO</p>
           <h2 className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] tracking-tight text-ink mb-8 text-balance">
             Six disciplines, one in-house team.
           </h2>
@@ -71,7 +71,7 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
       <article className="relative h-full overflow-hidden bg-ink text-canvas p-10 lg:p-12 transition-all duration-500 group-hover:bg-neutral-800 flex flex-col min-h-[480px]">
         {/* Gold accent corner */}
         <div
-          className="absolute top-0 right-0 w-20 h-px bg-gold/40"
+          className="absolute top-0 right-0 w-20 h-px bg-gold-deep/40"
           aria-hidden
         />
 
@@ -95,7 +95,7 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
           <p className="text-sm lg:text-base text-canvas/70 leading-relaxed mb-6">
             {service.description}
           </p>
-          <span className="caption inline-flex items-center gap-2 text-canvas group-hover:text-gold transition-colors duration-300">
+          <span className="caption inline-flex items-center gap-2 text-canvas group-hover:text-gold-deep transition-colors duration-300">
             Explore {service.name}
             <svg
               width="14"

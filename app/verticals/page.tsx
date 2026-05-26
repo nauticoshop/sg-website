@@ -30,7 +30,7 @@ export default function VerticalsIndexPage() {
       <section className="bg-canvas py-16 lg:py-24 px-6 lg:px-12">
         <div className="max-w-[1200px] mx-auto">
           <header className="mb-12">
-            <p className="caption text-gold mb-4">FEATURED VERTICALS</p>
+            <p className="caption text-gold-deep mb-4">FEATURED VERTICALS</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance max-w-3xl">
               Where we go deepest.
             </h2>
@@ -48,7 +48,7 @@ export default function VerticalsIndexPage() {
       <section className="bg-neutral-50 py-16 lg:py-24 px-6 lg:px-12 border-y border-neutral-200">
         <div className="max-w-[1200px] mx-auto">
           <header className="mb-12">
-            <p className="caption text-gold mb-4">ALSO SERVING</p>
+            <p className="caption text-gold-deep mb-4">ALSO SERVING</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance max-w-3xl">
               Categories where we&apos;re building category specialists.
             </h2>
@@ -82,7 +82,7 @@ function VerticalRow({
         className="group block bg-ink text-canvas p-6 lg:p-8 h-full transition-transform duration-500 hover:scale-[1.01]"
       >
         {featured && (
-          <p className="caption text-gold mb-4">FEATURED</p>
+          <p className="caption text-gold-deep mb-4">FEATURED</p>
         )}
         <h3 className="font-sans font-extrabold text-2xl lg:text-3xl leading-tight mb-3 text-balance">
           {vertical.name}
@@ -90,7 +90,7 @@ function VerticalRow({
         <p className="text-sm lg:text-base text-canvas/70 leading-relaxed mb-6">
           {vertical.tagline}
         </p>
-        <span className="caption inline-flex items-center gap-2 group-hover:text-gold transition-colors duration-300">
+        <span className="caption inline-flex items-center gap-2 group-hover:text-gold-deep transition-colors duration-300">
           Explore
           <svg
             width="14"

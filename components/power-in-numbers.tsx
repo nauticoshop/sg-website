@@ -36,7 +36,7 @@ export function PowerInNumbers() {
     <section className="py-24 lg:py-32 px-6 lg:px-12 bg-canvas border-y border-neutral-200">
       <div className="max-w-[1440px] mx-auto">
         <header className="text-center mb-16 lg:mb-20 max-w-4xl mx-auto">
-          <p className="caption text-gold mb-6">
+          <p className="caption text-gold-deep mb-6">
             BUILT ON A FOUNDATION OF PROVEN REACH
           </p>
           <h2 className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] tracking-tight text-ink text-balance">

@@ -39,7 +39,7 @@ export default function TeamPage() {
                     </span>
                   </div>
                 </div>
-                <p className="caption text-gold mb-2">{m.department}</p>
+                <p className="caption text-gold-deep mb-2">{m.department}</p>
                 <h3 className="font-sans font-extrabold text-2xl text-ink mb-1">
                   {m.name}
                 </h3>
@@ -53,7 +53,7 @@ export default function TeamPage() {
 
           <div className="mt-16 lg:mt-20 max-w-2xl">
             <p className="text-sm text-neutral-600 leading-relaxed">
-              <span className="caption text-gold mr-2">NOTE</span>
+              <span className="caption text-gold-deep mr-2">NOTE</span>
               The team grid above includes placeholder roles for the leadership
               and discipline leads while real photography and confirmed names
               are being gathered. Want to join the studio?{" "}

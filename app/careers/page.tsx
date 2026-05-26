@@ -44,7 +44,7 @@ export default function CareersPage() {
       {/* Why work here */}
       <section className="bg-canvas py-16 lg:py-24 px-6 lg:px-12">
         <div className="max-w-[1200px] mx-auto">
-          <p className="caption text-gold mb-6">WHY HERE</p>
+          <p className="caption text-gold-deep mb-6">WHY HERE</p>
           <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink mb-12 lg:mb-16 max-w-3xl text-balance">
             Four reasons people stay.
           </h2>
@@ -55,7 +55,7 @@ export default function CareersPage() {
                 key={i}
                 className="border-t border-neutral-200 pt-6 lg:pt-8"
               >
-                <p className="caption text-gold mb-3">
+                <p className="caption text-gold-deep mb-3">
                   {String(i + 1).padStart(2, "0")}
                 </p>
                 <h3 className="font-sans font-extrabold text-2xl lg:text-3xl text-ink mb-3 text-balance">
@@ -74,7 +74,7 @@ export default function CareersPage() {
       <section className="bg-neutral-50 py-16 lg:py-24 px-6 lg:px-12 border-y border-neutral-200">
         <div className="max-w-[1200px] mx-auto">
           <header className="mb-10 lg:mb-12">
-            <p className="caption text-gold mb-4">OPEN ROLES</p>
+            <p className="caption text-gold-deep mb-4">OPEN ROLES</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance max-w-3xl">
               Current openings.
             </h2>
@@ -92,7 +92,7 @@ export default function CareersPage() {
             </p>
             <Link
               href={`mailto:${site.contact.email}?subject=Careers%20%E2%80%94%20${encodeURIComponent("Introduction")}`}
-              className="caption inline-flex items-center gap-2 text-ink hover:text-gold transition-colors"
+              className="caption inline-flex items-center gap-2 text-ink hover:text-gold-deep transition-colors"
             >
               Introduce yourself
               <svg
