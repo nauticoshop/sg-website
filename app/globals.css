@@ -1,10 +1,6 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-/* Fontshare fonts (Clash Display, Satoshi) loaded via <link> in
-   app/layout.tsx — more reliable than @import which can be blocked
-   or silently fail. */
-
 @theme {
   /* ============================================
      SURROUNDINGS GROUP — DESIGN TOKENS
