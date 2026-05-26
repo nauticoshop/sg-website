@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { featuredProjects } from "@/lib/featured-work";
 
 /**
@@ -66,26 +65,16 @@ function ProjectCard({
   return (
     <Link href={project.href} className="group block h-full">
       <article className="relative h-full overflow-hidden bg-ink text-canvas transition-all duration-500 group-hover:bg-neutral-800 flex flex-col">
-        {/* Image area — real photo if provided, else dark placeholder */}
+        {/* Image area — placeholder with client name */}
         <div className="aspect-[4/3] relative overflow-hidden border-b border-canvas/10">
-          {project.image ? (
-            <Image
-              src={project.image}
-              alt={project.imageAlt ?? `${project.client} — ${project.vertical}`}
-              fill
-              sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-          ) : (
-            <div className="absolute inset-0 flex items-center justify-center px-6">
-              <span className="font-sans font-extrabold text-3xl lg:text-4xl text-canvas/25 text-center leading-tight">
-                {project.client}
-              </span>
-            </div>
-          )}
+          <div className="absolute inset-0 flex items-center justify-center px-6">
+            <span className="font-sans font-extrabold text-3xl lg:text-4xl text-canvas/25 text-center leading-tight">
+              {project.client}
+            </span>
+          </div>
           {/* Subtle gold accent corner */}
           <div
-            className="absolute top-0 right-0 w-16 h-px bg-gold-deep/40 z-10"
+            className="absolute top-0 right-0 w-16 h-px bg-gold-deep/40"
             aria-hidden
           />
         </div>

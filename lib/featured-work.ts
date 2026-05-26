@@ -17,15 +17,6 @@ export interface FeaturedProject {
   /** Optional category/service tag */
   tag?: string;
   href: string;
-  /**
-   * Optional hero image for the card. Drop a file in
-   * `/public/images/work/` and reference it as `/images/work/your-file.webp`.
-   * Recommended: 1600×1200 (4:3), WebP, <300KB. If omitted, the dark
-   * placeholder with the client name shows instead.
-   */
-  image?: string;
-  /** Optional alt text — defaults to "{client} — {vertical}" if absent */
-  imageAlt?: string;
 }
 
 export const featuredProjects: FeaturedProject[] = [
