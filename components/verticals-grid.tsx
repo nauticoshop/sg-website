@@ -2,23 +2,21 @@ import Link from "next/link";
 import { verticals } from "@/lib/verticals";
 
 /**
- * Industries-we-serve section — clean tiered layout, no empty cells.
+ * Industries-we-serve section.
  *
- * Per Billy's feedback: removed the empty 8th cell from the previous
- * 4-col grid. Now uses an explicit two-row layout that reflects the
- * tier structure:
- *
- *   Tier 1 (4 featured verticals): 4-col row, FEATURED label
- *   Tier 2 (3 additional): 3-col row, cleaner cards
- *
- * Larger typography throughout per feedback.
+ * Cleaned-up palette per Billy's feedback:
+ *   - bg-ink section background (was bg-neutral-900) — matches every
+ *     other dark section on the site for unified palette
+ *   - Cards bg-ink with bg-deep hover (was neutral-900 → deep)
+ *   - Tier 1 (4-col) + Tier 2 (3-col) split, no empty cells
+ *   - Larger card typography
  */
 export function VerticalsGrid() {
   const tier1 = verticals.filter((v) => v.tier === 1);
   const tier2 = verticals.filter((v) => v.tier === 2);
 
   return (
-    <section className="py-24 lg:py-36 px-6 lg:px-12 bg-neutral-900 text-canvas">
+    <section className="py-24 lg:py-36 px-6 lg:px-12 bg-ink text-canvas">
       <div className="max-w-[1440px] mx-auto">
         <header className="text-center mb-16 lg:mb-24 max-w-4xl mx-auto">
           <p className="caption text-gold mb-6">INDUSTRIES WE SERVE</p>
@@ -66,7 +64,7 @@ function VerticalCard({
     <li>
       <Link
         href={vertical.href}
-        className="group block bg-neutral-900 hover:bg-deep transition-colors duration-500 p-8 lg:p-10 min-h-[280px] lg:min-h-[320px] flex flex-col justify-between h-full"
+        className="group block bg-ink hover:bg-deep transition-colors duration-500 p-8 lg:p-10 min-h-[280px] lg:min-h-[320px] flex flex-col justify-between h-full"
       >
         <div>
           <h3 className="font-sans font-extrabold text-2xl lg:text-3xl xl:text-4xl leading-[1.1] text-balance mb-4 group-hover:text-gold transition-colors duration-300">

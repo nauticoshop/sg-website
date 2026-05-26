@@ -28,7 +28,7 @@ export function GlobalReach() {
           </div>
         </header>
 
-        <div className="bg-neutral-900 p-6 lg:p-12 border border-canvas/10">
+        <div className="bg-canvas/[0.03] p-6 lg:p-12 border border-canvas/10">
           <GlobalReachMap />
         </div>
       </div>

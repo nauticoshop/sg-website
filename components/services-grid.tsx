@@ -5,17 +5,15 @@ import { motion, useReducedMotion } from "motion/react";
 import { services, type Service } from "@/lib/services";
 
 /**
- * Six-service grid — clean 3-col uniform layout.
+ * Six-service grid — uniform 3-col, all cards equal size.
  *
- * Removed the asymmetric tall-Studio + wide-Intelligence bento per Billy's
- * feedback ("don't like Intelligence being that full bottom part"). Now all
- * six cards are equal weight, equal size — calmer, more confident,
- * uniformly readable.
+ * Cleaned-up version per Billy's feedback:
+ *   - No more line-clamp truncation on descriptions (they read in full)
+ *   - All cards same height (flex layout ensures consistency)
+ *   - bg-ink everywhere dark for color palette consistency
+ *   - Larger sub-text for readability
  *
- * Typography intentionally larger throughout so taglines + descriptions
- * are easy to scan, not squeezed.
- *
- * Motion: stagger fade-up on scroll into view (per-card 90ms delay).
+ * Motion: stagger fade-up on scroll into view.
  */
 export function ServicesGrid() {
   const reduce = useReducedMotion();
@@ -23,7 +21,6 @@ export function ServicesGrid() {
   return (
     <section className="py-24 lg:py-36 px-6 lg:px-12 bg-canvas">
       <div className="max-w-[1440px] mx-auto">
-        {/* Section header — significantly larger per feedback */}
         <header className="text-center mb-16 lg:mb-24 max-w-4xl mx-auto">
           <p className="caption text-gold mb-6">WHAT WE DO</p>
           <h2 className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] tracking-tight text-ink mb-8 text-balance">
@@ -35,7 +32,6 @@ export function ServicesGrid() {
           </p>
         </header>
 
-        {/* Uniform 3-col grid */}
         <motion.ul
           initial={reduce ? false : "hidden"}
           whileInView={reduce ? undefined : "shown"}
@@ -72,33 +68,31 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
 
   return (
     <Link href={service.href} className="group block h-full">
-      <article className="@container relative h-full overflow-hidden bg-ink text-canvas p-10 lg:p-12 transition-all duration-500 group-hover:bg-deep group-hover:scale-[1.01] flex flex-col min-h-[420px]">
-        {/* Subtle gold accent line top-right */}
+      <article className="relative h-full overflow-hidden bg-ink text-canvas p-10 lg:p-12 transition-all duration-500 group-hover:bg-deep flex flex-col min-h-[480px]">
+        {/* Gold accent corner */}
         <div
           className="absolute top-0 right-0 w-20 h-px bg-gold/40"
           aria-hidden
         />
 
         {/* Top: number marker */}
-        <div className="flex items-start justify-between mb-12 lg:mb-16">
-          <span className="caption text-canvas/40">
-            {num} / Service
-          </span>
-        </div>
+        <span className="caption text-canvas/40 mb-12 lg:mb-16">
+          {num} / Service
+        </span>
 
-        {/* Middle: big serif-weight name (DM Sans Black for that wordmark feel) */}
-        <div className="flex-1 flex items-end">
+        {/* Big serif-weight name centered vertically */}
+        <div className="flex-1 flex items-end mb-8 lg:mb-10">
           <h3 className="font-sans font-extrabold text-5xl lg:text-6xl xl:text-7xl leading-none tracking-tight">
             {service.name}
           </h3>
         </div>
 
-        {/* Bottom: tagline + CTA — intentionally larger taglines per feedback */}
-        <div className="mt-10 lg:mt-12 border-t border-canvas/15 pt-6">
+        {/* Bottom: tagline + description + CTA — no truncation */}
+        <div className="border-t border-canvas/15 pt-6">
           <p className="text-lg lg:text-xl text-canvas leading-snug mb-3 font-medium">
             {service.tagline}
           </p>
-          <p className="text-sm lg:text-base text-canvas/60 leading-relaxed mb-6 line-clamp-2">
+          <p className="text-sm lg:text-base text-canvas/70 leading-relaxed mb-6">
             {service.description}
           </p>
           <span className="caption inline-flex items-center gap-2 text-canvas group-hover:text-gold transition-colors duration-300">
