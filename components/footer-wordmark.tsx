@@ -24,7 +24,7 @@ export function FooterWordmark() {
           hidden: {},
           shown: { transition: { staggerChildren: 0.04, delayChildren: 0.1 } },
         }}
-        className="font-sans font-extrabold text-canvas leading-[0.85] tracking-[-0.04em] text-[clamp(3rem,14vw,15rem)] select-none"
+        className="font-sans font-extrabold text-canvas leading-[0.85] tracking-[-0.04em] text-[clamp(2rem,8vw,7rem)] select-none"
         aria-hidden
       >
         {words.map((word, wi) => (

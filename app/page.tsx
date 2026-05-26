@@ -17,11 +17,11 @@ export default function Home() {
     <>
       <Nav />
       <Hero />
+      <AboutSummary />
       <EditorialBillboard
         eyebrow="STUDIO WORK"
         caption="Cinematic content built for brands at the top of their categories."
       />
-      <AboutSummary />
       <ServicesGrid />
       <VerticalsGrid />
       <PowerInNumbers />

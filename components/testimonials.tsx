@@ -12,11 +12,11 @@ import { testimonials } from "@/lib/testimonials";
  */
 export function Testimonials() {
   return (
-    <section className="bg-canvas py-24 lg:py-36 px-6 lg:px-12 border-t border-neutral-200">
+    <section className="bg-ink text-canvas py-24 lg:py-36 px-6 lg:px-12">
       <div className="max-w-[1440px] mx-auto">
         <header className="text-center mb-16 lg:mb-20 max-w-3xl mx-auto">
-          <p className="caption text-gold-deep mb-6">WHAT CLIENTS SAY</p>
-          <h2 className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-ink text-balance">
+          <p className="caption text-gold mb-6">WHAT CLIENTS SAY</p>
+          <h2 className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-canvas text-balance">
             Work that moves the metric that matters.
           </h2>
         </header>
@@ -25,7 +25,7 @@ export function Testimonials() {
           {testimonials.map((t) => (
             <li
               key={t.slug}
-              className="bg-canvas border border-neutral-200 p-8 lg:p-10 flex flex-col h-full"
+              className="bg-neutral-900 border border-canvas/10 p-8 lg:p-10 flex flex-col h-full"
             >
               {/* Gold quote mark */}
               <svg
@@ -34,7 +34,7 @@ export function Testimonials() {
                 viewBox="0 0 32 24"
                 fill="none"
                 aria-hidden
-                className="text-gold-deep mb-6"
+                className="text-gold mb-6"
               >
                 <path
                   d="M0 24V14C0 6.27 4.5 0.7 13 0L13.5 4C7.8 4.5 5 8 5 12H8C12.5 12 14 13.5 14 17V19C14 22 12 24 8.5 24H0ZM18 24V14C18 6.27 22.5 0.7 31 0L31.5 4C25.8 4.5 23 8 23 12H26C30.5 12 32 13.5 32 17V19C32 22 30 24 26.5 24H18Z"
@@ -43,16 +43,16 @@ export function Testimonials() {
               </svg>
 
               <p
-                className="text-lg lg:text-xl text-ink leading-snug mb-8 flex-1 font-medium text-balance"
+                className="text-lg lg:text-xl text-canvas leading-snug mb-8 flex-1 font-medium text-balance"
                 dangerouslySetInnerHTML={{ __html: `"${t.quote}"` }}
               />
 
-              <div className="border-t border-neutral-200 pt-5">
-                <p className="font-sans font-extrabold text-base text-ink">
+              <div className="border-t border-canvas/15 pt-5">
+                <p className="font-sans font-extrabold text-base text-canvas">
                   {t.name}
                 </p>
-                <p className="text-sm text-neutral-600 mt-1">{t.title}</p>
-                <p className="caption text-gold-deep mt-3">{t.vertical}</p>
+                <p className="text-sm text-canvas/60 mt-1">{t.title}</p>
+                <p className="caption text-gold mt-3">{t.vertical}</p>
               </div>
             </li>
           ))}

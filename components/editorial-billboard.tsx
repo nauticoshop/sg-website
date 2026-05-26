@@ -33,7 +33,7 @@ export function EditorialBillboard({
 }: EditorialBillboardProps) {
   return (
     <section className="relative w-full bg-ink overflow-hidden">
-      <div className="relative aspect-[16/9] md:aspect-[21/8] lg:aspect-[21/7]">
+      <div className="relative aspect-[2/1] md:aspect-[3/1] lg:aspect-[4/1]">
         {image ? (
           <Image
             src={image}
