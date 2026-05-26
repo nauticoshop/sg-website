@@ -23,7 +23,7 @@ interface EditorialBillboardProps {
 }
 
 export function EditorialBillboard({
-  image = "/images/editorial/signature-banner.webp",
+  image = "/images/editorial/signature-banner.png",
   imageAlt = "Surroundings Group — a creative agency for premium markets",
   eyebrow,
   caption,
@@ -46,7 +46,7 @@ export function EditorialBillboard({
             <span className="caption text-canvas/25 text-center">
               SIGNATURE BANNER — DROP A FILE AT
               <br />
-              /public/images/editorial/signature-banner.webp
+              /public/images/editorial/signature-banner.png
             </span>
           </div>
         )}
