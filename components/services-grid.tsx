@@ -19,15 +19,16 @@ export function ServicesGrid() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="py-16 lg:py-24 px-6 lg:px-12 bg-canvas">
+    <section className="py-24 lg:py-36 px-6 lg:px-12 bg-canvas">
       <div className="max-w-[1440px] mx-auto">
-        <header className="text-center mb-10 lg:mb-14 max-w-3xl mx-auto">
-          <p className="caption text-gold-deep mb-4">WHAT WE DO</p>
-          <h2 className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-ink mb-5 text-balance">
+        <header className="text-center mb-16 lg:mb-24 max-w-4xl mx-auto">
+          <p className="caption text-gold-deep mb-6">WHAT WE DO</p>
+          <h2 className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] tracking-tight text-ink mb-8 text-balance">
             Six disciplines, one in-house team.
           </h2>
-          <p className="text-base lg:text-lg text-neutral-600 leading-relaxed max-w-2xl mx-auto">
-            Strategy, production, distribution, and measurement under one roof.
+          <p className="text-lg md:text-xl lg:text-2xl text-neutral-600 leading-relaxed max-w-3xl mx-auto">
+            Every campaign moves through our studio under one roof — strategy,
+            production, distribution, and measurement working as a single team.
           </p>
         </header>
 
@@ -39,7 +40,7 @@ export function ServicesGrid() {
             hidden: {},
             shown: { transition: { staggerChildren: 0.09, delayChildren: 0.05 } },
           }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
         >
           {services.map((service, i) => (
             <motion.li
@@ -67,32 +68,35 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
 
   return (
     <Link href={service.href} className="group block h-full">
-      <article className="relative h-full overflow-hidden bg-ink text-canvas p-7 lg:p-8 transition-all duration-500 group-hover:bg-neutral-800 flex flex-col min-h-[320px]">
+      <article className="relative h-full overflow-hidden bg-ink text-canvas p-10 lg:p-12 transition-all duration-500 group-hover:bg-neutral-800 flex flex-col min-h-[480px]">
         {/* Gold accent corner */}
         <div
-          className="absolute top-0 right-0 w-16 h-px bg-gold-deep/40"
+          className="absolute top-0 right-0 w-20 h-px bg-gold-deep/40"
           aria-hidden
         />
 
         {/* Top: number marker */}
-        <span className="caption text-canvas/40 mb-6 lg:mb-8">
+        <span className="caption text-canvas/40 mb-12 lg:mb-16">
           {num} / Service
         </span>
 
-        {/* Service name */}
-        <div className="flex-1 flex items-end mb-5 lg:mb-6">
-          <h3 className="font-sans font-extrabold text-3xl lg:text-4xl leading-none tracking-tight">
+        {/* Big serif-weight name centered vertically */}
+        <div className="flex-1 flex items-end mb-8 lg:mb-10">
+          <h3 className="font-sans font-extrabold text-5xl lg:text-6xl xl:text-7xl leading-none tracking-tight">
             {service.name}
           </h3>
         </div>
 
-        {/* Bottom: tagline + CTA — description moved to detail page for density */}
-        <div className="border-t border-canvas/15 pt-4">
-          <p className="text-sm lg:text-base text-canvas/85 leading-snug mb-4">
+        {/* Bottom: tagline + description + CTA — no truncation */}
+        <div className="border-t border-canvas/15 pt-6">
+          <p className="text-lg lg:text-xl text-canvas leading-snug mb-3 font-medium">
             {service.tagline}
           </p>
+          <p className="text-sm lg:text-base text-canvas/70 leading-relaxed mb-6">
+            {service.description}
+          </p>
           <span className="caption inline-flex items-center gap-2 text-canvas group-hover:text-gold-deep transition-colors duration-300">
-            Explore
+            Explore {service.name}
             <svg
               width="14"
               height="10"
