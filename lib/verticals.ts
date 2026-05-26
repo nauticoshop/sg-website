@@ -13,6 +13,14 @@ export interface Vertical {
   href: string;
   /** Tier 1 = lead vertical, full landing page; Tier 2 = lighter treatment */
   tier: 1 | 2;
+  /**
+   * Hero photo for the card. Drop a file in `/public/images/verticals/`
+   * and reference as `/images/verticals/marine.webp`. Recommended:
+   * portrait 1200×1500 (4:5), WebP, <300KB. Falls back to a dark
+   * placeholder with the vertical name if missing.
+   */
+  image?: string;
+  imageAlt?: string;
 }
 
 export const verticals: Vertical[] = [
