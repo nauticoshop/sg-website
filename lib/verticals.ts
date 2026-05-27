@@ -80,7 +80,7 @@ export const verticals: Vertical[] = [
     href: "/verticals/resorts-travel",
     tier: 2,
     image: "/images/verticals/resorts-travel.jpg",
-    imageAlt: "Aerial view of a Caribbean beachfront villa with infinity pool, palms, and lagoon",
+    imageAlt: "Eye-level view of a Caribbean luxury villa — infinity pool, loungers, dramatic sky",
   },
   {
     slug: "hospitality-experiences",
