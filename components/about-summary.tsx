@@ -13,11 +13,11 @@ import Link from "next/link";
  */
 export function AboutSummary() {
   return (
-    <section className="bg-canvas py-24 lg:py-36 px-6 lg:px-12">
+    <section className="bg-gold text-ink py-24 lg:py-36 px-6 lg:px-12">
       <div className="max-w-[1200px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           <div className="lg:col-span-4">
-            <p className="caption text-gold-deep mb-6">ABOUT</p>
+            <p className="caption text-ink mb-6">ABOUT</p>
             <h2 className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-ink text-balance">
               More than a media company.
             </h2>
@@ -29,7 +29,7 @@ export function AboutSummary() {
               designed to elevate luxury brands and drive attention where it
               matters most.
             </p>
-            <p className="text-base lg:text-lg text-neutral-700 leading-relaxed">
+            <p className="text-base lg:text-lg text-ink/75 leading-relaxed">
               From real estate developments to private aviation and hospitality
               experiences, our work blends creative direction with
               performance-focused marketing — backed by an owned-media network
@@ -38,7 +38,7 @@ export function AboutSummary() {
             <div className="pt-4">
               <Link
                 href="/about"
-                className="caption inline-flex items-center gap-2 text-ink hover:text-gold-deep transition-colors duration-300"
+                className="caption inline-flex items-center gap-2 text-ink hover:opacity-70 transition-opacity duration-300"
               >
                 Read the full story
                 <svg
