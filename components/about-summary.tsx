@@ -26,23 +26,22 @@ export function AboutSummary() {
 
           <div className="lg:col-span-8 space-y-6">
             <p className="text-xl lg:text-2xl text-ink leading-snug font-medium text-balance">
-              Surroundings Group is a creative agency built specifically for
-              luxury brands. Eight verticals deep, one in-house team, and a
-              network of premium clients who collaborate across categories to
-              make work no single-vertical agency could produce.
+              Surroundings Group is a creative agency for luxury brands. We
+              work in eight verticals with one in-house team, and our clients
+              collaborate across categories to produce work no single-vertical
+              agency could match.
             </p>
             <p className="text-base lg:text-lg text-ink/80 leading-relaxed">
-              From marine and real estate development to private aviation,
-              hospitality, and luxury goods, we deliver full-service digital
-              marketing — strategy, production, paid, and PR all under one
-              roof — staffed by senior practitioners who understand how each
-              industry buys, sells, and signals. A yacht from our marine
-              roster anchors a real estate launch film. A luxury car reveals
-              at a hospitality activation. A private aviation terminal hosts
-              a luxury goods drop. Every engagement is then amplified through
-              an owned-media network of ten editorial channels reaching 255M+
-              affluent viewers a year. Most agencies buy attention. We built
-              ours.
+              We cover marine, real estate development, private aviation,
+              hospitality, luxury goods, and a few categories in between.
+              Full-service digital marketing, all in-house. Strategy,
+              production, paid, and PR run by senior people who&apos;ve spent
+              careers in the industries we serve. Our clients borrow from each
+              other. A yacht from our marine roster might anchor a real estate
+              launch film. A car reveal lands at a hospitality activation.
+              Then we extend the reach. Our owned-media network runs ten
+              editorial channels with 255M+ viewers a year. Most agencies buy
+              attention. We built ours.
             </p>
             <div className="pt-4">
               <Link
