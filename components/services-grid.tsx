@@ -24,11 +24,11 @@ export function ServicesGrid() {
         <header className="text-center mb-12 lg:mb-16 max-w-3xl mx-auto">
           <p className="caption text-gold-deep mb-5">WHAT WE DO</p>
           <h2 className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-ink mb-5 text-balance">
-            Six disciplines, one in-house team.
+            Six services. All in-house.
           </h2>
           <p className="text-base lg:text-lg text-neutral-600 leading-relaxed max-w-2xl mx-auto">
-            Strategy, production, distribution, and measurement working as a
-            single team — under one roof.
+            Strategy, production, paid, PR, owned media, and the tech behind
+            it. Run by senior people who plan the work and ship it themselves.
           </p>
         </header>
 
