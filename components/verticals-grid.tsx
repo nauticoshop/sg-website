@@ -21,9 +21,9 @@ export function VerticalsGrid() {
   const tier2 = verticals.filter((v) => v.tier === 2);
 
   return (
-    <section className="py-24 lg:py-36 px-6 lg:px-12 bg-canvas">
+    <section className="pt-10 lg:pt-14 pb-24 lg:pb-32 px-6 lg:px-12 bg-canvas">
       <div className="max-w-[1440px] mx-auto">
-        <header className="text-center mb-14 lg:mb-20 max-w-3xl mx-auto">
+        <header className="text-center mb-10 lg:mb-14 max-w-3xl mx-auto">
           <p className="caption text-gold-deep mb-5">INDUSTRIES WE SERVE</p>
           <h2 className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] tracking-tight text-ink mb-5 text-balance">
             Vertical-focused. Never generalist.
