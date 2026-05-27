@@ -26,15 +26,18 @@ export function AboutSummary() {
 
           <div className="lg:col-span-8 space-y-6">
             <p className="text-xl lg:text-2xl text-ink leading-snug font-medium text-balance">
-              Surroundings Group is a Tampa-based creative agency built
-              specifically for luxury brands — eight verticals deep, with one
-              in-house team running strategy, production, distribution, and
-              measurement under a single roof.
+              Surroundings Group is a creative agency built specifically for
+              luxury brands. Eight verticals deep, one in-house team, and a
+              network of premium clients who collaborate across categories to
+              make work no single-vertical agency could produce.
             </p>
             <p className="text-base lg:text-lg text-ink/80 leading-relaxed">
               From marine and real estate development to private aviation,
-              hospitality, and luxury goods, we make cinematic content and the
-              marketing systems behind it. Every engagement is amplified
+              hospitality, and luxury goods, we run strategy, production,
+              distribution, and measurement under one roof. A yacht from our
+              marine roster anchors a real estate launch film. A luxury car
+              reveals at a hospitality activation. A private aviation terminal
+              hosts a luxury goods drop. Every engagement is then amplified
               through an owned-media network of ten editorial channels reaching
               255M+ affluent viewers a year. Most agencies buy attention. We
               built ours.
