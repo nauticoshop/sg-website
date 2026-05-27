@@ -92,7 +92,7 @@ export const verticals: Vertical[] = [
     href: "/verticals/hospitality-experiences",
     tier: 2,
     image: "/images/verticals/hospitality-experiences.jpg",
-    imageAlt: "Architectural pavilion with waterfall feature at night",
+    imageAlt: "Premium event hospitality activation — branded bar setup at a luxury concours",
   },
   {
     slug: "exotic-automotive",
@@ -104,7 +104,7 @@ export const verticals: Vertical[] = [
     href: "/verticals/exotic-automotive",
     tier: 2,
     image: "/images/verticals/exotic-automotive.jpg",
-    imageAlt: "Lineup of luxury exotic supercars in a private showroom",
+    imageAlt: "Mercedes G-Wagen Brabus parked on a coastal road",
   },
   {
     slug: "luxury-goods",
