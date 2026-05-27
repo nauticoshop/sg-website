@@ -17,7 +17,7 @@ export function FeaturedWork() {
       <div className="max-w-[1440px] mx-auto">
         <header className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 lg:mb-16 max-w-5xl">
           <div>
-            <p className="caption text-gold-deep mb-4">WHAT WE&apos;RE UP TO</p>
+            <p className="caption text-gold-deep mb-4">SELECTED WORK</p>
             <h2 className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] tracking-tight text-ink text-balance">
               Recent work for brands at the top of their categories.
             </h2>

@@ -29,7 +29,7 @@ export function VerticalsGrid() {
             Vertical-focused. Never generalist.
           </h2>
           <p className="text-base lg:text-lg text-neutral-600 leading-relaxed max-w-2xl mx-auto">
-            Seven luxury categories. The kind of category fluency generalist
+            Eight luxury categories. The kind of category fluency generalist
             agencies can&apos;t replicate.
           </p>
         </header>
