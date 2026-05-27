@@ -21,7 +21,7 @@ export function VerticalsGrid() {
   const tier2 = verticals.filter((v) => v.tier === 2);
 
   return (
-    <section className="pt-10 lg:pt-14 pb-24 lg:pb-32 px-6 lg:px-12 bg-canvas">
+    <section className="pt-10 lg:pt-14 pb-16 lg:pb-20 px-6 lg:px-12 bg-canvas">
       <div className="max-w-[1440px] mx-auto">
         <header className="text-center mb-10 lg:mb-14 max-w-3xl mx-auto">
           <p className="caption text-gold-deep mb-5">INDUSTRIES WE SERVE</p>

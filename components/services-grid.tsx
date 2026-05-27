@@ -19,9 +19,9 @@ export function ServicesGrid() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="py-20 lg:py-28 px-6 lg:px-12 bg-canvas">
+    <section className="pt-10 lg:pt-14 pb-20 lg:pb-28 px-6 lg:px-12 bg-canvas">
       <div className="max-w-[1440px] mx-auto">
-        <header className="text-center mb-12 lg:mb-16 max-w-3xl mx-auto">
+        <header className="text-center mb-10 lg:mb-14 max-w-3xl mx-auto">
           <p className="caption text-gold-deep mb-5">WHAT WE DO</p>
           <h2 className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-ink mb-5 text-balance">
             Full-service. An extension of your team.
