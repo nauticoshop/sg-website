@@ -33,14 +33,16 @@ export function AboutSummary() {
             </p>
             <p className="text-base lg:text-lg text-ink/80 leading-relaxed">
               From marine and real estate development to private aviation,
-              hospitality, and luxury goods, we run strategy, production,
-              distribution, and measurement under one roof. A yacht from our
-              marine roster anchors a real estate launch film. A luxury car
-              reveals at a hospitality activation. A private aviation terminal
-              hosts a luxury goods drop. Every engagement is then amplified
-              through an owned-media network of ten editorial channels reaching
-              255M+ affluent viewers a year. Most agencies buy attention. We
-              built ours.
+              hospitality, and luxury goods, we deliver full-service digital
+              marketing — strategy, production, paid, and PR all under one
+              roof — staffed by senior practitioners who understand how each
+              industry buys, sells, and signals. A yacht from our marine
+              roster anchors a real estate launch film. A luxury car reveals
+              at a hospitality activation. A private aviation terminal hosts
+              a luxury goods drop. Every engagement is then amplified through
+              an owned-media network of ten editorial channels reaching 255M+
+              affluent viewers a year. Most agencies buy attention. We built
+              ours.
             </p>
             <div className="pt-4">
               <Link
