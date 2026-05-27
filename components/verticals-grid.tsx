@@ -26,11 +26,11 @@ export function VerticalsGrid() {
         <header className="text-center mb-10 lg:mb-14 max-w-3xl mx-auto">
           <p className="caption text-gold-deep mb-5">INDUSTRIES WE SERVE</p>
           <h2 className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] tracking-tight text-ink mb-5 text-balance">
-            Vertical-focused. Never generalist.
+            Vertical-focused.
           </h2>
           <p className="text-base lg:text-lg text-neutral-600 leading-relaxed max-w-2xl mx-auto">
-            Eight luxury categories. The kind of category fluency generalist
-            agencies can&apos;t replicate.
+            We work deeply in these luxury verticals. Our clients collaborate
+            across them. That&apos;s the difference.
           </p>
         </header>
 
