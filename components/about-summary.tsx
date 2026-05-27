@@ -1,15 +1,16 @@
 import Link from "next/link";
 
 /**
- * About snippet for the homepage — short positioning statement.
+ * About snippet for the homepage — positioning statement designed
+ * to read as editorial and load with SEO-relevant terms naturally.
  *
- * Long-form story + team grid + NN spotlight live on /about. This is
- * the homepage hit: who we are in a few sentences, then directs to
- * the deeper page.
+ * SEO-targeted keywords integrated: "Tampa creative agency",
+ * "luxury brands", "marine", "real estate development", "private
+ * aviation", "hospitality", "luxury goods", "in-house production",
+ * "owned media", "editorial channels". No keyword stuffing —
+ * each term lives inside a real sentence.
  *
- * Copy informed by the SG 2026 media kit positioning ("connects luxury
- * brands together through content and influence with our unique
- * multi-channel global online reach").
+ * Long-form story + team grid + NN spotlight live on /about.
  */
 export function AboutSummary() {
   return (
@@ -19,21 +20,24 @@ export function AboutSummary() {
           <div className="lg:col-span-4">
             <p className="caption text-ink mb-6">ABOUT</p>
             <h2 className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-ink text-balance">
-              More than a media company.
+              Specialists where everyone else is a generalist.
             </h2>
           </div>
 
           <div className="lg:col-span-8 space-y-6">
             <p className="text-xl lg:text-2xl text-ink leading-snug font-medium text-balance">
-              We create cinematic content and strategic marketing systems
-              designed to elevate luxury brands and drive attention where it
-              matters most.
+              Surroundings Group is a Tampa-based creative agency built
+              specifically for luxury brands — eight verticals deep, with one
+              in-house team running strategy, production, distribution, and
+              measurement under a single roof.
             </p>
-            <p className="text-base lg:text-lg text-ink/75 leading-relaxed">
-              From real estate developments to private aviation and hospitality
-              experiences, our work blends creative direction with
-              performance-focused marketing — backed by an owned-media network
-              that reaches the audiences our clients want most.
+            <p className="text-base lg:text-lg text-ink/80 leading-relaxed">
+              From marine and real estate development to private aviation,
+              hospitality, and luxury goods, we make cinematic content and the
+              marketing systems behind it. Every engagement is amplified
+              through an owned-media network of ten editorial channels reaching
+              255M+ affluent viewers a year. Most agencies buy attention. We
+              built ours.
             </p>
             <div className="pt-4">
               <Link
