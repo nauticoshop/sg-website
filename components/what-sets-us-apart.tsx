@@ -43,6 +43,28 @@ const chapters: Chapter[] = [
   },
   {
     num: "02",
+    eyebrow: "The crossover advantage",
+    headline: "Eight verticals, one collaborative network.",
+    body: (
+      <>
+        <p>
+          Because we work deeply in eight luxury verticals, our clients borrow
+          from each other. A real estate developer&apos;s launch film features a
+          yacht from our marine roster. An exotic automotive brand stages a
+          reveal at a hospitality partner&apos;s resort. A luxury goods house
+          drops a new collection at a private aviation terminal.
+        </p>
+        <p>
+          The verticals don&apos;t sit in silos — they collaborate. Every brief
+          unlocks the full inventory of brands and locations we serve. It&apos;s
+          a moat no single-category specialist can match and no generalist
+          agency has the depth to build.
+        </p>
+      </>
+    ),
+  },
+  {
+    num: "03",
     eyebrow: "Why it matters",
     headline: "Owned audience changes the math.",
     body: (
@@ -62,7 +84,7 @@ const chapters: Chapter[] = [
     ),
   },
   {
-    num: "03",
+    num: "04",
     eyebrow: "Proven results",
     headline: "Numbers behind the work.",
     body: (
