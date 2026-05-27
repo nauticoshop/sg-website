@@ -45,7 +45,7 @@ export const verticals: Vertical[] = [
     href: "/verticals/real-estate",
     tier: 1,
     image: "/images/verticals/real-estate.jpg",
-    imageAlt: "Luxury estate at night — illuminated pool, waterfall feature, dramatic landscape lighting",
+    imageAlt: "Aerial view of a modern luxury estate — long blue infinity pool, slide, fire feature, manicured grounds",
   },
   {
     slug: "multifamily",
