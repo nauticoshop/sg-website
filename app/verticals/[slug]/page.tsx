@@ -65,7 +65,7 @@ export default async function VerticalDetailPage({ params }: RouteParams) {
               <p className="text-base lg:text-lg text-neutral-700 leading-relaxed">
                 {vertical.description}
               </p>
-              {vertical.slug === "marine-yachting" && (
+              {vertical.slug === "marine" && (
                 <p className="text-base lg:text-lg text-neutral-700 leading-relaxed mt-6">
                   Marine clients also get direct access to{" "}
                   <Link

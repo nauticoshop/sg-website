@@ -1,6 +1,6 @@
 /**
- * Seven luxury verticals — Surroundings Group.
- * Tier 1 (4) get full landing-page treatment; Tier 2 (3) get lighter pages.
+ * Eight luxury verticals — Surroundings Group.
+ * Tier 1 (4) get full landing-page treatment; Tier 2 (4) get lighter pages.
  */
 
 export interface Vertical {
@@ -24,27 +24,27 @@ export interface Vertical {
 
 export const verticals: Vertical[] = [
   {
-    slug: "marine-yachting",
-    name: "Marine & Yachting",
+    slug: "marine",
+    name: "Marine",
     tagline:
       "The category where we have the deepest reach — anchored by Nautical Network.",
     description:
-      "From boat builders and brokerages to charter operators and marinas, we serve the entire marine ecosystem with content, social, and distribution at a scale no other agency can match.",
-    href: "/verticals/marine-yachting",
+      "From boat builders and brokerages to charter operators and marinas, we serve the entire marine industry with content, social, and distribution at a scale no other agency can match.",
+    href: "/verticals/marine",
     tier: 1,
-    image: "/images/verticals/marine-yachting.jpg",
+    image: "/images/verticals/marine.jpg",
     imageAlt: "Sport-fish yacht running across calm coastal water",
   },
   {
-    slug: "luxury-real-estate",
-    name: "Luxury Real Estate Development",
+    slug: "real-estate",
+    name: "Real Estate & Development",
     tagline:
-      "From pre-sales storytelling to grand-opening campaigns for the top of the market.",
+      "Developers, brokerages, builders, and the home services that bring properties to life.",
     description:
-      "Cinematic project films, editorial storytelling, and integrated paid + PR for developers building flagship properties.",
-    href: "/verticals/luxury-real-estate",
+      "Cinematic project films, editorial storytelling, and integrated paid + PR — for developers building flagship properties, brokerages selling them, and the home services brands working around the luxury home.",
+    href: "/verticals/real-estate",
     tier: 1,
-    image: "/images/verticals/luxury-real-estate.jpg",
+    image: "/images/verticals/real-estate.jpg",
     imageAlt: "Luxury estate at twilight — illuminated pool, palms, two-story home",
   },
   {
@@ -83,8 +83,20 @@ export const verticals: Vertical[] = [
     imageAlt: "Beachfront resort villa with infinity pool and loungers",
   },
   {
+    slug: "hospitality-experiences",
+    name: "Hospitality & Experiences",
+    tagline:
+      "Hotels, restaurants, member clubs, and the curated experiences that define them.",
+    description:
+      "Content and distribution for hospitality brands — boutique hotels, restaurants, private clubs, spas — and the experiential brands building the next generation of premium service.",
+    href: "/verticals/hospitality-experiences",
+    tier: 2,
+    image: "/images/verticals/hospitality-experiences.jpg",
+    imageAlt: "Architectural pavilion with waterfall feature at night",
+  },
+  {
     slug: "exotic-automotive",
-    name: "Exotic & Luxury Automotive",
+    name: "Exotic Automotive",
     tagline:
       "Launch campaigns and ongoing social for dealers, collectors, and performance brands.",
     description:
@@ -92,13 +104,13 @@ export const verticals: Vertical[] = [
     href: "/verticals/exotic-automotive",
     tier: 2,
     image: "/images/verticals/exotic-automotive.jpg",
-    imageAlt: "Yellow Lamborghini Urus on coastal road with palms",
+    imageAlt: "Lineup of luxury exotic supercars in a private showroom",
   },
   {
     slug: "luxury-goods",
-    name: "Luxury Goods & Experiences",
+    name: "Luxury Goods",
     tagline:
-      "Editorial campaigns for timepieces, fashion, fine spirits, and experiential brands.",
+      "Editorial campaigns for timepieces, fashion, fine spirits, and craftsmanship-led brands.",
     description:
       "When the category demands an editorial sensibility, we deliver work that feels like the magazines your customers already read.",
     href: "/verticals/luxury-goods",

@@ -41,8 +41,8 @@ export function VerticalsGrid() {
           ))}
         </ul>
 
-        {/* Tier 2 — 3 additional verticals */}
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+        {/* Tier 2 — 4 additional verticals */}
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
           {tier2.map((vertical) => (
             <VerticalCard key={vertical.slug} vertical={vertical} />
           ))}
