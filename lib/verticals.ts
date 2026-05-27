@@ -13,6 +13,13 @@ export interface Vertical {
   href: string;
   /** Tier 1 = lead vertical, full landing page; Tier 2 = lighter treatment */
   tier: 1 | 2;
+  /**
+   * Hero photo for the vertical card. File lives in
+   * `/public/images/verticals/{slug}.jpg`. Optional — if omitted, a
+   * dark placeholder with the vertical name renders instead.
+   */
+  image?: string;
+  imageAlt?: string;
 }
 
 export const verticals: Vertical[] = [
@@ -25,6 +32,8 @@ export const verticals: Vertical[] = [
       "From boat builders and brokerages to charter operators and marinas, we serve the entire marine ecosystem with content, social, and distribution at a scale no other agency can match.",
     href: "/verticals/marine-yachting",
     tier: 1,
+    image: "/images/verticals/marine-yachting.jpg",
+    imageAlt: "Sport-fish yacht running across calm coastal water",
   },
   {
     slug: "luxury-real-estate",
@@ -35,6 +44,8 @@ export const verticals: Vertical[] = [
       "Cinematic project films, editorial storytelling, and integrated paid + PR for developers building flagship properties.",
     href: "/verticals/luxury-real-estate",
     tier: 1,
+    image: "/images/verticals/luxury-real-estate.jpg",
+    imageAlt: "Aerial twilight view of a luxury estate with pool and palms",
   },
   {
     slug: "multifamily",
@@ -45,6 +56,8 @@ export const verticals: Vertical[] = [
       "Built for properties competing for discerning residents — content programs, social engines, and paid demand that fills units.",
     href: "/verticals/multifamily",
     tier: 1,
+    image: "/images/verticals/multifamily.jpg",
+    imageAlt: "Mid-rise residential building at sunset with pool deck below",
   },
   {
     slug: "private-aviation",
@@ -55,6 +68,8 @@ export const verticals: Vertical[] = [
       "Production and distribution for the brands and terminals serving private flight — captured at the standard the category requires.",
     href: "/verticals/private-aviation",
     tier: 1,
+    image: "/images/verticals/private-aviation.jpg",
+    imageAlt: "Private jet on tarmac with airstairs down and red carpet",
   },
   {
     slug: "resorts-travel",
@@ -64,6 +79,8 @@ export const verticals: Vertical[] = [
       "Editorial-grade content and paid distribution for resorts, vacation rentals, and travel brands serving the top of the market.",
     href: "/verticals/resorts-travel",
     tier: 2,
+    image: "/images/verticals/resorts-travel.jpg",
+    imageAlt: "Beachfront resort villa with infinity pool and loungers",
   },
   {
     slug: "exotic-automotive",
@@ -74,6 +91,8 @@ export const verticals: Vertical[] = [
       "From new-model launches to ongoing brand presence — cinematic content and audience reach for premium automotive.",
     href: "/verticals/exotic-automotive",
     tier: 2,
+    image: "/images/verticals/exotic-automotive.jpg",
+    imageAlt: "Yellow Lamborghini Urus on coastal road with palms",
   },
   {
     slug: "luxury-goods",
@@ -84,5 +103,7 @@ export const verticals: Vertical[] = [
       "When the category demands an editorial sensibility, we deliver work that feels like the magazines your customers already read.",
     href: "/verticals/luxury-goods",
     tier: 2,
+    image: "/images/verticals/luxury-goods.jpg",
+    imageAlt: "Silver Rolex Day-Date watch on cream backdrop",
   },
 ];
