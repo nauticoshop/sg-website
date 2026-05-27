@@ -17,8 +17,8 @@ export default function Home() {
       <Nav />
       <Hero />
       <AboutSummary />
-      <ServicesGrid />
       <VerticalsGrid />
+      <ServicesGrid />
       <PowerInNumbers />
       <FeaturedWork />
       <GlobalReach />
