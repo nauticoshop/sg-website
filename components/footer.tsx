@@ -65,7 +65,7 @@ export function Footer() {
             <FooterLink href="/about">About</FooterLink>
             <FooterLink href="/about/team">Team</FooterLink>
             <FooterLink href="/about/nautical-network">Nautical Network</FooterLink>
-            <FooterLink href="/editorial">Editorial</FooterLink>
+            <FooterLink href="/journal">Journal</FooterLink>
             <FooterLink href="/case-studies">Case Studies</FooterLink>
             <FooterLink href="/careers">Careers</FooterLink>
             <FooterLink href="/contact">Contact</FooterLink>

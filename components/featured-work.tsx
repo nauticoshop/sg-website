@@ -1,15 +1,15 @@
 import Link from "next/link";
-import { featuredProjects } from "@/lib/featured-work";
+import Image from "next/image";
+import { featuredProjects, journalTypeLabel } from "@/lib/featured-work";
 
 /**
- * "What We're Up To" — featured projects/work section.
+ * Studio Journal feed — homepage section.
  *
- * Uniform 3-col grid — all cards equal size and weight.
- * Replaces the previous asymmetric 7/12 + 5/12 split which created
- * unbalanced proportions (per Billy's feedback).
+ * Mixed media hub showing recent case studies, BTS, client wins,
+ * and studio news. Each card carries a small gold "type" chip so
+ * visitors immediately see what kind of entry they're looking at.
  *
- * Image placeholders are intentional dark blocks with the client name.
- * Will be replaced with real project hero imagery as case studies ship.
+ * Uniform 3-col grid. Link out goes to /journal (the full hub).
  */
 export function FeaturedWork() {
   return (
@@ -17,16 +17,16 @@ export function FeaturedWork() {
       <div className="max-w-[1440px] mx-auto">
         <header className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 lg:mb-16 max-w-5xl">
           <div>
-            <p className="caption text-gold-deep mb-4">SELECTED WORK</p>
+            <p className="caption text-gold-deep mb-4">STUDIO JOURNAL</p>
             <h2 className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] tracking-tight text-ink text-balance">
-              Recent work for brands at the top of their categories.
+              Inside the studio.
             </h2>
           </div>
           <Link
-            href="/case-studies"
+            href="/journal"
             className="caption inline-flex items-center gap-2 text-ink hover:text-gold-deep transition-colors duration-300 shrink-0"
           >
-            View all case studies
+            Step inside
             <svg
               width="14"
               height="10"
@@ -65,22 +65,37 @@ function ProjectCard({
   return (
     <Link href={project.href} className="group block h-full">
       <article className="relative h-full overflow-hidden bg-ink text-canvas transition-all duration-500 group-hover:bg-neutral-800 flex flex-col">
-        {/* Image area — placeholder with client name */}
+        {/* Image area — real photo if provided, else dark placeholder */}
         <div className="aspect-[4/3] relative overflow-hidden border-b border-canvas/10">
-          <div className="absolute inset-0 flex items-center justify-center px-6">
-            <span className="font-sans font-extrabold text-3xl lg:text-4xl text-canvas/25 text-center leading-tight">
-              {project.client}
-            </span>
-          </div>
+          {project.image ? (
+            <Image
+              src={project.image}
+              alt={project.imageAlt ?? `${project.client} — ${project.vertical}`}
+              fill
+              sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center px-6">
+              <span className="font-sans font-extrabold text-3xl lg:text-4xl text-canvas/25 text-center leading-tight">
+                {project.client}
+              </span>
+            </div>
+          )}
           {/* Subtle gold accent corner */}
           <div
-            className="absolute top-0 right-0 w-16 h-px bg-gold-deep/40"
+            className="absolute top-0 right-0 w-16 h-px bg-gold-deep/40 z-10"
             aria-hidden
           />
         </div>
 
         {/* Content */}
         <div className="p-8 lg:p-10 flex-1 flex flex-col">
+          {/* Type chip */}
+          <p className="caption text-gold mb-4">
+            {journalTypeLabel(project.type)}
+          </p>
+
           <div className="caption text-canvas/50 mb-3 flex items-center gap-3 flex-wrap">
             <span>{project.vertical}</span>
             {project.tag && (
@@ -100,7 +115,7 @@ function ProjectCard({
           </p>
 
           <span className="caption inline-flex items-center gap-2 text-canvas group-hover:text-gold-deep transition-colors duration-300">
-            Read case study
+            Read entry
             <svg
               width="14"
               height="10"

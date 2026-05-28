@@ -35,7 +35,7 @@ export const site = {
   nav: [
     { label: "Services", href: "/services" },
     { label: "Verticals", href: "/verticals" },
-    { label: "Editorial", href: "/editorial" },
+    { label: "Journal", href: "/journal" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ],

@@ -90,7 +90,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
             <MenuLink href="/about/team" onClick={onClose}>Team</MenuLink>
             <MenuLink href="/about/nautical-network" onClick={onClose}>Nautical Network</MenuLink>
             <MenuLink href="/case-studies" onClick={onClose}>Case Studies</MenuLink>
-            <MenuLink href="/editorial" onClick={onClose}>Editorial</MenuLink>
+            <MenuLink href="/journal" onClick={onClose}>Journal</MenuLink>
             <MenuLink href="/careers" onClick={onClose}>Careers</MenuLink>
             <MenuLink href="/contact" onClick={onClose}>Contact</MenuLink>
           </MenuColumn>
