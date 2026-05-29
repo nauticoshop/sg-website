@@ -1,59 +1,74 @@
-import { testimonials } from "@/lib/testimonials";
-
 /**
- * Client testimonials — 3-card grid, editorial pull-quote treatment.
+ * Outcomes section — replaces the prior testimonial quote cards.
  *
- * Sits near the bottom of the homepage before the closing CTA.
- * Quotes are PLACEHOLDER content derived from media kit outcomes —
- * to be replaced with real permissioned quotes before launch.
+ * Per Billy: synthesized quotes felt fake. This section now shows
+ * factual client outcomes (real numbers, real client names, no
+ * fabricated attribution). Two cards for now (NOVEL Beach Park
+ * and Ryan Hughes Design — both verified outcomes). A third card
+ * gets added when there's a verified number for another client.
  *
- * Future upgrade: swap text quotes for video testimonials (each card
- * becomes a Vimeo embed thumbnail that expands to play on click).
+ * Dark section, gold accent on the stat numbers, centered on
+ * desktop since we only have 2 cards.
  */
+
+interface Outcome {
+  slug: string;
+  vertical: string;
+  /** The hero number (e.g. "12% → 52%" or "$7M+") */
+  value: string;
+  /** One-line description of what the number represents */
+  label: string;
+  /** Client name */
+  client: string;
+}
+
+const outcomes: Outcome[] = [
+  {
+    slug: "novel-beach-park",
+    vertical: "MULTIFAMILY",
+    value: "12% → 52%",
+    label: "Occupancy in two months",
+    client: "NOVEL Beach Park",
+  },
+  {
+    slug: "ryan-hughes-design",
+    vertical: "REAL ESTATE & DEVELOPMENT",
+    value: "$7M+",
+    label: "In client upsells driven by content + social",
+    client: "Ryan Hughes Design",
+  },
+];
+
 export function Testimonials() {
   return (
     <section className="bg-ink text-canvas py-24 lg:py-36 px-6 lg:px-12">
       <div className="max-w-[1440px] mx-auto">
         <header className="text-center mb-16 lg:mb-20 max-w-3xl mx-auto">
-          <p className="caption text-gold mb-6">WHAT CLIENTS SAY</p>
+          <p className="caption text-gold mb-6">OUTCOMES</p>
           <h2 className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-canvas text-balance">
-            Work that moves the metric that matters.
+            Work that moved the metric.
           </h2>
         </header>
 
-        <ul className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {testimonials.map((t) => (
+        <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
+          {outcomes.map((o) => (
             <li
-              key={t.slug}
-              className="bg-neutral-900 border border-canvas/10 p-8 lg:p-10 flex flex-col h-full"
+              key={o.slug}
+              className="bg-neutral-900 border border-canvas/10 p-8 lg:p-12 flex flex-col h-full"
             >
-              {/* Gold quote mark */}
-              <svg
-                width="32"
-                height="24"
-                viewBox="0 0 32 24"
-                fill="none"
-                aria-hidden
-                className="text-gold mb-6"
-              >
-                <path
-                  d="M0 24V14C0 6.27 4.5 0.7 13 0L13.5 4C7.8 4.5 5 8 5 12H8C12.5 12 14 13.5 14 17V19C14 22 12 24 8.5 24H0ZM18 24V14C18 6.27 22.5 0.7 31 0L31.5 4C25.8 4.5 23 8 23 12H26C30.5 12 32 13.5 32 17V19C32 22 30 24 26.5 24H18Z"
-                  fill="currentColor"
-                />
-              </svg>
+              <p className="caption text-gold mb-8">{o.vertical}</p>
 
-              <p
-                className="text-lg lg:text-xl text-canvas leading-snug mb-8 flex-1 font-medium text-balance"
-                dangerouslySetInnerHTML={{ __html: `"${t.quote}"` }}
-              />
+              <p className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl text-canvas leading-none mb-5 tracking-tight">
+                {o.value}
+              </p>
 
-              <div className="border-t border-canvas/15 pt-5">
-                <p className="font-sans font-extrabold text-base text-canvas">
-                  {t.name}
-                </p>
-                <p className="text-sm text-canvas/60 mt-1">{t.title}</p>
-                <p className="caption text-gold mt-3">{t.vertical}</p>
-              </div>
+              <p className="text-base lg:text-lg text-canvas/80 leading-snug mb-8 flex-1">
+                {o.label}
+              </p>
+
+              <p className="font-sans font-extrabold text-base text-canvas border-t border-canvas/15 pt-5">
+                {o.client}
+              </p>
             </li>
           ))}
         </ul>

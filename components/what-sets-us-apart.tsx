@@ -23,20 +23,14 @@ const chapters: Chapter[] = [
   {
     num: "01",
     eyebrow: "What sets us apart",
-    headline: "Vertical-fluent. In-house. No handoffs.",
+    headline: "Vertical-fluent. By design.",
     body: (
       <>
         <p>
-          We&apos;re a senior, in-house team of category practitioners — not a
-          layered agency staffed with outsourced juniors. Strategy, production,
-          and distribution live under one roof, on one timeline, with one
-          accountable lead per engagement.
-        </p>
-        <p>
-          We work deeply in seven luxury verticals — Marine, Real Estate,
-          Multifamily, Aviation, Resorts, Automotive, and Luxury Goods — and we
-          turn down work outside that lane. Category fluency is the reason
-          premium brands hire us over a generalist shop with a bigger logo.
+          We work deeply in the luxury categories we choose and turn down work
+          outside them. The team is fully in-house. Strategy, production, and
+          distribution share a roof and a timeline. The people on the pitch
+          are the people running the work.
         </p>
       </>
     ),
@@ -44,21 +38,14 @@ const chapters: Chapter[] = [
   {
     num: "02",
     eyebrow: "The crossover advantage",
-    headline: "Eight verticals, one collaborative network.",
+    headline: "The verticals work as one network.",
     body: (
       <>
         <p>
-          Because we work deeply in eight luxury verticals, our clients borrow
-          from each other. A real estate developer&apos;s launch film features a
-          yacht from our marine roster. An exotic automotive brand stages a
-          reveal at a hospitality partner&apos;s resort. A luxury goods house
-          drops a new collection at a private aviation terminal.
-        </p>
-        <p>
-          The verticals don&apos;t sit in silos — they collaborate. Every brief
-          unlocks the full inventory of brands and locations we serve. It&apos;s
-          a moat no single-category specialist can match and no generalist
-          agency has the depth to build.
+          One client roster across multiple luxury categories. When a brand
+          engages us, they don&apos;t just get our team. They get access to
+          the brands, the locations, and the talent across every vertical we
+          serve. The work compounds because the network compounds.
         </p>
       </>
     ),
@@ -66,19 +53,15 @@ const chapters: Chapter[] = [
   {
     num: "03",
     eyebrow: "Why it matters",
-    headline: "Owned audience changes the math.",
+    headline: "The math changes for the client.",
     body: (
       <>
         <p>
-          When the distribution channel is owned, every dollar of creative
-          investment compounds. The film commissioned for a launch isn&apos;t
-          just a hero asset on a brand&apos;s site — it runs across an editorial
-          ecosystem reaching the exact audience that buys what they sell.
-        </p>
-        <p>
-          Most agencies have to buy reach. We own it. That gap is the difference
-          between a campaign that ends when the media plan ends, and a brand
-          that compounds quarter over quarter.
+          When distribution lives inside the agency, every piece of creative
+          goes out through editorial channels we run, to audiences we&apos;ve
+          already built. The cost of attention drops. The audience compounds.
+          By year two of an engagement, the brand benefits from every piece
+          of work that came before.
         </p>
       </>
     ),
@@ -86,7 +69,7 @@ const chapters: Chapter[] = [
   {
     num: "04",
     eyebrow: "Proven results",
-    headline: "Numbers behind the work.",
+    headline: "Numbers, not narratives.",
     body: (
       <>
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-6">

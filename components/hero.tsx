@@ -26,7 +26,7 @@ export function Hero({
   vimeoId = site.hero.vimeoId,
   eyebrow = site.wordmark,
   headline = site.tagline,
-  pillars = ["Full-Service", "Vertical-focused", "Creatively Connected"],
+  pillars = ["Full-service", "Vertical-fluent", "Powerful network"],
 }: HeroProps) {
   const vimeoSrc = `https://player.vimeo.com/video/${vimeoId}?background=1&autoplay=1&loop=1&muted=1`;
 

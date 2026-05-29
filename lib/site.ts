@@ -6,7 +6,7 @@
 export const site = {
   name: "Surroundings Group",
   wordmark: "SURROUNDINGS GROUP",
-  tagline: "An award-winning creative agency for premium markets.",
+  tagline: "The vertical-fluent agency for premium brands.",
   description:
     "Full-service creative, content, and distribution for luxury brands — built by the team behind Nautical Network's 180M+ annual viewers.",
   url: "https://surroundingsgroup.com",

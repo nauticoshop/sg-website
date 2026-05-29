@@ -14,9 +14,8 @@ export function CtaBanner() {
           Let&apos;s build something worth talking about.
         </h2>
         <p className="text-base lg:text-lg text-ink/75 max-w-2xl mx-auto leading-relaxed mb-10">
-          We work with a small number of premium brands at a time. If
-          you&apos;re building something at the top of your category, we should
-          talk.
+          We work with a small roster of premium brands at a time. If
+          you&apos;re one of them, we should talk.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link

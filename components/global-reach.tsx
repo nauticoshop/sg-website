@@ -12,17 +12,14 @@ export function GlobalReach() {
       <div className="max-w-[1440px] mx-auto">
         <header className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mb-16 lg:mb-20">
           <div className="lg:col-span-7">
-            <p className="caption text-gold mb-6">GLOBAL REACH</p>
+            <p className="caption text-gold mb-6">GLOBAL PRESENCE</p>
             <h2 className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.02] tracking-tight text-balance">
-              From a studio in Tampa,
-              <br />
-              work that reaches the world.
+              Work that reaches the world.
             </h2>
           </div>
           <div className="lg:col-span-5 lg:pt-8">
             <p className="text-lg lg:text-xl text-canvas/70 leading-relaxed">
-              Our owned-media ecosystem reaches affluent audiences across the
-              Americas, Europe, the Middle East, and Asia. When our clients
+              255M+ affluent viewers a year. Four continents. When our clients
               launch, the world is already watching.
             </p>
           </div>
