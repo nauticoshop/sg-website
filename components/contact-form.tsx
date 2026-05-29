@@ -43,6 +43,24 @@ export function ContactForm() {
 
   return (
     <form onSubmit={onSubmit} className="space-y-6">
+      {/* Honeypot — bots fill it, humans don't see it. Hidden via
+          inline style so screen readers don't announce it either. */}
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          left: "-9999px",
+          width: "1px",
+          height: "1px",
+          opacity: 0,
+          pointerEvents: "none",
+        }}
+      />
+
       <Field label="Your name" name="name" required />
       <Field label="Email" name="email" type="email" required />
       <Field label="Company" name="company" />
