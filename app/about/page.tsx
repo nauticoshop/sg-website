@@ -9,7 +9,7 @@ import { team } from "@/lib/team";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Surroundings Group is a Tampa-based premium creative agency serving luxury verticals — marine, real estate, multifamily, aviation, and more. Sister brand to Nautical Network.",
+    "Surroundings Group is a vertical-fluent creative agency for premium brands. Marine, real estate, hospitality, aviation, and the categories around them. Built in-house. Backed by an owned-media network.",
 };
 
 export default function AboutPage() {
@@ -19,8 +19,8 @@ export default function AboutPage() {
 
       <PageHero
         eyebrow="ABOUT"
-        title="A premium creative agency for premium brands."
-        subhead="Tampa-based. Vertical-focused. Built around the discipline that luxury markets actually require."
+        title="Specialists where everyone else is a generalist."
+        subhead="Vertical-fluent. Fully in-house. Built for premium markets."
       />
 
       {/* Story */}
@@ -30,25 +30,36 @@ export default function AboutPage() {
             <p className="caption text-gold-deep lg:col-span-1">OUR STORY</p>
             <div className="lg:col-span-2 space-y-6 text-base lg:text-lg text-neutral-700 leading-relaxed">
               <p>
-                Surroundings Group exists because luxury brands deserve more
-                than generalist marketing. Most agencies pitch the same
-                playbook to a luxury watch brand, a $50M real estate
-                development, and a private aviation operator — and wonder
-                why none of the campaigns land.
+                Surroundings Group started with a simple observation. Most
+                agencies pitch the same playbook to a watchmaker, a $50M
+                real estate development, and a private aviation operator,
+                then wonder why none of the campaigns land. We don&apos;t.
               </p>
               <p>
-                We built a different model: vertical-focused expertise,
-                in-house production, and owned media distribution at a
-                scale no other agency at our size has. The work that
-                proves it — Nautical Network, our sister brand — reaches
-                more than 180 million luxury marine enthusiasts every year.
+                We built a different model. Vertical-fluent specialists,
+                fully in-house production, and an owned-media network at
+                a scale no other agency our size has. The proof is in
+                the sister brand we built: Nautical Network reaches more
+                than 180 million marine enthusiasts a year, and that
+                distribution becomes part of every marine engagement.
               </p>
               <p>
-                Today we serve seven luxury categories with the same
-                discipline: marine, luxury real estate development,
-                multifamily, private aviation, resorts and travel, exotic
-                automotive, and luxury goods. Each one gets specialists,
-                not generalists.
+                Today we work across the premium categories that demand
+                the same discipline. Marine. Real estate and development.
+                Multifamily. Private aviation. Hospitality and experiences.
+                Resorts and travel. Exotic automotive. Luxury goods. Each
+                one gets specialists who&apos;ve spent careers in the
+                category, not generalists with a credential.
+              </p>
+              <p>
+                Our clients borrow from each other across the verticals.
+                A yacht from our marine roster anchors a real estate
+                launch film. A car reveal lands at a hospitality
+                activation. A private aviation terminal hosts a luxury
+                goods drop. Then every engagement is amplified through
+                an owned-media network of ten editorial channels reaching
+                255M+ affluent viewers a year. Most agencies buy
+                attention. We built ours.
               </p>
             </div>
           </div>
@@ -62,7 +73,7 @@ export default function AboutPage() {
             <div>
               <p className="caption text-gold-deep mb-4">THE TEAM</p>
               <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
-                Senior people. In-house. Always.
+                The team behind the work.
               </h2>
             </div>
             <Link
@@ -76,7 +87,10 @@ export default function AboutPage() {
 
           <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {team.slice(0, 3).map((m) => (
-              <li key={m.slug} className="bg-canvas border border-neutral-200 p-6 lg:p-8">
+              <li
+                key={m.slug}
+                className="bg-canvas border border-neutral-200 p-6 lg:p-8"
+              >
                 <div className="aspect-[4/5] bg-ink mb-6" aria-hidden />
                 <p className="caption text-gold-deep mb-2">{m.department}</p>
                 <h3 className="font-sans font-extrabold text-2xl text-ink mb-2">
@@ -97,19 +111,19 @@ export default function AboutPage() {
         <div className="max-w-[1200px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-7">
-              <p className="caption text-gold-deep mb-6">SISTER BRAND</p>
+              <p className="caption text-gold mb-6">SISTER BRAND</p>
               <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight mb-6 text-balance">
-                Nautical Network — owned distribution at scale.
+                Nautical Network. Owned distribution at scale.
               </h2>
               <p className="text-base lg:text-lg text-canvas/70 leading-relaxed mb-8">
                 Built from a single Instagram into eight social brands
-                reaching 180M+ luxury marine enthusiasts annually. It&apos;s
-                proof of capability — and an unfair distribution advantage
-                we extend to every client we work with.
+                reaching 180M+ marine enthusiasts a year. It&apos;s proof
+                of capability and an unfair distribution advantage we
+                extend to every client we work with.
               </p>
               <Link
                 href="/about/nautical-network"
-                className="caption inline-flex items-center gap-2 text-canvas hover:text-gold-deep transition-colors"
+                className="caption inline-flex items-center gap-2 text-canvas hover:text-gold transition-colors"
               >
                 See how it works
                 <Arrow />
