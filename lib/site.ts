@@ -12,7 +12,7 @@ export const site = {
   url: "https://surroundingsgroup.com",
 
   contact: {
-    email: "hello@surroundingsgroup.com",
+    email: "interested@surroundingsgroup.com",
     phone: "727-810-1770",
     address: "4600 W Cypress St. Suite 500",
     city: "Tampa, FL 33607",

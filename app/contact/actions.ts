@@ -10,10 +10,10 @@ import { Resend } from "resend";
  *
  * Env vars required:
  *   RESEND_API_KEY       — from https://resend.com
- *   CONTACT_TO_EMAIL     — destination inbox (default: hello@surroundingsgroup.com)
+ *   CONTACT_TO_EMAIL     — destination inbox (default: interested@surroundingsgroup.com)
  *   CONTACT_FROM_EMAIL   — sender address. Until the domain is verified
  *                          in Resend, use Resend's default (onboarding@resend.dev).
- *                          After verification, switch to hello@surroundingsgroup.com.
+ *                          After verification, switch to interested@surroundingsgroup.com.
  */
 
 export interface ContactFormData {
@@ -29,7 +29,7 @@ export interface ContactFormResult {
   error?: string;
 }
 
-const DEFAULT_TO = "hello@surroundingsgroup.com";
+const DEFAULT_TO = "interested@surroundingsgroup.com";
 const DEFAULT_FROM = "Surroundings Group <onboarding@resend.dev>";
 
 export async function submitContact(
