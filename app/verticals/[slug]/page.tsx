@@ -36,6 +36,11 @@ export default async function VerticalDetailPage({ params }: RouteParams) {
   const currentIndex = verticals.findIndex((v) => v.slug === slug);
   const next = verticals[(currentIndex + 1) % verticals.length];
 
+  // Filter services to only the ones most relevant to this vertical
+  const relatedServices = vertical.relatedServiceSlugs
+    .map((s) => services.find((svc) => svc.slug === s))
+    .filter((svc): svc is NonNullable<typeof svc> => Boolean(svc));
+
   return (
     <>
       <Nav />
@@ -51,22 +56,22 @@ export default async function VerticalDetailPage({ params }: RouteParams) {
         tone="dark"
       />
 
-      {/* What we do for this vertical */}
+      {/* Intro / positioning */}
       <section className="bg-canvas py-20 lg:py-28 px-6 lg:px-12">
         <div className="max-w-[1200px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             <div className="lg:col-span-5">
-              <p className="caption text-gold-deep mb-4">OUR APPROACH</p>
+              <p className="caption text-gold-deep mb-4">THE CATEGORY</p>
               <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink leading-[1.1] text-balance">
-                Vertical-focused. Built specifically for {vertical.name.toLowerCase()}.
+                Built specifically for {vertical.name.toLowerCase()}.
               </h2>
             </div>
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-7 space-y-6">
               <p className="text-base lg:text-lg text-neutral-700 leading-relaxed">
-                {vertical.description}
+                {vertical.intro}
               </p>
               {vertical.slug === "marine" && (
-                <p className="text-base lg:text-lg text-neutral-700 leading-relaxed mt-6">
+                <p className="text-base lg:text-lg text-neutral-700 leading-relaxed">
                   Marine clients also get direct access to{" "}
                   <Link
                     href="/about/nautical-network"
@@ -74,9 +79,8 @@ export default async function VerticalDetailPage({ params }: RouteParams) {
                   >
                     Nautical Network distribution
                   </Link>
-                  {" "}— the largest multi-platform boating outlet, 180M+
-                  annual viewers, owned media reach baked into every
-                  engagement.
+                  . The largest multi-platform boating outlet, 180M+ annual
+                  viewers, owned media reach baked into every engagement.
                 </p>
               )}
             </div>
@@ -84,18 +88,91 @@ export default async function VerticalDetailPage({ params }: RouteParams) {
         </div>
       </section>
 
-      {/* Services applied to this vertical */}
+      {/* Who we serve — audience segments */}
+      <section className="bg-ink text-canvas py-20 lg:py-28 px-6 lg:px-12">
+        <div className="max-w-[1200px] mx-auto">
+          <header className="mb-12 lg:mb-16 max-w-3xl">
+            <p className="caption text-gold mb-4">WHO WE SERVE</p>
+            <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-canvas leading-[1.1] text-balance">
+              The full ecosystem around the category.
+            </h2>
+          </header>
+
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-px bg-canvas/15">
+            {vertical.audienceSegments.map((segment, i) => (
+              <li
+                key={i}
+                className="bg-ink p-8 lg:p-10 flex flex-col"
+              >
+                <p className="caption text-gold mb-5">
+                  {String(i + 1).padStart(2, "0")} / SEGMENT
+                </p>
+                <h3 className="font-sans font-extrabold text-2xl lg:text-3xl text-canvas leading-tight mb-4 text-balance">
+                  {segment.name}
+                </h3>
+                <p className="text-base text-canvas/75 leading-relaxed">
+                  {segment.copy}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Signature work — recurring plays */}
+      <section className="bg-canvas py-20 lg:py-28 px-6 lg:px-12">
+        <div className="max-w-[1200px] mx-auto">
+          <header className="mb-12 lg:mb-16 max-w-3xl">
+            <p className="caption text-gold-deep mb-4">SIGNATURE WORK</p>
+            <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink leading-[1.1] text-balance">
+              The kinds of work we ship for this category.
+            </h2>
+          </header>
+
+          <ul className="space-y-px bg-neutral-200 border-y border-neutral-200">
+            {vertical.signaturePlays.map((play, i) => (
+              <li key={i} className="bg-canvas">
+                <div className="py-8 lg:py-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-start">
+                  <div className="lg:col-span-1">
+                    <span className="caption text-gold-deep">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                  <div className="lg:col-span-4">
+                    <h3 className="font-sans font-extrabold text-xl lg:text-2xl text-ink leading-tight text-balance">
+                      {play.title}
+                    </h3>
+                  </div>
+                  <div className="lg:col-span-7">
+                    <p className="text-base lg:text-lg text-neutral-700 leading-relaxed">
+                      {play.copy}
+                    </p>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Capabilities tuned to this category */}
       <section className="bg-neutral-50 py-20 lg:py-28 px-6 lg:px-12 border-y border-neutral-200">
         <div className="max-w-[1200px] mx-auto">
           <header className="text-center mb-12 lg:mb-16 max-w-2xl mx-auto">
             <p className="caption text-gold-deep mb-4">CAPABILITIES</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
-              Every discipline, tuned for this category.
+              The disciplines that move the work here.
             </h2>
           </header>
 
-          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
-            {services.map((s) => (
+          <ul
+            className={`grid grid-cols-1 gap-4 lg:gap-6 ${
+              relatedServices.length === 4
+                ? "md:grid-cols-2 lg:grid-cols-4"
+                : "md:grid-cols-2 lg:grid-cols-3"
+            }`}
+          >
+            {relatedServices.map((s) => (
               <li key={s.slug}>
                 <Link
                   href={s.href}
@@ -107,22 +184,9 @@ export default async function VerticalDetailPage({ params }: RouteParams) {
                   <p className="text-sm text-neutral-600 group-hover:text-canvas/70 transition-colors duration-300 leading-relaxed mb-4">
                     {s.tagline}
                   </p>
-                  <span className="caption inline-flex items-center gap-2 text-neutral-500 group-hover:text-gold-deep transition-colors duration-300">
+                  <span className="caption inline-flex items-center gap-2 text-neutral-500 group-hover:text-gold transition-colors duration-300">
                     Explore
-                    <svg
-                      width="12"
-                      height="9"
-                      viewBox="0 0 14 10"
-                      fill="none"
-                      aria-hidden
-                    >
-                      <path
-                        d="M1 5h12m0 0L9 1m4 4L9 9"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="square"
-                      />
-                    </svg>
+                    <Arrow />
                   </span>
                 </Link>
               </li>
@@ -131,7 +195,7 @@ export default async function VerticalDetailPage({ params }: RouteParams) {
         </div>
       </section>
 
-      {/* Featured case studies placeholder */}
+      {/* Featured journal entries / case studies for this vertical */}
       <section className="bg-canvas py-20 lg:py-28 px-6 lg:px-12">
         <div className="max-w-[1200px] mx-auto">
           <header className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
@@ -142,24 +206,11 @@ export default async function VerticalDetailPage({ params }: RouteParams) {
               </h2>
             </div>
             <Link
-              href="/case-studies"
+              href="/journal"
               className="caption inline-flex items-center gap-2 text-ink hover:text-gold-deep transition-colors shrink-0"
             >
-              All case studies
-              <svg
-                width="14"
-                height="10"
-                viewBox="0 0 14 10"
-                fill="none"
-                aria-hidden
-              >
-                <path
-                  d="M1 5h12m0 0L9 1m4 4L9 9"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="square"
-                />
-              </svg>
+              All entries
+              <Arrow />
             </Link>
           </header>
 
@@ -218,5 +269,25 @@ export default async function VerticalDetailPage({ params }: RouteParams) {
       <CtaBanner />
       <Footer />
     </>
+  );
+}
+
+function Arrow() {
+  return (
+    <svg
+      width="12"
+      height="9"
+      viewBox="0 0 14 10"
+      fill="none"
+      aria-hidden
+      className="transition-transform duration-300 group-hover:translate-x-1"
+    >
+      <path
+        d="M1 5h12m0 0L9 1m4 4L9 9"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="square"
+      />
+    </svg>
   );
 }
