@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { ContactForm } from "@/components/contact-form";
+import { BdMeetingCard } from "@/components/bd-meeting-card";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Book a Discovery Call",
   description:
-    "Schedule a 30-minute discovery call with Surroundings Group to talk through your project, timeline, and what success looks like.",
+    "Connect directly with Phallon Ray, Director of Business Development, for a 30-minute discovery call with Surroundings Group.",
 };
 
 export default function DiscoveryCallPage() {
@@ -16,7 +17,7 @@ export default function DiscoveryCallPage() {
       <Nav />
 
       {/* Hero — offset for fixed nav */}
-      <section className="bg-canvas pt-36 lg:pt-44 pb-16 lg:pb-20 px-6 lg:px-12">
+      <section className="bg-canvas pt-36 lg:pt-44 pb-12 lg:pb-16 px-6 lg:px-12">
         <div className="max-w-[1200px] mx-auto">
           <p className="caption text-gold-deep mb-6">DISCOVERY CALL</p>
           <h1 className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-ink max-w-3xl text-balance">
@@ -24,13 +25,27 @@ export default function DiscoveryCallPage() {
           </h1>
           <p className="text-lg lg:text-xl text-neutral-700 mt-6 max-w-2xl leading-relaxed">
             30 minutes. No pitch deck. We&apos;ll learn your project,
-            timeline, and what success looks like — and tell you honestly
+            timeline, and what success looks like, and tell you honestly
             whether we&apos;re the right fit.
           </p>
         </div>
       </section>
 
-      <section className="bg-canvas pb-24 lg:pb-32 px-6 lg:px-12">
+      {/* Primary CTA — BD editorial card */}
+      <BdMeetingCard
+        name="Phallon Ray"
+        title="Director of Business Development"
+        initials="PR"
+        quote="Tell me what you're building. I'll tell you straight whether we're the right team."
+        meta="30 minutes. No pitch deck. No follow-up nagging."
+        bookingHref="https://calendly.com/nauticalnetwork/introductory"
+        bookingLabel="Book 30 min with Phallon"
+        eyebrow="CONNECT DIRECTLY"
+        // image="/images/team/phallon-ray.jpg"   ← drop the file here when ready
+      />
+
+      {/* What to expect + secondary contact form */}
+      <section className="bg-canvas py-20 lg:py-28 px-6 lg:px-12">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           {/* What to expect */}
           <aside className="lg:col-span-4 order-2 lg:order-1">
@@ -40,21 +55,16 @@ export default function DiscoveryCallPage() {
                 <ol className="space-y-6">
                   <ExpectationStep
                     num="01"
-                    title="You send a brief note"
-                    copy="The form on the right. Two minutes. We just need enough context to bring the right person to the call."
+                    title="Pick a time on Phallon's calendar"
+                    copy="The button above. Live availability, no back-and-forth."
                   />
                   <ExpectationStep
                     num="02"
-                    title="We schedule the call"
-                    copy="You'll get a calendar link within one business day. Pick a time that works."
-                  />
-                  <ExpectationStep
-                    num="03"
                     title="30-minute discovery"
                     copy="No pitch deck. We listen, ask, and tell you honestly whether we're the right fit."
                   />
                   <ExpectationStep
-                    num="04"
+                    num="03"
                     title="A clear next step"
                     copy="Either a proposal, a referral to someone better suited, or we revisit in 90 days."
                   />
@@ -76,14 +86,16 @@ export default function DiscoveryCallPage() {
             </div>
           </aside>
 
-          {/* Form */}
+          {/* Secondary path — contact form */}
           <div className="lg:col-span-8 order-1 lg:order-2">
+            <header className="mb-8 lg:mb-10 pb-6 lg:pb-8 border-b border-neutral-200">
+              <p className="caption text-gold-deep mb-3">OR SEND A NOTE</p>
+              <h2 className="font-sans font-extrabold text-3xl lg:text-4xl text-ink leading-tight text-balance">
+                Not ready to grab a time? Tell us what you&apos;re working on
+                and we&apos;ll follow up.
+              </h2>
+            </header>
             <ContactForm />
-            <p className="text-xs text-neutral-500 mt-6">
-              Live calendar booking via Cal.com is coming soon. For now, the
-              form above routes straight to Billy and the team — we&apos;ll
-              send a calendar link within one business day.
-            </p>
           </div>
         </div>
       </section>
