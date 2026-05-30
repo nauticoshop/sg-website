@@ -36,7 +36,7 @@ export default function DiscoveryCallPage() {
         name="Phallon Ray"
         title="Director of Business Development"
         initials="PR"
-        quote="Tell me what you're building. I'll tell you straight whether we're the right team."
+        quote="Every great brand starts with a great conversation."
         meta="30 minutes. No pitch deck. No follow-up nagging."
         bookingHref="https://calendly.com/nauticalnetwork/introductory"
         bookingLabel="Book 30 min with Phallon"
