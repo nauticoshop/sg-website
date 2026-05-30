@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer";
 import { PageHero } from "@/components/page-hero";
 import { CtaBanner } from "@/components/cta-banner";
 import { services } from "@/lib/services";
+import { verticals } from "@/lib/verticals";
 
 interface RouteParams {
   params: Promise<{ slug: string }>;
@@ -33,9 +34,13 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
   const service = services.find((s) => s.slug === slug);
   if (!service) notFound();
 
-  // Find adjacent services for the "next" link
   const currentIndex = services.findIndex((s) => s.slug === slug);
   const next = services[(currentIndex + 1) % services.length];
+
+  // Find verticals where this service appears in relatedServiceSlugs
+  const verticalsWhereUsed = verticals.filter((v) =>
+    v.relatedServiceSlugs.includes(service.slug),
+  );
 
   return (
     <>
@@ -48,31 +53,48 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
         tone="dark"
       />
 
-      {/* What's included */}
+      {/* Intro / positioning */}
       <section className="bg-canvas py-20 lg:py-28 px-6 lg:px-12">
         <div className="max-w-[1200px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             <div className="lg:col-span-5">
-              <p className="caption text-gold-deep mb-4">WHAT&apos;S INCLUDED</p>
+              <p className="caption text-gold-deep mb-4">THE WORK</p>
               <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink leading-[1.1] text-balance">
-                Built around what {service.name.toLowerCase()} actually
-                requires.
+                {service.name}, run as a discipline.
               </h2>
             </div>
             <div className="lg:col-span-7">
-              <p className="text-base lg:text-lg text-neutral-700 leading-relaxed mb-8">
+              <p className="text-base lg:text-lg text-neutral-700 leading-relaxed">
+                {service.intro}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What's included — capability list */}
+      <section className="bg-ink text-canvas py-20 lg:py-28 px-6 lg:px-12">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+            <div className="lg:col-span-5">
+              <p className="caption text-gold mb-4">WHAT&apos;S INCLUDED</p>
+              <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-canvas leading-[1.1] text-balance">
+                Every capability inside.
+              </h2>
+              <p className="text-base lg:text-lg text-canvas/70 leading-relaxed mt-6">
                 {service.description}
               </p>
-              <ul className="space-y-4 lg:space-y-5">
+            </div>
+            <div className="lg:col-span-7">
+              <ul className="divide-y divide-canvas/15 border-y border-canvas/15">
                 {service.capabilities.map((cap, i) => (
-                  <li
-                    key={i}
-                    className="flex items-start gap-4 pb-4 lg:pb-5 border-b border-neutral-200 last:border-b-0"
-                  >
-                    <span className="caption text-gold-deep pt-1 shrink-0 w-8">
+                  <li key={i} className="py-5 flex items-start gap-4 lg:gap-6">
+                    <span className="caption text-gold pt-1 shrink-0 w-10">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <span className="text-base lg:text-lg text-ink">{cap}</span>
+                    <span className="text-base lg:text-lg text-canvas">
+                      {cap}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -81,41 +103,57 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
         </div>
       </section>
 
-      {/* Process */}
+      {/* Sample deliverables */}
+      <section className="bg-canvas py-20 lg:py-28 px-6 lg:px-12">
+        <div className="max-w-[1200px] mx-auto">
+          <header className="mb-12 lg:mb-16 max-w-3xl">
+            <p className="caption text-gold-deep mb-4">WHAT SHIPS</p>
+            <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink leading-[1.1] text-balance">
+              Concrete examples, not vague promises.
+            </h2>
+          </header>
+
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-px bg-neutral-200 border border-neutral-200">
+            {service.sampleDeliverables.map((deliverable, i) => (
+              <li key={i} className="bg-canvas p-6 lg:p-8 flex items-start gap-4">
+                <span className="caption text-gold-deep pt-1 shrink-0 w-8">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="text-base lg:text-lg text-ink leading-snug">
+                  {deliverable}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Best for */}
+      <section className="bg-gold text-ink py-16 lg:py-24 px-6 lg:px-12">
+        <div className="max-w-[1000px] mx-auto">
+          <p className="caption text-ink mb-6">BEST FOR</p>
+          <p className="font-sans font-medium text-2xl md:text-3xl lg:text-4xl text-ink leading-[1.2] text-balance">
+            {service.bestForCopy}
+          </p>
+        </div>
+      </section>
+
+      {/* Service-specific process */}
       <section className="bg-neutral-50 py-20 lg:py-28 px-6 lg:px-12 border-y border-neutral-200">
         <div className="max-w-[1200px] mx-auto">
           <header className="text-center mb-12 lg:mb-16 max-w-2xl mx-auto">
             <p className="caption text-gold-deep mb-4">HOW WE WORK</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
-              A four-step process. Every time.
+              The four steps every {service.name.toLowerCase()} engagement runs.
             </h2>
           </header>
 
           <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            {[
-              {
-                step: "01",
-                title: "Discovery",
-                copy: "We learn the brand, the audience, and the constraints. Then we tell you whether we're the right fit.",
-              },
-              {
-                step: "02",
-                title: "Strategy",
-                copy: "We translate the brief into a measurable plan with deliverables, timelines, and a clear definition of success.",
-              },
-              {
-                step: "03",
-                title: "Execution",
-                copy: "In-house production. No handoffs. The team that planned it is the team that ships it.",
-              },
-              {
-                step: "04",
-                title: "Iteration",
-                copy: "We measure, learn, and refine. Premium brand work compounds over time, not in a single campaign burst.",
-              },
-            ].map((step) => (
-              <li key={step.step} className="bg-canvas p-6 lg:p-8">
-                <p className="caption text-gold-deep mb-4">{step.step}</p>
+            {service.processSteps.map((step, i) => (
+              <li key={i} className="bg-canvas p-6 lg:p-8">
+                <p className="caption text-gold-deep mb-4">
+                  {String(i + 1).padStart(2, "0")}
+                </p>
                 <h3 className="font-sans font-extrabold text-xl lg:text-2xl text-ink mb-3">
                   {step.title}
                 </h3>
@@ -128,8 +166,44 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
         </div>
       </section>
 
+      {/* Verticals where this service shows up */}
+      {verticalsWhereUsed.length > 0 && (
+        <section className="bg-canvas py-20 lg:py-28 px-6 lg:px-12">
+          <div className="max-w-[1200px] mx-auto">
+            <header className="mb-12 lg:mb-16 max-w-3xl">
+              <p className="caption text-gold-deep mb-4">WHERE WE APPLY IT</p>
+              <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink leading-[1.1] text-balance">
+                Tuned for the categories we serve.
+              </h2>
+            </header>
+
+            <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+              {verticalsWhereUsed.map((v) => (
+                <li key={v.slug}>
+                  <Link
+                    href={v.href}
+                    className="group block bg-ink text-canvas p-6 lg:p-8 hover:bg-neutral-800 transition-colors duration-300 h-full"
+                  >
+                    <h3 className="font-sans font-extrabold text-xl lg:text-2xl mb-3 text-balance group-hover:text-gold transition-colors duration-300">
+                      {v.name}
+                    </h3>
+                    <p className="text-sm text-canvas/70 leading-snug mb-4">
+                      {v.tagline}
+                    </p>
+                    <span className="caption inline-flex items-center gap-2 text-canvas/80 group-hover:text-gold transition-colors duration-300">
+                      Explore vertical
+                      <Arrow />
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
       {/* Next service navigation */}
-      <section className="bg-canvas py-16 lg:py-20 px-6 lg:px-12 border-b border-neutral-200">
+      <section className="bg-canvas py-16 lg:py-20 px-6 lg:px-12 border-t border-b border-neutral-200">
         <div className="max-w-[1200px] mx-auto">
           <Link href={next.href} className="group block">
             <p className="caption text-gold-deep mb-4">NEXT SERVICE</p>
@@ -163,5 +237,25 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
       <CtaBanner />
       <Footer />
     </>
+  );
+}
+
+function Arrow() {
+  return (
+    <svg
+      width="14"
+      height="10"
+      viewBox="0 0 14 10"
+      fill="none"
+      aria-hidden
+      className="transition-transform duration-300 group-hover:translate-x-1"
+    >
+      <path
+        d="M1 5h12m0 0L9 1m4 4L9 9"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="square"
+      />
+    </svg>
   );
 }
