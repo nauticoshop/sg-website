@@ -3,6 +3,11 @@ import { DM_Sans, Castoro } from "next/font/google";
 import "./globals.css";
 import { FloatingContact } from "@/components/floating-contact";
 import { SmoothScroll } from "@/components/smooth-scroll";
+import {
+  JsonLd,
+  organizationSchema,
+  websiteSchema,
+} from "@/components/json-ld";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -20,19 +25,25 @@ const castoro = Castoro({
 
 export const metadata: Metadata = {
   title: {
-    default: "Surroundings Group — An award-winning creative agency for premium markets",
+    default:
+      "Surroundings Group — The vertical-fluent agency for premium brands",
     template: "%s — Surroundings Group",
   },
   description:
-    "Full-service creative, content, and distribution for luxury brands — built by the team behind Nautical Network's 180M+ annual viewers.",
+    "Surroundings Group is a vertical-fluent creative agency for premium brands. Marine, real estate, hospitality, aviation, and more. Fully in-house. Backed by an owned-media network reaching 255M+ affluent viewers a year.",
   metadataBase: new URL("https://surroundingsgroup.com"),
   openGraph: {
     title: "Surroundings Group",
-    description: "An award-winning creative agency for premium markets.",
+    description: "The vertical-fluent agency for premium brands.",
     url: "https://surroundingsgroup.com",
     siteName: "Surroundings Group",
     locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Surroundings Group",
+    description: "The vertical-fluent agency for premium brands.",
   },
 };
 
@@ -47,6 +58,7 @@ export default function RootLayout({
       className={`${dmSans.variable} ${castoro.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-canvas text-ink">
+        <JsonLd data={[organizationSchema(), websiteSchema()]} />
         <SmoothScroll />
         {children}
         <FloatingContact />

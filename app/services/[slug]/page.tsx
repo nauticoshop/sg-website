@@ -7,6 +7,12 @@ import { PageHero } from "@/components/page-hero";
 import { CtaBanner } from "@/components/cta-banner";
 import { services } from "@/lib/services";
 import { verticals } from "@/lib/verticals";
+import { site } from "@/lib/site";
+import {
+  JsonLd,
+  serviceSchema,
+  breadcrumbSchema,
+} from "@/components/json-ld";
 
 interface RouteParams {
   params: Promise<{ slug: string }>;
@@ -42,9 +48,26 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
     v.relatedServiceSlugs.includes(service.slug),
   );
 
+  const fullUrl = `${site.url.replace(/\/$/, "")}${service.href}`;
+
   return (
     <>
       <Nav />
+
+      <JsonLd
+        data={[
+          serviceSchema({
+            name: service.name,
+            description: service.tagline,
+            url: fullUrl,
+          }),
+          breadcrumbSchema([
+            { name: "Home", url: site.url },
+            { name: "Services", url: `${site.url.replace(/\/$/, "")}/services` },
+            { name: service.name, url: fullUrl },
+          ]),
+        ]}
+      />
 
       <PageHero
         eyebrow={`SERVICE / ${String(currentIndex + 1).padStart(2, "0")}`}

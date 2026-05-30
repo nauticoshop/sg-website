@@ -7,6 +7,8 @@ import { PageHero } from "@/components/page-hero";
 import { CtaBanner } from "@/components/cta-banner";
 import { verticals } from "@/lib/verticals";
 import { services } from "@/lib/services";
+import { site } from "@/lib/site";
+import { JsonLd, breadcrumbSchema } from "@/components/json-ld";
 
 interface RouteParams {
   params: Promise<{ slug: string }>;
@@ -41,9 +43,19 @@ export default async function VerticalDetailPage({ params }: RouteParams) {
     .map((s) => services.find((svc) => svc.slug === s))
     .filter((svc): svc is NonNullable<typeof svc> => Boolean(svc));
 
+  const fullUrl = `${site.url.replace(/\/$/, "")}${vertical.href}`;
+
   return (
     <>
       <Nav />
+
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", url: site.url },
+          { name: "Industries", url: `${site.url.replace(/\/$/, "")}/verticals` },
+          { name: vertical.name, url: fullUrl },
+        ])}
+      />
 
       <PageHero
         eyebrow={
