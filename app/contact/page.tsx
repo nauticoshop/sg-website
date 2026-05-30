@@ -23,7 +23,7 @@ export default function ContactPage() {
             Let&apos;s work together.
           </h1>
           <p className="text-lg lg:text-xl text-neutral-700 mt-6 max-w-2xl leading-relaxed">
-            We work with a small number of premium brands at a time. Tell us
+            We work with a small roster of premium brands at a time. Tell us
             what you&apos;re building.
           </p>
         </div>
@@ -93,8 +93,15 @@ export default function ContactPage() {
               <div className="pt-8 border-t border-neutral-200">
                 <p className="text-sm text-neutral-600 leading-relaxed">
                   For press, partnerships, or general inquiries, email is best.
-                  For project briefs, use the form — it routes straight to
-                  Billy and the team.
+                  For project briefs, the form routes straight to Phallon and
+                  the team. Or{" "}
+                  <a
+                    href="/discovery-call"
+                    className="underline hover:text-ink transition-colors"
+                  >
+                    book a 30-minute discovery
+                  </a>{" "}
+                  directly on her calendar.
                 </p>
               </div>
             </div>

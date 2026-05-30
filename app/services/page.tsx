@@ -9,7 +9,7 @@ import { services } from "@/lib/services";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Six disciplines, one in-house team. Studio, Social, Digital, Growth, Experiences, and Intelligence — built specifically for premium brands.",
+    "A diverse suite of specialty areas, all under one roof. Studio, Social, Digital, Growth, Experiences, and Intelligence. Built for premium brands.",
 };
 
 export default function ServicesIndexPage() {
@@ -19,8 +19,8 @@ export default function ServicesIndexPage() {
 
       <PageHero
         eyebrow="WHAT WE DO"
-        title="Six disciplines, one in-house team."
-        subhead="Every campaign moves through our studio under one roof — strategy, production, distribution, and measurement working as a single team."
+        title="Full-service. An extension of your team."
+        subhead="A diverse suite of specialty areas, all under one roof. Studio, Social, Digital, Growth, Experiences, Intelligence."
       />
 
       <section className="bg-canvas py-16 lg:py-24 px-6 lg:px-12">

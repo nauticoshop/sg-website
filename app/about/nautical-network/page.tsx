@@ -8,7 +8,7 @@ import { CtaBanner } from "@/components/cta-banner";
 export const metadata: Metadata = {
   title: "Nautical Network",
   description:
-    "Surroundings Group's owned-media ecosystem — eight social brands reaching 180M+ luxury marine enthusiasts annually. The unfair distribution advantage we extend to every client.",
+    "Surroundings Group's owned-media ecosystem. Eight social brands reaching 180M+ marine enthusiasts a year. The unfair distribution advantage we extend to every client.",
 };
 
 export default function NauticalNetworkPage() {
@@ -18,7 +18,7 @@ export default function NauticalNetworkPage() {
 
       <PageHero
         eyebrow="SISTER BRAND"
-        title="Nautical Network — owned distribution at scale."
+        title="Nautical Network. Owned distribution at scale."
         subhead="Eight social brands, 180M+ annual viewers, the largest global multi-platform boating outlet. Built from a single Instagram. Available to every Surroundings Group client."
         tone="dark"
       />
@@ -31,17 +31,17 @@ export default function NauticalNetworkPage() {
             <div className="lg:col-span-2 space-y-6 text-base lg:text-lg text-neutral-700 leading-relaxed">
               <p>
                 Nautical Network is the largest multi-platform editorial
-                and social ecosystem in luxury marine. It started as a
+                and social ecosystem in premium marine. It started as a
                 single Instagram account, grew into eight branded channels,
-                and now publishes daily across every major platform —
-                reaching the engaged audience that luxury yacht builders,
-                charter operators, marinas, and marine brands actually
-                want to reach.
+                and now publishes daily across every major platform. It
+                reaches the engaged audience yacht builders, charter
+                operators, marinas, and marine brands actually want to
+                reach.
               </p>
               <p>
                 For Surroundings Group clients, that audience becomes a
                 distribution channel. Most agencies have to buy reach.
-                We own it.
+                We built ours.
               </p>
             </div>
           </div>
@@ -73,10 +73,10 @@ export default function NauticalNetworkPage() {
               </h2>
               <p className="text-base lg:text-lg text-neutral-700 leading-relaxed">
                 When the distribution channel is owned, every dollar of
-                creative investment compounds. The film you commissioned for
-                a boat launch isn&apos;t just a hero asset on your site — it
-                runs across an editorial ecosystem reaching the exact
-                audience that buys what you sell.
+                creative investment compounds. The film you commissioned
+                for a boat launch isn&apos;t just a hero asset on your
+                site. It runs across an editorial ecosystem reaching the
+                exact audience that buys what you sell.
               </p>
             </div>
             <div>
@@ -86,9 +86,9 @@ export default function NauticalNetworkPage() {
               </h2>
               <p className="text-base lg:text-lg text-neutral-700 leading-relaxed">
                 Marine clients get Nautical Network reach baked into their
-                Growth engagements. For other verticals, the model is the
-                same — we&apos;re building owned media properties in each of
-                the seven categories we serve, so every client eventually
+                Growth engagements. For the other premium categories we
+                serve, the model is the same. We&apos;re building owned
+                media properties in each one, so every client eventually
                 gets the same distribution leverage.
               </p>
             </div>

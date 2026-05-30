@@ -9,7 +9,7 @@ import { verticals } from "@/lib/verticals";
 export const metadata: Metadata = {
   title: "Industries",
   description:
-    "Seven luxury verticals served by Surroundings Group — marine, real estate development, multifamily, private aviation, resorts, automotive, and luxury goods.",
+    "The premium categories Surroundings Group works in. Marine, real estate and development, multifamily, private aviation, hospitality, resorts and travel, exotic automotive, and luxury goods.",
 };
 
 export default function VerticalsIndexPage() {
@@ -22,8 +22,8 @@ export default function VerticalsIndexPage() {
 
       <PageHero
         eyebrow="INDUSTRIES WE SERVE"
-        title="Vertical-focused. Never generalist."
-        subhead="We work deeply in seven luxury categories — building the kind of category expertise generalist agencies can't replicate."
+        title="Vertical-focused."
+        subhead="We work deeply in these premium categories. Our clients collaborate across them. That's the difference."
       />
 
       {/* Featured (Tier 1) verticals */}
@@ -50,7 +50,7 @@ export default function VerticalsIndexPage() {
           <header className="mb-12">
             <p className="caption text-gold-deep mb-4">ALSO SERVING</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance max-w-3xl">
-              Categories where we&apos;re building category specialists.
+              Adjacent categories with the same discipline applied.
             </h2>
           </header>
 

@@ -8,7 +8,7 @@ import { team } from "@/lib/team";
 export const metadata: Metadata = {
   title: "Team",
   description:
-    "The team at Surroundings Group — senior creatives, strategists, and producers serving luxury brands from our Tampa studio.",
+    "The team behind Surroundings Group. Vertical-fluent practitioners building creative work, content systems, and owned distribution for premium brands.",
 };
 
 export default function TeamPage() {
@@ -19,7 +19,7 @@ export default function TeamPage() {
       <PageHero
         eyebrow="TEAM"
         title="The people behind the work."
-        subhead="Senior practitioners, in-house. No layered junior teams, no outsourced production."
+        subhead="Fully in-house. Vertical-fluent. The team that plans the work is the team that ships it."
       />
 
       <section className="bg-canvas py-16 lg:py-24 px-6 lg:px-12">
