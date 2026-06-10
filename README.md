@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Surroundings Group — surroundingsgroup.com
 
-## Getting Started
+Marketing site for Surroundings Group, the creative partner behind the
+world's premium brands. Next.js 16 (App Router) + React 19 +
+Tailwind CSS v4, deployed on Vercel.
 
-First, run the development server:
+## Quick start
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
+npm run build      # production build — must pass before pushing
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Pushing to `main` auto-deploys to production via Vercel.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Adding content (portfolio, case studies, team, careers…)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Read [CONTENT-GUIDE.md](./CONTENT-GUIDE.md)** — step-by-step recipes
+for every content type, written for non-developers too.
 
-## Learn More
+## Architecture in one minute
 
-To learn more about Next.js, take a look at the following resources:
+- **`lib/`** — all content as typed data files (single sources of
+  truth): `site.ts` (nav/contact/hero video), `services.ts`,
+  `verticals.ts`, `work.ts` (portfolio), `featured-work.ts` (journal),
+  `team.ts`, `locations.ts` (map), `clients.ts`, `testimonials.ts`
+- **`app/`** — routes; dynamic pages (`services/[slug]`,
+  `verticals/[slug]`, `work/[slug]`, `journal/[slug]`) render from the
+  `lib/` data and are statically generated at build time
+- **`components/`** — presentational components matching the site's
+  editorial design system (ink/canvas/gold palette, DM Sans + Castoro)
+- **`public/images/`** — web-optimized assets only (`work/` portfolio,
+  `team/`, `verticals/`, `brand/`)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Old WordPress URLs are 301-redirected in `next.config.ts`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Environment variables (Vercel)
 
-## Deploy on Vercel
+| Var | Purpose |
+|---|---|
+| `RESEND_API_KEY` | Contact form email delivery |
+| `CONTACT_TO_EMAIL` | Where form submissions go |
+| `CONTACT_FROM_EMAIL` | Sender address (Resend-verified domain) |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The site runs without them locally; only the contact form needs them.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Analytics
+
+Google Tag Manager (`GTM-5S62THWD`) is installed in `app/layout.tsx`
+via `@next/third-parties`. Configure tags/triggers in the GTM dashboard.
