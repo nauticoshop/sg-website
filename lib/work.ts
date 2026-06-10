@@ -26,6 +26,10 @@ export interface WorkCollection {
   vertical: string;
   /** 2-3 sentence description shown on the collection page */
   description: string;
+  /** Client the work was produced for — shown as a credit line */
+  client?: string;
+  /** Where the shoot happened — shown alongside the client credit */
+  location?: string;
   href: string;
   images: WorkImage[];
 }
@@ -36,7 +40,9 @@ export const workCollections: WorkCollection[] = [
     title: "M/Y Aquanova",
     vertical: "Marine",
     description:
-      "A charter lifestyle shoot aboard a Palmer Johnson sport yacht anchored in the turquoise shallows of Bloody Bay, Bahamas. Running shots, sunset aerials, split-level over/under water photography, and warm contemporary interiors give this collection an adventurous, editorial edge.",
+      "A charter lifestyle shoot aboard a Palmer Johnson sport yacht anchored in turquoise shallows off Nassau, Bahamas. Running shots, sunset aerials, split-level over/under water photography, and warm contemporary interiors give this collection an adventurous, editorial edge.",
+    client: "Iconic Yachts",
+    location: "Nassau, Bahamas",
     href: "/work/aquanova",
     images: [
       {
@@ -96,6 +102,7 @@ export const workCollections: WorkCollection[] = [
     vertical: "Marine",
     description:
       "A full charter campaign for a 60-meter superyacht shot off Miami at golden hour and into the night. Cinematic aerial running shots, a glowing night anchorage, the sun deck jacuzzi, opulent interiors, and styled fine-dining vignettes. The night aerials with underwater lighting are the signature frames.",
+    location: "Off South Beach, Miami",
     href: "/work/lumiere",
     images: [
       {
@@ -154,7 +161,9 @@ export const workCollections: WorkCollection[] = [
     title: "M/Y Moca",
     vertical: "Marine",
     description:
-      "An exterior-and-interior shoot of the 73-meter motor yacht Moca at anchor in the Exumas. Aerials capture the yacht over electric turquoise banks with tenders and jet skis deployed, alongside a dramatic night anchorage and serene blond-wood interiors.",
+      "An exterior-and-interior shoot of the 73-meter motor yacht Moca at anchor in the Exumas, Bahamas. Aerials capture the yacht over electric turquoise banks with tenders and jet skis deployed, alongside a dramatic night anchorage and serene blond-wood interiors.",
+    client: "FGI",
+    location: "Exumas, Bahamas",
     href: "/work/moca",
     images: [
       {
@@ -213,7 +222,9 @@ export const workCollections: WorkCollection[] = [
     title: "M/Y Moonraker",
     vertical: "Marine",
     description:
-      "A full charter-brand shoot aboard the 55-meter superyacht Moonraker anchored in the Bahamas. Dramatic drone work, dusk shots with glowing underwater lighting, interiors, water-toy lifestyle, and fine-dining details give this collection exceptional day-to-night range.",
+      "A full charter-brand shoot aboard the 55-meter superyacht Moonraker anchored in Exuma, Bahamas. Dramatic drone work, dusk shots with glowing underwater lighting, interiors, water-toy lifestyle, and fine-dining details give this collection exceptional day-to-night range.",
+    client: "Iconic Yachts",
+    location: "Exuma, Bahamas",
     href: "/work/moonraker",
     images: [
       {
@@ -273,6 +284,8 @@ export const workCollections: WorkCollection[] = [
     vertical: "Marine",
     description:
       "A golden-hour brand shoot pairing a Sanlorenzo SX motor yacht with its orange-accented chase tender in the Hamptons. Aerial running shots, sunset exteriors along wooded shoreline, a beach picnic, and branded cocktail moments give it a lifestyle-editorial feel.",
+    client: "M/Y No Time To Die charter",
+    location: "The Hamptons & Miami",
     href: "/work/no-time-to-die",
     images: [
       {
@@ -325,7 +338,9 @@ export const workCollections: WorkCollection[] = [
     title: "M/Y Skyfall",
     vertical: "Marine",
     description:
-      "A comprehensive charter portfolio for the 58-meter superyacht Skyfall shot in the Exumas. Running shots, top-down aerials over gin-clear flats, jacuzzi lifestyle, snorkeling, formal interiors, and twilight deck dining — a flagship marine collection.",
+      "A comprehensive charter portfolio for the 58-meter superyacht Skyfall shot near Rose Island off Nassau. Running shots, top-down aerials over gin-clear flats, jacuzzi lifestyle, snorkeling, formal interiors, and twilight deck dining — a flagship marine collection.",
+    client: "Northrop & Johnson",
+    location: "Rose Island, Nassau, Bahamas",
     href: "/work/skyfall",
     images: [
       {
@@ -385,6 +400,8 @@ export const workCollections: WorkCollection[] = [
     vertical: "Marine",
     description:
       "A full brand shoot aboard M/Y Offline, a sleek open-style superyacht anchored off the Fowey Rocks Lighthouse near Miami. Running shots, drone aerials, designer interiors, and branded lifestyle details — with the lighthouse motif threaded through the exteriors.",
+    client: "Kitson Yacht Sales",
+    location: "Miami, Florida",
     href: "/work/offline",
     images: [
       {
@@ -444,6 +461,8 @@ export const workCollections: WorkCollection[] = [
     vertical: "Marine",
     description:
       "A product and lifestyle shoot for the Scout 530 LXF, a flagship luxury center console, run through Florida mangrove channels and open water. Aerial running shots, helm and cockpit detail, quad Mercury Verado power, and on-board lifestyle in golden-hour light.",
+    client: "Scout Boats",
+    location: "Florida",
     href: "/work/scout-530-lxf",
     images: [
       {
@@ -497,6 +516,8 @@ export const workCollections: WorkCollection[] = [
     vertical: "Hospitality & Experiences",
     description:
       "A hospitality campaign for Sparkman Wharf, Tampa's waterfront dining and entertainment district. Drone establishing views of the wharf and skyline, daytime beer-garden energy, golden-hour strolls, chef-driven food detail, and neon-lit nightlife — a full day-to-night arc of the guest experience.",
+    client: "Sparkman Wharf",
+    location: "Tampa, Florida",
     href: "/work/sparkman-wharf",
     images: [
       {
@@ -556,6 +577,8 @@ export const workCollections: WorkCollection[] = [
     vertical: "Real Estate",
     description:
       "A Balinese-inspired modern tropical residence with a resort-grade backyard built around a lagoon pool, carved-stone grotto waterfall, and dense palm landscaping. Daylight aerials, blue-hour rear elevations, and dramatically lit night details.",
+    client: "Ryan Hughes Design",
+    location: "Palm Harbor, Florida",
     href: "/work/bali-estate",
     images: [
       {
@@ -603,6 +626,8 @@ export const workCollections: WorkCollection[] = [
     vertical: "Real Estate",
     description:
       "A sprawling lakefront compound photographed at dusk and night, anchored by a winding lagoon pool, sunken fire-pit conversation ring, and a cantilevered pavilion with a circular waterfall column. Night aerials show the full estate glowing against the dark lake.",
+    client: "Ryan Hughes Design",
+    location: "Orlando, Florida",
     href: "/work/carmel-estate",
     images: [
       {
@@ -656,6 +681,8 @@ export const workCollections: WorkCollection[] = [
     vertical: "Real Estate",
     description:
       "A transitional Mediterranean-modern estate on manicured lakefront grounds, featuring a courtyard pool with pergola lounge, retractable-canopy fire-feature terrace, and a full outdoor kitchen. Twilight aerials, a moonlit front elevation, and warm evening amenity shots.",
+    client: "Ryan Hughes Design",
+    location: "Tampa, Florida",
     href: "/work/lakefront-estate",
     images: [
       {
@@ -703,6 +730,8 @@ export const workCollections: WorkCollection[] = [
     vertical: "Real Estate",
     description:
       "A screened-lanai outdoor living environment in coastal Florida, organized around a symmetrical pool with in-water loungers, a slatted-wood cabana with sunken sectional and fire table, and an illuminated water wall. Spa-like, serene styling true to its name.",
+    client: "Ryan Hughes Design",
+    location: "Florida",
     href: "/work/tranquility-estate",
     images: [
       {
@@ -756,6 +785,8 @@ export const workCollections: WorkCollection[] = [
     vertical: "Resorts & Travel",
     description:
       "A beachfront villa shoot in the Turks and Caicos, pairing architectural coverage of a white modern villa with infinity pool against bone-white sand and turquoise water. Paddleboarding, wakesurfing, a private chef, and sunset cocktails make it a full guest-experience story.",
+    client: "Emerald Bay",
+    location: "Turks and Caicos",
     href: "/work/emerald-bay",
     images: [
       {
@@ -862,6 +893,8 @@ export const workCollections: WorkCollection[] = [
     vertical: "Resorts & Travel",
     description:
       "A destination campaign for Los Sueños Resort and Marina on Costa Rica's Pacific coast, shot across air, sea, and villa. Sunrise drone work over the marina basin, sportfishing fleets running in formation, and lifestyle from champagne terraces to fighting fish offshore.",
+    client: "Los Sueños Resort & Marina, with Galati Yacht Sales",
+    location: "Herradura, Costa Rica",
     href: "/work/los-suenos",
     images: [
       {
@@ -921,6 +954,8 @@ export const workCollections: WorkCollection[] = [
     vertical: "Multifamily",
     description:
       "A launch shoot for Cora Residences, a luxury high-rise residential tower in Tampa's downtown waterfront district. Aerials of the rooftop pool deck and skyline blend with resident-lifestyle vignettes — dog walks, dinner at Predalina, and quiet moments at floor-to-ceiling windows.",
+    client: "Cora / SPP Development",
+    location: "Water Street, Tampa, Florida",
     href: "/work/cora-residences",
     images: [
       {
@@ -974,6 +1009,8 @@ export const workCollections: WorkCollection[] = [
     vertical: "Luxury Goods",
     description:
       "A product and lifestyle shoot for G&G Timepieces, a luxury watch dealer specializing in Audemars Piguet and Rolex. Gold Royal Oaks and Day-Dates staged against exotic machinery — a Lamborghini Huracan and an AMG G-Wagon — blending horology detail with collector lifestyle.",
+    client: "G&G Timepieces",
+    location: "Miami, Florida",
     href: "/work/gg-timepieces",
     images: [
       {
@@ -1015,6 +1052,7 @@ export const workCollections: WorkCollection[] = [
     vertical: "Cross-Vertical",
     description:
       "A mixed showcase spanning the agency's core luxury verticals: superyachts and sportfishing boats offshore, exotic cars from Pebble Beach Concours to Lamborghini and Bentley brand work, private jets on the ramp, and illuminated estates from Florida to the Caribbean.",
+    client: "Various clients",
     href: "/work/selected-works",
     images: [
       {

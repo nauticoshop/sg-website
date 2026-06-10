@@ -17,7 +17,7 @@ export interface MapLocation {
   region: string;
   coordinates: [number, number]; // [longitude, latitude]
   weight: 1 | 2 | 3;
-  type: "studio" | "audience";
+  type: "studio" | "audience" | "project";
 }
 
 export const studioLocation: MapLocation = {
@@ -51,4 +51,19 @@ export const audienceHubs: MapLocation[] = [
   { city: "Hong Kong", region: "Hong Kong", coordinates: [114.1694, 22.3193], weight: 2, type: "audience" },
   // Oceania
   { city: "Sydney", region: "Australia", coordinates: [151.2093, -33.8688], weight: 1, type: "audience" },
+];
+
+/**
+ * Places the studio has actually produced work — project & shoot pins.
+ * `region` doubles as the project credit shown in the hover tooltip.
+ */
+export const projectLocations: MapLocation[] = [
+  { city: "Nassau, Bahamas", region: "M/Y Aquanova · M/Y Skyfall", coordinates: [-77.3963, 25.0443], weight: 2, type: "project" },
+  { city: "Exumas, Bahamas", region: "M/Y Moca · M/Y Moonraker", coordinates: [-76.1, 23.7], weight: 2, type: "project" },
+  { city: "Miami, Florida", region: "M/Y Lumiere · M/Y Offline · G&G Timepieces", coordinates: [-80.13, 25.79], weight: 2, type: "project" },
+  { city: "The Hamptons, New York", region: "M/Y No Time To Die", coordinates: [-72.3851, 40.9634], weight: 1, type: "project" },
+  { city: "Orlando, Florida", region: "Carmel Estate", coordinates: [-81.3792, 28.5383], weight: 1, type: "project" },
+  { city: "Turks and Caicos", region: "Emerald Bay", coordinates: [-72.2654, 21.7738], weight: 1, type: "project" },
+  { city: "Herradura, Costa Rica", region: "Los Sueños Resort & Marina", coordinates: [-84.6589, 9.6489], weight: 2, type: "project" },
+  { city: "Pebble Beach, California", region: "Concours coverage", coordinates: [-121.9508, 36.5725], weight: 1, type: "project" },
 ];

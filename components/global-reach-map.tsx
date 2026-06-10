@@ -8,7 +8,11 @@ import {
   Marker,
   ZoomableGroup,
 } from "react-simple-maps";
-import { audienceHubs, studioLocation } from "@/lib/locations";
+import {
+  audienceHubs,
+  projectLocations,
+  studioLocation,
+} from "@/lib/locations";
 
 /**
  * Premium dark-mode world map showing studio location + global audience hubs.
@@ -27,7 +31,7 @@ interface MarkerData {
   city: string;
   region: string;
   weight: 1 | 2 | 3;
-  type: "studio" | "audience";
+  type: "studio" | "audience" | "project";
 }
 
 export function GlobalReachMap() {
@@ -131,6 +135,27 @@ export function GlobalReachMap() {
               />
             </Marker>
           ))}
+
+          {/* Project & shoot markers — hollow canvas-white rings so they
+              read distinctly from the gold audience dots */}
+          {projectLocations.map((p) => (
+            <Marker
+              key={`${p.city}-${p.coordinates[0]}`}
+              coordinates={p.coordinates}
+              onMouseEnter={() => setHovered({ ...p })}
+              onMouseLeave={() => setHovered(null)}
+            >
+              <circle
+                r={p.weight * 1.5 + 2.5}
+                fill="none"
+                stroke="#f7f4f0"
+                strokeWidth={1.4}
+                opacity={0.9}
+                style={{ cursor: "pointer" }}
+              />
+              <circle r={1.6} fill="#f7f4f0" opacity={0.9} />
+            </Marker>
+          ))}
         </ZoomableGroup>
       </ComposableMap>
 
@@ -143,7 +168,11 @@ export function GlobalReachMap() {
         {hovered && (
           <>
             <p className="caption text-gold mb-1">
-              {hovered.type === "studio" ? "STUDIO" : "AUDIENCE HUB"}
+              {hovered.type === "studio"
+                ? "STUDIO"
+                : hovered.type === "project"
+                  ? "ON LOCATION"
+                  : "AUDIENCE HUB"}
             </p>
             <p className="font-sans font-extrabold text-base leading-none">
               {hovered.city}
@@ -151,6 +180,24 @@ export function GlobalReachMap() {
             <p className="text-xs text-neutral-600 mt-1">{hovered.region}</p>
           </>
         )}
+      </div>
+
+      {/* Marker key */}
+      <div className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-2">
+        <span className="caption text-canvas/60 inline-flex items-center gap-2">
+          <span
+            className="inline-block w-2.5 h-2.5 rounded-full bg-gold"
+            aria-hidden
+          />
+          Audience hubs
+        </span>
+        <span className="caption text-canvas/60 inline-flex items-center gap-2">
+          <span
+            className="inline-block w-2.5 h-2.5 rounded-full border border-canvas"
+            aria-hidden
+          />
+          Shoots &amp; projects
+        </span>
       </div>
 
       {/* Region legend at bottom */}

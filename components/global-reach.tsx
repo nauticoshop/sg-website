@@ -19,8 +19,10 @@ export function GlobalReach() {
           </div>
           <div className="lg:col-span-5 lg:pt-8">
             <p className="text-lg lg:text-xl text-canvas/70 leading-relaxed">
-              255M+ affluent viewers a year. Four continents. When our clients
-              launch, the world is already watching.
+              255M+ affluent viewers a year across an owned-media network on
+              four continents. And a production team that goes where the work
+              is — from the Bahamas and the Hamptons to Costa Rica and Pebble
+              Beach. When our clients launch, the world is already watching.
             </p>
           </div>
         </header>

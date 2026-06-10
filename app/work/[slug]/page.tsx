@@ -55,6 +55,27 @@ export default async function WorkCollectionPage({ params }: RouteParams) {
       {/* Masonry gallery — CSS columns preserve each image's aspect ratio */}
       <section className="bg-canvas pb-16 lg:pb-24 px-6 lg:px-12">
         <div className="max-w-[1200px] mx-auto">
+          {/* Credit line — client + shoot location */}
+          {(collection.client || collection.location) && (
+            <dl className="flex flex-wrap gap-x-12 gap-y-4 mb-10 lg:mb-12 pb-8 border-b border-neutral-200">
+              {collection.client && (
+                <div>
+                  <dt className="caption text-gold-deep mb-1">CLIENT</dt>
+                  <dd className="font-sans font-extrabold text-base lg:text-lg text-ink">
+                    {collection.client}
+                  </dd>
+                </div>
+              )}
+              {collection.location && (
+                <div>
+                  <dt className="caption text-gold-deep mb-1">LOCATION</dt>
+                  <dd className="font-sans font-extrabold text-base lg:text-lg text-ink">
+                    {collection.location}
+                  </dd>
+                </div>
+              )}
+            </dl>
+          )}
           <div className="columns-1 sm:columns-2 lg:columns-3 gap-6">
             {collection.images.map((image) => (
               <div key={image.src} className="mb-6 break-inside-avoid">
