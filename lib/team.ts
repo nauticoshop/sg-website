@@ -50,13 +50,6 @@ export const team: TeamMember[] = [
     photo: "/images/team/stephen-massaro.png",
   },
   {
-    slug: "daniel-rojas",
-    name: "Daniel Rojas",
-    role: "Director of Partnerships",
-    department: "Partnerships",
-    photo: "/images/team/daniel-rojas.png",
-  },
-  {
     slug: "phallon-ray",
     name: "Phallon Ray",
     role: "Business Development Manager",
@@ -104,12 +97,5 @@ export const team: TeamMember[] = [
     role: "Filmmaker / Editor",
     department: "Production",
     photo: "/images/team/granger-smith.png",
-  },
-  {
-    slug: "adam-reader",
-    name: "Adam Reader",
-    role: "Filmmaker / Editor",
-    department: "Production",
-    photo: "/images/team/adam-reader.png",
   },
 ];
