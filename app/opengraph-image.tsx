@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const alt =
-  "Surroundings Group — The vertical-fluent agency for premium brands";
+  "Surroundings Group — The creative partner behind the world's premium brands";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -65,7 +65,7 @@ export default function Image() {
             maxWidth: 1000,
           }}
         >
-          The vertical-fluent agency for premium brands.
+          The creative partner behind the world&apos;s premium brands.
         </div>
 
         {/* Bottom — pillars + gold accent */}

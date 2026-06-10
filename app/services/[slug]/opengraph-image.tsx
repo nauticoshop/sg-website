@@ -25,7 +25,7 @@ export default async function Image({
   const service = services.find((s) => s.slug === params.slug);
   const name = service?.name ?? "Services";
   const tagline =
-    service?.tagline ?? "The vertical-fluent agency for premium brands.";
+    service?.tagline ?? "The creative partner behind the world's premium brands.";
 
   return new ImageResponse(
     (

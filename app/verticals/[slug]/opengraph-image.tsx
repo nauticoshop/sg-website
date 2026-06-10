@@ -25,7 +25,7 @@ export default async function Image({
   const vertical = verticals.find((v) => v.slug === params.slug);
   const name = vertical?.name ?? "Premium Markets";
   const tagline =
-    vertical?.tagline ?? "The vertical-fluent agency for premium brands.";
+    vertical?.tagline ?? "The creative partner behind the world's premium brands.";
 
   return new ImageResponse(
     (

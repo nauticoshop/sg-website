@@ -28,15 +28,15 @@ const castoro = Castoro({
 export const metadata: Metadata = {
   title: {
     default:
-      "Surroundings Group — The vertical-fluent agency for premium brands",
+      "Surroundings Group — The creative partner behind the world's premium brands",
     template: "%s — Surroundings Group",
   },
   description:
-    "Surroundings Group is a vertical-fluent creative agency for premium brands. Marine, real estate, hospitality, aviation, and more. Fully in-house. Backed by an owned-media network reaching 255M+ affluent viewers a year.",
+    "Surroundings Group is the creative partner behind the world's premium brands. Marine, real estate, hospitality, aviation, and more. Fully in-house. Backed by an owned-media network reaching 255M+ affluent viewers a year.",
   metadataBase: new URL("https://surroundingsgroup.com"),
   openGraph: {
     title: "Surroundings Group",
-    description: "The vertical-fluent agency for premium brands.",
+    description: "The creative partner behind the world's premium brands.",
     url: "https://surroundingsgroup.com",
     siteName: "Surroundings Group",
     locale: "en_US",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Surroundings Group",
-    description: "The vertical-fluent agency for premium brands.",
+    description: "The creative partner behind the world's premium brands.",
   },
 };
 
