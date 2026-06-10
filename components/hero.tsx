@@ -57,8 +57,13 @@ export function Hero({
         />
       </div>
 
-      {/* Dark overlay tint */}
-      <div className="absolute inset-0 bg-ink/45 z-10" />
+      {/* Overlay — light wash up top so the video stays vivid, plus a
+          bottom scrim so the text cluster reads on bright footage */}
+      <div className="absolute inset-0 bg-ink/20 z-10" />
+      <div
+        className="absolute inset-x-0 bottom-0 h-[55vh] bg-gradient-to-t from-ink/85 via-ink/40 to-transparent z-10"
+        aria-hidden
+      />
 
       {/* Content — anchored low so the video does the talking.
           The tagline stays as an sr-only h1 for SEO and screen readers. */}
