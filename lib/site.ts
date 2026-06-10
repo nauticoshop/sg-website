@@ -28,8 +28,22 @@ export const site = {
 
   hero: {
     // Vimeo video ID for the homepage hero. Background mode + autoplay + loop + muted.
+    // To swap the banner video, change vimeoId (and vimeoHash if the video
+    // is unlisted — it's the `h=` value in Vimeo's embed code; leave "" for
+    // public videos).
     vimeoId: "1195210356",
     vimeoHash: "456679e373", // unlisted-video hash from Vimeo embed
+
+    // A/B test for the hero video. Set variantB.vimeoId to enable; leave it
+    // "" to turn the test off. Visitors are split by `weightB` (0.5 = 50/50)
+    // and stick to their variant across visits (stored in localStorage).
+    // Each pageview pushes a `hero_video_ab` event with `hero_video_variant`
+    // ("a" | "b") to the GTM dataLayer for reporting.
+    variantB: {
+      vimeoId: "1200194773", // "SG Web Banner" — clear to stop the test
+      vimeoHash: "", // public video, no hash needed
+      weightB: 0.5,
+    },
   },
 
   nav: [

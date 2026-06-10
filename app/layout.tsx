@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { DM_Sans, Castoro } from "next/font/google";
+import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
+import { site } from "@/lib/site";
 import { FloatingContact } from "@/components/floating-contact";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import {
@@ -57,6 +59,7 @@ export default function RootLayout({
       lang="en"
       className={`${dmSans.variable} ${castoro.variable} h-full antialiased`}
     >
+      <GoogleTagManager gtmId={site.gtm} />
       <body className="min-h-full flex flex-col bg-canvas text-ink">
         <JsonLd data={[organizationSchema(), websiteSchema()]} />
         <SmoothScroll />
