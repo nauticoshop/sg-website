@@ -36,6 +36,7 @@ export const site = {
   },
 
   nav: [
+    { label: "Work", href: "/work" },
     { label: "Services", href: "/services" },
     { label: "Verticals", href: "/verticals" },
     { label: "Journal", href: "/journal" },
@@ -45,7 +46,7 @@ export const site = {
 
   cta: {
     primary: { label: "Book a discovery call", href: "/discovery-call" },
-    secondary: { label: "Explore our work", href: "/journal" },
+    secondary: { label: "Explore our work", href: "/work" },
   },
 
   // Analytics

@@ -1,0 +1,123 @@
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import Link from "next/link";
+import Image from "next/image";
+import { Nav } from "@/components/nav";
+import { Footer } from "@/components/footer";
+import { PageHero } from "@/components/page-hero";
+import { CtaBanner } from "@/components/cta-banner";
+import { workCollections, collectionCover } from "@/lib/work";
+
+interface RouteParams {
+  params: Promise<{ slug: string }>;
+}
+
+export function generateStaticParams() {
+  return workCollections.map((c) => ({ slug: c.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: RouteParams): Promise<Metadata> {
+  const { slug } = await params;
+  const collection = workCollections.find((c) => c.slug === slug);
+  if (!collection) return {};
+  const cover = collectionCover(collection);
+  return {
+    title: `${collection.title} — Work`,
+    description: collection.description,
+    openGraph: {
+      title: collection.title,
+      description: collection.description,
+      images: [{ url: cover.src, width: cover.width, height: cover.height }],
+    },
+  };
+}
+
+export default async function WorkCollectionPage({ params }: RouteParams) {
+  const { slug } = await params;
+  const collection = workCollections.find((c) => c.slug === slug);
+  if (!collection) notFound();
+
+  const currentIndex = workCollections.findIndex((c) => c.slug === slug);
+  const next = workCollections[(currentIndex + 1) % workCollections.length];
+
+  return (
+    <>
+      <Nav />
+
+      <PageHero
+        eyebrow={collection.vertical.toUpperCase()}
+        title={collection.title}
+        subhead={collection.description}
+      />
+
+      {/* Masonry gallery — CSS columns preserve each image's aspect ratio */}
+      <section className="bg-canvas pb-16 lg:pb-24 px-6 lg:px-12">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="columns-1 sm:columns-2 lg:columns-3 gap-6">
+            {collection.images.map((image) => (
+              <div key={image.src} className="mb-6 break-inside-avoid">
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  width={image.width}
+                  height={image.height}
+                  sizes="(min-width: 1024px) 384px, (min-width: 640px) 50vw, 100vw"
+                  className="w-full h-auto"
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Footer nav — back to index + next collection */}
+          <div className="flex items-center justify-between mt-12 lg:mt-16 pt-8 border-t border-neutral-200">
+            <Link
+              href="/work"
+              className="caption inline-flex items-center gap-2 text-neutral-500 hover:text-gold-deep transition-colors duration-300"
+            >
+              <svg
+                width="14"
+                height="10"
+                viewBox="0 0 14 10"
+                fill="none"
+                aria-hidden
+              >
+                <path
+                  d="M13 5H1m0 0l4-4M1 5l4 4"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="square"
+                />
+              </svg>
+              All work
+            </Link>
+            <Link
+              href={next.href}
+              className="caption inline-flex items-center gap-2 text-ink hover:text-gold-deep transition-colors duration-300"
+            >
+              Next: {next.title}
+              <svg
+                width="14"
+                height="10"
+                viewBox="0 0 14 10"
+                fill="none"
+                aria-hidden
+              >
+                <path
+                  d="M1 5h12m0 0L9 1m4 4L9 9"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="square"
+                />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <CtaBanner />
+      <Footer />
+    </>
+  );
+}

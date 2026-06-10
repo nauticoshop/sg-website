@@ -3,6 +3,7 @@ import { site } from "@/lib/site";
 import { verticals } from "@/lib/verticals";
 import { services } from "@/lib/services";
 import { featuredProjects } from "@/lib/featured-work";
+import { workCollections } from "@/lib/work";
 
 /**
  * Auto-generated sitemap at /sitemap.xml.
@@ -17,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/about/team`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/about/nautical-network`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/work`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/services`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/verticals`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/journal`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
@@ -51,5 +53,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...verticalRoutes, ...serviceRoutes, ...journalRoutes];
+  const workRoutes: MetadataRoute.Sitemap = workCollections.map((c) => ({
+    url: `${baseUrl}${c.href}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
+
+  return [
+    ...staticRoutes,
+    ...verticalRoutes,
+    ...serviceRoutes,
+    ...journalRoutes,
+    ...workRoutes,
+  ];
 }

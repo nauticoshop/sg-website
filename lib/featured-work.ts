@@ -88,6 +88,9 @@ export const featuredProjects: FeaturedProject[] = [
       "Built the largest multi-platform boating and yachting outlet from a single Instagram.",
     tag: "Studio + Social + Growth",
     href: "/journal/nautical-network",
+    image: "/images/work/skyfall/skyfall-02.jpg",
+    imageAlt:
+      "Top-down aerial of superyacht with tenders over gin-clear turquoise flats",
     content: {
       lead: "Surroundings Group's sister brand started as a single Instagram account. Today Nautical Network is the largest multi-platform editorial and social ecosystem in premium marine, reaching more than 180 million viewers a year across eight branded channels. It's also the distribution advantage we extend to every marine engagement we run.",
       outcomes: [
@@ -143,6 +146,9 @@ export const featuredProjects: FeaturedProject[] = [
       "Pre-sales storytelling and grand-opening campaign for a flagship luxury development.",
     tag: "Studio + Growth",
     href: "/journal/placeholder-real-estate",
+    image: "/images/work/tranquility-estate/tranquility-estate-01.jpg",
+    imageAlt:
+      "Sunset view of symmetrical screened pool terrace with cabana and umbrellas",
   },
   {
     slug: "placeholder-multifamily",
@@ -153,5 +159,8 @@ export const featuredProjects: FeaturedProject[] = [
       "Lease-up content program filling a 300-unit luxury rental community.",
     tag: "Studio + Social",
     href: "/journal/placeholder-multifamily",
+    image: "/images/work/cora-residences/cora-residences-01.jpg",
+    imageAlt:
+      "Aerial of landscaped rooftop pool deck atop downtown residential tower",
   },
 ];
