@@ -21,8 +21,8 @@ export function GlobalReach() {
             <p className="text-lg lg:text-xl text-canvas/70 leading-relaxed">
               255M+ affluent viewers a year across an owned-media network on
               four continents. And a production team that goes where the work
-              is — from the Bahamas and the Hamptons to Costa Rica and Pebble
-              Beach. When our clients launch, the world is already watching.
+              is — from the Bahamas and the Riviera to Dubai and Bangkok.
+              When our clients launch, the world is already watching.
             </p>
           </div>
         </header>
