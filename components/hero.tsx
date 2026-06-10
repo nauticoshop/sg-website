@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
 
@@ -70,7 +71,16 @@ export function Hero({
       <div className="relative z-20 flex flex-col items-center justify-end min-h-screen px-6 lg:px-12 pb-24 lg:pb-28 text-center text-canvas pt-20">
         <h1 className="sr-only">{headline}</h1>
 
-        <p className="caption tracking-[0.2em] text-gold mb-6">{eyebrow}</p>
+        {/* S mark — the source PNG carries generous transparent padding,
+            so it renders oversized with negative margins to compensate */}
+        <Image
+          src="/images/brand/s-mark-white.png"
+          alt={eyebrow}
+          width={500}
+          height={500}
+          priority
+          className="h-28 w-28 lg:h-32 lg:w-32 object-contain -my-7 lg:-my-8 [filter:drop-shadow(0_2px_14px_rgba(20,18,16,0.65))]"
+        />
 
         {/* Three-pillar positioning */}
         <p className="caption tracking-[0.2em] text-gold mb-12 flex items-center flex-wrap justify-center gap-x-3 gap-y-1">

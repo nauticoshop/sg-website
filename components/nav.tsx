@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { MobileMenu } from "./mobile-menu";
@@ -19,13 +20,24 @@ export function Nav() {
     <>
       <nav className="fixed top-0 inset-x-0 z-40 bg-ink text-canvas">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12 h-16 lg:h-20 flex items-center justify-between">
-          {/* Wordmark */}
+          {/* S mark + wordmark */}
           <Link
             href="/"
-            className="caption tracking-[0.18em] font-medium hover:text-gold transition-colors"
+            className="caption tracking-[0.18em] font-medium hover:text-gold transition-colors inline-flex items-center gap-1"
             aria-label={site.name}
           >
-            {site.wordmark}
+            {/* Mark PNG has built-in transparent padding — negative
+                margins pull the wordmark in tight */}
+            <Image
+              src="/images/brand/s-mark-white.png"
+              alt=""
+              width={500}
+              height={500}
+              priority
+              className="h-14 w-14 lg:h-16 lg:w-16 object-contain -m-3 lg:-m-3.5"
+              aria-hidden
+            />
+            <span>{site.wordmark}</span>
           </Link>
 
           {/* Right side: phone + hamburger */}
