@@ -1,8 +1,6 @@
 import { ImageResponse } from "next/og";
 import { services } from "@/lib/services";
 
-export const runtime = "edge";
-
 export const alt = "Surroundings Group — Service";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
