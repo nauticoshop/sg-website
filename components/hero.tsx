@@ -79,7 +79,7 @@ export function Hero({
           width={500}
           height={500}
           priority
-          className="h-28 w-28 lg:h-32 lg:w-32 object-contain -my-7 lg:-my-8 [filter:drop-shadow(0_2px_14px_rgba(20,18,16,0.65))]"
+          className="h-28 w-28 lg:h-32 lg:w-32 object-contain -mt-7 lg:-mt-8 -mb-1 [filter:drop-shadow(0_2px_14px_rgba(20,18,16,0.65))]"
         />
 
         {/* Three-pillar positioning */}
