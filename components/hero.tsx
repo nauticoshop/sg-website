@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
-import { HeroVideo } from "@/components/hero-video";
 
 interface HeroProps {
   /** Vimeo video ID. Defaults to site config. */
@@ -29,11 +28,33 @@ export function Hero({
   headline = site.tagline,
   pillars = ["Full-service", "Vertical-fluent", "Powerful network"],
 }: HeroProps) {
+  // Unlisted videos need their `h=` hash in the player URL; public ones don't.
+  const hash = site.hero.vimeoHash ? `h=${site.hero.vimeoHash}&` : "";
+  const vimeoSrc = `https://player.vimeo.com/video/${vimeoId}?${hash}background=1&autoplay=1&loop=1&muted=1`;
+
   return (
     <section className="relative w-full min-h-screen overflow-hidden bg-ink">
       {/* Background video — sized to always cover the section */}
       <div className="absolute inset-0 overflow-hidden">
-        <HeroVideo vimeoId={vimeoId} />
+        <iframe
+          src={vimeoSrc}
+          title="Surroundings Group reel"
+          allow="autoplay; fullscreen; picture-in-picture"
+          aria-hidden="true"
+          tabIndex={-1}
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            width: "max(100%, calc(100vh * 16 / 9))",
+            height: "max(100%, calc(100vw * 9 / 16))",
+            minWidth: "100%",
+            minHeight: "100%",
+            transform: "translate(-50%, -50%)",
+            pointerEvents: "none",
+            border: 0,
+          }}
+        />
       </div>
 
       {/* Dark overlay tint */}
