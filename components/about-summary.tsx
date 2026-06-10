@@ -20,16 +20,16 @@ export function AboutSummary() {
           <div className="lg:col-span-4">
             <p className="caption text-ink mb-6">ABOUT</p>
             <h2 className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-ink text-balance">
-              Specialists where everyone else is a generalist.
+              At home in the world&apos;s premium markets.
             </h2>
           </div>
 
           <div className="lg:col-span-8 space-y-6">
             <p className="text-xl lg:text-2xl text-ink leading-snug font-medium text-balance">
-              Surroundings Group is a creative agency for luxury brands. We
-              work in eight verticals with one in-house team, and our clients
-              collaborate across categories to produce work no single-vertical
-              agency could match.
+              Surroundings Group is a creative agency for premium brands. One
+              in-house team, focused on the premium verticals we know inside
+              out. Our clients collaborate across categories to produce work
+              no single-vertical agency could match.
             </p>
             <p className="text-base lg:text-lg text-ink/80 leading-relaxed">
               We cover marine, real estate development, private aviation,

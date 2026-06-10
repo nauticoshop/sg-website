@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
@@ -8,7 +9,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Careers",
   description:
-    "Build the agency premium brands actually deserve. Surroundings Group hires vertical-fluent practitioners who care about premium work and want to ship it.",
+    "Build the agency premium brands actually deserve. Surroundings Group hires vertical-fluent practitioners who care about premium work and want to make it.",
 };
 
 /** Six reasons people stay (why here). */
@@ -19,7 +20,7 @@ const benefits = [
   },
   {
     title: "Real ownership of work.",
-    copy: "Every deliverable that ships is something you'd put in your portfolio. We don't ship work we'd be embarrassed to publish, and we don't ship work that gets buried in a deck.",
+    copy: "Every deliverable that goes out is something you'd put in your portfolio. We don't put our name on work we'd be embarrassed to publish, and we don't make work that gets buried in a deck.",
   },
   {
     title: "The cross-vertical advantage.",
@@ -27,11 +28,11 @@ const benefits = [
   },
   {
     title: "Owned media at scale.",
-    copy: "Every piece of creative ships through editorial channels we run, reaching 255M+ affluent viewers a year. Your work gets distribution most agencies have to buy.",
+    copy: "Every piece of creative travels through editorial channels we run, reaching 255M+ affluent viewers a year. Your work gets distribution most agencies have to buy.",
   },
   {
     title: "One team, one process.",
-    copy: "Strategy, production, distribution, and measurement all under one roof. No handoffs between departments. The people who plan it are the people who ship it.",
+    copy: "Strategy, production, distribution, and measurement all under one roof. No handoffs between departments. The people who plan it are the people who make it.",
   },
   {
     title: "Tampa-rooted.",
@@ -50,7 +51,7 @@ const paths = [
   {
     name: "Strategy & Growth",
     blurb:
-      "Strategists, paid media operators, PR leads, email and lifecycle marketers. The team that builds and ships demand.",
+      "Strategists, paid media operators, PR leads, email and lifecycle marketers. The team that builds demand.",
     subject: "Careers — Strategy & Growth",
   },
   {
@@ -73,19 +74,19 @@ const paths = [
   },
 ];
 
-/** Culture pillars. Image placeholders until real team/studio photos are dropped. */
+/** Culture pillars — blended from the original SG careers page. */
 const culturePillars = [
   {
-    title: "Vertical-fluent by design.",
-    copy: "We work in the categories we've spent years learning. Marine, real estate, multifamily, aviation, hospitality, resorts, automotive, luxury goods. You bring your category and the rest of the team learns from it.",
+    title: "Fun is the fuel.",
+    copy: "Brainstorming here is a team sport. Thinking outside the box is the compass for creativity, innovation is the norm, and the room runs on genuine energy, not mandatory fun.",
   },
   {
-    title: "Real ownership.",
-    copy: "Every deliverable has your name on it. The work goes live in the brands you respect, not into a deck the client politely thanks you for.",
+    title: "Growth & development.",
+    copy: "Shadow other departments, pick up disciplines outside your lane, and chart your path in quarterly one-on-ones. We invest in where you're going, not just what you do today.",
   },
   {
-    title: "A network that compounds.",
-    copy: "Our clients borrow from each other across the categories. As a teammate, that means cross-vertical work most agencies can't pull off, and a portfolio that reflects it.",
+    title: "Live the industry.",
+    copy: "Yachts, estates, jets, resorts. You work in the lifestyle most people only see in a feed, and the access is part of the job. Where passion meets opulence.",
   },
   {
     title: "Tampa-rooted.",
@@ -105,7 +106,7 @@ export default function CareersPage() {
       <PageHero
         eyebrow="CAREERS"
         title="Build the agency premium brands actually deserve."
-        subhead="We hire vertical-fluent people who care about premium work and want to ship it."
+        subhead="An adaptive-first group of creative humans working in the industries most people only dream about. We bet you'll fit right in."
       />
 
       {/* Why here — 6 reasons */}
@@ -194,24 +195,24 @@ export default function CareersPage() {
             </p>
           </header>
 
+          {/* The team, in one frame */}
+          <div className="mb-12 lg:mb-16">
+            <Image
+              src="/images/team/careers-group.jpg"
+              alt="The Surroundings Group team together at the studio"
+              width={1400}
+              height={915}
+              sizes="(min-width: 1280px) 1200px, 100vw"
+              className="w-full h-auto"
+            />
+          </div>
+
           <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {culturePillars.map((pillar, i) => (
-              <li key={i} className="flex flex-col">
-                {/* Image placeholder — 4:5 portrait, dark frame.
-                    Drop real studio/team photos at
-                    /public/images/careers/{slug}.jpg and swap to <Image>. */}
-                <div className="aspect-[4/5] bg-ink relative overflow-hidden mb-5">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="caption text-canvas/25">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                  </div>
-                  <div
-                    className="absolute top-0 right-0 w-12 h-px bg-gold/50"
-                    aria-hidden
-                  />
-                </div>
-
+              <li key={i} className="border-t border-neutral-200 pt-6">
+                <p className="caption text-gold-deep mb-3">
+                  {String(i + 1).padStart(2, "0")}
+                </p>
                 <h3 className="font-sans font-extrabold text-xl lg:text-2xl text-ink mb-3 leading-tight text-balance">
                   {pillar.title}
                 </h3>

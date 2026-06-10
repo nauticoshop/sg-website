@@ -24,7 +24,7 @@ const steps: Step[] = [
     num: "02",
     name: "Production",
     copy:
-      "In-house production. No handoffs, no outsourced juniors. The team that planned it is the team that captures, edits, and ships it.",
+      "In-house production. No handoffs, no outsourced juniors. The team that planned it is the team that captures, edits, and delivers it.",
   },
   {
     num: "03",

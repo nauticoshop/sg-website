@@ -60,13 +60,12 @@ export function Hero({
       {/* Dark overlay tint */}
       <div className="absolute inset-0 bg-ink/45 z-10" />
 
-      {/* Content */}
-      <div className="relative z-20 flex flex-col items-center justify-center min-h-screen px-6 lg:px-12 text-center text-canvas pt-20">
-        <p className="caption tracking-[0.2em] text-gold mb-8">{eyebrow}</p>
+      {/* Content — anchored low so the video does the talking.
+          The tagline stays as an sr-only h1 for SEO and screen readers. */}
+      <div className="relative z-20 flex flex-col items-center justify-end min-h-screen px-6 lg:px-12 pb-24 lg:pb-28 text-center text-canvas pt-20">
+        <h1 className="sr-only">{headline}</h1>
 
-        <h1 className="font-sans font-extrabold text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight max-w-5xl text-balance mb-10">
-          {headline}
-        </h1>
+        <p className="caption tracking-[0.2em] text-gold mb-6">{eyebrow}</p>
 
         {/* Three-pillar positioning */}
         <p className="caption tracking-[0.2em] text-gold mb-12 flex items-center flex-wrap justify-center gap-x-3 gap-y-1">

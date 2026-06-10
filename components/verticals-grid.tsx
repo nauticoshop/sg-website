@@ -29,8 +29,8 @@ export function VerticalsGrid() {
             Vertical-focused.
           </h2>
           <p className="text-base lg:text-lg text-neutral-600 leading-relaxed max-w-2xl mx-auto">
-            We work deeply in these luxury verticals. Our clients collaborate
-            across them. That&apos;s the difference.
+            We work deeply in premium, high-trust markets. Our clients
+            collaborate across them. That&apos;s the difference.
           </p>
         </header>
 

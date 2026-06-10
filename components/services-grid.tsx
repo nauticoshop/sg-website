@@ -87,13 +87,11 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
           </h3>
         </div>
 
-        {/* Bottom: tagline + description + CTA */}
+        {/* Bottom: tagline + CTA — the longer description lives on the
+            detail page; keeping the card to one line reads cleaner. */}
         <div className="border-t border-canvas/15 pt-5">
-          <p className="text-base lg:text-lg text-canvas leading-snug mb-3 font-medium">
+          <p className="text-base lg:text-lg text-canvas/90 leading-snug mb-5">
             {service.tagline}
-          </p>
-          <p className="text-sm text-canvas/70 leading-relaxed mb-5">
-            {service.description}
           </p>
           <span className="caption inline-flex items-center gap-2 text-canvas group-hover:text-gold-deep transition-colors duration-300">
             Explore {service.name}

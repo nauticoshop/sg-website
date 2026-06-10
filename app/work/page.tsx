@@ -21,7 +21,7 @@ export default function WorkIndexPage() {
       <PageHero
         eyebrow="THE PORTFOLIO"
         title="Work that speaks for itself."
-        subhead="Selected collections across marine, real estate, aviation, hospitality, and the categories around them. Shot, cut, and shipped by our in-house team."
+        subhead="Selected collections across marine, real estate, aviation, hospitality, and the categories around them. Shot, cut, and delivered by our in-house team."
       />
 
       <section className="bg-canvas pb-16 lg:pb-24 px-6 lg:px-12">

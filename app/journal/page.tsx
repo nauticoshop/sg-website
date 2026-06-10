@@ -119,7 +119,7 @@ export default function JournalPage() {
             </h2>
             <p className="text-base text-neutral-700 leading-relaxed mb-6">
               Behind-the-scenes posts, client updates, and studio news join
-              the feed as work ships. For our published editorial work in
+              the feed as work goes live. For our published editorial work in
               marine, follow{" "}
               <a
                 href="https://nauticalnetwork.com"

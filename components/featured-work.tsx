@@ -10,7 +10,40 @@ import { featuredProjects, journalTypeLabel } from "@/lib/featured-work";
  * visitors immediately see what kind of entry they're looking at.
  *
  * Uniform 3-col grid. Link out goes to /journal (the full hub).
+ *
+ * The outcomes strip below the grid carries factual client results
+ * (real numbers, real client names, no fabricated attribution) —
+ * folded in here from the old standalone Outcomes section so the
+ * proof sits next to the work.
  */
+
+interface Outcome {
+  slug: string;
+  vertical: string;
+  /** The hero number (e.g. "12% → 52%" or "$7M+") */
+  value: string;
+  /** One-line description of what the number represents */
+  label: string;
+  /** Client name */
+  client: string;
+}
+
+const outcomes: Outcome[] = [
+  {
+    slug: "novel-beach-park",
+    vertical: "MULTIFAMILY",
+    value: "12% → 52%",
+    label: "Occupancy in two months",
+    client: "NOVEL Beach Park",
+  },
+  {
+    slug: "ryan-hughes-design",
+    vertical: "REAL ESTATE & DEVELOPMENT",
+    value: "$7M+",
+    label: "In client upsells driven by content + social",
+    client: "Ryan Hughes Design",
+  },
+];
 export function FeaturedWork() {
   return (
     <section className="py-24 lg:py-36 px-6 lg:px-12 bg-canvas">
@@ -52,6 +85,32 @@ export function FeaturedWork() {
             </li>
           ))}
         </ul>
+
+        {/* Outcomes strip — factual client results under the work */}
+        <div className="mt-16 lg:mt-20">
+          <p className="caption text-gold-deep mb-8">
+            OUTCOMES / WORK THAT MOVED THE METRIC
+          </p>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            {outcomes.map((o) => (
+              <li
+                key={o.slug}
+                className="bg-ink text-canvas border border-canvas/10 p-8 lg:p-12 flex flex-col h-full"
+              >
+                <p className="caption text-gold mb-8">{o.vertical}</p>
+                <p className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl text-canvas leading-none mb-5 tracking-tight">
+                  {o.value}
+                </p>
+                <p className="text-base lg:text-lg text-canvas/80 leading-snug mb-8 flex-1">
+                  {o.label}
+                </p>
+                <p className="font-sans font-extrabold text-base text-canvas border-t border-canvas/15 pt-5">
+                  {o.client}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 
 /**
@@ -10,8 +11,15 @@ import Lenis from "lenis";
  *
  * Mounted once in the root layout; runs a RAF loop while the page
  * is alive. Cleans up on unmount.
+ *
+ * On route change we snap Lenis back to the top immediately —
+ * otherwise its RAF loop re-applies the previous page's scroll
+ * offset after Next.js navigates, landing visitors mid-page.
  */
 export function SmoothScroll() {
+  const lenisRef = useRef<Lenis | null>(null);
+  const pathname = usePathname();
+
   useEffect(() => {
     const reduce = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
@@ -25,6 +33,7 @@ export function SmoothScroll() {
       wheelMultiplier: 1,
       touchMultiplier: 1.5,
     });
+    lenisRef.current = lenis;
 
     let rafId: number;
     function raf(time: number) {
@@ -36,8 +45,14 @@ export function SmoothScroll() {
     return () => {
       cancelAnimationFrame(rafId);
       lenis.destroy();
+      lenisRef.current = null;
     };
   }, []);
+
+  // New page → start at the top, no easing.
+  useEffect(() => {
+    lenisRef.current?.scrollTo(0, { immediate: true, force: true });
+  }, [pathname]);
 
   return null;
 }

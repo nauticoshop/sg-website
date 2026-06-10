@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
@@ -19,7 +20,7 @@ export default function AboutPage() {
 
       <PageHero
         eyebrow="ABOUT"
-        title="Specialists where everyone else is a generalist."
+        title="At home in the world's premium markets."
         subhead="Vertical-fluent. Fully in-house. Built for premium markets."
       />
 
@@ -66,6 +67,20 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Team photo — full-width editorial moment */}
+      <section className="bg-canvas pb-16 lg:pb-24 px-6 lg:px-12">
+        <div className="max-w-[1200px] mx-auto">
+          <Image
+            src="/images/team/team-photo.jpg"
+            alt="The Surroundings Group team"
+            width={1800}
+            height={896}
+            sizes="(min-width: 1280px) 1200px, 100vw"
+            className="w-full h-auto"
+          />
+        </div>
+      </section>
+
       {/* Team preview */}
       <section className="bg-neutral-50 py-20 lg:py-28 px-6 lg:px-12">
         <div className="max-w-[1200px] mx-auto">
@@ -91,15 +106,27 @@ export default function AboutPage() {
                 key={m.slug}
                 className="bg-canvas border border-neutral-200 p-6 lg:p-8"
               >
-                <div className="aspect-[4/5] bg-ink mb-6" aria-hidden />
+                <div className="relative aspect-[4/5] bg-ink mb-6 overflow-hidden">
+                  {m.photo && (
+                    <Image
+                      src={m.photo}
+                      alt={`${m.name} — ${m.role}`}
+                      fill
+                      sizes="(min-width: 1024px) 350px, (min-width: 768px) 50vw, 100vw"
+                      className="object-cover object-top"
+                    />
+                  )}
+                </div>
                 <p className="caption text-gold-deep mb-2">{m.department}</p>
                 <h3 className="font-sans font-extrabold text-2xl text-ink mb-2">
                   {m.name}
                 </h3>
                 <p className="text-sm text-neutral-600 mb-4">{m.role}</p>
-                <p className="text-sm text-neutral-700 leading-relaxed line-clamp-3">
-                  {m.bio}
-                </p>
+                {m.bio && (
+                  <p className="text-sm text-neutral-700 leading-relaxed line-clamp-3">
+                    {m.bio}
+                  </p>
+                )}
               </li>
             ))}
           </ul>

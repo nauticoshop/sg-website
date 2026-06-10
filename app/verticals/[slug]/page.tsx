@@ -137,7 +137,7 @@ export default async function VerticalDetailPage({ params }: RouteParams) {
           <header className="mb-12 lg:mb-16 max-w-3xl">
             <p className="caption text-gold-deep mb-4">SIGNATURE WORK</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink leading-[1.1] text-balance">
-              The kinds of work we ship for this category.
+              The kinds of work we deliver for this category.
             </h2>
           </header>
 

@@ -1,61 +1,115 @@
 /**
  * Surroundings Group team data.
  *
- * Placeholder structure. Billy will fill in real team members + bios
- * + photos in a future session. Each member can become a /about/team/[slug]
- * page later if we want individual bios.
+ * Roster + headshots pulled from the Nautical Network team page
+ * (transparent-background PNGs in /public/images/team/). Bios are
+ * optional — add per person as they're written; the team grid
+ * renders fine without them.
  */
 
 export interface TeamMember {
   slug: string;
   name: string;
   role: string;
-  /** Short bio for team grid card */
-  bio: string;
-  /** Department / function — used for filtering */
-  department:
-    | "Leadership"
-    | "Creative"
-    | "Strategy"
-    | "Production"
-    | "Operations";
+  /** Optional short bio for the team grid card */
+  bio?: string;
+  /** Department / function — display chip above the name */
+  department: string;
+  /** Headshot, /public path. Transparent PNG renders on ink card. */
+  photo?: string;
 }
 
 export const team: TeamMember[] = [
   {
     slug: "billy-pavlock",
     name: "Billy Pavlock",
-    role: "Founder & CEO",
+    role: "Chief Executive Officer",
     bio: "Founded Surroundings Group to bring tech-company leverage to premium brand marketing. Built Nautical Network from a single Instagram into the largest multi-platform boating outlet.",
     department: "Leadership",
+    photo: "/images/team/billy-pavlock.png",
   },
-  // Placeholder additional members — Billy to confirm + add real teammates
   {
-    slug: "creative-director",
-    name: "Creative Director",
-    role: "Creative Direction",
-    bio: "Leads the studio's editorial sensibility across film, photography, and brand identity work.",
+    slug: "justin-tarr",
+    name: "Justin Tarr",
+    role: "Chief Financial Officer",
+    department: "Leadership",
+    photo: "/images/team/justin-tarr.png",
+  },
+  {
+    slug: "austin-tompkins",
+    name: "Austin Tompkins",
+    role: "Head of Creative",
     department: "Creative",
+    photo: "/images/team/austin-tompkins.png",
   },
   {
-    slug: "head-of-production",
-    name: "Head of Production",
-    role: "Production",
-    bio: "Runs the in-house production team — cinematic capture for luxury brand films, listing videos, and editorial shoots.",
+    slug: "stephen-massaro",
+    name: "Stephen Massaro",
+    role: "Director of Web Services",
+    department: "Digital",
+    photo: "/images/team/stephen-massaro.png",
+  },
+  {
+    slug: "daniel-rojas",
+    name: "Daniel Rojas",
+    role: "Director of Partnerships",
+    department: "Partnerships",
+    photo: "/images/team/daniel-rojas.png",
+  },
+  {
+    slug: "phallon-ray",
+    name: "Phallon Ray",
+    role: "Business Development Manager",
+    department: "Partnerships",
+    photo: "/images/team/phallon-ray.png",
+  },
+  {
+    slug: "morgan-finger",
+    name: "Morgan Finger",
+    role: "Account Manager",
+    department: "Client Services",
+    photo: "/images/team/morgan-finger.png",
+  },
+  {
+    slug: "arial-pavlock",
+    name: "Arial Pavlock",
+    role: "Team Support Manager",
+    department: "Operations",
+    photo: "/images/team/arial-pavlock.png",
+  },
+  {
+    slug: "sean-odonnell",
+    name: "Sean O'Donnell",
+    role: "Community Engagement Manager",
+    department: "Social",
+    photo: "/images/team/sean-odonnell.png",
+  },
+  {
+    slug: "andre-gonzalez",
+    name: "Andre Gonzalez",
+    role: "Filmmaker / Editor",
     department: "Production",
+    photo: "/images/team/andre-gonzalez.png",
   },
   {
-    slug: "head-of-growth",
-    name: "Head of Growth",
-    role: "Growth & Paid Media",
-    bio: "Builds integrated paid + PR + email engines that turn premium brand awareness into measurable demand.",
-    department: "Strategy",
+    slug: "brandon-ricketts",
+    name: "Brandon Ricketts",
+    role: "Filmmaker / Editor",
+    department: "Production",
+    photo: "/images/team/brandon-ricketts.png",
   },
   {
-    slug: "head-of-social",
-    name: "Head of Social",
-    role: "Social & Distribution",
-    bio: "Plans the content calendars and community programs that keep luxury brands engaging the right audiences daily.",
-    department: "Strategy",
+    slug: "granger-smith",
+    name: "Granger Smith",
+    role: "Filmmaker / Editor",
+    department: "Production",
+    photo: "/images/team/granger-smith.png",
+  },
+  {
+    slug: "adam-reader",
+    name: "Adam Reader",
+    role: "Filmmaker / Editor",
+    department: "Production",
+    photo: "/images/team/adam-reader.png",
   },
 ];

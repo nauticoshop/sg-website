@@ -5,7 +5,7 @@
  * Data shape extended (2026-05-29) with rich detail-page fields:
  *   - intro            : positioning paragraph for the detail page
  *   - audienceSegments : who-we-serve breakouts within the vertical
- *   - signaturePlays   : recurring work patterns we ship for this vertical
+ *   - signaturePlays   : recurring work patterns we deliver for this vertical
  *   - relatedServiceSlugs : services most relevant to this vertical
  *
  * The homepage card still uses `tagline`. The detail page uses
@@ -43,7 +43,7 @@ export interface Vertical {
    */
   audienceSegments: AudienceSegment[];
   /**
-   * Recurring work patterns we ship for this category.
+   * Recurring work patterns we deliver for this category.
    * Drives the "Signature work" section on the detail page.
    */
   signaturePlays: SignaturePlay[];
@@ -154,7 +154,7 @@ export const verticals: Vertical[] = [
       },
       {
         title: "Listing video programs",
-        copy: "Standardized capture and edit at a level premium buyers expect, repeatable across portfolios. Built so brokers ship better video on every property without the per-listing creative burden.",
+        copy: "Standardized capture and edit at a level premium buyers expect, repeatable across portfolios. Built so brokers get better video on every property without the per-listing creative burden.",
       },
       {
         title: "Editorial portfolio work",
@@ -187,7 +187,7 @@ export const verticals: Vertical[] = [
       },
       {
         name: "Owner-operators & portfolios",
-        copy: "Brand systems and content frameworks that scale across multiple properties. Built so a 12-property portfolio ships premium content without 12 agency relationships.",
+        copy: "Brand systems and content frameworks that scale across multiple properties. Built so a 12-property portfolio produces premium content without 12 agency relationships.",
       },
       {
         name: "Branded residences",
@@ -349,7 +349,7 @@ export const verticals: Vertical[] = [
       },
       {
         title: "Event activations",
-        copy: "Strategy, production, and on-site capture for events that are part marketing, part service. We treat them as brand moments and ship the assets back as a year of content.",
+        copy: "Strategy, production, and on-site capture for events that are part marketing, part service. We treat them as brand moments and turn the assets into a year of content.",
       },
     ],
     relatedServiceSlugs: ["studio", "experiences", "social", "growth"],

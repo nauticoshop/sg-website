@@ -29,7 +29,7 @@ export default function NotFound() {
               <p className="text-base lg:text-lg text-canvas/75 leading-relaxed mb-10 max-w-xl">
                 It might have moved, been retired, or never existed. Try
                 heading back to the homepage, or look around the Studio
-                Journal for what we&apos;re shipping.
+                Journal for what we&apos;re making.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">

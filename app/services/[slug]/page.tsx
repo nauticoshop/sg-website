@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import Link from "next/link";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
@@ -130,7 +131,7 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
       <section className="bg-canvas py-20 lg:py-28 px-6 lg:px-12">
         <div className="max-w-[1200px] mx-auto">
           <header className="mb-12 lg:mb-16 max-w-3xl">
-            <p className="caption text-gold-deep mb-4">WHAT SHIPS</p>
+            <p className="caption text-gold-deep mb-4">THE DELIVERABLES</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink leading-[1.1] text-balance">
               Concrete examples, not vague promises.
             </h2>
@@ -151,10 +152,10 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
         </div>
       </section>
 
-      {/* Best for */}
+      {/* Who it's for */}
       <section className="bg-gold text-ink py-16 lg:py-24 px-6 lg:px-12">
         <div className="max-w-[1000px] mx-auto">
-          <p className="caption text-ink mb-6">BEST FOR</p>
+          <p className="caption text-ink mb-6">WHO IT&apos;S FOR</p>
           <p className="font-sans font-medium text-2xl md:text-3xl lg:text-4xl text-ink leading-[1.2] text-balance">
             {service.bestForCopy}
           </p>
@@ -196,8 +197,12 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
             <header className="mb-12 lg:mb-16 max-w-3xl">
               <p className="caption text-gold-deep mb-4">WHERE WE APPLY IT</p>
               <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink leading-[1.1] text-balance">
-                Tuned for the categories we serve.
+                Every engagement is tuned to its vertical.
               </h2>
+              <p className="text-base lg:text-lg text-neutral-600 leading-relaxed mt-6">
+                This work flexes across every category we serve. These are the
+                verticals where it shows up most.
+              </p>
             </header>
 
             <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
@@ -222,6 +227,50 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
               ))}
             </ul>
           </div>
+        </section>
+      )}
+
+      {/* Portfolio banner — full-bleed image into /work */}
+      {service.portfolioImage && (
+        <section className="bg-ink">
+          <Link href="/work" className="group block relative overflow-hidden">
+            <div className="relative h-[420px] lg:h-[560px]">
+              <Image
+                src={service.portfolioImage}
+                alt={service.portfolioAlt ?? "Selected work from the studio"}
+                fill
+                sizes="100vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+              />
+              <div
+                className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent"
+                aria-hidden
+              />
+            </div>
+            <div className="absolute inset-0 flex flex-col justify-end p-8 lg:p-14 text-canvas">
+              <p className="caption text-gold mb-4">SEE THE WORK</p>
+              <div className="flex items-baseline justify-between gap-6">
+                <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-balance group-hover:text-gold transition-colors duration-300">
+                  Explore the portfolio.
+                </h2>
+                <svg
+                  width="32"
+                  height="20"
+                  viewBox="0 0 14 10"
+                  fill="none"
+                  className="text-canvas group-hover:text-gold transition-all duration-300 group-hover:translate-x-2 shrink-0"
+                  aria-hidden
+                >
+                  <path
+                    d="M1 5h12m0 0L9 1m4 4L9 9"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="square"
+                  />
+                </svg>
+              </div>
+            </div>
+          </Link>
         </section>
       )}
 
