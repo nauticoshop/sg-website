@@ -94,7 +94,7 @@ function ServiceBand({
       href={service.href}
       className="group block border-b border-neutral-200"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-2 lg:min-h-[480px]">
+      <div className="grid grid-cols-1 lg:grid-cols-2 lg:min-h-[360px]">
         {/* Photo side */}
         <div
           className={`relative aspect-[5/4] lg:aspect-auto overflow-hidden bg-ink ${
@@ -126,24 +126,24 @@ function ServiceBand({
 
         {/* Text side */}
         <div
-          className={`bg-canvas px-6 py-12 lg:px-16 lg:py-20 flex flex-col justify-center ${
+          className={`bg-canvas px-6 py-10 lg:px-12 lg:py-14 flex flex-col justify-center ${
             photoLeft ? "lg:order-2" : "lg:order-1"
           }`}
         >
           <div className="max-w-xl">
-            <p className="caption text-gold-deep mb-6">
+            <p className="caption text-gold-deep mb-4">
               {num} / SERVICE
             </p>
 
-            <h3 className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-none tracking-tight text-ink mb-6 group-hover:text-gold-deep transition-colors duration-500">
+            <h3 className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-none tracking-tight text-ink mb-5 group-hover:text-gold-deep transition-colors duration-500">
               {service.name}
             </h3>
 
-            <p className="text-lg lg:text-xl text-ink font-medium leading-snug mb-4 text-balance">
+            <p className="text-base lg:text-lg text-ink font-medium leading-snug mb-3 text-balance">
               {service.tagline}
             </p>
 
-            <p className="text-base text-neutral-700 leading-relaxed mb-8">
+            <p className="text-sm lg:text-base text-neutral-700 leading-relaxed mb-6">
               {service.description}
             </p>
 
@@ -192,7 +192,7 @@ function PlaceholderNumeral({ num, name }: { num: string; name: string }) {
       {/* Giant number */}
       <span
         className="relative font-sans font-extrabold text-gold leading-none tracking-tight"
-        style={{ fontSize: "clamp(8rem, 18vw, 16rem)" }}
+        style={{ fontSize: "clamp(6rem, 14vw, 12rem)" }}
         aria-hidden
       >
         {num}
