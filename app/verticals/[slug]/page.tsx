@@ -5,8 +5,13 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { PageHero } from "@/components/page-hero";
 import { CtaBanner } from "@/components/cta-banner";
+import Image from "next/image";
 import { verticals } from "@/lib/verticals";
 import { services } from "@/lib/services";
+import {
+  getWorkForVertical,
+  collectionCover,
+} from "@/lib/work";
 import { site } from "@/lib/site";
 import { JsonLd, breadcrumbSchema } from "@/components/json-ld";
 
@@ -42,6 +47,17 @@ export default async function VerticalDetailPage({ params }: RouteParams) {
   const relatedServices = vertical.relatedServiceSlugs
     .map((s) => services.find((svc) => svc.slug === s))
     .filter((svc): svc is NonNullable<typeof svc> => Boolean(svc));
+
+  // Portfolio work shot for this vertical
+  const verticalWork = getWorkForVertical(vertical.slug);
+  const featureWork = verticalWork[0];
+  // Use the 2nd image (or fall back to the cover) for the editorial
+  // image-break so it isn't identical to the gallery thumbnail below
+  const featureBreakImage = featureWork
+    ? featureWork.images[1] ?? collectionCover(featureWork)
+    : null;
+  // Show up to 6 collections in the gallery grid
+  const galleryCollections = verticalWork.slice(0, 6);
 
   const fullUrl = `${site.url.replace(/\/$/, "")}${vertical.href}`;
 
@@ -131,6 +147,39 @@ export default async function VerticalDetailPage({ params }: RouteParams) {
         </div>
       </section>
 
+      {/* Editorial image break — full-bleed shot from a vertical
+          work collection to break the text-heavy rhythm */}
+      {featureBreakImage && featureWork && (
+        <section className="bg-ink relative w-full overflow-hidden">
+          <div className="relative aspect-[16/9] md:aspect-[21/8] lg:aspect-[21/7]">
+            <Image
+              src={featureBreakImage.src}
+              alt={featureBreakImage.alt}
+              fill
+              sizes="100vw"
+              className="object-cover"
+            />
+            <div
+              className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent pointer-events-none"
+              aria-hidden
+            />
+            <div className="absolute inset-x-0 bottom-0 px-6 lg:px-12 py-6 lg:py-10 text-canvas">
+              <div className="max-w-[1440px] mx-auto flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
+                <p className="caption text-gold">FROM THE STUDIO</p>
+                <p className="text-sm lg:text-base text-canvas/85 sm:text-right">
+                  {featureWork.title}
+                  {featureWork.location && ` · ${featureWork.location}`}
+                </p>
+              </div>
+            </div>
+            <div
+              className="absolute top-0 left-0 w-24 h-px bg-gold/60"
+              aria-hidden
+            />
+          </div>
+        </section>
+      )}
+
       {/* Signature work — recurring plays */}
       <section className="bg-canvas py-20 lg:py-28 px-6 lg:px-12">
         <div className="max-w-[1200px] mx-auto">
@@ -207,7 +256,7 @@ export default async function VerticalDetailPage({ params }: RouteParams) {
         </div>
       </section>
 
-      {/* Featured journal entries / case studies for this vertical */}
+      {/* Selected work — real portfolio collections from this vertical */}
       <section className="bg-canvas py-20 lg:py-28 px-6 lg:px-12">
         <div className="max-w-[1200px] mx-auto">
           <header className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
@@ -218,31 +267,73 @@ export default async function VerticalDetailPage({ params }: RouteParams) {
               </h2>
             </div>
             <Link
-              href="/journal"
+              href="/work"
               className="caption inline-flex items-center gap-2 text-ink hover:text-gold-deep transition-colors shrink-0"
             >
-              All entries
+              All work
               <Arrow />
             </Link>
           </header>
 
-          <div className="bg-neutral-100 border border-neutral-200 p-12 lg:p-20 text-center">
-            <p className="caption text-neutral-500 mb-4">COMING SOON</p>
-            <p className="font-sans font-extrabold text-2xl lg:text-3xl text-ink mb-4 text-balance">
-              Case studies for {vertical.name.toLowerCase()} are being
-              packaged.
-            </p>
-            <p className="text-sm text-neutral-600 max-w-md mx-auto">
-              In the meantime, the work informs every brief.{" "}
-              <Link
-                href="/contact"
-                className="underline hover:text-ink transition-colors"
-              >
-                Talk to us
-              </Link>{" "}
-              to see relevant projects.
-            </p>
-          </div>
+          {galleryCollections.length > 0 ? (
+            <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+              {galleryCollections.map((c) => {
+                const cover = collectionCover(c);
+                return (
+                  <li key={c.slug}>
+                    <Link
+                      href={c.href}
+                      className="group block relative overflow-hidden bg-ink aspect-[4/3]"
+                    >
+                      <Image
+                        src={cover.src}
+                        alt={cover.alt}
+                        fill
+                        sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                        className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                      />
+                      <div
+                        className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/30 to-ink/5 group-hover:from-ink group-hover:via-ink/50 transition-all duration-500"
+                        aria-hidden
+                      />
+                      <div
+                        className="absolute top-0 right-0 w-12 h-px bg-gold/60"
+                        aria-hidden
+                      />
+                      <div className="absolute inset-0 flex flex-col justify-end p-5 lg:p-6 text-canvas">
+                        <p className="caption text-gold mb-2">{c.vertical}</p>
+                        <h3 className="font-sans font-extrabold text-xl lg:text-2xl leading-[1.1] text-balance group-hover:text-gold transition-colors duration-300">
+                          {c.title}
+                        </h3>
+                        {c.location && (
+                          <p className="text-xs lg:text-sm text-canvas/70 mt-1">
+                            {c.location}
+                          </p>
+                        )}
+                      </div>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          ) : (
+            <div className="bg-neutral-100 border border-neutral-200 p-12 lg:p-20 text-center">
+              <p className="caption text-neutral-500 mb-4">IN PRODUCTION</p>
+              <p className="font-sans font-extrabold text-2xl lg:text-3xl text-ink mb-4 text-balance">
+                {vertical.name} work is being packaged.
+              </p>
+              <p className="text-sm text-neutral-600 max-w-md mx-auto">
+                The work informs every brief.{" "}
+                <Link
+                  href="/contact"
+                  className="underline hover:text-ink transition-colors"
+                >
+                  Talk to us
+                </Link>{" "}
+                to see relevant projects.
+              </p>
+            </div>
+          )}
         </div>
       </section>
 

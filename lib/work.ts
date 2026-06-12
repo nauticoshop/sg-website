@@ -1100,3 +1100,33 @@ export const workCollections: WorkCollection[] = [
 export function collectionCover(c: WorkCollection): WorkImage {
   return c.images.find((i) => i.cover) ?? c.images[0];
 }
+
+/**
+ * Maps a vertical slug (from lib/verticals.ts) to the vertical label(s)
+ * used in workCollections. Used to filter portfolio work onto vertical
+ * detail pages.
+ */
+const VERTICAL_TO_WORK_LABELS: Record<string, string[]> = {
+  marine: ["Marine"],
+  "real-estate": ["Real Estate"],
+  multifamily: ["Multifamily"],
+  "private-aviation": ["Private Aviation"],
+  "resorts-travel": ["Resorts & Travel"],
+  "hospitality-experiences": ["Hospitality & Experiences"],
+  "exotic-automotive": [],
+  "luxury-goods": ["Luxury Goods"],
+};
+
+/** Returns work collections that match a vertical slug. */
+export function getWorkForVertical(verticalSlug: string): WorkCollection[] {
+  const labels = VERTICAL_TO_WORK_LABELS[verticalSlug] ?? [];
+  if (labels.length === 0) return [];
+  return workCollections.filter((c) => labels.includes(c.vertical));
+}
+
+/** Returns specific collections by slug, preserving the input order. */
+export function getCollectionsBySlugs(slugs: string[]): WorkCollection[] {
+  return slugs
+    .map((slug) => workCollections.find((c) => c.slug === slug))
+    .filter((c): c is WorkCollection => Boolean(c));
+}

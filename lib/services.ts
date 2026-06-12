@@ -45,6 +45,10 @@ export interface Service {
    *  detail pages keep their real portfolio shots). */
   cardImage?: string;
   cardAlt?: string;
+  /** Curated workCollection slugs shown in the "Recent work" gallery
+   *  on the service detail page. Order matters. Use 3 collections
+   *  per service for a clean 3-column grid. */
+  featuredWorkSlugs?: string[];
 }
 
 export const services: Service[] = [
@@ -96,6 +100,7 @@ export const services: Service[] = [
     ],
     portfolioImage: "/images/work/skyfall/skyfall-01.jpg",
     portfolioAlt: "Superyacht Skyfall underway at dusk beneath pastel pink clouds",
+    featuredWorkSlugs: ["skyfall", "flexjet", "tranquility-estate"],
   },
   {
     slug: "social",
@@ -145,6 +150,7 @@ export const services: Service[] = [
     ],
     portfolioImage: "/images/work/sparkman-wharf/sparkman-wharf-01.jpg",
     portfolioAlt: "Aerial of Sparkman Wharf lawn and marina against Tampa skyline",
+    featuredWorkSlugs: ["aquanova", "cora-residences", "gg-timepieces"],
   },
   {
     slug: "digital",
@@ -193,6 +199,7 @@ export const services: Service[] = [
     ],
     portfolioImage: "/images/work/cora-residences/cora-residences-02.jpg",
     portfolioAlt: "Drone view of Tampa waterfront district towers and marina at dusk",
+    featuredWorkSlugs: ["sparkman-wharf", "cora-residences", "selected-works"],
   },
   {
     slug: "growth",
@@ -243,6 +250,7 @@ export const services: Service[] = [
     ],
     portfolioImage: "/images/work/los-suenos/los-suenos-01.jpg",
     portfolioAlt: "Sunrise aerial of Los Suenos marina, jungle hillside, and Pacific coastline",
+    featuredWorkSlugs: ["los-suenos", "selected-works", "sparkman-wharf"],
   },
   {
     slug: "experiences",
@@ -291,6 +299,7 @@ export const services: Service[] = [
     ],
     portfolioImage: "/images/work/selected-works/selected-works-04.jpg",
     portfolioAlt: "Yellow Bentley Bacalar roadster displayed beside Flexjet event tower",
+    featuredWorkSlugs: ["sparkman-wharf", "flexjet", "selected-works"],
   },
   {
     slug: "intelligence",
@@ -339,5 +348,6 @@ export const services: Service[] = [
     ],
     portfolioImage: "/images/work/flexjet/flexjet-01.jpg",
     portfolioAlt: "Sikorsky helicopter and private jet on hangar ramp at golden hour",
+    featuredWorkSlugs: ["cora-residences", "selected-works", "flexjet"],
   },
 ];

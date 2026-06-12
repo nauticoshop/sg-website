@@ -8,6 +8,7 @@ import { PageHero } from "@/components/page-hero";
 import { CtaBanner } from "@/components/cta-banner";
 import { services } from "@/lib/services";
 import { verticals } from "@/lib/verticals";
+import { getCollectionsBySlugs, collectionCover } from "@/lib/work";
 import { site } from "@/lib/site";
 import {
   JsonLd,
@@ -48,6 +49,11 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
   const verticalsWhereUsed = verticals.filter((v) =>
     v.relatedServiceSlugs.includes(service.slug),
   );
+
+  // Curated portfolio collections for the "Recent work" gallery
+  const featuredWork = service.featuredWorkSlugs
+    ? getCollectionsBySlugs(service.featuredWorkSlugs)
+    : [];
 
   const fullUrl = `${site.url.replace(/\/$/, "")}${service.href}`;
 
@@ -225,6 +231,70 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
                   </Link>
                 </li>
               ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      {/* Recent work — curated 3-card gallery from the portfolio */}
+      {featuredWork.length > 0 && (
+        <section className="bg-canvas py-20 lg:py-28 px-6 lg:px-12">
+          <div className="max-w-[1200px] mx-auto">
+            <header className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+              <div>
+                <p className="caption text-gold-deep mb-4">RECENT WORK</p>
+                <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink leading-[1.1] text-balance">
+                  {service.name} in the field.
+                </h2>
+              </div>
+              <Link
+                href="/work"
+                className="caption inline-flex items-center gap-2 text-ink hover:text-gold-deep transition-colors shrink-0"
+              >
+                All work
+                <Arrow />
+              </Link>
+            </header>
+
+            <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+              {featuredWork.map((c) => {
+                const cover = collectionCover(c);
+                return (
+                  <li key={c.slug}>
+                    <Link
+                      href={c.href}
+                      className="group block relative overflow-hidden bg-ink aspect-[4/3]"
+                    >
+                      <Image
+                        src={cover.src}
+                        alt={cover.alt}
+                        fill
+                        sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                        className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                      />
+                      <div
+                        className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/30 to-ink/5 group-hover:from-ink group-hover:via-ink/50 transition-all duration-500"
+                        aria-hidden
+                      />
+                      <div
+                        className="absolute top-0 right-0 w-12 h-px bg-gold/60"
+                        aria-hidden
+                      />
+                      <div className="absolute inset-0 flex flex-col justify-end p-5 lg:p-6 text-canvas">
+                        <p className="caption text-gold mb-2">{c.vertical}</p>
+                        <h3 className="font-sans font-extrabold text-xl lg:text-2xl leading-[1.1] text-balance group-hover:text-gold transition-colors duration-300">
+                          {c.title}
+                        </h3>
+                        {c.location && (
+                          <p className="text-xs lg:text-sm text-canvas/70 mt-1">
+                            {c.location}
+                          </p>
+                        )}
+                      </div>
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </section>
