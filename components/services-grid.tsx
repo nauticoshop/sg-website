@@ -13,11 +13,11 @@ import { services, type Service } from "@/lib/services";
  * other, alternating sides per row. On mobile each row stacks photo
  * over text.
  *
- * When a service has a `portfolioImage`, it renders as the row's
- * photo. When absent, a stylized gold-numeral placeholder fills the
- * photo slot (the same pattern as the Phallon BD card). Drop a JPG
- * at /public/images/services/{slug}.jpg and the placeholder swaps to
- * the real photo automatically.
+ * When a service has a `cardImage` (or falls back to `portfolioImage`),
+ * it renders as the row's photo. When absent, a stylized gold-numeral
+ * placeholder fills the photo slot (the same pattern as the Phallon BD
+ * card). Drop a JPG at /public/images/services/{slug}.jpg and reference
+ * it via `cardImage` to enable.
  *
  * Voice: editorial magazine spread, not "agency grid". Drama from
  * scale and negative space rather than dense card layouts.
@@ -101,10 +101,14 @@ function ServiceBand({
             photoLeft ? "lg:order-1" : "lg:order-2"
           }`}
         >
-          {service.portfolioImage ? (
+          {(service.cardImage || service.portfolioImage) ? (
             <Image
-              src={service.portfolioImage}
-              alt={service.portfolioAlt ?? `${service.name} — Surroundings Group`}
+              src={service.cardImage ?? service.portfolioImage!}
+              alt={
+                service.cardAlt ??
+                service.portfolioAlt ??
+                `${service.name} — Surroundings Group`
+              }
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
