@@ -96,8 +96,6 @@ export const services: Service[] = [
     ],
     portfolioImage: "/images/work/skyfall/skyfall-01.jpg",
     portfolioAlt: "Superyacht Skyfall underway at dusk beneath pastel pink clouds",
-    cardImage: "/images/services/studio.jpg",
-    cardAlt: "Editorial still-life of a vintage rangefinder camera on dark walnut",
   },
   {
     slug: "social",
@@ -147,8 +145,6 @@ export const services: Service[] = [
     ],
     portfolioImage: "/images/work/sparkman-wharf/sparkman-wharf-01.jpg",
     portfolioAlt: "Aerial of Sparkman Wharf lawn and marina against Tampa skyline",
-    cardImage: "/images/services/social.jpg",
-    cardAlt: "Editorial still-life of an iPhone with ambient gradient on dark walnut",
   },
   {
     slug: "digital",
@@ -197,8 +193,6 @@ export const services: Service[] = [
     ],
     portfolioImage: "/images/work/cora-residences/cora-residences-02.jpg",
     portfolioAlt: "Drone view of Tampa waterfront district towers and marina at dusk",
-    cardImage: "/images/services/digital.jpg",
-    cardAlt: "Editorial still-life of a thin laptop with warm gradient screen on dark walnut",
   },
   {
     slug: "growth",
@@ -249,8 +243,6 @@ export const services: Service[] = [
     ],
     portfolioImage: "/images/work/los-suenos/los-suenos-01.jpg",
     portfolioAlt: "Sunrise aerial of Los Suenos marina, jungle hillside, and Pacific coastline",
-    cardImage: "/images/services/growth.jpg",
-    cardAlt: "Editorial still-life of an antique brass compass and premium black cards on dark walnut",
   },
   {
     slug: "experiences",
@@ -299,8 +291,6 @@ export const services: Service[] = [
     ],
     portfolioImage: "/images/work/selected-works/selected-works-04.jpg",
     portfolioAlt: "Yellow Bentley Bacalar roadster displayed beside Flexjet event tower",
-    cardImage: "/images/services/experiences.jpg",
-    cardAlt: "Editorial still-life of a crystal coupe champagne glass next to a folded card on dark walnut",
   },
   {
     slug: "intelligence",
@@ -349,7 +339,5 @@ export const services: Service[] = [
     ],
     portfolioImage: "/images/work/flexjet/flexjet-01.jpg",
     portfolioAlt: "Sikorsky helicopter and private jet on hangar ramp at golden hour",
-    cardImage: "/images/services/intelligence.jpg",
-    cardAlt: "Editorial still-life of a sculptural chess piece and brass geometric form on dark walnut",
   },
 ];
