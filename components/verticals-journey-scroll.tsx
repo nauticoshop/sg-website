@@ -219,15 +219,25 @@ function JourneyCaption({
   const start = index * span;
   const end = start + span;
 
+  // Clamp every input keyframe to [0, 1]. WAAPI rejects offsets
+  // outside that range and crashes the component on mount.
   const opacity = useTransform(
     progress,
-    [start - 0.01, start + span * 0.22, end - span * 0.22, end + 0.01],
+    [
+      Math.max(0, start - 0.01),
+      Math.max(0, Math.min(1, start + span * 0.22)),
+      Math.max(0, Math.min(1, end - span * 0.22)),
+      Math.min(1, end + 0.01),
+    ],
     [0, 1, 1, 0],
   );
 
   const y = useTransform(
     progress,
-    [start, start + span * 0.4],
+    [
+      Math.max(0, Math.min(1, start)),
+      Math.max(0, Math.min(1, start + span * 0.4)),
+    ],
     [40, 0],
   );
 
@@ -310,20 +320,24 @@ function DotIndicator({
   const span = 1 / total;
   const start = index * span;
   const end = start + span;
-  const width = useTransform(
-    progress,
-    [start - 0.01, start + span * 0.2, end - span * 0.2, end + 0.01],
-    ["10px", "32px", "32px", "10px"],
-  );
-  const opacity = useTransform(
-    progress,
-    [start - 0.05, start + span * 0.2, end - span * 0.2, end + 0.05],
-    [0.3, 1, 1, 0.3],
-  );
+
+  // Clamp keyframes into [0, 1]. WAAPI rejects offsets outside that
+  // range. Only animate scaleX + opacity (both numeric, safe for the
+  // animation engine) — no string-based width interpolation.
+  const inputRange = [
+    Math.max(0, start - 0.05),
+    Math.max(0, Math.min(1, start + span * 0.2)),
+    Math.max(0, Math.min(1, end - span * 0.2)),
+    Math.min(1, end + 0.05),
+  ];
+
+  const scaleX = useTransform(progress, inputRange, [1, 3.2, 3.2, 1]);
+  const opacity = useTransform(progress, inputRange, [0.3, 1, 1, 0.3]);
+
   return (
     <motion.span
-      style={{ width, opacity }}
-      className="h-[2px] bg-gold rounded-full"
+      style={{ scaleX, opacity, originX: 0.5 }}
+      className="block w-[10px] h-[2px] bg-gold rounded-full"
       aria-hidden
     />
   );
