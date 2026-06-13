@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { motion, useReducedMotion } from "motion/react";
 
 /**
  * About snippet for the homepage — positioning statement designed
@@ -10,28 +13,75 @@ import Link from "next/link";
  * "owned media", "editorial channels". No keyword stuffing —
  * each term lives inside a real sentence.
  *
+ * Scroll-reveal animation: the eyebrow, headline, lead paragraph,
+ * body paragraph, and CTA cascade in one after another as the
+ * section enters view. Subtle y-translate + opacity, staggered by
+ * 0.12s. Reduced-motion users get the static layout.
+ *
  * Long-form story + team grid + NN spotlight live on /about.
  */
 export function AboutSummary() {
+  const reduce = useReducedMotion();
+
+  const variants = reduce
+    ? undefined
+    : {
+        hidden: { opacity: 0, y: 24 },
+        shown: {
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.7, ease: [0.22, 0.61, 0.36, 1] as const },
+        },
+      };
+
+  const containerProps = reduce
+    ? {}
+    : {
+        initial: "hidden",
+        whileInView: "shown",
+        viewport: { once: true, amount: 0.25 },
+        variants: {
+          hidden: {},
+          shown: { transition: { staggerChildren: 0.12 } },
+        },
+      };
+
   return (
     <section className="bg-gold text-ink py-24 lg:py-36 px-6 lg:px-12">
       <div className="max-w-[1200px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        <motion.div
+          {...containerProps}
+          className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16"
+        >
           <div className="lg:col-span-4">
-            <p className="caption text-ink mb-6">ABOUT</p>
-            <h2 className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-ink text-balance">
+            <motion.p
+              variants={variants}
+              className="caption text-ink mb-6"
+            >
+              ABOUT
+            </motion.p>
+            <motion.h2
+              variants={variants}
+              className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-ink text-balance"
+            >
               At home in the world&apos;s premium markets.
-            </h2>
+            </motion.h2>
           </div>
 
           <div className="lg:col-span-8 space-y-6">
-            <p className="text-xl lg:text-2xl text-ink leading-snug font-medium text-balance">
+            <motion.p
+              variants={variants}
+              className="text-xl lg:text-2xl text-ink leading-snug font-medium text-balance"
+            >
               Surroundings Group is a creative agency for premium brands. One
               in-house team, focused on the premium verticals we know inside
               out. Our clients collaborate across categories to produce work
               no single-vertical agency could match.
-            </p>
-            <p className="text-base lg:text-lg text-ink/80 leading-relaxed">
+            </motion.p>
+            <motion.p
+              variants={variants}
+              className="text-base lg:text-lg text-ink/80 leading-relaxed"
+            >
               We cover marine, real estate development, private aviation,
               hospitality, luxury goods, and a few categories in between.
               Full-service digital marketing, all in-house. Strategy,
@@ -42,8 +92,8 @@ export function AboutSummary() {
               Then we extend the reach. Our owned-media network runs ten
               editorial channels with 255M+ viewers a year. Most agencies buy
               attention. We built ours.
-            </p>
-            <div className="pt-4">
+            </motion.p>
+            <motion.div variants={variants} className="pt-4">
               <Link
                 href="/about"
                 className="caption inline-flex items-center gap-2 text-ink hover:opacity-70 transition-opacity duration-300"
@@ -64,9 +114,9 @@ export function AboutSummary() {
                   />
                 </svg>
               </Link>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
