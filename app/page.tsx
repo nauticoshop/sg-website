@@ -1,5 +1,6 @@
 import { Nav } from "@/components/nav";
 import { Hero } from "@/components/hero";
+import { VerticalsJourneyScroll } from "@/components/verticals-journey-scroll";
 import { PinnedStoryScroll } from "@/components/pinned-story-scroll";
 import { AboutSummary } from "@/components/about-summary";
 import { ServicesGrid } from "@/components/services-grid";
@@ -15,6 +16,7 @@ export default function Home() {
     <>
       <Nav />
       <Hero />
+      <VerticalsJourneyScroll />
       <PinnedStoryScroll />
       <AboutSummary />
       <VerticalsGrid />
