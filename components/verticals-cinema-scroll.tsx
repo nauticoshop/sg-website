@@ -115,10 +115,15 @@ export function VerticalsCinemaScroll() {
       <div className="sticky top-0 h-screen overflow-hidden">
         {/* Atmospheric Higgsfield video — scroll-scrubbed background.
             currentTime is driven by scrollYProgress in the effect
-            above. Muted + playsInline so iOS doesn't block it. */}
+            above. autoPlay + loop give a graceful fallback when
+            scroll hasn't engaged yet (or when iOS rejects programmatic
+            currentTime control). Muted + playsInline are required
+            for autoplay to actually fire on mobile browsers. */}
         <video
           ref={videoRef}
           src="/videos/verticals-atmosphere.mp4"
+          autoPlay
+          loop
           muted
           playsInline
           preload="auto"
@@ -126,14 +131,12 @@ export function VerticalsCinemaScroll() {
           className="absolute inset-0 w-full h-full object-cover"
         />
 
-        {/* Dark overlay so the foreground cards have contrast. */}
+        {/* Light overlay only — the video is the show. A subtle
+            bottom-anchored gradient keeps the floating card legible
+            without burying the cinematic backdrop. */}
         <div
           aria-hidden
-          className="absolute inset-0 bg-ink/55"
-        />
-        <div
-          aria-hidden
-          className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-ink/50"
+          className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-ink/30 pointer-events-none"
         />
 
         {/* Eyebrow at top */}
