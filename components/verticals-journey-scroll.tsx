@@ -181,24 +181,20 @@ function JourneyImageLayer({
         : [0, 1, 1, 0],
   );
 
-  // Slow Ken Burns zoom across the beat's window
-  const scale = useTransform(progress, [start, end], [1.06, 1.16]);
-
   return (
     <motion.div style={{ opacity }} className="absolute inset-0">
-      <motion.div style={{ scale }} className="absolute inset-0">
-        <Image
-          src={beat.image}
-          alt={beat.alt}
-          fill
-          sizes="100vw"
-          quality={85}
-          priority={index < 2}
-          className="object-cover"
-        />
-      </motion.div>
+      <Image
+        src={beat.image}
+        alt={beat.alt}
+        fill
+        sizes="100vw"
+        quality={70}
+        priority={index === 0}
+        loading={index === 0 ? "eager" : "lazy"}
+        className="object-cover"
+      />
 
-      {/* Cinematic vignette — darker bottom for caption legibility, gold top */}
+      {/* Cinematic vignette — darker bottom for caption legibility */}
       <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/30 to-ink/50" />
     </motion.div>
   );

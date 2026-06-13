@@ -7,7 +7,6 @@ import {
   useScroll,
   useTransform,
   useReducedMotion,
-  useSpring,
   type MotionValue,
 } from "motion/react";
 import { verticals } from "@/lib/verticals";
@@ -35,17 +34,9 @@ export function PinnedStoryScroll() {
   const ref = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
 
-  const { scrollYProgress } = useScroll({
+  const { scrollYProgress: progress } = useScroll({
     target: ref,
     offset: ["start start", "end end"],
-  });
-
-  // Smooth the raw scroll progress slightly so the animations don't
-  // feel jittery on track-pads with very fine resolution.
-  const progress = useSpring(scrollYProgress, {
-    stiffness: 120,
-    damping: 28,
-    mass: 0.3,
   });
 
   // Beat opacities — three beats, each occupies ~1/3 of the scroll.
@@ -55,18 +46,8 @@ export function PinnedStoryScroll() {
   const beat2Opacity = useTransform(progress, [0.34, 0.40, 0.61, 0.67], [0, 1, 1, 0]);
   const beat3Opacity = useTransform(progress, [0.67, 0.73, 0.96, 1.0], [0, 1, 1, 1]);
 
-  // Gold radial-gradient drift behind the foreground. The glow moves
-  // diagonally as the user scrolls — subtle but adds parallax depth.
-  const glowX = useTransform(progress, [0, 1], ["20%", "78%"]);
-  const glowY = useTransform(progress, [0, 1], ["28%", "70%"]);
-  const glowScale = useTransform(progress, [0, 0.5, 1], [1, 1.15, 1]);
-
   // Number tick-up for the reach stat
   const reachValue = useTransform(progress, [0.34, 0.55], [0, 180]);
-
-  // Gentle backdrop video parallax — the y-translate gives the
-  // background a touch of motion without competing with the foreground
-  const backdropY = useTransform(progress, [0, 1], ["0%", "-8%"]);
 
   if (reduce) {
     return <StaticFallback />;
@@ -75,33 +56,21 @@ export function PinnedStoryScroll() {
   return (
     <section ref={ref} className="relative h-[300vh] bg-ink text-canvas">
       <div className="sticky top-0 h-screen overflow-hidden">
-        {/* Backdrop: ink + subtle gold radial that drifts on scroll */}
-        <motion.div
+        {/* Backdrop: ink + static gold radial glow. Kept static (not
+            scroll-driven) so the GPU isn't running an additional
+            transform alongside the beats. */}
+        <div
           aria-hidden
-          className="absolute inset-0"
-          style={{ y: backdropY }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-br from-ink via-neutral-900 to-ink" />
-          <motion.div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              background:
-                "radial-gradient(ellipse 60% 50% at var(--gx) var(--gy), rgba(255, 189, 132, 0.22), transparent 65%)",
-              ["--gx" as string]: glowX,
-              ["--gy" as string]: glowY,
-              scale: glowScale,
-              transformOrigin: "center",
-            }}
-          />
-          {/* Subtle grain */}
-          <div
-            className="absolute inset-0 opacity-[0.04] mix-blend-overlay"
-            style={{
-              backgroundImage:
-                "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.6'/></svg>\")",
-            }}
-          />
-        </motion.div>
+          className="absolute inset-0 bg-gradient-to-br from-ink via-neutral-900 to-ink"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse 55% 45% at 50% 45%, rgba(255, 189, 132, 0.18), transparent 65%)",
+          }}
+        />
 
         {/* Top-left progress rail */}
         <ProgressRail progress={progress} />
@@ -130,17 +99,6 @@ export function PinnedStoryScroll() {
           <BeatThree progress={progress} />
         </motion.div>
 
-        {/* Bottom hairline + scroll cue */}
-        <div className="absolute bottom-8 left-0 right-0 flex items-center justify-center">
-          <motion.div
-            style={{
-              opacity: useTransform(progress, [0, 0.05, 0.92, 1], [1, 1, 0, 0]),
-            }}
-            className="caption text-canvas/40 tracking-[0.3em]"
-          >
-            SCROLL
-          </motion.div>
-        </div>
       </div>
     </section>
   );
