@@ -30,16 +30,66 @@ export function ServicesGrid() {
       {/* Header sits inside a container; the rows below go full-bleed */}
       <div className="px-6 lg:px-12">
         <div className="max-w-[1440px] mx-auto">
-          <header className="text-center mb-12 lg:mb-20 max-w-3xl mx-auto">
-            <p className="caption text-gold-deep mb-5">WHAT WE DO</p>
-            <h2 className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-ink mb-5 text-balance">
+          <motion.header
+            initial={reduce ? false : "hidden"}
+            whileInView={reduce ? undefined : "shown"}
+            viewport={{ once: true, amount: 0.4 }}
+            variants={{
+              hidden: {},
+              shown: { transition: { staggerChildren: 0.12 } },
+            }}
+            className="text-center mb-12 lg:mb-20 max-w-3xl mx-auto"
+          >
+            <motion.p
+              variants={{
+                hidden: { opacity: 0, y: 24 },
+                shown: {
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    duration: 0.7,
+                    ease: [0.22, 0.61, 0.36, 1] as const,
+                  },
+                },
+              }}
+              className="caption text-gold-deep mb-5"
+            >
+              WHAT WE DO
+            </motion.p>
+            <motion.h2
+              variants={{
+                hidden: { opacity: 0, y: 24 },
+                shown: {
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    duration: 0.7,
+                    ease: [0.22, 0.61, 0.36, 1] as const,
+                  },
+                },
+              }}
+              className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-ink mb-5 text-balance"
+            >
               Full-service. An extension of your team.
-            </h2>
-            <p className="text-base lg:text-lg text-neutral-600 leading-relaxed max-w-2xl mx-auto">
+            </motion.h2>
+            <motion.p
+              variants={{
+                hidden: { opacity: 0, y: 24 },
+                shown: {
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    duration: 0.7,
+                    ease: [0.22, 0.61, 0.36, 1] as const,
+                  },
+                },
+              }}
+              className="text-base lg:text-lg text-neutral-600 leading-relaxed max-w-2xl mx-auto"
+            >
               A diverse suite of specialty areas, all under one roof. Studio,
               Social, Digital, Growth, Experiences, Intelligence.
-            </p>
-          </header>
+            </motion.p>
+          </motion.header>
         </div>
       </div>
 

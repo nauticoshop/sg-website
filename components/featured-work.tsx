@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { motion, useReducedMotion } from "motion/react";
 import { featuredProjects, journalTypeLabel } from "@/lib/featured-work";
 
 /**
@@ -15,6 +18,10 @@ import { featuredProjects, journalTypeLabel } from "@/lib/featured-work";
  * (real numbers, real client names, no fabricated attribution) —
  * folded in here from the old standalone Outcomes section so the
  * proof sits next to the work.
+ *
+ * Scroll-reveal: header cascades in, then the project cards
+ * stagger in, then the outcomes strip lands last. Each piece
+ * uses a 24px upward translate + opacity fade.
  */
 
 interface Outcome {
@@ -44,56 +51,120 @@ const outcomes: Outcome[] = [
     client: "Ryan Hughes Design",
   },
 ];
+
 export function FeaturedWork() {
+  const reduce = useReducedMotion();
+
+  const child = reduce
+    ? undefined
+    : {
+        hidden: { opacity: 0, y: 24 },
+        shown: {
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.7, ease: [0.22, 0.61, 0.36, 1] as const },
+        },
+      };
+
+  const headerProps = reduce
+    ? {}
+    : {
+        initial: "hidden",
+        whileInView: "shown",
+        viewport: { once: true, amount: 0.3 },
+        variants: {
+          hidden: {},
+          shown: { transition: { staggerChildren: 0.1 } },
+        },
+      };
+
+  const gridProps = reduce
+    ? {}
+    : {
+        initial: "hidden",
+        whileInView: "shown",
+        viewport: { once: true, amount: 0.1 },
+        variants: {
+          hidden: {},
+          shown: { transition: { staggerChildren: 0.12 } },
+        },
+      };
+
+  const outcomesProps = reduce
+    ? {}
+    : {
+        initial: "hidden",
+        whileInView: "shown",
+        viewport: { once: true, amount: 0.2 },
+        variants: {
+          hidden: {},
+          shown: { transition: { staggerChildren: 0.12 } },
+        },
+      };
+
   return (
     <section className="py-24 lg:py-36 px-6 lg:px-12 bg-canvas">
       <div className="max-w-[1440px] mx-auto">
-        <header className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 lg:mb-16 max-w-5xl">
+        <motion.header
+          {...headerProps}
+          className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 lg:mb-16 max-w-5xl"
+        >
           <div>
-            <p className="caption text-gold-deep mb-4">STUDIO JOURNAL</p>
-            <h2 className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] tracking-tight text-ink text-balance">
-              Inside the studio.
-            </h2>
-          </div>
-          <Link
-            href="/journal"
-            className="caption inline-flex items-center gap-2 text-ink hover:text-gold-deep transition-colors duration-300 shrink-0"
-          >
-            Step inside
-            <svg
-              width="14"
-              height="10"
-              viewBox="0 0 14 10"
-              fill="none"
-              aria-hidden
+            <motion.p variants={child} className="caption text-gold-deep mb-4">
+              STUDIO JOURNAL
+            </motion.p>
+            <motion.h2
+              variants={child}
+              className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] tracking-tight text-ink text-balance"
             >
-              <path
-                d="M1 5h12m0 0L9 1m4 4L9 9"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="square"
-              />
-            </svg>
-          </Link>
-        </header>
+              Inside the studio.
+            </motion.h2>
+          </div>
+          <motion.div variants={child}>
+            <Link
+              href="/journal"
+              className="caption inline-flex items-center gap-2 text-ink hover:text-gold-deep transition-colors duration-300 shrink-0"
+            >
+              Step inside
+              <svg
+                width="14"
+                height="10"
+                viewBox="0 0 14 10"
+                fill="none"
+                aria-hidden
+              >
+                <path
+                  d="M1 5h12m0 0L9 1m4 4L9 9"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="square"
+                />
+              </svg>
+            </Link>
+          </motion.div>
+        </motion.header>
 
         {/* Uniform 3-col grid */}
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <motion.ul
+          {...gridProps}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+        >
           {featuredProjects.map((project) => (
-            <li key={project.slug}>
+            <motion.li variants={child} key={project.slug}>
               <ProjectCard project={project} />
-            </li>
+            </motion.li>
           ))}
-        </ul>
+        </motion.ul>
 
         {/* Outcomes strip — factual client results under the work */}
-        <div className="mt-16 lg:mt-20">
-          <p className="caption text-gold-deep mb-8">
+        <motion.div {...outcomesProps} className="mt-16 lg:mt-20">
+          <motion.p variants={child} className="caption text-gold-deep mb-8">
             OUTCOMES / WORK THAT MOVED THE METRIC
-          </p>
+          </motion.p>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {outcomes.map((o) => (
-              <li
+              <motion.li
+                variants={child}
                 key={o.slug}
                 className="bg-ink text-canvas border border-canvas/10 p-8 lg:p-12 flex flex-col h-full"
               >
@@ -107,10 +178,10 @@ export function FeaturedWork() {
                 <p className="font-sans font-extrabold text-base text-canvas border-t border-canvas/15 pt-5">
                   {o.client}
                 </p>
-              </li>
+              </motion.li>
             ))}
           </ul>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
