@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -47,12 +47,60 @@ import { verticals, type Vertical } from "@/lib/verticals";
  */
 export function VerticalsCinemaScroll() {
   const ref = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const reduce = useReducedMotion();
 
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end end"],
   });
+
+  // SCROLL-SCRUB THE BACKGROUND VIDEO.
+  //
+  // Tie the <video> currentTime directly to scroll progress, so the
+  // user is physically driving the playback as they scroll the
+  // section. We update inside requestAnimationFrame to batch writes
+  // and avoid hammering the video element on every scroll event.
+  //
+  // Mobile Safari rejects rapid currentTime writes on autoplaying
+  // muted video; we mitigate by NOT autoplaying and by setting
+  // currentTime only when the video metadata is loaded.
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || reduce) return;
+
+    let rafId: number | null = null;
+    let targetTime = 0;
+
+    const apply = () => {
+      rafId = null;
+      if (!Number.isNaN(video.duration) && video.duration > 0) {
+        // Clamp into a hair below duration to avoid the seek wrap.
+        video.currentTime = Math.min(video.duration - 0.05, targetTime);
+      }
+    };
+
+    const onChange = (v: number) => {
+      if (!Number.isNaN(video.duration) && video.duration > 0) {
+        targetTime = v * video.duration;
+        if (rafId === null) rafId = requestAnimationFrame(apply);
+      }
+    };
+
+    // Run once when metadata arrives so the first frame matches
+    // wherever the user happens to be in the section already.
+    const onLoaded = () => onChange(scrollYProgress.get());
+    video.addEventListener("loadedmetadata", onLoaded);
+    if (video.readyState >= 1) onLoaded();
+
+    const unsubscribe = scrollYProgress.on("change", onChange);
+
+    return () => {
+      video.removeEventListener("loadedmetadata", onLoaded);
+      unsubscribe();
+      if (rafId !== null) cancelAnimationFrame(rafId);
+    };
+  }, [scrollYProgress, reduce]);
 
   if (reduce) return <StaticVerticals />;
 
@@ -65,16 +113,28 @@ export function VerticalsCinemaScroll() {
       style={{ height: `${total * 90}vh` }}
     >
       <div className="sticky top-0 h-screen overflow-hidden">
-        {/* Background imagery — one layer per vertical, cross-fades on scroll */}
-        {verticals.map((vertical, i) => (
-          <BackgroundLayer
-            key={vertical.slug}
-            vertical={vertical}
-            index={i}
-            total={total}
-            progress={scrollYProgress}
-          />
-        ))}
+        {/* Atmospheric Higgsfield video — scroll-scrubbed background.
+            currentTime is driven by scrollYProgress in the effect
+            above. Muted + playsInline so iOS doesn't block it. */}
+        <video
+          ref={videoRef}
+          src="/videos/verticals-atmosphere.mp4"
+          muted
+          playsInline
+          preload="auto"
+          aria-hidden
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+
+        {/* Dark overlay so the foreground cards have contrast. */}
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-ink/55"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-ink/50"
+        />
 
         {/* Eyebrow at top */}
         <header className="absolute top-7 lg:top-10 inset-x-0 z-40 text-center pointer-events-none">
@@ -98,72 +158,6 @@ export function VerticalsCinemaScroll() {
         <ProgressRail progress={scrollYProgress} />
       </div>
     </section>
-  );
-}
-
-/* ------------------------------------------------------------------ */
-/*  Background layer per vertical                                      */
-/* ------------------------------------------------------------------ */
-
-function BackgroundLayer({
-  vertical,
-  index,
-  total,
-  progress,
-}: {
-  vertical: Vertical;
-  index: number;
-  total: number;
-  progress: MotionValue<number>;
-}) {
-  const span = 1 / total;
-  const start = index * span;
-  const end = start + span;
-
-  const opacity = useTransform(
-    progress,
-    [
-      Math.max(0, start - span * 0.15),
-      Math.max(0, Math.min(1, start + span * 0.15)),
-      Math.max(0, Math.min(1, end - span * 0.15)),
-      Math.min(1, end + span * 0.15),
-    ],
-    index === 0
-      ? [1, 1, 1, 0]
-      : index === total - 1
-        ? [0, 1, 1, 1]
-        : [0, 1, 1, 0],
-  );
-
-  // Slow Ken Burns
-  const scale = useTransform(
-    progress,
-    [Math.max(0, start), Math.min(1, end)],
-    [1.08, 1.18],
-  );
-
-  return (
-    <motion.div style={{ opacity }} className="absolute inset-0">
-      <motion.div style={{ scale }} className="absolute inset-0">
-        {vertical.image ? (
-          <Image
-            src={vertical.image}
-            alt={vertical.imageAlt ?? vertical.name}
-            fill
-            sizes="100vw"
-            quality={75}
-            priority={index === 0}
-            loading={index === 0 ? "eager" : "lazy"}
-            className="object-cover"
-          />
-        ) : (
-          <div className="absolute inset-0 bg-gradient-to-br from-neutral-900 via-ink to-neutral-900" />
-        )}
-      </motion.div>
-      {/* Deep cinematic vignette so the floating card pops */}
-      <div className="absolute inset-0 bg-ink/55" />
-      <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/60" />
-    </motion.div>
   );
 }
 
