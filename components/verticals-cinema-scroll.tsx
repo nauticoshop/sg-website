@@ -122,6 +122,7 @@ export function VerticalsCinemaScroll() {
         <video
           ref={videoRef}
           src="/videos/verticals-atmosphere.mp4"
+          poster="/videos/verticals-atmosphere-poster.jpg"
           autoPlay
           loop
           muted
