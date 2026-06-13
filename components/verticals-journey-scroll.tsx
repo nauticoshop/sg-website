@@ -143,6 +143,10 @@ export function VerticalsJourneyScroll() {
           />
         ))}
 
+        {/* Transition flash — brief ink-overlay pulse at each scene
+            boundary. Reads as the camera passing through a gap. */}
+        <TransitionFlash progress={scrollYProgress} total={total} />
+
         {/* Foreground captions — only the active beat is at full opacity */}
         {JOURNEY.map((beat, i) => (
           <JourneyCaption
@@ -193,18 +197,34 @@ function JourneyImageLayer({
         : [0, 1, 1, 0],
   );
 
-  // Ken Burns — gentle scale across the beat's active window.
-  // Numeric transform, input clamped to [0, 1] — safe under WAAPI.
+  // CAMERA DOLLY — the image scales 1.0 → 1.22 across its scroll
+  // window. Combined with cross-fade opacity, this reads as the
+  // camera pushing forward through one scene and out the other side
+  // as the next beat emerges at neutral scale. The "through the
+  // scene" sensation comes from the outgoing image being at max
+  // scale (most "in your face") right as it dissolves into the next
+  // image at neutral scale (1.0) ramping up.
+  //
+  // Numeric values, input clamped to [0, 1] — safe under WAAPI.
   const scale = useTransform(
     progress,
+    [Math.max(0, start - span * 0.1), Math.min(1, end + span * 0.1)],
+    [1.0, 1.22],
+  );
+
+  // CAMERA TILT — a 40px vertical drift across the beat's window.
+  // Mimics a subtle pan of the camera as it travels through the
+  // scene. Numeric pixel value, input clamped.
+  const yPan = useTransform(
+    progress,
     [Math.max(0, start), Math.min(1, end)],
-    [1.04, 1.12],
+    [0, -40],
   );
 
   return (
     <motion.div style={{ opacity }} className="absolute inset-0">
       <motion.div
-        style={{ scale }}
+        style={{ scale, y: yPan }}
         className="absolute inset-0"
       >
         <Image
@@ -222,6 +242,48 @@ function JourneyImageLayer({
       {/* Cinematic vignette — darker bottom for caption legibility */}
       <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/25 to-ink/40" />
     </motion.div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Transition flash — a brief darkness pulse at each scene boundary   */
+/*  Reads as the camera "passing through" the gap between scenes       */
+/* ------------------------------------------------------------------ */
+
+function TransitionFlash({
+  progress,
+  total,
+}: {
+  progress: MotionValue<number>;
+  total: number;
+}) {
+  // Build a keyframe array: opacity stays at 0 most of the time, but
+  // pulses up to ~0.6 at each beat boundary. Numbers only, all
+  // monotonic and clamped to [0, 1].
+  //
+  // For 8 beats we have 7 boundaries (between beats 1-2, 2-3, ..., 7-8).
+  const span = 1 / total;
+  const input: number[] = [0];
+  const output: number[] = [0];
+
+  for (let i = 1; i < total; i++) {
+    const boundary = i * span;
+    const before = Math.max(0, boundary - span * 0.05);
+    const after = Math.min(1, boundary + span * 0.05);
+    input.push(before, boundary, after);
+    output.push(0, 0.55, 0);
+  }
+  input.push(1);
+  output.push(0);
+
+  const flash = useTransform(progress, input, output);
+
+  return (
+    <motion.div
+      aria-hidden
+      className="absolute inset-0 z-20 bg-ink pointer-events-none"
+      style={{ opacity: flash }}
+    />
   );
 }
 
@@ -257,13 +319,19 @@ function JourneyCaption({
     [0, 1, 1, 0],
   );
 
+  // Caption motion — enters from 40px below (settling in as the scene
+  // arrives) and continues rising past the viewport as the camera
+  // dollies through. The continuous motion ties the caption to the
+  // image's vertical pan so the whole frame moves as one piece.
   const y = useTransform(
     progress,
     [
       Math.max(0, Math.min(1, start)),
-      Math.max(0, Math.min(1, start + span * 0.4)),
+      Math.max(0, Math.min(1, start + span * 0.3)),
+      Math.max(0, Math.min(1, end - span * 0.05)),
+      Math.min(1, end + span * 0.05),
     ],
-    [32, 0],
+    [40, 0, -20, -60],
   );
 
   const num = String(index + 1).padStart(2, "0");
