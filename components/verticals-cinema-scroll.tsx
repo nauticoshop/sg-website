@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -45,9 +45,30 @@ import { verticals, type Vertical } from "@/lib/verticals";
  * All useTransform input ranges are clamped to [0, 1] to avoid the
  * WAAPI "Offsets must be monotonically non-decreasing" crash.
  */
+/**
+ * Looping montage of cinematic clips brought to motion from real SG
+ * portfolio shots. The 3 clips play in sequence and loop forever
+ * behind the floating vertical cards.
+ */
+const MONTAGE_CLIPS = [
+  {
+    src: "/videos/scene-jet.mp4",
+    poster: "/videos/scene-jet-poster.jpg",
+  },
+  {
+    src: "/videos/scene-yacht.mp4",
+    poster: "/videos/scene-yacht-poster.jpg",
+  },
+  {
+    src: "/videos/scene-car.mp4",
+    poster: "/videos/scene-car-poster.jpg",
+  },
+];
+
 export function VerticalsCinemaScroll() {
   const ref = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [clipIndex, setClipIndex] = useState(0);
   const reduce = useReducedMotion();
 
   const { scrollYProgress } = useScroll({
@@ -55,52 +76,19 @@ export function VerticalsCinemaScroll() {
     offset: ["start start", "end end"],
   });
 
-  // SCROLL-SCRUB THE BACKGROUND VIDEO.
-  //
-  // Tie the <video> currentTime directly to scroll progress, so the
-  // user is physically driving the playback as they scroll the
-  // section. We update inside requestAnimationFrame to batch writes
-  // and avoid hammering the video element on every scroll event.
-  //
-  // Mobile Safari rejects rapid currentTime writes on autoplaying
-  // muted video; we mitigate by NOT autoplaying and by setting
-  // currentTime only when the video metadata is loaded.
+  // Cycle through the montage on each clip's `ended` event.
+  // The src + key change cause React to remount the <video> with the
+  // next clip, autoPlay handles the rest.
   useEffect(() => {
     const video = videoRef.current;
     if (!video || reduce) return;
 
-    let rafId: number | null = null;
-    let targetTime = 0;
-
-    const apply = () => {
-      rafId = null;
-      if (!Number.isNaN(video.duration) && video.duration > 0) {
-        // Clamp into a hair below duration to avoid the seek wrap.
-        video.currentTime = Math.min(video.duration - 0.05, targetTime);
-      }
+    const onEnded = () => {
+      setClipIndex((i) => (i + 1) % MONTAGE_CLIPS.length);
     };
-
-    const onChange = (v: number) => {
-      if (!Number.isNaN(video.duration) && video.duration > 0) {
-        targetTime = v * video.duration;
-        if (rafId === null) rafId = requestAnimationFrame(apply);
-      }
-    };
-
-    // Run once when metadata arrives so the first frame matches
-    // wherever the user happens to be in the section already.
-    const onLoaded = () => onChange(scrollYProgress.get());
-    video.addEventListener("loadedmetadata", onLoaded);
-    if (video.readyState >= 1) onLoaded();
-
-    const unsubscribe = scrollYProgress.on("change", onChange);
-
-    return () => {
-      video.removeEventListener("loadedmetadata", onLoaded);
-      unsubscribe();
-      if (rafId !== null) cancelAnimationFrame(rafId);
-    };
-  }, [scrollYProgress, reduce]);
+    video.addEventListener("ended", onEnded);
+    return () => video.removeEventListener("ended", onEnded);
+  }, [clipIndex, reduce]);
 
   if (reduce) return <StaticVerticals />;
 
@@ -113,18 +101,17 @@ export function VerticalsCinemaScroll() {
       style={{ height: `${total * 90}vh` }}
     >
       <div className="sticky top-0 h-screen overflow-hidden">
-        {/* Atmospheric Higgsfield video — scroll-scrubbed background.
-            currentTime is driven by scrollYProgress in the effect
-            above. autoPlay + loop give a graceful fallback when
-            scroll hasn't engaged yet (or when iOS rejects programmatic
-            currentTime control). Muted + playsInline are required
-            for autoplay to actually fire on mobile browsers. */}
+        {/* Cinematic montage — 3 clips brought to motion from real SG
+            portfolio shots. The clips cycle on `ended` to give a
+            continuous loop. Each clip has its own poster so the user
+            sees the still frame instantly while the next clip buffers.
+            Muted + playsInline are required for autoplay on mobile. */}
         <video
           ref={videoRef}
-          src="/videos/verticals-atmosphere.mp4"
-          poster="/videos/verticals-atmosphere-poster.jpg"
+          key={MONTAGE_CLIPS[clipIndex].src}
+          src={MONTAGE_CLIPS[clipIndex].src}
+          poster={MONTAGE_CLIPS[clipIndex].poster}
           autoPlay
-          loop
           muted
           playsInline
           preload="auto"
