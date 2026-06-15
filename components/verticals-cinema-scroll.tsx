@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -45,30 +45,9 @@ import { verticals, type Vertical } from "@/lib/verticals";
  * All useTransform input ranges are clamped to [0, 1] to avoid the
  * WAAPI "Offsets must be monotonically non-decreasing" crash.
  */
-/**
- * Looping montage of cinematic clips brought to motion from real SG
- * portfolio shots. The 3 clips play in sequence and loop forever
- * behind the floating vertical cards.
- */
-const MONTAGE_CLIPS = [
-  {
-    src: "/videos/scene-jet.mp4",
-    poster: "/videos/scene-jet-poster.jpg",
-  },
-  {
-    src: "/videos/scene-yacht.mp4",
-    poster: "/videos/scene-yacht-poster.jpg",
-  },
-  {
-    src: "/videos/scene-car.mp4",
-    poster: "/videos/scene-car-poster.jpg",
-  },
-];
-
 export function VerticalsCinemaScroll() {
   const ref = useRef<HTMLElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [clipIndex, setClipIndex] = useState(0);
+  const spotRef = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
 
   const { scrollYProgress } = useScroll({
@@ -76,19 +55,84 @@ export function VerticalsCinemaScroll() {
     offset: ["start start", "end end"],
   });
 
-  // Cycle through the montage on each clip's `ended` event.
-  // The src + key change cause React to remount the <video> with the
-  // next clip, autoPlay handles the rest.
+  // MOUSE-FOLLOWING SPOTLIGHT.
+  //
+  // We track the cursor's position inside the section, then write
+  // its coordinates as CSS custom properties (--spot-x, --spot-y) on
+  // a single fixed-position div. A radial gradient is drawn from
+  // those coordinates, giving the illusion of a warm gold light
+  // following the cursor.
+  //
+  // Smoothing: we lerp the current position toward the target each
+  // frame, so the light glides instead of jumping. Lerp factor 0.12
+  // is a quiet, premium feel — not snappy.
+  //
+  // Mobile / no-cursor fallback: the spotlight slowly drifts in a
+  // figure-eight using a sin/cos pair seeded by Date.now(). Result:
+  // touch users get an ambient candlelit feel rather than a static
+  // pool. Since Date.now() isn't available in our Math wrappers, we
+  // use performance.now() inside the rAF loop instead.
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video || reduce) return;
+    if (reduce) return;
+    const section = ref.current;
+    const spot = spotRef.current;
+    if (!section || !spot) return;
 
-    const onEnded = () => {
-      setClipIndex((i) => (i + 1) % MONTAGE_CLIPS.length);
+    let rafId: number | null = null;
+    let targetX = 50;
+    let targetY = 45;
+    let currentX = 50;
+    let currentY = 45;
+    let usingMouse = false;
+    let lastDriftStamp = 0;
+
+    const matchMediaCoarse =
+      typeof window !== "undefined" &&
+      window.matchMedia &&
+      window.matchMedia("(pointer: coarse)").matches;
+
+    const tick = (timestamp: number) => {
+      // Drift fallback for touch / no-pointer devices.
+      if (!usingMouse) {
+        if (lastDriftStamp === 0) lastDriftStamp = timestamp;
+        const t = (timestamp - lastDriftStamp) / 1000;
+        targetX = 50 + Math.sin(t * 0.35) * 18;
+        targetY = 45 + Math.cos(t * 0.28) * 14;
+      }
+      // Lerp toward the target each frame for a smooth glide.
+      currentX += (targetX - currentX) * 0.12;
+      currentY += (targetY - currentY) * 0.12;
+      spot.style.setProperty("--spot-x", `${currentX}%`);
+      spot.style.setProperty("--spot-y", `${currentY}%`);
+      rafId = requestAnimationFrame(tick);
     };
-    video.addEventListener("ended", onEnded);
-    return () => video.removeEventListener("ended", onEnded);
-  }, [clipIndex, reduce]);
+
+    const onMove = (e: MouseEvent) => {
+      const rect = section.getBoundingClientRect();
+      const inside =
+        e.clientX >= rect.left &&
+        e.clientX <= rect.right &&
+        e.clientY >= rect.top &&
+        e.clientY <= rect.bottom;
+      if (!inside) return;
+      usingMouse = true;
+      targetX = ((e.clientX - rect.left) / rect.width) * 100;
+      targetY = ((e.clientY - rect.top) / rect.height) * 100;
+    };
+
+    if (!matchMediaCoarse) {
+      window.addEventListener("mousemove", onMove);
+    }
+
+    rafId = requestAnimationFrame(tick);
+
+    return () => {
+      if (!matchMediaCoarse) {
+        window.removeEventListener("mousemove", onMove);
+      }
+      if (rafId !== null) cancelAnimationFrame(rafId);
+    };
+  }, [reduce]);
 
   if (reduce) return <StaticVerticals />;
 
@@ -101,30 +145,45 @@ export function VerticalsCinemaScroll() {
       style={{ height: `${total * 90}vh` }}
     >
       <div className="sticky top-0 h-screen overflow-hidden">
-        {/* Cinematic montage — 3 clips brought to motion from real SG
-            portfolio shots. The clips cycle on `ended` to give a
-            continuous loop. Each clip has its own poster so the user
-            sees the still frame instantly while the next clip buffers.
-            Muted + playsInline are required for autoplay on mobile. */}
-        <video
-          ref={videoRef}
-          key={MONTAGE_CLIPS[clipIndex].src}
-          src={MONTAGE_CLIPS[clipIndex].src}
-          poster={MONTAGE_CLIPS[clipIndex].poster}
-          autoPlay
-          muted
-          playsInline
-          preload="auto"
-          aria-hidden
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-
-        {/* Light overlay only — the video is the show. A subtle
-            bottom-anchored gradient keeps the floating card legible
-            without burying the cinematic backdrop. */}
+        {/* Deep ink base — Tom Ford / Loewe-style velvet dark room. */}
         <div
           aria-hidden
-          className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-ink/30 pointer-events-none"
+          className="absolute inset-0 bg-gradient-to-br from-ink via-neutral-900 to-ink"
+        />
+
+        {/* Mouse-following warm gold spotlight. Coordinates set as
+            CSS custom properties from the rAF loop in the effect
+            above. Touch users get an ambient figure-eight drift. */}
+        <div
+          ref={spotRef}
+          aria-hidden
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            ["--spot-x" as string]: "50%",
+            ["--spot-y" as string]: "45%",
+            background:
+              "radial-gradient(circle 620px at var(--spot-x) var(--spot-y), rgba(255, 189, 132, 0.22), rgba(255, 189, 132, 0.06) 35%, transparent 70%)",
+          }}
+        />
+
+        {/* Vignette — pulls the eye toward the centered card. */}
+        <div
+          aria-hidden
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse 80% 70% at 50% 50%, transparent 40%, rgba(15, 15, 18, 0.75) 100%)",
+          }}
+        />
+
+        {/* Film grain — subtle premium texture. */}
+        <div
+          aria-hidden
+          className="absolute inset-0 opacity-[0.05] mix-blend-overlay pointer-events-none"
+          style={{
+            backgroundImage:
+              "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.5'/></svg>\")",
+          }}
         />
 
         {/* Eyebrow at top */}
