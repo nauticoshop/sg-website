@@ -151,6 +151,20 @@ export function VerticalsCinemaScroll() {
           className="absolute inset-0 bg-gradient-to-br from-ink via-neutral-900 to-ink"
         />
 
+        {/* Per-vertical cinematic backdrop — the active vertical's
+            portfolio photo cross-fades into view as you scroll. Sits
+            UNDER the cursor spotlight so the gold light glows on top
+            of the imagery. */}
+        {verticals.map((vertical, i) => (
+          <BackgroundLayer
+            key={`bg-${vertical.slug}`}
+            vertical={vertical}
+            index={i}
+            total={total}
+            progress={scrollYProgress}
+          />
+        ))}
+
         {/* Mouse-following warm gold spotlight. Coordinates set as
             CSS custom properties from the rAF loop in the effect
             above. Touch users get an ambient figure-eight drift. */}
@@ -208,6 +222,76 @@ export function VerticalsCinemaScroll() {
         <ProgressRail progress={scrollYProgress} />
       </div>
     </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Background layer — per-vertical photo cross-fade                   */
+/* ------------------------------------------------------------------ */
+
+function BackgroundLayer({
+  vertical,
+  index,
+  total,
+  progress,
+}: {
+  vertical: Vertical;
+  index: number;
+  total: number;
+  progress: MotionValue<number>;
+}) {
+  const span = 1 / total;
+  const start = index * span;
+  const end = start + span;
+
+  // Cross-fade input range: cushion the fade by 15% of the beat on
+  // each side so adjacent beats overlap and there's no hard cut.
+  // Input clamped into [0, 1] to keep WAAPI happy.
+  const opacity = useTransform(
+    progress,
+    [
+      Math.max(0, start - span * 0.15),
+      Math.max(0, Math.min(1, start + span * 0.15)),
+      Math.max(0, Math.min(1, end - span * 0.15)),
+      Math.min(1, end + span * 0.15),
+    ],
+    index === 0
+      ? [1, 1, 1, 0]
+      : index === total - 1
+        ? [0, 1, 1, 1]
+        : [0, 1, 1, 0],
+  );
+
+  // Slow Ken Burns scale across the beat window.
+  const scale = useTransform(
+    progress,
+    [Math.max(0, start), Math.min(1, end)],
+    [1.06, 1.16],
+  );
+
+  return (
+    <motion.div style={{ opacity }} className="absolute inset-0">
+      <motion.div style={{ scale }} className="absolute inset-0">
+        {vertical.image && (
+          <Image
+            src={vertical.image}
+            alt={vertical.imageAlt ?? vertical.name}
+            fill
+            sizes="100vw"
+            quality={75}
+            priority={index === 0}
+            loading={index === 0 ? "eager" : "lazy"}
+            className="object-cover opacity-55"
+          />
+        )}
+      </motion.div>
+      {/* Soft ink wash on the photo so the cursor spotlight can
+          light it without the imagery competing with the card. */}
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-ink/30 pointer-events-none"
+      />
+    </motion.div>
   );
 }
 
