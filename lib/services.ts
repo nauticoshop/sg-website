@@ -100,6 +100,8 @@ export const services: Service[] = [
     ],
     portfolioImage: "/images/work/skyfall/skyfall-01.jpg",
     portfolioAlt: "Superyacht Skyfall underway at dusk beneath pastel pink clouds",
+    cardImage: "/images/services/studio.jpg",
+    cardAlt: "Premium camera lens optical element catching warm golden light",
     featuredWorkSlugs: ["skyfall", "flexjet", "tranquility-estate"],
   },
   {
@@ -150,6 +152,8 @@ export const services: Service[] = [
     ],
     portfolioImage: "/images/work/sparkman-wharf/sparkman-wharf-01.jpg",
     portfolioAlt: "Aerial of Sparkman Wharf lawn and marina against Tampa skyline",
+    cardImage: "/images/services/social.jpg",
+    cardAlt: "Premium smartphone with reflective black glass screen on dark slate",
     featuredWorkSlugs: ["aquanova", "cora-residences", "gg-timepieces"],
   },
   {
@@ -199,6 +203,8 @@ export const services: Service[] = [
     ],
     portfolioImage: "/images/work/cora-residences/cora-residences-02.jpg",
     portfolioAlt: "Drone view of Tampa waterfront district towers and marina at dusk",
+    cardImage: "/images/services/digital.jpg",
+    cardAlt: "Minimalist closed laptop edge profile catching warm light on a walnut desk",
     featuredWorkSlugs: ["sparkman-wharf", "cora-residences", "selected-works"],
   },
   {
@@ -250,6 +256,8 @@ export const services: Service[] = [
     ],
     portfolioImage: "/images/work/los-suenos/los-suenos-01.jpg",
     portfolioAlt: "Sunrise aerial of Los Suenos marina, jungle hillside, and Pacific coastline",
+    cardImage: "/images/services/growth.jpg",
+    cardAlt: "Polished brass compass on a dark walnut desk at golden hour",
     featuredWorkSlugs: ["los-suenos", "selected-works", "sparkman-wharf"],
   },
   {
@@ -299,6 +307,8 @@ export const services: Service[] = [
     ],
     portfolioImage: "/images/work/selected-works/selected-works-04.jpg",
     portfolioAlt: "Yellow Bentley Bacalar roadster displayed beside Flexjet event tower",
+    cardImage: "/images/services/experiences.jpg",
+    cardAlt: "Crystal champagne flutes and lit taper candles on a private event table",
     featuredWorkSlugs: ["sparkman-wharf", "flexjet", "selected-works"],
   },
   {
@@ -348,6 +358,8 @@ export const services: Service[] = [
     ],
     portfolioImage: "/images/work/flexjet/flexjet-01.jpg",
     portfolioAlt: "Sikorsky helicopter and private jet on hangar ramp at golden hour",
+    cardImage: "/images/services/intelligence.jpg",
+    cardAlt: "Brass magnifying glass on a dark slate surface in warm light",
     featuredWorkSlugs: ["cora-residences", "selected-works", "flexjet"],
   },
 ];
