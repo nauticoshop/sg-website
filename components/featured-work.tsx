@@ -14,43 +14,9 @@ import { featuredProjects, journalTypeLabel } from "@/lib/featured-work";
  *
  * Uniform 3-col grid. Link out goes to /journal (the full hub).
  *
- * The outcomes strip below the grid carries factual client results
- * (real numbers, real client names, no fabricated attribution) —
- * folded in here from the old standalone Outcomes section so the
- * proof sits next to the work.
- *
  * Scroll-reveal: header cascades in, then the project cards
- * stagger in, then the outcomes strip lands last. Each piece
- * uses a 24px upward translate + opacity fade.
+ * stagger in. Each piece uses a 24px upward translate + opacity fade.
  */
-
-interface Outcome {
-  slug: string;
-  vertical: string;
-  /** The hero number (e.g. "12% → 52%" or "$7M+") */
-  value: string;
-  /** One-line description of what the number represents */
-  label: string;
-  /** Client name */
-  client: string;
-}
-
-const outcomes: Outcome[] = [
-  {
-    slug: "novel-beach-park",
-    vertical: "MULTIFAMILY",
-    value: "12% → 52%",
-    label: "Occupancy in two months",
-    client: "NOVEL Beach Park",
-  },
-  {
-    slug: "ryan-hughes-design",
-    vertical: "REAL ESTATE & DEVELOPMENT",
-    value: "$7M+",
-    label: "In client upsells driven by content + social",
-    client: "Ryan Hughes Design",
-  },
-];
 
 export function FeaturedWork() {
   const reduce = useReducedMotion();
@@ -84,18 +50,6 @@ export function FeaturedWork() {
         initial: "hidden",
         whileInView: "shown",
         viewport: { once: true, amount: 0.1 },
-        variants: {
-          hidden: {},
-          shown: { transition: { staggerChildren: 0.12 } },
-        },
-      };
-
-  const outcomesProps = reduce
-    ? {}
-    : {
-        initial: "hidden",
-        whileInView: "shown",
-        viewport: { once: true, amount: 0.2 },
         variants: {
           hidden: {},
           shown: { transition: { staggerChildren: 0.12 } },
@@ -156,32 +110,6 @@ export function FeaturedWork() {
           ))}
         </motion.ul>
 
-        {/* Outcomes strip — factual client results under the work */}
-        <motion.div {...outcomesProps} className="mt-16 lg:mt-20">
-          <motion.p variants={child} className="caption text-gold-deep mb-8">
-            OUTCOMES / WORK THAT MOVED THE METRIC
-          </motion.p>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-            {outcomes.map((o) => (
-              <motion.li
-                variants={child}
-                key={o.slug}
-                className="bg-ink text-canvas border border-canvas/10 p-8 lg:p-12 flex flex-col h-full"
-              >
-                <p className="caption text-gold mb-8">{o.vertical}</p>
-                <p className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl text-canvas leading-none mb-5 tracking-tight">
-                  {o.value}
-                </p>
-                <p className="text-base lg:text-lg text-canvas/80 leading-snug mb-8 flex-1">
-                  {o.label}
-                </p>
-                <p className="font-sans font-extrabold text-base text-canvas border-t border-canvas/15 pt-5">
-                  {o.client}
-                </p>
-              </motion.li>
-            ))}
-          </ul>
-        </motion.div>
       </div>
     </section>
   );
