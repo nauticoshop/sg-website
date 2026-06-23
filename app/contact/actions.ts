@@ -6,14 +6,20 @@ import { Resend } from "resend";
  * Server action for the contact form.
  *
  * Validates input, runs a basic honeypot spam check, and emails
- * the submission to CONTACT_TO_EMAIL via Resend.
+ * the submission via Resend.
  *
  * Env vars required:
  *   RESEND_API_KEY       — from https://resend.com
- *   CONTACT_TO_EMAIL     — destination inbox (default: interested@surroundingsgroup.com)
- *   CONTACT_FROM_EMAIL   — sender address. Until the domain is verified
- *                          in Resend, use Resend's default (onboarding@resend.dev).
- *                          After verification, switch to interested@surroundingsgroup.com.
+ *   CONTACT_TO_EMAIL     — destination inbox(es). Accepts a single
+ *                          address or a comma-separated list. Each
+ *                          recipient receives the same email and sees
+ *                          the other recipients in the To: header.
+ *                          Default: interested@surroundingsgroup.com,
+ *                                   billy@surroundingsgroup.com
+ *   CONTACT_FROM_EMAIL   — sender address. Defaults to the verified
+ *                          surroundingsgroup.com address. Until the
+ *                          domain is verified in Resend, override
+ *                          with onboarding@resend.dev.
  */
 
 export interface ContactFormData {
@@ -29,8 +35,20 @@ export interface ContactFormResult {
   error?: string;
 }
 
-const DEFAULT_TO = "interested@surroundingsgroup.com";
-const DEFAULT_FROM = "Surroundings Group <onboarding@resend.dev>";
+const DEFAULT_TO = "interested@surroundingsgroup.com,billy@surroundingsgroup.com";
+const DEFAULT_FROM =
+  "Surroundings Group <interested@surroundingsgroup.com>";
+
+/**
+ * Parse a comma-separated recipient list into an array. Tolerates
+ * extra whitespace and stray commas. Returns at least one address
+ * or the fallback default.
+ */
+function parseRecipients(value: string | undefined): string[] {
+  const raw = (value ?? DEFAULT_TO).split(",");
+  const list = raw.map((s) => s.trim()).filter(Boolean);
+  return list.length > 0 ? list : [DEFAULT_TO];
+}
 
 export async function submitContact(
   formData: FormData,
@@ -73,7 +91,7 @@ export async function submitContact(
   }
 
   const resend = new Resend(apiKey);
-  const to = process.env.CONTACT_TO_EMAIL || DEFAULT_TO;
+  const to = parseRecipients(process.env.CONTACT_TO_EMAIL);
   const from = process.env.CONTACT_FROM_EMAIL || DEFAULT_FROM;
 
   try {
