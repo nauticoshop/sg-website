@@ -41,7 +41,8 @@ export default function DiscoveryCallPage() {
         bookingHref="https://calendly.com/nauticalnetwork/introductory"
         bookingLabel="Book 30 min with Phallon"
         eyebrow="CONNECT DIRECTLY"
-        // image="/images/team/phallon-ray.jpg"   ← drop the file here when ready
+        image="/images/team/phallon-ray-cutout.png"
+        imageAlt="Phallon Ray, Director of Business Development at Surroundings Group"
       />
 
       {/* What to expect + secondary contact form */}
