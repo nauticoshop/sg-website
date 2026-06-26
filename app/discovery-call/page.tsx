@@ -38,7 +38,7 @@ export default function DiscoveryCallPage() {
         initials="PR"
         quote="Every great brand starts with a great conversation."
         meta="30 minutes. No pitch deck. No follow-up nagging."
-        bookingHref="https://calendly.com/nauticalnetwork/introductory"
+        bookingHref="https://calendly.com/surroundingsgroup/30min"
         bookingLabel="Book 30 min with Phallon"
         eyebrow="CONNECT DIRECTLY"
         image="/images/team/phallon-ray-cutout.png"
