@@ -3,6 +3,7 @@ import { site } from "@/lib/site";
 import { services } from "@/lib/services";
 import { verticals } from "@/lib/verticals";
 import { FooterWordmark } from "./footer-wordmark";
+import { SocialIcons } from "./social-icons";
 
 /**
  * Multi-column site footer — Markets-of-Tomorrow inspired.
@@ -75,42 +76,25 @@ export function Footer() {
         <FooterWordmark />
 
         {/* Bottom legal bar */}
-        <div className="border-t border-canvas/10 pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div className="border-t border-canvas/10 pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <p className="caption text-canvas/40">
             © {new Date().getFullYear()} Surroundings Group · Built in {site.contact.city}
           </p>
-          <ul className="flex items-center gap-6 caption text-canvas/40">
-            <li>
-              <Link href="/privacy" className="hover:text-canvas transition-colors">
-                Privacy
-              </Link>
-            </li>
-            <li>
-              <Link href="/terms" className="hover:text-canvas transition-colors">
-                Terms
-              </Link>
-            </li>
-            <li>
-              <a
-                href={site.social.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-canvas transition-colors"
-              >
-                Instagram
-              </a>
-            </li>
-            <li>
-              <a
-                href={site.social.vimeo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-canvas transition-colors"
-              >
-                Vimeo
-              </a>
-            </li>
-          </ul>
+          <div className="flex flex-col-reverse md:flex-row items-start md:items-center gap-6 md:gap-10">
+            <ul className="flex items-center gap-6 caption text-canvas/40">
+              <li>
+                <Link href="/privacy" className="hover:text-canvas transition-colors">
+                  Privacy
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms" className="hover:text-canvas transition-colors">
+                  Terms
+                </Link>
+              </li>
+            </ul>
+            <SocialIcons />
+          </div>
         </div>
       </div>
     </footer>

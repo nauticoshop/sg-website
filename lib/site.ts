@@ -20,10 +20,11 @@ export const site = {
 
   social: {
     instagram: "https://instagram.com/surroundingsgroup",
+    linkedin: "https://www.linkedin.com/company/surroundings-group",
+    facebook: "https://www.facebook.com/p/Surroundings-Group-100091523444080/",
+    youtube: "https://www.youtube.com/@surroundingsgroup",
+    tiktok: "https://www.tiktok.com/@surroundings_group",
     vimeo: "https://vimeo.com/surroundingsgroup",
-    // Add when available:
-    // linkedin: "https://linkedin.com/company/surroundings-group",
-    // youtube: "https://youtube.com/@surroundingsgroup",
   },
 
   hero: {
