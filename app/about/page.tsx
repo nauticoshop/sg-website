@@ -67,8 +67,62 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team photo — full-width editorial moment */}
+      {/* Operating principles — what makes the SG model different */}
       <section className="bg-canvas pb-16 lg:pb-24 px-6 lg:px-12">
+        <div className="max-w-[1200px] mx-auto">
+          <header className="mb-12 lg:mb-16 max-w-3xl">
+            <p className="caption text-gold-deep mb-5">OPERATING PRINCIPLES</p>
+            <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl leading-tight tracking-tight text-ink text-balance">
+              Four convictions that shape every engagement.
+            </h2>
+          </header>
+          <ol className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            <Principle
+              num="01"
+              title="Vertical depth over horizontal reach"
+              body="We turn down work outside the categories we know. The brief lands faster, the work hits harder, and the team gets compounding fluency in the rooms our clients sit in."
+            />
+            <Principle
+              num="02"
+              title="In-house from concept to delivery"
+              body="Strategy, production, post, paid, PR — all under one roof, run by senior people on the pitch. No agency-of-record handoffs, no freelance networks pretending to be a team."
+            />
+            <Principle
+              num="03"
+              title="Distribution included, not handed off"
+              body="Every creative engagement comes with an owned-media plan. The film we make for a yacht launch runs across our editorial channels, not just the brand's own."
+            />
+            <Principle
+              num="04"
+              title="Long engagements, compounding outcomes"
+              body="Premium growth is a quarter-over-quarter game. We build audience, owned media, and retention systems that compound — not single campaigns chasing one quarter's number."
+            />
+          </ol>
+        </div>
+      </section>
+
+      {/* Leadership perspective — pull-quote moment */}
+      <section className="bg-gold text-ink py-20 lg:py-28 px-6 lg:px-12">
+        <div className="max-w-[1000px] mx-auto text-center">
+          <p className="caption text-ink mb-8 tracking-[0.28em]">
+            FROM THE STUDIO
+          </p>
+          <blockquote className="font-sans font-extrabold text-2xl md:text-3xl lg:text-4xl xl:text-5xl leading-[1.15] tracking-tight text-ink text-balance">
+            <span aria-hidden className="text-ink/40 mr-1">&ldquo;</span>
+            The agencies that win at the premium end aren&apos;t the loudest.
+            They&apos;re the ones who understand the category, ship the work
+            in-house, and own the channels that reach the audience.
+            That&apos;s the model.
+            <span aria-hidden className="text-ink/40 ml-1">&rdquo;</span>
+          </blockquote>
+          <div className="mt-10 caption text-ink/70 tracking-[0.22em]">
+            BILLY PAVLOCK · FOUNDER
+          </div>
+        </div>
+      </section>
+
+      {/* Team photo — full-width editorial moment */}
+      <section className="bg-canvas py-16 lg:py-24 px-6 lg:px-12">
         <div className="max-w-[1200px] mx-auto">
           <Image
             src="/images/team/team-photo.jpg"
@@ -204,5 +258,27 @@ function Arrow() {
         strokeLinecap="square"
       />
     </svg>
+  );
+}
+
+function Principle({
+  num,
+  title,
+  body,
+}: {
+  num: string;
+  title: string;
+  body: string;
+}) {
+  return (
+    <li className="border-t border-neutral-300 pt-6 lg:pt-8">
+      <p className="caption text-gold-deep mb-4">{num}</p>
+      <h3 className="font-sans font-extrabold text-xl lg:text-2xl text-ink leading-tight tracking-tight mb-4">
+        {title}
+      </h3>
+      <p className="text-sm lg:text-base text-neutral-700 leading-relaxed">
+        {body}
+      </p>
+    </li>
   );
 }
