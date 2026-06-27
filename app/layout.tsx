@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { DM_Sans, Castoro } from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 import { site } from "@/lib/site";
-import { FloatingContact } from "@/components/floating-contact";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import {
   JsonLd,
@@ -64,7 +64,13 @@ export default function RootLayout({
         <JsonLd data={[organizationSchema(), websiteSchema()]} />
         <SmoothScroll />
         {children}
-        <FloatingContact />
+        {/* Clarky AI chat — loads after hydration so it doesn't block
+            initial paint. Renders its own floating widget; replaces
+            the earlier placeholder FloatingContact bubble. */}
+        <Script
+          src="https://clarky.ai/embed/54eff0a3-e16d-4ebd-a26d-c12fe344e043/chat.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
