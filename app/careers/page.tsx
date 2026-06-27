@@ -256,8 +256,125 @@ export default function CareersPage() {
         </div>
       </section>
 
+      {/* Hiring process — what to expect after introducing yourself */}
+      <section className="bg-canvas py-20 lg:py-28 px-6 lg:px-12">
+        <div className="max-w-[1200px] mx-auto">
+          <header className="mb-12 lg:mb-16 max-w-3xl">
+            <p className="caption text-gold-deep mb-5 tracking-[0.28em]">
+              WHAT TO EXPECT
+            </p>
+            <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink leading-[1.1] text-balance">
+              How we hire.
+            </h2>
+            <p className="text-base lg:text-lg text-neutral-700 leading-relaxed mt-6 max-w-2xl">
+              We read every note. No black-hole portals, no ATS auto-rejections
+              ten months after the fact. Here&apos;s the actual sequence.
+            </p>
+          </header>
+
+          <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+            <Step
+              num="01"
+              title="Introduction"
+              body="You send a note via the path that fits best. A real person at SG reads it within the week and replies — even when a formal role isn't open."
+            />
+            <Step
+              num="02"
+              title="Conversation"
+              body="30-minute call with the discipline lead. We talk about your work, your category fluency, and what you're looking for next."
+            />
+            <Step
+              num="03"
+              title="Portfolio review"
+              body="Walk us through 2-3 projects you'd want associated with your name forever. We're more interested in your taste than in case-study polish."
+            />
+            <Step
+              num="04"
+              title="Team day + offer"
+              body="A working session with the team you'd join, on the kind of brief you'd actually run here. Decision within a week of the day."
+            />
+          </ol>
+        </div>
+      </section>
+
+      {/* What we offer — transparent benefits strip */}
+      <section className="bg-ink text-canvas py-20 lg:py-28 px-6 lg:px-12 border-t border-canvas/10">
+        <div className="max-w-[1200px] mx-auto">
+          <header className="mb-12 lg:mb-16 max-w-3xl">
+            <p className="caption text-gold mb-5 tracking-[0.28em]">
+              WHAT WE OFFER
+            </p>
+            <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-canvas leading-[1.1] text-balance">
+              The table stakes, the upside, and the access.
+            </h2>
+          </header>
+
+          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+            <Offer
+              title="Competitive base + performance"
+              body="Salary calibrated to the discipline and category, plus performance upside tied to engagements you contribute to."
+            />
+            <Offer
+              title="Full medical + dental"
+              body="Comprehensive coverage for you and your dependents from day one. No tier games."
+            />
+            <Offer
+              title="PTO that's actually used"
+              body="Built-in time off plus seasonal closures so the team genuinely unplugs. The studio runs because we're rested."
+            />
+            <Offer
+              title="In-house creative pipeline"
+              body="Best-in-class production gear, editorial tools, and AI workflows wired to the studio. You don't fight your tools to do the work."
+            />
+            <Offer
+              title="Industry access"
+              body="On-location work in the categories we serve — yachts, estates, terminals, member clubs. The job exposes you to rooms most agencies don't get into."
+            />
+            <Offer
+              title="Path to leadership"
+              body="Clear track from practitioner to lead to discipline head. Quarterly reviews tied to growth, not just performance."
+            />
+          </ul>
+        </div>
+      </section>
+
       <Footer />
     </>
+  );
+}
+
+function Step({
+  num,
+  title,
+  body,
+}: {
+  num: string;
+  title: string;
+  body: string;
+}) {
+  return (
+    <li className="border-t border-neutral-300 pt-6 lg:pt-8">
+      <p className="caption text-gold-deep mb-4">{num}</p>
+      <h3 className="font-sans font-extrabold text-xl lg:text-2xl text-ink leading-tight mb-4 tracking-tight">
+        {title}
+      </h3>
+      <p className="text-sm lg:text-base text-neutral-700 leading-relaxed">
+        {body}
+      </p>
+    </li>
+  );
+}
+
+function Offer({ title, body }: { title: string; body: string }) {
+  return (
+    <li className="border-t border-canvas/15 pt-6 lg:pt-8">
+      <h3 className="font-sans font-extrabold text-lg lg:text-xl text-canvas leading-tight mb-3 tracking-tight">
+        {title}
+      </h3>
+      <p className="text-sm lg:text-base text-canvas/75 leading-relaxed">
+        {body}
+      </p>
+    </li>
   );
 }
 
