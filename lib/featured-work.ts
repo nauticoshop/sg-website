@@ -137,30 +137,7 @@ export const featuredProjects: FeaturedProject[] = [
         "Nautical Network is the proof point for the broader Surroundings Group model. We're building owned editorial properties in each of the premium categories we serve, so every client eventually gets the same distribution leverage. The marine roster has it today. The rest of the verticals are next.",
     },
   },
-  {
-    slug: "placeholder-real-estate",
-    type: "case-study",
-    client: "Featured Real Estate Project",
-    vertical: "Real Estate & Development",
-    headline:
-      "Pre-sales storytelling and grand-opening campaign for a flagship luxury development.",
-    tag: "Studio + Growth",
-    href: "/journal/placeholder-real-estate",
-    image: "/images/work/tranquility-estate/tranquility-estate-01.jpg",
-    imageAlt:
-      "Sunset view of symmetrical screened pool terrace with cabana and umbrellas",
-  },
-  {
-    slug: "placeholder-multifamily",
-    type: "case-study",
-    client: "Featured Multifamily Property",
-    vertical: "Multifamily",
-    headline:
-      "Lease-up content program filling a 300-unit luxury rental community.",
-    tag: "Studio + Social",
-    href: "/journal/placeholder-multifamily",
-    image: "/images/work/cora-residences/cora-residences-01.jpg",
-    imageAlt:
-      "Aerial of landscaped rooftop pool deck atop downtown residential tower",
-  },
+  // Future entries to add as case studies come in — see Monday board
+  // "SG Website — Open Items" for content collection TODOs (Real Estate
+  // and Multifamily case studies are the next two to backfill here).
 ];

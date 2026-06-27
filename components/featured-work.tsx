@@ -98,10 +98,19 @@ export function FeaturedWork() {
           </motion.div>
         </motion.header>
 
-        {/* Uniform 3-col grid */}
+        {/* Layout adapts to how many entries are present: 3-up grid
+            for a full set, 2-up for two, single centered feature
+            card when there's only one. Keeps the section from looking
+            orphaned while we're still backfilling case studies. */}
         <motion.ul
           {...gridProps}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+          className={
+            featuredProjects.length === 1
+              ? "max-w-2xl mx-auto"
+              : featuredProjects.length === 2
+                ? "grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto"
+                : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+          }
         >
           {featuredProjects.map((project) => (
             <motion.li variants={child} key={project.slug}>
