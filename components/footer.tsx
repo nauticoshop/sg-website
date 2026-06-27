@@ -2,7 +2,6 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 import { services } from "@/lib/services";
 import { verticals } from "@/lib/verticals";
-import { FooterWordmark } from "./footer-wordmark";
 import { SocialIcons } from "./social-icons";
 
 /**
@@ -71,9 +70,6 @@ export function Footer() {
             <FooterLink href="/contact">Contact</FooterLink>
           </FooterColumn>
         </div>
-
-        {/* Oversized animated wordmark */}
-        <FooterWordmark />
 
         {/* Bottom legal bar */}
         <div className="border-t border-canvas/10 pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
