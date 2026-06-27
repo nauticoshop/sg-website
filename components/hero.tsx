@@ -67,10 +67,9 @@ export function Hero({
       />
 
       {/* Content — anchored low so the video does the talking.
-          The tagline stays as an sr-only h1 for SEO and screen readers. */}
+          The headline below is the visible H1 (good for SEO); the
+          three-pillar line above it reads as a gold editorial eyebrow. */}
       <div className="relative z-20 flex flex-col items-center justify-end min-h-screen px-6 lg:px-12 pb-24 lg:pb-28 text-center text-canvas pt-20">
-        <h1 className="sr-only">{headline}</h1>
-
         {/* S mark — the source PNG carries generous transparent padding,
             so it renders oversized with negative margins to compensate */}
         <Image
@@ -82,8 +81,8 @@ export function Hero({
           className="h-28 w-28 lg:h-32 lg:w-32 object-contain -mt-7 lg:-mt-8 -mb-1 [filter:drop-shadow(0_2px_14px_rgba(20,18,16,0.65))]"
         />
 
-        {/* Three-pillar positioning */}
-        <p className="caption tracking-[0.2em] text-gold mb-12 flex items-center flex-wrap justify-center gap-x-3 gap-y-1">
+        {/* Three-pillar gold eyebrow above the headline */}
+        <p className="caption tracking-[0.2em] text-gold mb-6 lg:mb-7 flex items-center flex-wrap justify-center gap-x-3 gap-y-1">
           {pillars.map((pillar, i) => (
             <span key={pillar} className="inline-flex items-center gap-3">
               {pillar}
@@ -95,6 +94,15 @@ export function Hero({
             </span>
           ))}
         </p>
+
+        {/* Hero positioning headline — visible H1 */}
+        <h1 className="font-sans font-extrabold text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-canvas leading-[1.15] tracking-tight max-w-4xl text-balance mb-10 lg:mb-12 [text-shadow:0_2px_14px_rgba(20,18,16,0.55)]">
+          A Digital Marketing Agency Built for High-Trust Brands
+        </h1>
+
+        {/* Headline prop kept on the component but no longer rendered
+            visibly — keep available so callers can override if needed. */}
+        <span className="sr-only">{headline}</span>
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4">
