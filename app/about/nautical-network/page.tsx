@@ -48,17 +48,47 @@ export default function NauticalNetworkPage() {
         </div>
       </section>
 
-      {/* Stats */}
+      {/* Stats — expanded with the full media kit numbers */}
       <section className="bg-neutral-50 py-16 lg:py-24 px-6 lg:px-12 border-y border-neutral-200">
         <div className="max-w-[1200px] mx-auto">
-          <ul className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-neutral-200">
+          <ul className="grid grid-cols-2 md:grid-cols-4 divide-neutral-200">
             <StatBlock value="180M+" label="Annual viewers across the network" />
-            <StatBlock value="8" label="Owned social brands publishing daily" />
-            <StatBlock
-              value="#1"
-              label="Largest global multi-platform boating outlet"
-            />
+            <StatBlock value="4.75M" label="Followers across editorial channels" />
+            <StatBlock value="62M" label="Annual watch minutes on owned video" />
+            <StatBlock value="#1" label="Largest multi-platform outlet in premium marine" />
           </ul>
+        </div>
+      </section>
+
+      {/* Channel lanes — what's actually being published daily */}
+      <section className="bg-canvas py-20 lg:py-28 px-6 lg:px-12">
+        <div className="max-w-[1200px] mx-auto">
+          <header className="mb-12 lg:mb-16 max-w-3xl">
+            <p className="caption text-gold-deep mb-5">INSIDE THE NETWORK</p>
+            <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
+              Eight channels. One editorial standard.
+            </h2>
+            <p className="text-base lg:text-lg text-neutral-700 mt-6 max-w-2xl leading-relaxed">
+              Each branded channel publishes daily into a distinct
+              sub-audience inside premium marine. The lanes don&apos;t
+              compete with each other — they extend the reach of every
+              piece of content we publish.
+            </p>
+          </header>
+          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            <Lane num="01" title="Yachting" audience="Owners, charterers, builders" />
+            <Lane num="02" title="Sport-fishing" audience="Tournament anglers and boat builders" />
+            <Lane num="03" title="Sailing" audience="Cruisers, racers, sail-tech enthusiasts" />
+            <Lane num="04" title="Charter" audience="Members, brokers, fleet operators" />
+            <Lane num="05" title="Lifestyle" audience="The premium boating culture at large" />
+            <Lane num="06" title="Industry" audience="Builders, OEMs, marina operators" />
+            <Lane num="07" title="News &amp; Editorial" audience="Daily category coverage and commentary" />
+            <Lane num="08" title="Long-form Video" audience="Cinematic films across YouTube and Vimeo" />
+          </ul>
+          <p className="caption text-neutral-500 mt-10">
+            PUBLISHED ACROSS INSTAGRAM · TIKTOK · YOUTUBE · FACEBOOK ·
+            NAUTICALNETWORK.COM
+          </p>
         </div>
       </section>
 
@@ -91,6 +121,86 @@ export default function NauticalNetworkPage() {
                 media properties in each one, so every client eventually
                 gets the same distribution leverage.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How client work flows through the network — process */}
+      <section className="bg-ink text-canvas py-20 lg:py-28 px-6 lg:px-12">
+        <div className="max-w-[1200px] mx-auto">
+          <header className="mb-12 lg:mb-16 max-w-3xl">
+            <p className="caption text-gold mb-5 tracking-[0.28em]">
+              HOW CLIENT WORK FLOWS THROUGH IT
+            </p>
+            <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-canvas text-balance">
+              From shoot day to 180M+ in three steps.
+            </h2>
+          </header>
+          <ol className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+            <Flow
+              num="01"
+              title="Shoot at SG standard"
+              body="Studio captures the film, photography, and short-form assets at the editorial standard the category demands. The shoot is briefed once, used many ways."
+            />
+            <Flow
+              num="02"
+              title="Cut for every channel"
+              body="Post produces hero film, brand-account cutdowns, paid variants, and editorial-network packages — each formatted for the audience and platform it lands in."
+            />
+            <Flow
+              num="03"
+              title="Publish across owned + paid"
+              body="The brand's own channels run the hero. Nautical Network publishes the editorial cut to its 180M+ audience. Paid amplifies into lookalikes. One shoot, three distribution layers."
+            />
+          </ol>
+        </div>
+      </section>
+
+      {/* Beyond Marine — the model in other verticals */}
+      <section className="bg-canvas py-20 lg:py-28 px-6 lg:px-12 border-t border-neutral-200">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+            <div className="lg:col-span-5">
+              <p className="caption text-gold-deep mb-5">BEYOND MARINE</p>
+              <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink leading-tight text-balance">
+                The same model is being built in each vertical we serve.
+              </h2>
+            </div>
+            <div className="lg:col-span-7 space-y-6">
+              <p className="text-lg lg:text-xl text-ink leading-snug font-medium text-balance">
+                Nautical Network is the proof point. The play is the
+                same in every premium category we work in.
+              </p>
+              <p className="text-base lg:text-lg text-neutral-700 leading-relaxed">
+                Premium real estate, private aviation, hospitality, exotic
+                automotive, and luxury goods all have audiences hungry for
+                editorial coverage at a standard the existing outlets
+                don&apos;t serve. We&apos;re building owned-media properties
+                in each one — so every Surroundings Group client eventually
+                gets the same distribution leverage marine clients get
+                today.
+              </p>
+              <Link
+                href="/verticals"
+                className="caption inline-flex items-center gap-2 text-ink hover:text-gold-deep transition-colors"
+              >
+                See the verticals we&apos;re building in
+                <svg
+                  width="14"
+                  height="10"
+                  viewBox="0 0 14 10"
+                  fill="none"
+                  aria-hidden
+                >
+                  <path
+                    d="M1 5h12m0 0L9 1m4 4L9 9"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="square"
+                  />
+                </svg>
+              </Link>
             </div>
           </div>
         </div>
@@ -133,11 +243,53 @@ export default function NauticalNetworkPage() {
 function StatBlock({ value, label }: { value: string; label: string }) {
   return (
     <li className="px-6 py-10 md:py-12 text-center">
-      <p className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl text-ink leading-none mb-4 tracking-tight">
+      <p className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl text-ink leading-none mb-4 tracking-tight">
         {value}
       </p>
       <p className="text-sm lg:text-base text-neutral-600 leading-snug max-w-[260px] mx-auto">
         {label}
+      </p>
+    </li>
+  );
+}
+
+function Lane({
+  num,
+  title,
+  audience,
+}: {
+  num: string;
+  title: string;
+  audience: string;
+}) {
+  return (
+    <li className="border-t border-neutral-300 pt-5 lg:pt-6">
+      <p className="caption text-gold-deep mb-3">{num}</p>
+      <h3 className="font-sans font-extrabold text-xl lg:text-2xl text-ink leading-tight tracking-tight mb-2">
+        {title}
+      </h3>
+      <p className="text-sm text-neutral-600 leading-snug">{audience}</p>
+    </li>
+  );
+}
+
+function Flow({
+  num,
+  title,
+  body,
+}: {
+  num: string;
+  title: string;
+  body: string;
+}) {
+  return (
+    <li className="border-t border-canvas/15 pt-6 lg:pt-8">
+      <p className="caption text-gold mb-4">{num}</p>
+      <h3 className="font-sans font-extrabold text-xl lg:text-2xl text-canvas leading-tight tracking-tight mb-4">
+        {title}
+      </h3>
+      <p className="text-sm lg:text-base text-canvas/75 leading-relaxed">
+        {body}
       </p>
     </li>
   );
