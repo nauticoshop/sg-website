@@ -45,7 +45,7 @@ export const team: TeamMember[] = [
   {
     slug: "stephen-massaro",
     name: "Stephen Massaro",
-    role: "Director of Web Services",
+    role: "Director of Web Services & Project Management",
     department: "Digital",
     photo: "/images/team/stephen-massaro.png",
   },
@@ -66,7 +66,7 @@ export const team: TeamMember[] = [
   {
     slug: "arial-pavlock",
     name: "Arial Pavlock",
-    role: "Team Support Manager",
+    role: "Team Support Manager & Events Coordinator",
     department: "Operations",
     photo: "/images/team/arial-pavlock.png",
   },
@@ -108,7 +108,7 @@ export const team: TeamMember[] = [
   {
     slug: "brandon-ricketts",
     name: "Brandon Ricketts",
-    role: "Filmmaker / Editor",
+    role: "Cinematographer / Drone Pilot",
     department: "Production",
     photo: "/images/team/brandon-ricketts.png",
   },
@@ -132,5 +132,33 @@ export const team: TeamMember[] = [
     role: "Creator",
     department: "Production",
     // photo: add headshot at /images/team/loic-gergaud.png when ready
+  },
+  {
+    slug: "noah-rahman",
+    name: "Noah Rahman",
+    role: "Marketing Strategist",
+    department: "Strategy",
+    // photo: add headshot at /images/team/noah-rahman.png when ready
+  },
+  {
+    slug: "nicholas-nunez",
+    name: "Nicholas Nunez",
+    role: "Content Creator",
+    department: "Production",
+    // photo: add headshot at /images/team/nicholas-nunez.png when ready
+  },
+  {
+    slug: "justin-roseman",
+    name: "Justin Roseman",
+    role: "Filmmaker / Editor",
+    department: "Production",
+    // photo: add headshot at /images/team/justin-roseman.png when ready
+  },
+  {
+    slug: "rendi-andrianto",
+    name: "Rendi Andrianto",
+    role: "Creative Content Designer",
+    department: "Creative",
+    // photo: add headshot at /images/team/rendi-andrianto.png when ready
   },
 ];
