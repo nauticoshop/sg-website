@@ -91,7 +91,7 @@ export default async function VerticalDetailPage({ params }: RouteParams) {
             <div className="lg:col-span-5">
               <p className="caption text-gold-deep mb-4">THE CATEGORY</p>
               <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink leading-[1.1] text-balance">
-                Built specifically for {vertical.name.toLowerCase()}.
+                {vertical.headlines.intro}
               </h2>
             </div>
             <div className="lg:col-span-7 space-y-6">
@@ -122,7 +122,7 @@ export default async function VerticalDetailPage({ params }: RouteParams) {
           <header className="mb-12 lg:mb-16 max-w-3xl">
             <p className="caption text-gold mb-4">WHO WE SERVE</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-canvas leading-[1.1] text-balance">
-              The full ecosystem around the category.
+              {vertical.headlines.who}
             </h2>
           </header>
 
@@ -186,7 +186,7 @@ export default async function VerticalDetailPage({ params }: RouteParams) {
           <header className="mb-12 lg:mb-16 max-w-3xl">
             <p className="caption text-gold-deep mb-4">SIGNATURE WORK</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink leading-[1.1] text-balance">
-              The kinds of work we deliver for this category.
+              {vertical.headlines.work}
             </h2>
           </header>
 
@@ -222,7 +222,7 @@ export default async function VerticalDetailPage({ params }: RouteParams) {
           <header className="text-center mb-12 lg:mb-16 max-w-2xl mx-auto">
             <p className="caption text-gold-deep mb-4">CAPABILITIES</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
-              The disciplines that move the work here.
+              {vertical.headlines.capabilities}
             </h2>
           </header>
 

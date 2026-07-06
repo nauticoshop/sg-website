@@ -64,7 +64,7 @@ export function AboutSummary() {
               variants={variants}
               className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-ink text-balance"
             >
-              At home in the world&apos;s premium markets.
+              Fluent in the world&apos;s premium markets.
             </motion.h2>
           </div>
 

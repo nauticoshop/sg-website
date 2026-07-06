@@ -261,7 +261,7 @@ export default function JournalPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://nauticalnetwork.com"
+              href="https://www.nautical.network"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-ink text-canvas px-8 py-4 text-sm font-medium tracking-wide hover:bg-neutral-800 transition-colors duration-300 inline-flex items-center gap-2"

@@ -61,7 +61,7 @@ export default function WorkIndexPage() {
         />
         <div
           aria-hidden
-          className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-ink/30"
+          className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/35 to-ink/20"
         />
         <div className="absolute inset-x-0 bottom-0 z-10 px-6 lg:px-12 pb-10 lg:pb-14">
           <div className="max-w-[1200px] mx-auto">

@@ -37,6 +37,14 @@ export interface Service {
   bestForCopy: string;
   /** Service-specific four-step process (not generic) */
   processSteps: ProcessStep[];
+  /** Per-page section headlines so detail pages read authored, not templated */
+  headlines: {
+    intro: string;
+    capabilities: string;
+    deliverables: string;
+    process: string;
+    apply: string;
+  };
   /** Portfolio banner image on the detail page — links to /work */
   portfolioImage?: string;
   portfolioAlt?: string;
@@ -68,10 +76,17 @@ export const services: Service[] = [
       "Post-production & color",
     ],
     href: "/services/studio",
+    headlines: {
+      intro: "Where the work gets made.",
+      capabilities: "From concept to color grade.",
+      deliverables: "What a Studio engagement produces.",
+      process: "From treatment to delivery in four moves.",
+      apply: "Production tuned to every category we serve.",
+    },
     intro:
       "Studio is where the work gets made. We run a fully in-house production team built specifically for premium brands. Directors, cinematographers, photographers, drone operators, and post-production all working under one roof, on one schedule, to one standard. Streamlined sessions and market-leading turnaround mean the path from idea to impact is short. And because the work travels across our distribution network, the films you commission for a launch run across more than just your channels.",
     sampleDeliverables: [
-      "60–90 second cinematic brand story film",
+      "Cinematic brand story films",
       "Monthly reel and short-form video program for social",
       "Listing and walkthrough video for a property, aircraft, or yacht",
       "Location highlight film — a charter destination, a private terminal, a flagship address",
@@ -120,15 +135,22 @@ export const services: Service[] = [
       "Strategy & analytical reporting",
     ],
     href: "/services/social",
+    headlines: {
+      intro: "The most-used room in a premium brand.",
+      capabilities: "Everything a daily presence demands.",
+      deliverables: "What lands in your calendar.",
+      process: "How an account becomes a category leader.",
+      apply: "Presence built for the audience each category keeps.",
+    },
     intro:
       "Social is the most-used room in a premium brand. We run it as a full discipline: strategy, daily publishing, community work, paid amplification, and reporting. Our decisions run on data, not feelings, and every post is crafted to serve a purpose. The community side matters as much as the content. Real engagement in the comments and DMs builds the sense of belonging that turns an audience into something greater than a follower count. And the team that runs your social is the same team that publishes our editorial channels, with a working knowledge of premium audiences and the content that earns their attention.",
     sampleDeliverables: [
       "Monthly content calendar across Instagram, TikTok, LinkedIn, and Pinterest",
-      "Daily community management, comment engagement, and DM response",
-      "Quarterly influencer and creator partnerships",
+      "Community management, comment engagement, and DM response",
+      "Influencer and creator partnerships matched to the brand",
       "Cross-platform content adaptation from a single capture",
       "Monthly analytical reporting against the metrics that matter",
-      "Editorial integration with the Surroundings Group channels",
+      "Editorial amplification across our owned media channels",
     ],
     bestForCopy:
       "Social is for brands whose online presence is a real channel, not a checkbox. We work with clients who treat their feeds as part of the product, who care about the standard of what gets published, and who want their account to set the bar in their category instead of meet it.",
@@ -171,13 +193,20 @@ export const services: Service[] = [
       "SEO & conversion optimization",
     ],
     href: "/services/digital",
+    headlines: {
+      intro: "The most-used brand surface there is.",
+      capabilities: "Strategy, build, and long-term care.",
+      deliverables: "What we design, build, and run.",
+      process: "From sitemap to go-live and beyond.",
+      apply: "Sites shaped by the conventions of each category.",
+    },
     intro:
       "Your online presence is more than a website. It's a dynamic representation of the brand, and often the most-used brand surface there is. We design and build for the premium end of every category we serve, which means we know how a luxury developer's site should feel different from a private aviation operator's, and both should feel different from a watchmaker's. A site is also organic. It changes as the business and its customers evolve, so we stay on as partners: maintenance, revisions, proactive security updates, and a hosting environment that's monitored, not just rented.",
     sampleDeliverables: [
       "Full website strategy, design, build, and Go Live for a flagship launch",
       "Listing or portfolio system for a brokerage or design firm",
       "Conversion-optimized landing pages for paid campaigns",
-      "Migration from WordPress to a modern static or hybrid build",
+      "Content management system builds and new application development",
       "Ongoing maintenance, revision, and platform-update program",
       "Hosting environment management with proactive monitoring",
     ],
@@ -224,13 +253,20 @@ export const services: Service[] = [
       "Owned media & niche branded outlets",
     ],
     href: "/services/growth",
+    headlines: {
+      intro: "One acquisition engine, not six retainers.",
+      capabilities: "Every channel that builds demand.",
+      deliverables: "What a Growth program includes.",
+      process: "How demand compounds quarter over quarter.",
+      apply: "Demand programs fluent in every category we serve.",
+    },
     intro:
       "Growth is how the work reaches the buyer. We run paid, PR, email, influencers, and our owned-media network as one connected acquisition system, not six disconnected channels charged separately. Campaigns are built from in-depth keyword and competitor research, refined against live data, and pointed at custom landing pages designed to turn clicks into committed customers. The advantage at SG: a campaign here doesn't only travel through paid. It runs through editorial channels we own and niche branded outlets with audiences we built, which means every dollar of spend is amplified by reach we didn't have to buy.",
     sampleDeliverables: [
       "Paid program across Google Search & Display, Meta, and YouTube for a launch",
       "Retargeting campaigns that re-engage site visitors and social audiences",
       "PR campaign tied to a new-model release or grand opening",
-      "Email and lifecycle program connected to HubSpot or Klaviyo",
+      "Email and lifecycle programs connected to your CRM and marketing stack — HubSpot, Klaviyo, Salesforce, and more",
       "Influencer and creator program matched to the brand's category",
       "Owned-media and branded-outlet distribution across our editorial network",
     ],
@@ -275,12 +311,19 @@ export const services: Service[] = [
       "Post-event content & recaps",
     ],
     href: "/services/experiences",
+    headlines: {
+      intro: "Moments designed to outlive the night.",
+      capabilities: "From concept to capture to recap.",
+      deliverables: "What we plan, produce, and publish.",
+      process: "How one night becomes a year of content.",
+      apply: "Events staged inside the categories we know.",
+    },
     intro:
       "Experiences are the brand work that happens off-screen. Openings, launches, boat shows, concours, member dinners, and the activations that turn a brand moment into a year of content. We treat events as both the marketing and the source material. The way we run them is as much about the content that follows as the night itself.",
     sampleDeliverables: [
       "Grand-opening event for a property or restaurant",
       "Branded activation at a major industry show (boat, concours, design week)",
-      "Multi-stop private client tour or trunk show",
+      "Multi-stop private client tours and previews",
       "Member dinner and gathering production",
       "On-site capture and same-week edit packages",
       "Post-event content programs that extend the brand moment",
@@ -326,6 +369,13 @@ export const services: Service[] = [
       "Data pipelines & reporting infrastructure",
     ],
     href: "/services/intelligence",
+    headlines: {
+      intro: "The systems behind the studio.",
+      capabilities: "Automation, agents, and infrastructure.",
+      deliverables: "What we build and operate.",
+      process: "From audit to automation in four phases.",
+      apply: "Systems built around each category's stack.",
+    },
     intro:
       "Intelligence is the systems work that makes everything else move faster. Custom AI agents for content briefing and operations, workflow automation for marketing and sales, integration work that ties the tools a brand already uses into one running pipeline. We build for our own studio, then extend the same capability to clients. It's the rare agency offering where the operator is also the customer.",
     sampleDeliverables: [

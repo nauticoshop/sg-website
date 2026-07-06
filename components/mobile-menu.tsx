@@ -95,29 +95,26 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
           </MenuColumn>
         </div>
 
-        {/* Bottom contact bar */}
-        <div className="border-t border-canvas/10 px-6 lg:px-12 py-8 lg:py-10">
+        {/* Bottom contact bar — extra bottom/right clearance keeps the
+            floating chat widget from covering the CTA */}
+        <div className="border-t border-canvas/10 px-6 lg:px-12 pt-8 lg:pt-10 pb-28 md:pb-10">
           <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
             <div className="flex flex-col sm:flex-row gap-6 sm:gap-10">
               <a
                 href={`tel:${site.contact.phone.replace(/-/g, "")}`}
-                className="caption hover:text-gold transition-colors"
+                className="caption hover:text-gold transition-colors whitespace-nowrap"
               >
                 {site.contact.phone}
               </a>
-              <a
-                href={`mailto:${site.contact.email}`}
-                className="caption hover:text-gold transition-colors"
-              >
-                {site.contact.email}
-              </a>
-              <span className="caption text-canvas/50">{site.contact.city}</span>
+              <span className="caption text-canvas/50 whitespace-nowrap">
+                {site.contact.city}
+              </span>
             </div>
-            <div className="flex justify-start md:justify-end">
+            <div className="flex justify-start md:justify-end md:pr-24">
               <Link
                 href={site.cta.primary.href}
                 onClick={onClose}
-                className="bg-gold text-ink px-6 py-3 text-sm font-medium tracking-wide hover:bg-canvas transition-colors duration-300"
+                className="bg-gold text-ink px-6 py-3 text-sm font-medium tracking-wide hover:bg-canvas transition-colors duration-300 whitespace-nowrap"
               >
                 {site.cta.primary.label}
               </Link>

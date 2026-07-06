@@ -90,7 +90,7 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
             <div className="lg:col-span-5">
               <p className="caption text-gold-deep mb-4">THE WORK</p>
               <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink leading-[1.1] text-balance">
-                {service.name}, run as a discipline.
+                {service.headlines.intro}
               </h2>
             </div>
             <div className="lg:col-span-7">
@@ -109,7 +109,7 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
             <div className="lg:col-span-5">
               <p className="caption text-gold mb-4">WHAT&apos;S INCLUDED</p>
               <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-canvas leading-[1.1] text-balance">
-                Every capability inside.
+                {service.headlines.capabilities}
               </h2>
               <p className="text-base lg:text-lg text-canvas/70 leading-relaxed mt-6">
                 {service.description}
@@ -139,7 +139,7 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
           <header className="mb-12 lg:mb-16 max-w-3xl">
             <p className="caption text-gold-deep mb-4">THE DELIVERABLES</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink leading-[1.1] text-balance">
-              Concrete examples, not vague promises.
+              {service.headlines.deliverables}
             </h2>
           </header>
 
@@ -174,7 +174,7 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
           <header className="text-center mb-12 lg:mb-16 max-w-2xl mx-auto">
             <p className="caption text-gold-deep mb-4">HOW WE WORK</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
-              The four steps every {service.name.toLowerCase()} engagement runs.
+              {service.headlines.process}
             </h2>
           </header>
 
@@ -203,7 +203,7 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
             <header className="mb-12 lg:mb-16 max-w-3xl">
               <p className="caption text-gold-deep mb-4">WHERE WE APPLY IT</p>
               <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink leading-[1.1] text-balance">
-                Every engagement is tuned to its vertical.
+                {service.headlines.apply}
               </h2>
               <p className="text-base lg:text-lg text-neutral-600 leading-relaxed mt-6">
                 This work flexes across every category we serve. These are the

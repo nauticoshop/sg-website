@@ -53,7 +53,7 @@ export function organizationSchema() {
     subOrganization: {
       "@type": "Organization",
       name: "Nautical Network",
-      url: "https://nauticalnetwork.com",
+      url: "https://www.nautical.network",
       description:
         "The largest multi-platform editorial and social ecosystem in premium marine.",
     },

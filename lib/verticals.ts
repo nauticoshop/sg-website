@@ -52,6 +52,13 @@ export interface Vertical {
    * "Capabilities tuned to this category" section. Order matters.
    */
   relatedServiceSlugs: string[];
+  /** Per-page section headlines so detail pages read authored, not templated */
+  headlines: {
+    intro: string;
+    who: string;
+    work: string;
+    capabilities: string;
+  };
   /**
    * Hero photo for the vertical card. File lives in
    * `/public/images/verticals/{slug}.jpg`. Optional.
@@ -69,6 +76,12 @@ export const verticals: Vertical[] = [
     description:
       "From boat builders and brokerages to charter operators and marinas, we serve the entire marine industry with content, social, and distribution at a scale no other agency can match.",
     href: "/verticals/marine",
+    headlines: {
+      intro: "Our home water.",
+      who: "Everyone who builds, sells, and runs the water.",
+      work: "The plays we run in marine.",
+      capabilities: "The disciplines behind the marine roster.",
+    },
     tier: 1,
     image: "/images/verticals/marine.jpg",
     imageAlt: "Sport-fish yacht running across calm coastal water",
@@ -120,6 +133,12 @@ export const verticals: Vertical[] = [
     description:
       "Cinematic project films, editorial storytelling, and integrated paid + PR — for developers building flagship properties, brokerages selling them, and the home services brands working around the luxury home.",
     href: "/verticals/real-estate",
+    headlines: {
+      intro: "Built around the luxury home.",
+      who: "From groundbreaking to grand opening.",
+      work: "How we move premium property.",
+      capabilities: "The disciplines behind the listings.",
+    },
     tier: 1,
     image: "/images/verticals/real-estate.jpg",
     imageAlt: "Luxury estate at night — illuminated pool, waterfall feature, dramatic landscape lighting",
@@ -171,6 +190,12 @@ export const verticals: Vertical[] = [
     description:
       "Built for properties competing for discerning residents — content programs, social engines, and paid demand that fills units.",
     href: "/verticals/multifamily",
+    headlines: {
+      intro: "Lease-ups are a content business.",
+      who: "From lease-up to stabilized and beyond.",
+      work: "The programs that fill buildings.",
+      capabilities: "The disciplines that drive occupancy.",
+    },
     tier: 1,
     image: "/images/verticals/multifamily.jpg",
     imageAlt: "Mid-rise residential building at sunset with pool deck below",
@@ -222,6 +247,12 @@ export const verticals: Vertical[] = [
     description:
       "Production and distribution for the brands and terminals serving private flight — captured at the standard the category requires.",
     href: "/verticals/private-aviation",
+    headlines: {
+      intro: "Work at altitude.",
+      who: "The whole ecosystem around private flight.",
+      work: "The campaigns that move aircraft.",
+      capabilities: "The disciplines behind the fleet.",
+    },
     tier: 1,
     image: "/images/verticals/private-aviation.jpg",
     imageAlt: "Private jet on tarmac with airstairs down and red carpet",
@@ -272,6 +303,12 @@ export const verticals: Vertical[] = [
     description:
       "Editorial-grade content and paid distribution for resorts, vacation rentals, and travel brands serving the top of the market.",
     href: "/verticals/resorts-travel",
+    headlines: {
+      intro: "Built for the booking window.",
+      who: "The properties, and the people who fill them.",
+      work: "The campaigns that drive direct bookings.",
+      capabilities: "The disciplines behind the stay.",
+    },
     tier: 2,
     image: "/images/verticals/resorts-travel.jpg",
     imageAlt: "Eye-level view of a Caribbean luxury villa — infinity pool, loungers, dramatic sky",
@@ -315,6 +352,12 @@ export const verticals: Vertical[] = [
     description:
       "Content and distribution for hospitality brands — boutique hotels, restaurants, private clubs, spas — and the experiential brands building the next generation of premium service.",
     href: "/verticals/hospitality-experiences",
+    headlines: {
+      intro: "Every guest interaction is the brand.",
+      who: "Hotels, tables, clubs, and the nights between.",
+      work: "The programs that fill rooms and covers.",
+      capabilities: "The disciplines behind the experience.",
+    },
     tier: 2,
     image: "/images/verticals/hospitality-experiences.jpg",
     imageAlt: "Premium event hospitality activation — branded bar setup at a luxury concours",
@@ -362,6 +405,12 @@ export const verticals: Vertical[] = [
     description:
       "From new-model launches to ongoing brand presence — cinematic content and audience reach for premium automotive.",
     href: "/verticals/exotic-automotive",
+    headlines: {
+      intro: "Cinema for the machines that deserve it.",
+      who: "From the factory floor to the collector's garage.",
+      work: "The campaigns that move metal.",
+      capabilities: "The disciplines behind the reveal.",
+    },
     tier: 2,
     image: "/images/verticals/exotic-automotive.jpg",
     imageAlt: "Mercedes G-Wagen Brabus parked on a coastal road",
@@ -405,10 +454,16 @@ export const verticals: Vertical[] = [
     slug: "luxury-goods",
     name: "Luxury Goods",
     tagline:
-      "Editorial campaigns for timepieces, fashion, fine spirits, and craftsmanship-led brands.",
+      "Magazine-grade campaigns for timepieces, fashion, fine spirits, and craftsmanship-led brands.",
     description:
       "When the category demands an editorial sensibility, we deliver work that feels like the magazines your customers already read.",
     href: "/verticals/luxury-goods",
+    headlines: {
+      intro: "Editorial standard, atelier discipline.",
+      who: "Makers, houses, and the craft between.",
+      work: "The campaigns built like collections.",
+      capabilities: "The disciplines behind the brand.",
+    },
     tier: 2,
     image: "/images/verticals/luxury-goods.jpg",
     imageAlt: "Silver Rolex Day-Date watch on cream backdrop",

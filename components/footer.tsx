@@ -22,22 +22,22 @@ export function Footer() {
               An award-winning creative agency for premium markets.
             </p>
             <address className="not-italic text-sm text-canvas/60 mt-6 leading-relaxed space-y-1">
-              <p>{site.contact.city}</p>
+              <p className="whitespace-nowrap">{site.contact.city}</p>
               <p>
                 <a
                   href={`tel:${site.contact.phone.replace(/-/g, "")}`}
-                  className="hover:text-gold transition-colors"
+                  className="hover:text-gold transition-colors whitespace-nowrap"
                 >
                   {site.contact.phone}
                 </a>
               </p>
               <p>
-                <a
-                  href={`mailto:${site.contact.email}`}
+                <Link
+                  href="/contact"
                   className="hover:text-gold transition-colors"
                 >
-                  {site.contact.email}
-                </a>
+                  Send us a note →
+                </Link>
               </p>
             </address>
           </div>
@@ -71,8 +71,9 @@ export function Footer() {
           </FooterColumn>
         </div>
 
-        {/* Bottom legal bar */}
-        <div className="border-t border-canvas/10 pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        {/* Bottom legal bar — right/bottom clearance keeps the floating
+            chat widget from covering the social icons */}
+        <div className="border-t border-canvas/10 pt-8 pb-20 md:pb-0 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:pr-24">
           <p className="caption text-canvas/40">
             © {new Date().getFullYear()} Surroundings Group · Built in {site.contact.city}
           </p>

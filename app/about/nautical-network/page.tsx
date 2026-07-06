@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
@@ -60,35 +61,104 @@ export default function NauticalNetworkPage() {
         </div>
       </section>
 
-      {/* Channel lanes — what's actually being published daily */}
+      {/* The channels — real named accounts, linked */}
       <section className="bg-canvas py-20 lg:py-28 px-6 lg:px-12">
         <div className="max-w-[1200px] mx-auto">
           <header className="mb-12 lg:mb-16 max-w-3xl">
             <p className="caption text-gold-deep mb-5">INSIDE THE NETWORK</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
-              Eight channels. One editorial standard.
+              The flagship, plus eight branded channels.
             </h2>
             <p className="text-base lg:text-lg text-neutral-700 mt-6 max-w-2xl leading-relaxed">
-              Each branded channel publishes daily into a distinct
-              sub-audience inside premium marine. The lanes don&apos;t
-              compete with each other — they extend the reach of every
-              piece of content we publish.
+              Each account publishes into a distinct sub-audience inside
+              premium marine. The channels don&apos;t compete with each
+              other — they extend the reach of every piece of content we
+              publish.
             </p>
           </header>
-          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            <Lane num="01" title="Yachting" audience="Owners, charterers, builders" />
-            <Lane num="02" title="Sport-fishing" audience="Tournament anglers and boat builders" />
-            <Lane num="03" title="Sailing" audience="Cruisers, racers, sail-tech enthusiasts" />
-            <Lane num="04" title="Charter" audience="Members, brokers, fleet operators" />
-            <Lane num="05" title="Lifestyle" audience="The premium boating culture at large" />
-            <Lane num="06" title="Industry" audience="Builders, OEMs, marina operators" />
-            <Lane num="07" title="News &amp; Editorial" audience="Daily category coverage and commentary" />
-            <Lane num="08" title="Long-form Video" audience="Cinematic films across YouTube and Vimeo" />
+          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            <Channel
+              name="Nautical Network"
+              handle="@nautical.network"
+              href="https://instagram.com/nautical.network"
+              audience="The flagship. Premium marine editorial, published daily."
+            />
+            <Channel
+              name="@boat"
+              handle="@boat"
+              href="https://instagram.com/boat"
+              audience="The category's namesake handle. Broad-reach boating."
+            />
+            <Channel
+              name="Yachting Network"
+              handle="@yachting.network"
+              href="https://instagram.com/yachting.network"
+              audience="Yachts, owners, and the charter lifestyle."
+            />
+            <Channel
+              name="Sportfishing Network"
+              handle="@sportfishing.network"
+              href="https://instagram.com/sportfishing.network"
+              audience="Tournament fishing and sportfish builds."
+            />
+            <Channel
+              name="Boating Network"
+              handle="@boating.network"
+              href="https://instagram.com/boating.network"
+              audience="Everyday premium boating culture."
+            />
+            <Channel
+              name="Boats Gone Wild"
+              handle="@boatsgonewild"
+              href="https://instagram.com/boatsgonewild"
+              audience="The wild side of the water."
+            />
+            <Channel
+              name="Performance Boat Network"
+              handle="@performanceboat.network"
+              href="https://instagram.com/performanceboat.network"
+              audience="Go-fast boats and performance builds."
+            />
+            <Channel
+              name="Wake Boat Network"
+              handle="@wakeboat.network"
+              href="https://instagram.com/wakeboat.network"
+              audience="Wake, surf, and tow boat life."
+            />
+            <Channel
+              name="Marine Source"
+              handle="@marinesource"
+              href="https://instagram.com/marinesource"
+              audience="Industry news across the marine trade."
+            />
           </ul>
           <p className="caption text-neutral-500 mt-10">
             PUBLISHED ACROSS INSTAGRAM · TIKTOK · YOUTUBE · FACEBOOK ·
-            NAUTICALNETWORK.COM
+            NAUTICAL.NETWORK
           </p>
+        </div>
+      </section>
+
+      {/* Full-bleed marine editorial moment */}
+      <section className="relative h-[50vh] min-h-[360px] max-h-[600px] overflow-hidden">
+        <Image
+          src="/images/work/moonraker/moonraker-01.jpg"
+          alt="Superyacht Moonraker underway — Nautical Network editorial coverage"
+          fill
+          sizes="100vw"
+          quality={80}
+          className="object-cover"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/10 to-ink/25"
+        />
+        <div className="absolute inset-x-0 bottom-0 z-10 px-6 lg:px-12 pb-10 lg:pb-12">
+          <div className="max-w-[1200px] mx-auto">
+            <p className="caption text-gold tracking-[0.28em]">
+              SHOT BY THE STUDIO · PUBLISHED BY THE NETWORK
+            </p>
+          </div>
         </div>
       </section>
 
@@ -215,15 +285,15 @@ export default function NauticalNetworkPage() {
           </h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="https://nauticalnetwork.com"
+              href="https://www.nautical.network"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gold text-ink px-8 py-4 text-sm font-medium tracking-wide hover:bg-canvas transition-colors duration-300"
             >
-              nauticalnetwork.com
+              nautical.network
             </Link>
             <Link
-              href="https://instagram.com/nauticalnetwork"
+              href="https://instagram.com/nautical.network"
               target="_blank"
               rel="noopener noreferrer"
               className="border border-canvas/40 text-canvas px-8 py-4 text-sm font-medium tracking-wide hover:bg-canvas hover:text-ink hover:border-canvas transition-colors duration-300"
@@ -253,22 +323,31 @@ function StatBlock({ value, label }: { value: string; label: string }) {
   );
 }
 
-function Lane({
-  num,
-  title,
+function Channel({
+  name,
+  handle,
+  href,
   audience,
 }: {
-  num: string;
-  title: string;
+  name: string;
+  handle: string;
+  href: string;
   audience: string;
 }) {
   return (
-    <li className="border-t border-neutral-300 pt-5 lg:pt-6">
-      <p className="caption text-gold-deep mb-3">{num}</p>
-      <h3 className="font-sans font-extrabold text-xl lg:text-2xl text-ink leading-tight tracking-tight mb-2">
-        {title}
-      </h3>
-      <p className="text-sm text-neutral-600 leading-snug">{audience}</p>
+    <li className="border-t border-neutral-300">
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group block pt-5 lg:pt-6 pb-2"
+      >
+        <p className="caption text-gold-deep mb-3">{handle}</p>
+        <h3 className="font-sans font-extrabold text-xl lg:text-2xl text-ink leading-tight tracking-tight mb-2 group-hover:text-gold-deep transition-colors duration-300">
+          {name}
+        </h3>
+        <p className="text-sm text-neutral-600 leading-snug">{audience}</p>
+      </a>
     </li>
   );
 }

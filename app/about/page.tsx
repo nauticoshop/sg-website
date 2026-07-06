@@ -110,9 +110,9 @@ export default function AboutPage() {
           <blockquote className="font-sans font-extrabold text-2xl md:text-3xl lg:text-4xl xl:text-5xl leading-[1.15] tracking-tight text-ink text-balance">
             <span aria-hidden className="text-ink/40 mr-1">&ldquo;</span>
             The agencies that win at the premium end aren&apos;t the loudest.
-            They&apos;re the ones who understand the category, ship the work
-            in-house, and own the channels that reach the audience.
-            That&apos;s the model.
+            They&apos;re the ones who understand the category, make the work
+            in-house from start to finish, and own the channels that reach
+            the audience. That&apos;s the model.
             <span aria-hidden className="text-ink/40 ml-1">&rdquo;</span>
           </blockquote>
           <div className="mt-10 caption text-ink/70 tracking-[0.22em]">
