@@ -78,9 +78,30 @@ export const team: TeamMember[] = [
     photo: "/images/team/sean-odonnell.png",
   },
   {
+    slug: "kamila-bacha",
+    name: "Kamila Bacha",
+    role: "Account Manager",
+    department: "Client Services",
+    // photo: add headshot at /images/team/kamila-bacha.png when ready
+  },
+  {
+    slug: "tiffany-lewis",
+    name: "Tiffany Lewis",
+    role: "Social Media Manager",
+    department: "Social",
+    // photo: add headshot at /images/team/tiffany-lewis.png when ready
+  },
+  {
+    slug: "joaley-da-silva",
+    name: "Joaley Da Silva",
+    role: "Social Media & Events Manager",
+    department: "Social",
+    // photo: add headshot at /images/team/joaley-da-silva.png when ready
+  },
+  {
     slug: "andre-gonzalez",
     name: "Andre Gonzalez",
-    role: "Filmmaker / Editor",
+    role: "Creator",
     department: "Production",
     photo: "/images/team/andre-gonzalez.png",
   },
@@ -94,8 +115,22 @@ export const team: TeamMember[] = [
   {
     slug: "granger-smith",
     name: "Granger Smith",
-    role: "Filmmaker / Editor",
+    role: "Creator",
     department: "Production",
     photo: "/images/team/granger-smith.png",
+  },
+  {
+    slug: "kyle-daniels",
+    name: "Kyle Daniels",
+    role: "Creator",
+    department: "Production",
+    // photo: add headshot at /images/team/kyle-daniels.png when ready
+  },
+  {
+    slug: "loic-gergaud",
+    name: "Loic Gergaud",
+    role: "Creator",
+    department: "Production",
+    // photo: add headshot at /images/team/loic-gergaud.png when ready
   },
 ];

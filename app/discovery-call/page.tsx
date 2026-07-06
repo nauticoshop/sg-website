@@ -3,6 +3,7 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { ContactForm } from "@/components/contact-form";
 import { BdMeetingCard } from "@/components/bd-meeting-card";
+import { CalendlyEmbed } from "@/components/calendly-embed";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -38,12 +39,25 @@ export default function DiscoveryCallPage() {
         initials="PR"
         quote="Every great brand starts with a great conversation."
         meta="30 minutes. No pitch deck. No follow-up nagging."
-        bookingHref="https://calendly.com/surroundingsgroup/30min"
+        bookingHref="#book"
         bookingLabel="Book 30 min with Phallon"
         eyebrow="CONNECT DIRECTLY"
         image="/images/team/phallon-ray-cutout.png"
         imageAlt="Phallon Ray, Director of Business Development at Surroundings Group"
       />
+
+      {/* Inline booking calendar — book without leaving the site */}
+      <section id="book" className="bg-canvas py-16 lg:py-24 px-6 lg:px-12 scroll-mt-24">
+        <div className="max-w-[1000px] mx-auto">
+          <header className="text-center mb-8 lg:mb-10">
+            <p className="caption text-gold-deep mb-4">PICK A TIME</p>
+            <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
+              Live availability, right here.
+            </h2>
+          </header>
+          <CalendlyEmbed />
+        </div>
+      </section>
 
       {/* What to expect + secondary contact form */}
       <section className="bg-canvas py-20 lg:py-28 px-6 lg:px-12">
@@ -57,7 +71,7 @@ export default function DiscoveryCallPage() {
                   <ExpectationStep
                     num="01"
                     title="Pick a time on Phallon's calendar"
-                    copy="The button above. Live availability, no back-and-forth."
+                    copy="The calendar above — live availability, no back-and-forth."
                   />
                   <ExpectationStep
                     num="02"
@@ -81,7 +95,7 @@ export default function DiscoveryCallPage() {
                   {site.contact.phone}
                 </a>
                 <p className="text-sm text-neutral-600 mt-2">
-                  Tampa, FL business hours
+                  Mon–Fri, 9–5 ET
                 </p>
               </div>
             </div>

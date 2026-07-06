@@ -224,14 +224,11 @@ export default function JournalPage() {
             </p>
           </header>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-            {categories.map((c, i) => (
+            {categories.map((c) => (
               <li
                 key={c.label}
                 className="border-t border-canvas/15 pt-6 lg:pt-8"
               >
-                <p className="caption text-gold mb-4">
-                  {String(i + 1).padStart(2, "0")}
-                </p>
                 <h3 className="font-sans font-extrabold text-2xl lg:text-3xl text-canvas leading-tight mb-4 tracking-tight">
                   {c.label}
                 </h3>

@@ -36,6 +36,10 @@ interface MarkerData {
 
 export function GlobalReachMap() {
   const [hovered, setHovered] = useState<MarkerData | null>(null);
+  // Zoom level drives inverse marker scaling: pins hold constant
+  // screen size while the map expands, so clusters actually separate.
+  const [zoom, setZoom] = useState(1);
+  const z = Math.max(zoom, 1);
 
   return (
     <div className="relative w-full">
@@ -46,7 +50,13 @@ export function GlobalReachMap() {
         height={480}
         style={{ width: "100%", height: "auto" }}
       >
-        <ZoomableGroup center={[20, 30]} zoom={1} disablePanning disableZooming>
+        <ZoomableGroup
+          center={[20, 30]}
+          zoom={1}
+          minZoom={1}
+          maxZoom={8}
+          onMoveEnd={({ zoom: nextZoom }) => setZoom(nextZoom)}
+        >
           {/* Country outlines */}
           <Geographies geography={geoUrl}>
             {({ geographies }: { geographies: Array<{ rsmKey: string }> }) =>
@@ -77,26 +87,26 @@ export function GlobalReachMap() {
           >
             {/* Outer pulse ring */}
             <circle
-              r={12}
+              r={12 / z}
               fill="none"
               stroke="#FFBD84"
-              strokeWidth={1}
+              strokeWidth={1 / z}
               opacity={0.4}
             />
             <circle
-              r={7}
+              r={7 / z}
               fill="none"
               stroke="#FFBD84"
-              strokeWidth={1.2}
+              strokeWidth={1.2 / z}
               opacity={0.8}
             />
-            <circle r={4} fill="#FFBD84" />
+            <circle r={4 / z} fill="#FFBD84" />
             <text
-              y={-18}
+              y={-18 / z}
               textAnchor="middle"
               style={{
                 fontFamily: "var(--font-dm-sans), system-ui",
-                fontSize: 9,
+                fontSize: 9 / z,
                 fontWeight: 800,
                 letterSpacing: "0.1em",
                 fill: "#FFBD84",
@@ -116,16 +126,16 @@ export function GlobalReachMap() {
               onMouseLeave={() => setHovered(null)}
             >
               <circle
-                r={hub.weight * 1.5 + 1}
+                r={(hub.weight * 1.5 + 1) / z}
                 fill="#FFBD84"
                 opacity={0.85}
                 style={{ transition: "all 200ms ease", cursor: "pointer" }}
               />
               <circle
-                r={hub.weight * 1.5 + 1}
+                r={(hub.weight * 1.5 + 1) / z}
                 fill="none"
                 stroke="#FFBD84"
-                strokeWidth={1}
+                strokeWidth={1 / z}
                 opacity={0.25}
                 style={{
                   transform: `scale(${hub.weight + 1})`,
@@ -146,14 +156,14 @@ export function GlobalReachMap() {
               onMouseLeave={() => setHovered(null)}
             >
               <circle
-                r={p.weight * 1.5 + 2.5}
+                r={(p.weight * 1.5 + 2.5) / z}
                 fill="none"
                 stroke="#f7f4f0"
-                strokeWidth={1.4}
+                strokeWidth={1.4 / z}
                 opacity={0.9}
                 style={{ cursor: "pointer" }}
               />
-              <circle r={1.6} fill="#f7f4f0" opacity={0.9} />
+              <circle r={1.6 / z} fill="#f7f4f0" opacity={0.9} />
             </Marker>
           ))}
         </ZoomableGroup>

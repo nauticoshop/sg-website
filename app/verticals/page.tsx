@@ -119,17 +119,14 @@ export default function VerticalsIndexPage() {
           </header>
           <ul className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             <CrossoverExample
-              num="01"
               title="Aviation × Hospitality"
               body="A charter operator&apos;s new aircraft entering service debuts at a member club gathering — covered across both our aviation channels and the hospitality property's social presence."
             />
             <CrossoverExample
-              num="02"
               title="Marine × Luxury Goods"
               body="A watchmaker stages a new collection on a superyacht we already film — pulling editorial coverage from Nautical Network's marine audience and the brand's own channels."
             />
             <CrossoverExample
-              num="03"
               title="Real Estate × Automotive"
               body="A flagship development&apos;s grand opening features a curated exotic car activation — both engagements compound traffic and dwell time at the property's sales center."
             />
@@ -234,17 +231,14 @@ function VerticalCard({
 }
 
 function CrossoverExample({
-  num,
   title,
   body,
 }: {
-  num: string;
   title: string;
   body: string;
 }) {
   return (
     <li className="border-t border-canvas/15 pt-6 lg:pt-8">
-      <p className="caption text-gold mb-4">{num}</p>
       <h3 className="font-sans font-extrabold text-xl lg:text-2xl text-canvas leading-tight mb-4 tracking-tight">
         {title}
       </h3>

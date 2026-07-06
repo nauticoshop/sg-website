@@ -78,22 +78,18 @@ export default function AboutPage() {
           </header>
           <ol className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             <Principle
-              num="01"
               title="Vertical depth over horizontal reach"
               body="We turn down work outside the categories we know. The brief lands faster, the work hits harder, and the team gets compounding fluency in the rooms our clients sit in."
             />
             <Principle
-              num="02"
               title="In-house from concept to delivery"
               body="Strategy, production, post, paid, PR — all under one roof, run by senior people on the pitch. No agency-of-record handoffs, no freelance networks pretending to be a team."
             />
             <Principle
-              num="03"
               title="Distribution included, not handed off"
               body="Every creative engagement comes with an owned-media plan. The film we make for a yacht launch runs across our editorial channels, not just the brand's own."
             />
             <Principle
-              num="04"
               title="Long engagements, compounding outcomes"
               body="Premium growth is a quarter-over-quarter game. We build audience, owned media, and retention systems that compound — not single campaigns chasing one quarter's number."
             />
@@ -262,17 +258,14 @@ function Arrow() {
 }
 
 function Principle({
-  num,
   title,
   body,
 }: {
-  num: string;
   title: string;
   body: string;
 }) {
   return (
     <li className="border-t border-neutral-300 pt-6 lg:pt-8">
-      <p className="caption text-gold-deep mb-4">{num}</p>
       <h3 className="font-sans font-extrabold text-xl lg:text-2xl text-ink leading-tight tracking-tight mb-4">
         {title}
       </h3>

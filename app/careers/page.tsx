@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
@@ -23,20 +22,20 @@ const benefits = [
     copy: "Every deliverable that goes out is something you'd put in your portfolio. We don't put our name on work we'd be embarrassed to publish, and we don't make work that gets buried in a deck.",
   },
   {
-    title: "The cross-vertical advantage.",
-    copy: "Our clients borrow from each other across the categories. A yacht in a real estate launch film. A car reveal at a hospitality activation. You make connected work, not siloed campaigns.",
-  },
-  {
     title: "Owned media at scale.",
     copy: "Every piece of creative travels through editorial channels we run, reaching 255M+ affluent viewers a year. Your work gets distribution most agencies have to buy.",
   },
   {
-    title: "One team, one process.",
-    copy: "Strategy, production, distribution, and measurement all under one roof. No handoffs between departments. The people who plan it are the people who make it.",
+    title: "Fun is the fuel.",
+    copy: "Brainstorming here is a team sport. Thinking outside the box is the compass for creativity, innovation is the norm, and the room runs on genuine energy, not mandatory fun.",
+  },
+  {
+    title: "Live the industry.",
+    copy: "Yachts, estates, jets, resorts. You work in the lifestyle most people only see in a feed, and the access is part of the job. Where passion meets opulence.",
   },
   {
     title: "Tampa-rooted.",
-    copy: "Studio is in Tampa. We work with brands nationally, but the team is here, building together in real space, on a real schedule.",
+    copy: "Studio is in Tampa. We work with brands nationally, but the team is here, building together in real space, on a real schedule — with quarterly one-on-ones charting where you're headed.",
   },
 ];
 
@@ -74,26 +73,6 @@ const paths = [
   },
 ];
 
-/** Culture pillars — blended from the original SG careers page. */
-const culturePillars = [
-  {
-    title: "Fun is the fuel.",
-    copy: "Brainstorming here is a team sport. Thinking outside the box is the compass for creativity, innovation is the norm, and the room runs on genuine energy, not mandatory fun.",
-  },
-  {
-    title: "Growth & development.",
-    copy: "Shadow other departments, pick up disciplines outside your lane, and chart your path in quarterly one-on-ones. We invest in where you're going, not just what you do today.",
-  },
-  {
-    title: "Live the industry.",
-    copy: "Yachts, estates, jets, resorts. You work in the lifestyle most people only see in a feed, and the access is part of the job. Where passion meets opulence.",
-  },
-  {
-    title: "Tampa-rooted.",
-    copy: "Studio is in Tampa. We work with brands nationally, but the team is here. Real days together, real shared lunches, a built-in culture you can't get over Slack.",
-  },
-];
-
 function mailtoLink(subject: string) {
   return `mailto:${site.contact.email}?subject=${encodeURIComponent(subject)}`;
 }
@@ -114,7 +93,7 @@ export default function CareersPage() {
         <div className="max-w-[1200px] mx-auto">
           <p className="caption text-gold-deep mb-6">WHY HERE</p>
           <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink mb-12 lg:mb-16 max-w-3xl text-balance">
-            Six reasons people stay.
+            Why people stay.
           </h2>
 
           <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
@@ -123,9 +102,6 @@ export default function CareersPage() {
                 key={i}
                 className="border-t border-neutral-200 pt-6 lg:pt-8"
               >
-                <p className="caption text-gold-deep mb-3">
-                  {String(i + 1).padStart(2, "0")}
-                </p>
                 <h3 className="font-sans font-extrabold text-xl lg:text-2xl text-ink mb-3 text-balance">
                   {b.title}
                 </h3>
@@ -144,7 +120,7 @@ export default function CareersPage() {
           <header className="mb-12 lg:mb-16 max-w-3xl">
             <p className="caption text-gold mb-4">WHERE YOU FIT</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-canvas leading-[1.1] text-balance">
-              Five paths into the studio.
+              Find where you fit.
             </h2>
             <p className="text-base lg:text-lg text-canvas/70 leading-relaxed mt-6 max-w-2xl">
               Pick the closest one and send a note. Even when there isn&apos;t
@@ -154,15 +130,12 @@ export default function CareersPage() {
           </header>
 
           <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-canvas/15 border border-canvas/15">
-            {paths.map((p, i) => (
+            {paths.map((p) => (
               <li key={p.name}>
                 <a
                   href={mailtoLink(p.subject)}
                   className="group block bg-ink p-8 lg:p-10 hover:bg-neutral-800 transition-colors duration-300 h-full"
                 >
-                  <p className="caption text-gold mb-6">
-                    {String(i + 1).padStart(2, "0")} / PATH
-                  </p>
                   <h3 className="font-sans font-extrabold text-2xl lg:text-3xl text-canvas leading-tight mb-4 text-balance group-hover:text-gold transition-colors duration-300">
                     {p.name}
                   </h3>
@@ -174,51 +147,6 @@ export default function CareersPage() {
                     <Arrow />
                   </span>
                 </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* Life at the studio — culture pillars with image placeholders */}
-      <section className="bg-canvas py-20 lg:py-28 px-6 lg:px-12">
-        <div className="max-w-[1200px] mx-auto">
-          <header className="mb-12 lg:mb-16 max-w-3xl">
-            <p className="caption text-gold-deep mb-4">LIFE AT THE STUDIO</p>
-            <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink leading-[1.1] text-balance">
-              The model is the perk.
-            </h2>
-            <p className="text-base lg:text-lg text-neutral-700 leading-relaxed mt-6 max-w-2xl">
-              People stay because the way the studio runs makes the work
-              better. The verticals, the network, the in-house production,
-              the room itself.
-            </p>
-          </header>
-
-          {/* The team, in one frame */}
-          <div className="mb-12 lg:mb-16">
-            <Image
-              src="/images/team/careers-group.jpg"
-              alt="The Surroundings Group team together at the studio"
-              width={1400}
-              height={915}
-              sizes="(min-width: 1280px) 1200px, 100vw"
-              className="w-full h-auto"
-            />
-          </div>
-
-          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            {culturePillars.map((pillar, i) => (
-              <li key={i} className="border-t border-neutral-200 pt-6">
-                <p className="caption text-gold-deep mb-3">
-                  {String(i + 1).padStart(2, "0")}
-                </p>
-                <h3 className="font-sans font-extrabold text-xl lg:text-2xl text-ink mb-3 leading-tight text-balance">
-                  {pillar.title}
-                </h3>
-                <p className="text-sm lg:text-base text-neutral-700 leading-relaxed">
-                  {pillar.copy}
-                </p>
               </li>
             ))}
           </ul>
