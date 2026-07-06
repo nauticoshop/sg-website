@@ -136,8 +136,8 @@ export const team: TeamMember[] = [
   {
     slug: "noah-rahman",
     name: "Noah Rahman",
-    role: "Marketing Strategist",
-    department: "Strategy",
+    role: "Account Manager",
+    department: "Client Services",
     // photo: add headshot at /images/team/noah-rahman.png when ready
   },
   {
