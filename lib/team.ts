@@ -45,7 +45,7 @@ export const team: TeamMember[] = [
   {
     slug: "stephen-massaro",
     name: "Stephen Massaro",
-    role: "Director of Web Services & Project Management",
+    role: "Director of Web Services & Account Manager",
     department: "Digital",
     photo: "/images/team/stephen-massaro.png",
   },
@@ -73,7 +73,7 @@ export const team: TeamMember[] = [
   {
     slug: "sean-odonnell",
     name: "Sean O'Donnell",
-    role: "Community Engagement Manager",
+    role: "Head of Digital Media",
     department: "Social",
     photo: "/images/team/sean-odonnell.png",
   },
@@ -108,7 +108,7 @@ export const team: TeamMember[] = [
   {
     slug: "brandon-ricketts",
     name: "Brandon Ricketts",
-    role: "Cinematographer / Drone Pilot",
+    role: "Creator",
     department: "Production",
     photo: "/images/team/brandon-ricketts.png",
   },
@@ -142,15 +142,15 @@ export const team: TeamMember[] = [
   },
   {
     slug: "nicholas-nunez",
-    name: "Nicholas Nunez",
-    role: "Content Creator",
+    name: "Nick Nunez",
+    role: "Creator",
     department: "Production",
     // photo: add headshot at /images/team/nicholas-nunez.png when ready
   },
   {
     slug: "justin-roseman",
     name: "Justin Roseman",
-    role: "Filmmaker / Editor",
+    role: "Creator",
     department: "Production",
     // photo: add headshot at /images/team/justin-roseman.png when ready
   },
