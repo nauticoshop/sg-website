@@ -4,6 +4,7 @@ import { DM_Sans, Castoro } from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 import { site } from "@/lib/site";
+import { AnalyticsEvents } from "@/components/analytics-events";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import {
   JsonLd,
@@ -63,6 +64,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-canvas text-ink">
         <JsonLd data={[organizationSchema(), websiteSchema()]} />
         <SmoothScroll />
+        <AnalyticsEvents />
         {children}
         {/* Clarky AI chat — loads after hydration so it doesn't block
             initial paint. Renders its own floating widget; replaces

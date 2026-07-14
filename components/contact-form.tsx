@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { submitContact } from "@/app/contact/actions";
+import { trackEvent } from "@/lib/analytics";
 import { verticals } from "@/lib/verticals";
 
 export function ContactForm() {
@@ -18,6 +19,9 @@ export function ContactForm() {
     startTransition(async () => {
       const res = await submitContact(formData);
       if (res.ok) {
+        trackEvent("contact_form_submit", {
+          vertical: String(formData.get("vertical") ?? ""),
+        });
         setResult({ state: "ok" });
         (e.target as HTMLFormElement).reset();
       } else {
