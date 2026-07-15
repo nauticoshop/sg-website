@@ -40,40 +40,6 @@ const benefits = [
   },
 ];
 
-/** Five paths people fit into. Mailto subjects are pre-filled per path. */
-const paths = [
-  {
-    name: "Creative & Studio",
-    blurb:
-      "Directors, cinematographers, editors, photographers, art directors. The team that makes the work.",
-    subject: "Careers — Creative & Studio",
-  },
-  {
-    name: "Strategy & Growth",
-    blurb:
-      "Strategists, paid media operators, PR leads, email and lifecycle marketers. The team that builds demand.",
-    subject: "Careers — Strategy & Growth",
-  },
-  {
-    name: "Social & Content",
-    blurb:
-      "Social strategists, community leads, content producers, creators. The team that runs daily presence.",
-    subject: "Careers — Social & Content",
-  },
-  {
-    name: "Digital & Intelligence",
-    blurb:
-      "Engineers, designers, AI and automation operators, marketing technologists. The team building the digital surface and the systems behind it.",
-    subject: "Careers — Digital & Intelligence",
-  },
-  {
-    name: "Operations & BD",
-    blurb:
-      "Producers, account leads, business development, finance, ops. The team that keeps the studio running and the partnerships growing.",
-    subject: "Careers — Operations & BD",
-  },
-];
-
 function mailtoLink(subject: string) {
   return `mailto:${site.contact.email}?subject=${encodeURIComponent(subject)}`;
 }
@@ -109,45 +75,6 @@ export default function CareersPage() {
                 <p className="text-base text-neutral-700 leading-relaxed">
                   {b.copy}
                 </p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* Where you fit — 5 role category paths */}
-      <section className="bg-ink text-canvas py-20 lg:py-28 px-6 lg:px-12">
-        <div className="max-w-[1200px] mx-auto">
-          <header className="mb-12 lg:mb-16 max-w-3xl">
-            <p className="caption text-gold mb-4">WHERE YOU FIT</p>
-            <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-canvas leading-[1.1] text-balance">
-              Find where you fit.
-            </h2>
-            <p className="text-base lg:text-lg text-canvas/70 leading-relaxed mt-6 max-w-2xl">
-              Pick the closest one and send a note. Even when there isn&apos;t
-              an open role on the list, we&apos;ll keep the introduction on
-              file for the next hiring window.
-            </p>
-          </header>
-
-          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-canvas/15 border border-canvas/15">
-            {paths.map((p) => (
-              <li key={p.name}>
-                <a
-                  href={mailtoLink(p.subject)}
-                  className="group block bg-ink p-8 lg:p-10 hover:bg-neutral-800 transition-colors duration-300 h-full"
-                >
-                  <h3 className="font-sans font-extrabold text-2xl lg:text-3xl text-canvas leading-tight mb-4 text-balance group-hover:text-gold transition-colors duration-300">
-                    {p.name}
-                  </h3>
-                  <p className="text-base text-canvas/70 leading-relaxed mb-6">
-                    {p.blurb}
-                  </p>
-                  <span className="caption inline-flex items-center gap-2 text-canvas group-hover:text-gold transition-colors duration-300">
-                    Introduce yourself
-                    <Arrow />
-                  </span>
-                </a>
               </li>
             ))}
           </ul>

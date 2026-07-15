@@ -3,8 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
-import { jobs, getJob, applyMailto } from "@/lib/jobs";
-import { site } from "@/lib/site";
+import { jobs, getJob } from "@/lib/jobs";
+import { ApplicationForm } from "@/components/application-form";
 
 /**
  * Job detail page — full description for a single open role.
@@ -37,8 +37,6 @@ export default async function JobPage({
   const { slug } = await params;
   const job = getJob(slug);
   if (!job) notFound();
-
-  const mailto = applyMailto(job, site.contact.email);
 
   return (
     <>
@@ -83,7 +81,7 @@ export default async function JobPage({
             {job.summary}
           </p>
           <a
-            href={mailto}
+            href="#apply"
             className="inline-block mt-8 bg-ink text-canvas px-8 py-4 text-sm font-medium tracking-wide hover:bg-neutral-800 transition-colors duration-300"
           >
             Apply for this role
@@ -171,22 +169,24 @@ export default async function JobPage({
         </div>
       </section>
 
-      {/* Apply CTA */}
-      <section className="bg-gold text-ink py-16 lg:py-20 px-6 lg:px-12">
-        <div className="max-w-[900px] mx-auto text-center">
-          <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight mb-6 text-balance">
-            Sound like you?
-          </h2>
-          <p className="text-base lg:text-lg text-ink/75 mb-8 max-w-xl mx-auto leading-relaxed">
-            Send your resume and portfolio. Tell us what you&apos;d bring to
-            the room.
-          </p>
-          <a
-            href={mailto}
-            className="inline-block bg-ink text-canvas px-8 py-4 text-sm font-medium tracking-wide hover:bg-neutral-800 transition-colors duration-300"
-          >
-            Apply — {job.title}
-          </a>
+      {/* Application form */}
+      <section
+        id="apply"
+        className="bg-neutral-50 py-16 lg:py-24 px-6 lg:px-12 border-t border-neutral-200 scroll-mt-24"
+      >
+        <div className="max-w-[900px] mx-auto">
+          <header className="mb-10 lg:mb-12">
+            <p className="caption text-gold-deep mb-4">APPLY</p>
+            <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
+              Sound like you?
+            </h2>
+            <p className="text-base lg:text-lg text-neutral-700 mt-5 max-w-2xl leading-relaxed">
+              Attach your resume, drop a portfolio link if you have one, and
+              tell us what you&apos;d bring to the room. It lands directly in
+              our inbox.
+            </p>
+          </header>
+          <ApplicationForm roleTitle={job.title} />
         </div>
       </section>
 

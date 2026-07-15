@@ -383,12 +383,3 @@ export const jobs: Job[] = [
 export function getJob(slug: string): Job | undefined {
   return jobs.find((j) => j.slug === slug);
 }
-
-/** Prefilled application mailto for a role. */
-export function applyMailto(job: Job, email: string): string {
-  const subject = encodeURIComponent(`Application — ${job.title}`);
-  const body = encodeURIComponent(
-    `Hi Surroundings Group,\n\nI'm applying for the ${job.title} role. My resume/portfolio is attached.\n\n`,
-  );
-  return `mailto:${email}?subject=${subject}&body=${body}`;
-}

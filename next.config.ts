@@ -7,6 +7,13 @@ import type { NextConfig } from "next";
  * none of these old URLs should 404.
  */
 const nextConfig: NextConfig = {
+  // Job applications upload a CV through a server action; the default
+  // 1MB action body limit is too small for real resumes.
+  experimental: {
+    serverActions: {
+      bodySizeLimit: "8mb",
+    },
+  },
   async redirects() {
     return [
       // -------------------------------------------------------------
