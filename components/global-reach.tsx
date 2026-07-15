@@ -1,7 +1,19 @@
 "use client";
 
 import { motion, useReducedMotion } from "motion/react";
-import { GlobalReachMap } from "./global-reach-map";
+import dynamic from "next/dynamic";
+
+// Client-only: d3's projection math yields microscopically different
+// floats on server vs browser, so SSR-ing the map guarantees a React
+// hydration mismatch. It's decorative — draw it in the browser only,
+// with an aspect-matched placeholder to avoid layout shift.
+const GlobalReachMap = dynamic(
+  () => import("./global-reach-map").then((m) => m.GlobalReachMap),
+  {
+    ssr: false,
+    loading: () => <div className="w-full aspect-[980/480]" aria-hidden />,
+  },
+);
 import { Rule } from "@/components/rule";
 
 /**
