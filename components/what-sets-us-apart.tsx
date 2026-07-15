@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Rule } from "@/components/rule";
 
 /**
  * Combined "What Sets Us Apart / Why It Matters / Proven Results"
@@ -99,13 +100,14 @@ export function WhatSetsUsApart() {
   }
 
   return (
-    <section className="bg-canvas py-20 lg:py-28 px-6 lg:px-12">
+    <section className="bg-canvas py-20 lg:py-28 px-6 lg:px-12 border-t border-neutral-200">
       <div className="max-w-[1200px] mx-auto">
         <header className="text-center mb-12 lg:mb-16 max-w-3xl mx-auto">
           <p className="caption text-gold-deep mb-4">WHY SURROUNDINGS GROUP</p>
           <h2 className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-ink text-balance">
             What sets us apart, why it matters, and the proof.
           </h2>
+          <Rule className="bg-gold-deep mx-auto mt-6" />
         </header>
 
         <ul className="border-t border-neutral-200">

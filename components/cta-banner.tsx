@@ -3,10 +3,12 @@
 import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
 import { site } from "@/lib/site";
+import { Rule } from "@/components/rule";
 
 /**
- * Closing CTA banner — full-bleed gold section pushing toward the
- * primary conversion (book a discovery call).
+ * Closing CTA banner — full-bleed ink statement pushing toward the
+ * primary conversion (book a discovery call). The single dark close;
+ * gold lives earlier in the page (AboutSummary) so it stays special.
  *
  * Scroll-reveal: eyebrow → headline → supporting copy → button row
  * cascade in with staggered timing as the section enters view.
@@ -38,23 +40,24 @@ export function CtaBanner() {
       };
 
   return (
-    <section className="py-24 lg:py-32 px-6 lg:px-12 bg-gold text-ink">
+    <section className="py-28 lg:py-44 px-6 lg:px-12 bg-ink text-canvas border-t border-canvas/10">
       <motion.div
         {...containerProps}
-        className="max-w-[1000px] mx-auto text-center"
+        className="max-w-[1100px] mx-auto text-center"
       >
-        <motion.p variants={child} className="caption text-ink mb-6">
+        <motion.p variants={child} className="caption text-gold mb-8">
           READY WHEN YOU ARE
         </motion.p>
         <motion.h2
           variants={child}
-          className="font-sans font-extrabold text-4xl md:text-5xl lg:text-7xl leading-[1.05] tracking-tight mb-6 text-balance text-ink"
+          className="font-sans font-extrabold text-5xl md:text-7xl lg:text-8xl leading-[1.02] tracking-tight text-balance text-canvas"
         >
           Let&apos;s build something worth talking about.
         </motion.h2>
+        <Rule className="bg-gold mx-auto mt-8" />
         <motion.p
           variants={child}
-          className="text-base lg:text-lg text-ink/75 max-w-2xl mx-auto leading-relaxed mb-10"
+          className="text-base lg:text-lg text-canvas/60 max-w-2xl mx-auto leading-relaxed mt-8 mb-12"
         >
           We work with a small roster of premium brands at a time. If
           you&apos;re one of them, we should talk.
@@ -65,13 +68,13 @@ export function CtaBanner() {
         >
           <Link
             href={site.cta.primary.href}
-            className="bg-ink text-canvas px-8 py-4 text-sm font-medium tracking-wide hover:bg-neutral-800 transition-colors duration-300"
+            className="bg-gold text-ink px-8 py-4 text-sm font-medium tracking-wide hover:bg-gold/85 transition-colors duration-300"
           >
             {site.cta.primary.label}
           </Link>
           <Link
             href="/contact"
-            className="border border-ink/40 text-ink px-8 py-4 text-sm font-medium tracking-wide hover:bg-ink hover:text-canvas hover:border-ink transition-colors duration-300"
+            className="border border-canvas/30 text-canvas px-8 py-4 text-sm font-medium tracking-wide hover:bg-canvas hover:text-ink hover:border-canvas transition-colors duration-300"
           >
             Or send us a note
           </Link>

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
+import { Rule } from "@/components/rule";
 
 /**
  * About snippet for the homepage — positioning statement designed
@@ -66,6 +67,7 @@ export function AboutSummary() {
             >
               Fluent in the world&apos;s premium markets.
             </motion.h2>
+            <Rule className="bg-ink mt-6" />
           </div>
 
           <div className="lg:col-span-8 space-y-6">

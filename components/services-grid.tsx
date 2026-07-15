@@ -9,6 +9,7 @@ import {
   type Variants,
 } from "motion/react";
 import { services, type Service } from "@/lib/services";
+import { Rule } from "@/components/rule";
 
 /**
  * Six-service accordion.
@@ -59,6 +60,7 @@ export function ServicesGrid() {
           >
             Full-service. An extension of your team.
           </motion.h2>
+          <Rule className="bg-gold mx-auto mb-6" />
           <motion.p
             variants={child}
             className="text-base lg:text-lg text-canvas/70 leading-relaxed max-w-2xl mx-auto"

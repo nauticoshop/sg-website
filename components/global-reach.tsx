@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "motion/react";
 import { GlobalReachMap } from "./global-reach-map";
+import { Rule } from "@/components/rule";
 
 /**
  * Global reach section — dark mode, full-bleed.
@@ -52,16 +53,17 @@ export function GlobalReach() {
             >
               Work that reaches the world.
             </motion.h2>
+            <Rule className="bg-gold mt-6" />
           </div>
           <div className="lg:col-span-5 lg:pt-8">
             <motion.p
               variants={child}
               className="text-lg lg:text-xl text-canvas/70 leading-relaxed"
             >
-              255M+ affluent viewers a year across an owned-media network on
-              four continents. And a production team that goes where the work
-              is — from the Bahamas and the Riviera to Dubai and Bangkok.
-              When our clients launch, the world is already watching.
+              An owned-media audience on four continents, and a production
+              team that goes where the work is — from the Bahamas and the
+              Riviera to Dubai and Bangkok. When our clients launch, the
+              world is already watching.
             </motion.p>
           </div>
         </header>

@@ -1,3 +1,5 @@
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
 
 export const alt =
@@ -11,7 +13,12 @@ export const contentType = "image/png";
  * Pages that need a route-specific image can drop their own
  * `opengraph-image.tsx` next to their page.tsx.
  */
-export default function Image() {
+export default async function Image() {
+  const [bold, medium] = await Promise.all([
+    readFile(join(process.cwd(), "assets/dm-sans-bold.ttf")),
+    readFile(join(process.cwd(), "assets/dm-sans-medium.ttf")),
+  ]);
+
   return new ImageResponse(
     (
       <div
@@ -23,8 +30,7 @@ export default function Image() {
           justifyContent: "space-between",
           background: "#0f0f0f",
           padding: "72px 80px",
-          fontFamily:
-            "Helvetica Neue, system-ui, -apple-system, BlinkMacSystemFont, sans-serif",
+          fontFamily: "DM Sans",
           color: "#f7f4f0",
         }}
       >
@@ -109,6 +115,13 @@ export default function Image() {
         </div>
       </div>
     ),
-    { ...size },
+    {
+      ...size,
+      fonts: [
+        { name: "DM Sans", data: bold, weight: 800, style: "normal" },
+        { name: "DM Sans", data: bold, weight: 700, style: "normal" },
+        { name: "DM Sans", data: medium, weight: 500, style: "normal" },
+      ],
+    },
   );
 }

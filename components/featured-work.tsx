@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, useReducedMotion } from "motion/react";
 import { featuredProjects, journalTypeLabel } from "@/lib/featured-work";
+import { Rule } from "@/components/rule";
 
 /**
  * Studio Journal feed — homepage section.
@@ -73,6 +74,7 @@ export function FeaturedWork() {
             >
               Inside the studio.
             </motion.h2>
+            <Rule className="bg-gold-deep mt-6" />
           </div>
           <motion.div variants={child}>
             <Link
