@@ -60,6 +60,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Display headlines run ALL CAPS — the wide grotesque's capitals are
+   where it earns the premium/industrial look (lowercase reads softer).
+   Long-form article headings (prose) stay sentence case. */
+h1,
+h2 {
+  text-transform: uppercase;
+}
+.prose h1,
+.prose h2 {
+  text-transform: none;
+}
+
 /* Editorial caption pattern (uppercase eyebrows) — bumped 13px → 15px
    weight 700 per Billy feedback (section titles "way too little"). */
 .caption {
