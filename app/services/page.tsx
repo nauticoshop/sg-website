@@ -66,7 +66,7 @@ export default function ServicesIndexPage() {
       <section className="bg-canvas px-6 lg:px-12 pb-16 lg:pb-24">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
           <div className="lg:col-span-5">
-            <p className="caption text-neutral-500 mb-5">ONE ROOF</p>
+            <p className="caption text-neutral-500 mb-5">◆ ONE ROOF</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl leading-[1.05] tracking-tight text-ink text-balance">
               Six disciplines that act like one.
             </h2>
@@ -93,7 +93,7 @@ export default function ServicesIndexPage() {
       <section className="bg-canvas py-16 lg:py-24 px-6 lg:px-12 border-t border-neutral-200">
         <div className="max-w-[1200px] mx-auto">
           <header className="mb-12 lg:mb-16 max-w-3xl">
-            <p className="caption text-neutral-500 mb-5">THE SUITE</p>
+            <p className="caption text-neutral-500 mb-5">◆ THE SUITE</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl leading-tight tracking-tight text-ink text-balance">
               What we ship.
             </h2>
@@ -151,7 +151,7 @@ export default function ServicesIndexPage() {
         <div className="max-w-[1440px] mx-auto">
           <header className="mb-12 lg:mb-16 max-w-3xl">
             <p className="caption text-gold mb-5 tracking-[0.28em]">
-              IN COMBINATION
+              ◆ IN COMBINATION
             </p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl leading-tight tracking-tight text-canvas text-balance">
               Most engagements use three or four at once.
@@ -235,7 +235,7 @@ export default function ServicesIndexPage() {
       <section className="bg-canvas py-20 lg:py-28 px-6 lg:px-12">
         <div className="max-w-[1000px] mx-auto text-center">
           <p className="caption text-neutral-500 mb-5 tracking-[0.28em]">
-            BUILT FOR PREMIUM
+            ◆ BUILT FOR PREMIUM
           </p>
           <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl leading-tight tracking-tight text-ink text-balance">
             One agency. One accountable team. Senior people on every brief.

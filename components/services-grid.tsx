@@ -40,7 +40,7 @@ export function ServicesGrid() {
 
   return (
     <section className="py-20 lg:py-28 px-6 lg:px-12 bg-ink text-canvas">
-      <div className="max-w-[1200px] mx-auto">
+      <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-x-16 gap-y-12">
         <motion.header
           initial={reduce ? false : "hidden"}
           whileInView={reduce ? undefined : "shown"}
@@ -49,28 +49,31 @@ export function ServicesGrid() {
             hidden: {},
             shown: { transition: { staggerChildren: 0.12 } },
           }}
-          className="text-center mb-12 lg:mb-20 max-w-3xl mx-auto"
+          className="lg:col-span-4 lg:sticky lg:top-32 lg:self-start"
         >
           <motion.p variants={child} className="caption text-gold mb-5">
-            WHAT WE DO
+            ◆ CAPABILITIES
           </motion.p>
           <motion.h2
             variants={child}
-            className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-canvas mb-5 text-balance"
+            className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.02] tracking-tight text-canvas text-balance"
           >
-            Full-service. An extension of your team.
+            What we do.
           </motion.h2>
-          <Rule className="bg-gold mx-auto mb-6" />
+          <Rule className="bg-gold mt-6" />
           <motion.p
             variants={child}
-            className="text-base lg:text-lg text-canvas/70 leading-relaxed max-w-2xl mx-auto"
+            className="text-xl lg:text-2xl font-light leading-[1.3] text-canvas mt-8"
           >
-            A diverse suite of specialty areas, all under one roof. Studio,
-            Social, Digital, Growth, Experiences, Intelligence.
+            Full-service. An extension of your team.{" "}
+            <span className="text-canvas/55">
+              Studio, Social, Digital, Growth, Experiences, Intelligence —
+              all under one roof.
+            </span>
           </motion.p>
         </motion.header>
 
-        <ol className="border-t border-canvas/15">
+        <ol className="lg:col-span-8 border-t border-canvas/15">
           {services.map((service, i) => (
             <ServiceRow key={service.slug} service={service} index={i} />
           ))}
@@ -97,21 +100,24 @@ function ServiceRow({
         type="button"
         aria-expanded={open}
         onClick={() => setOpen((o) => !o)}
-        className="w-full py-6 lg:py-9 flex items-baseline gap-5 lg:gap-10 text-left group transition-colors hover:bg-canvas/[0.03]"
+        className="w-full py-7 lg:py-9 flex items-center gap-6 lg:gap-10 text-left group transition-colors hover:bg-canvas/[0.03]"
       >
-        <span className="caption text-gold shrink-0 pt-1">{num}</span>
-
-        <span className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-none tracking-tight text-canvas group-hover:text-gold transition-colors duration-300">
-          {service.name}
+        <span className="font-sans font-extrabold text-3xl lg:text-4xl leading-none tracking-tight text-canvas/90 shrink-0 w-14 lg:w-16">
+          {num}
         </span>
 
-        <span className="hidden md:inline text-base lg:text-lg text-canvas/65 leading-snug flex-1 pt-2">
-          {service.tagline}
+        <span className="flex-1 min-w-0">
+          <span className="block font-sans font-extrabold text-2xl lg:text-3xl leading-none tracking-tight text-canvas group-hover:text-gold transition-colors duration-300">
+            {service.name}
+          </span>
+          <span className="hidden md:block text-sm lg:text-base text-canvas/55 leading-snug mt-2">
+            {service.tagline}
+          </span>
         </span>
 
         <span
           aria-hidden
-          className={`shrink-0 self-center text-gold transition-transform duration-300 ${
+          className={`shrink-0 self-center text-canvas/70 group-hover:text-gold transition-all duration-300 ${
             open ? "rotate-45" : ""
           }`}
         >
@@ -163,7 +169,7 @@ function ServiceRow({
             }
             className="overflow-hidden"
           >
-            <div className="pb-10 lg:pb-14 pt-2 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 lg:pl-20">
+            <div className="pb-10 lg:pb-14 pt-2 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 lg:pl-[6.5rem]">
               <div className="lg:col-span-7 space-y-6">
                 <p className="text-base lg:text-lg text-canvas/85 leading-relaxed">
                   {service.description}
@@ -192,7 +198,7 @@ function ServiceRow({
               </div>
 
               <div className="lg:col-span-5">
-                <p className="caption text-gold mb-4">CAPABILITIES</p>
+                <p className="caption text-gold mb-4">◆ CAPABILITIES</p>
                 <ul className="space-y-2">
                   {service.capabilities.slice(0, 7).map((capability) => (
                     <li

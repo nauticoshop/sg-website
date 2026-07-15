@@ -45,7 +45,7 @@ export function Process() {
     <section className="bg-ink text-canvas py-24 lg:py-36 px-6 lg:px-12">
       <div className="max-w-[1440px] mx-auto">
         <header className="text-center mb-16 lg:mb-24 max-w-4xl mx-auto">
-          <p className="caption text-gold mb-6">HOW WE WORK</p>
+          <p className="caption text-gold mb-6">◆ HOW WE WORK</p>
           <h2 className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] tracking-tight mb-8 text-balance">
             Concept to execution. Every engagement.
           </h2>

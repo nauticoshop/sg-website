@@ -145,7 +145,7 @@ export default async function JournalEntryPage({ params }: RouteParams) {
           {entry.content.closer && (
             <section className="bg-ink text-canvas py-20 lg:py-28 px-6 lg:px-12">
               <div className="max-w-[1000px] mx-auto text-center">
-                <p className="caption text-gold mb-8">THE TAKEAWAY</p>
+                <p className="caption text-gold mb-8">◆ THE TAKEAWAY</p>
                 <p className="font-sans font-extrabold text-2xl md:text-3xl lg:text-4xl leading-[1.2] text-balance">
                   {entry.content.closer}
                 </p>
@@ -158,7 +158,7 @@ export default async function JournalEntryPage({ params }: RouteParams) {
         <section className="bg-canvas py-20 lg:py-28 px-6 lg:px-12">
           <div className="max-w-[900px] mx-auto">
             <div className="bg-neutral-100 border border-neutral-200 p-12 lg:p-20 text-center">
-              <p className="caption text-neutral-500 mb-4">COMING SOON</p>
+              <p className="caption text-neutral-500 mb-4">◆ COMING SOON</p>
               <p className="font-sans font-extrabold text-2xl lg:text-3xl text-ink mb-4 text-balance">
                 The full write-up for {entry.client} is being packaged.
               </p>
@@ -181,7 +181,7 @@ export default async function JournalEntryPage({ params }: RouteParams) {
       <section className="bg-canvas py-16 lg:py-20 px-6 lg:px-12 border-y border-neutral-200">
         <div className="max-w-[1200px] mx-auto">
           <Link href={next.href} className="group block">
-            <p className="caption text-neutral-500 mb-4">NEXT ENTRY</p>
+            <p className="caption text-neutral-500 mb-4">◆ NEXT ENTRY</p>
             <div className="flex items-baseline justify-between gap-6">
               <h3 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl text-ink leading-tight tracking-tight group-hover:text-neutral-500 transition-colors duration-300 text-balance">
                 {next.client}

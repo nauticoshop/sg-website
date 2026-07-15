@@ -59,7 +59,7 @@ export function AboutSummary() {
               variants={variants}
               className="caption text-ink mb-6"
             >
-              ABOUT
+              ◆ ABOUT
             </motion.p>
             <motion.h2
               variants={variants}

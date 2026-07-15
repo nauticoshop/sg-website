@@ -25,7 +25,7 @@ export function VerticalsGrid() {
     <section className="pt-10 lg:pt-14 pb-16 lg:pb-20 px-6 lg:px-12 bg-canvas">
       <div className="max-w-[1440px] mx-auto">
         <header className="text-center mb-10 lg:mb-14 max-w-3xl mx-auto">
-          <p className="caption text-neutral-500 mb-5">INDUSTRIES WE SERVE</p>
+          <p className="caption text-neutral-500 mb-5">◆ INDUSTRIES WE SERVE</p>
           <h2 className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] tracking-tight text-ink mb-5 text-balance">
             Vertical-focused.
           </h2>

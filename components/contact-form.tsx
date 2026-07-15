@@ -33,7 +33,7 @@ export function ContactForm() {
   if (result.state === "ok") {
     return (
       <div className="bg-canvas border border-neutral-200 p-10 lg:p-12 text-center">
-        <p className="caption text-neutral-500 mb-4">RECEIVED</p>
+        <p className="caption text-neutral-500 mb-4">◆ RECEIVED</p>
         <h3 className="font-sans font-extrabold text-3xl lg:text-4xl text-ink mb-4">
           Thanks. We&apos;ll be in touch shortly.
         </h3>

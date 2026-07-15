@@ -66,7 +66,7 @@ export default async function JobPage({
             </svg>
             All openings
           </Link>
-          <p className="caption text-neutral-500 mb-5">OPEN ROLE</p>
+          <p className="caption text-neutral-500 mb-5">◆ OPEN ROLE</p>
           <h1 className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-ink text-balance">
             {job.title}
           </h1>
@@ -92,7 +92,7 @@ export default async function JobPage({
       {/* Shared studio intro */}
       <section className="bg-ink text-canvas py-14 lg:py-16 px-6 lg:px-12">
         <div className="max-w-[900px] mx-auto">
-          <p className="caption text-gold mb-5">WHO YOU&apos;D JOIN</p>
+          <p className="caption text-gold mb-5">◆ WHO YOU&apos;D JOIN</p>
           <p className="text-lg lg:text-2xl text-canvas/90 leading-[1.4] font-light">
             Surroundings Group is the creative partner behind the world&apos;s
             premium brands: marine, real estate, private aviation,
@@ -111,7 +111,7 @@ export default async function JobPage({
           {job.sections.map((section) => (
             <div key={section.heading}>
               <h2 className="caption text-neutral-500 mb-5">
-                {section.heading.toUpperCase()}
+                ◆ {section.heading.toUpperCase()}
               </h2>
               {section.body?.map((p) => (
                 <p
@@ -141,7 +141,7 @@ export default async function JobPage({
 
           {job.schedule && (
             <div>
-              <h2 className="caption text-neutral-500 mb-5">WORK SCHEDULE</h2>
+              <h2 className="caption text-neutral-500 mb-5">◆ WORK SCHEDULE</h2>
               <p className="text-base lg:text-lg text-neutral-700 leading-relaxed">
                 {job.schedule}
               </p>
@@ -149,7 +149,7 @@ export default async function JobPage({
           )}
 
           <div>
-            <h2 className="caption text-neutral-500 mb-5">HIRING TIMELINE</h2>
+            <h2 className="caption text-neutral-500 mb-5">◆ HIRING TIMELINE</h2>
             <p className="text-base lg:text-lg text-neutral-700 leading-relaxed">
               Hiring runs on a rolling basis. If this role fits, introduce
               yourself now; when the hiring need opens, we reach out. We read
@@ -176,7 +176,7 @@ export default async function JobPage({
       >
         <div className="max-w-[900px] mx-auto">
           <header className="mb-10 lg:mb-12">
-            <p className="caption text-neutral-500 mb-4">APPLY</p>
+            <p className="caption text-neutral-500 mb-4">◆ APPLY</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
               Sound like you?
             </h2>

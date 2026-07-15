@@ -76,7 +76,7 @@ export function CareersHero() {
     <section className="bg-canvas pt-36 lg:pt-44 pb-16 lg:pb-20 px-6 lg:px-12">
       <motion.div {...container} className="max-w-[1200px] mx-auto">
         <motion.p variants={child} className="caption text-neutral-500 mb-6">
-          CAREERS
+          ◆ CAREERS
         </motion.p>
         <motion.h1
           variants={child}
@@ -129,7 +129,7 @@ export function OpenRolesList() {
     >
       <motion.div {...container} className="max-w-[1200px] mx-auto">
         <motion.header variants={child} className="mb-8 lg:mb-10">
-          <p className="caption text-neutral-500 mb-4">OPEN ROLES</p>
+          <p className="caption text-neutral-500 mb-4">◆ OPEN ROLES</p>
           <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
             Current openings.
           </h2>
@@ -243,7 +243,7 @@ export function WhyPeopleStay() {
           variants={child}
           className="lg:col-span-4 lg:sticky lg:top-32 lg:self-start"
         >
-          <p className="caption text-neutral-500 mb-5">WHY HERE</p>
+          <p className="caption text-neutral-500 mb-5">◆ WHY HERE</p>
           <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
             Why people stay.
           </h2>
@@ -309,7 +309,7 @@ export function HowWeHire() {
           variants={child}
           className="lg:col-span-4 lg:sticky lg:top-32 lg:self-start"
         >
-          <p className="caption text-gold mb-5">WHAT TO EXPECT</p>
+          <p className="caption text-gold mb-5">◆ WHAT TO EXPECT</p>
           <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-canvas text-balance">
             How we hire.
           </h2>
@@ -381,7 +381,7 @@ export function OfferAndCta() {
             variants={child}
             className="lg:col-span-4 lg:sticky lg:top-32 lg:self-start"
           >
-            <p className="caption text-ink/70 mb-5">WHAT WE OFFER</p>
+            <p className="caption text-ink/70 mb-5">◆ WHAT WE OFFER</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
               The table stakes, the upside, and the access.
             </h2>

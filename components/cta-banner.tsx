@@ -46,7 +46,7 @@ export function CtaBanner() {
         className="max-w-[1100px] mx-auto text-center"
       >
         <motion.p variants={child} className="caption text-gold mb-8">
-          READY WHEN YOU ARE
+          ◆ READY WHEN YOU ARE
         </motion.p>
         <motion.h2
           variants={child}

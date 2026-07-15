@@ -66,7 +66,7 @@ export function FeaturedWork() {
         >
           <div>
             <motion.p variants={child} className="caption text-neutral-500 mb-4">
-              STUDIO JOURNAL
+              ◆ STUDIO JOURNAL
             </motion.p>
             <motion.h2
               variants={child}

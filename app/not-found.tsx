@@ -22,7 +22,7 @@ export default function NotFound() {
             </div>
 
             <div className="lg:col-span-7">
-              <p className="caption text-gold mb-6">PAGE NOT FOUND</p>
+              <p className="caption text-gold mb-6">◆ PAGE NOT FOUND</p>
               <h1 className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-canvas mb-6 text-balance">
                 The page you&apos;re looking for isn&apos;t here.
               </h1>

@@ -45,7 +45,7 @@ export function GlobalReach() {
         <header className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mb-16 lg:mb-20">
           <div className="lg:col-span-7">
             <motion.p variants={child} className="caption text-gold mb-6">
-              GLOBAL PRESENCE
+              ◆ GLOBAL PRESENCE
             </motion.p>
             <motion.h2
               variants={child}

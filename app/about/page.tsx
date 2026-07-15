@@ -71,7 +71,7 @@ export default function AboutPage() {
       <section className="bg-canvas pb-16 lg:pb-24 px-6 lg:px-12">
         <div className="max-w-[1200px] mx-auto">
           <header className="mb-12 lg:mb-16 max-w-3xl">
-            <p className="caption text-neutral-500 mb-5">OPERATING PRINCIPLES</p>
+            <p className="caption text-neutral-500 mb-5">◆ OPERATING PRINCIPLES</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl leading-tight tracking-tight text-ink text-balance">
               Four convictions that shape every engagement.
             </h2>
@@ -101,7 +101,7 @@ export default function AboutPage() {
       <section className="bg-gold text-ink py-20 lg:py-28 px-6 lg:px-12">
         <div className="max-w-[1000px] mx-auto text-center">
           <p className="caption text-ink mb-8 tracking-[0.28em]">
-            FROM THE STUDIO
+            ◆ FROM THE STUDIO
           </p>
           <blockquote className="font-sans font-extrabold text-2xl md:text-3xl lg:text-4xl xl:text-5xl leading-[1.15] tracking-tight text-ink text-balance">
             <span aria-hidden className="text-ink/40 mr-1">&ldquo;</span>
@@ -136,7 +136,7 @@ export default function AboutPage() {
         <div className="max-w-[1200px] mx-auto">
           <header className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
             <div>
-              <p className="caption text-neutral-500 mb-4">THE TEAM</p>
+              <p className="caption text-neutral-500 mb-4">◆ THE TEAM</p>
               <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
                 The team behind the work.
               </h2>
@@ -188,7 +188,7 @@ export default function AboutPage() {
         <div className="max-w-[1200px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-7">
-              <p className="caption text-gold mb-6">SISTER BRAND</p>
+              <p className="caption text-gold mb-6">◆ SISTER BRAND</p>
               <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight mb-6 text-balance">
                 Nautical Network. Owned distribution at scale.
               </h2>

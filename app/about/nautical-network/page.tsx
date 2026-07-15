@@ -65,7 +65,7 @@ export default function NauticalNetworkPage() {
       <section className="bg-canvas py-20 lg:py-28 px-6 lg:px-12">
         <div className="max-w-[1200px] mx-auto">
           <header className="mb-12 lg:mb-16 max-w-3xl">
-            <p className="caption text-neutral-500 mb-5">INSIDE THE NETWORK</p>
+            <p className="caption text-neutral-500 mb-5">◆ INSIDE THE NETWORK</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
               The flagship, plus eight branded channels.
             </h2>
@@ -167,7 +167,7 @@ export default function NauticalNetworkPage() {
         <div className="max-w-[1200px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
             <div>
-              <p className="caption text-neutral-500 mb-4">WHY IT MATTERS</p>
+              <p className="caption text-neutral-500 mb-4">◆ WHY IT MATTERS</p>
               <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink mb-6 text-balance">
                 Owned reach changes the math.
               </h2>
@@ -180,7 +180,7 @@ export default function NauticalNetworkPage() {
               </p>
             </div>
             <div>
-              <p className="caption text-neutral-500 mb-4">HOW WE EXTEND IT</p>
+              <p className="caption text-neutral-500 mb-4">◆ HOW WE EXTEND IT</p>
               <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink mb-6 text-balance">
                 Distribution as a service.
               </h2>
@@ -201,7 +201,7 @@ export default function NauticalNetworkPage() {
         <div className="max-w-[1200px] mx-auto">
           <header className="mb-12 lg:mb-16 max-w-3xl">
             <p className="caption text-gold mb-5 tracking-[0.28em]">
-              HOW CLIENT WORK FLOWS THROUGH IT
+              ◆ HOW CLIENT WORK FLOWS THROUGH IT
             </p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-canvas text-balance">
               From shoot day to 180M+ in three steps.
@@ -232,7 +232,7 @@ export default function NauticalNetworkPage() {
         <div className="max-w-[1200px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
             <div className="lg:col-span-5">
-              <p className="caption text-neutral-500 mb-5">BEYOND MARINE</p>
+              <p className="caption text-neutral-500 mb-5">◆ BEYOND MARINE</p>
               <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink leading-tight text-balance">
                 The same model is being built in each vertical we serve.
               </h2>
@@ -279,7 +279,7 @@ export default function NauticalNetworkPage() {
       {/* External link */}
       <section className="bg-ink text-canvas py-16 lg:py-20 px-6 lg:px-12">
         <div className="max-w-[1200px] mx-auto text-center">
-          <p className="caption text-neutral-500 mb-6">VISIT THE NETWORK</p>
+          <p className="caption text-neutral-500 mb-6">◆ VISIT THE NETWORK</p>
           <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight mb-8 text-balance max-w-3xl mx-auto">
             See what we publish daily.
           </h2>
