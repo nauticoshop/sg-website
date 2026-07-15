@@ -40,6 +40,11 @@ function useReveal(stagger = 0.1) {
   return { child, container };
 }
 
+/** Short accent rule under section headlines — the page's splitting device. */
+function Rule({ className = "" }: { className?: string }) {
+  return <span aria-hidden className={`block w-14 h-[3px] mt-6 ${className}`} />;
+}
+
 function Arrow({ className = "" }: { className?: string }) {
   return (
     <svg
@@ -83,7 +88,7 @@ export function CareersHero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 mt-10 lg:mt-14">
           <motion.p
             variants={child}
-            className="lg:col-start-6 lg:col-span-7 text-lg lg:text-xl text-neutral-700 leading-relaxed max-w-2xl"
+            className="lg:col-start-6 lg:col-span-7 text-lg lg:text-xl text-neutral-800 leading-relaxed max-w-2xl"
           >
             An adaptive-first group of creative humans working in the
             industries most people only dream about. We bet you&apos;ll fit
@@ -118,29 +123,30 @@ export function OpenRolesList() {
   return (
     <section
       id="roles"
-      className="bg-canvas py-20 lg:py-28 px-6 lg:px-12 scroll-mt-20"
+      className="bg-[#EFE7DA] py-20 lg:py-28 px-6 lg:px-12 scroll-mt-20"
     >
       <motion.div {...container} className="max-w-[1200px] mx-auto">
-        <motion.header variants={child} className="mb-6 lg:mb-8">
+        <motion.header variants={child} className="mb-8 lg:mb-10">
           <p className="caption text-gold-deep mb-4">OPEN ROLES</p>
           <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
             Current openings.
           </h2>
+          <Rule className="bg-gold-deep" />
         </motion.header>
 
         {jobs.length > 0 ? (
           <>
-            <ul className="border-t border-neutral-200">
+            <ul className="border-t border-ink/15">
               {jobs.map((job) => (
                 <motion.li variants={child} key={job.slug}>
                   <Link
                     href={`/careers/${job.slug}`}
-                    className="group grid grid-cols-1 md:grid-cols-12 md:items-baseline gap-y-2 gap-x-6 py-7 lg:py-9 border-b border-neutral-200 hover:border-gold-deep/50 transition-colors duration-300"
+                    className="group grid grid-cols-1 md:grid-cols-12 md:items-baseline gap-y-2 gap-x-6 py-7 lg:py-9 border-b border-ink/10 hover:border-gold-deep/60 transition-colors duration-300"
                   >
                     <h3 className="md:col-span-7 font-sans font-extrabold text-2xl lg:text-[2.5rem] leading-tight tracking-tight text-ink group-hover:text-gold-deep transition-colors duration-300 text-balance">
                       {job.title}
                     </h3>
-                    <span className="md:col-span-4 caption text-neutral-500">
+                    <span className="md:col-span-4 caption text-neutral-600">
                       {job.type} · {job.location}
                     </span>
                     <span className="hidden md:flex md:col-span-1 justify-end text-neutral-400 group-hover:text-gold-deep transition-colors duration-300">
@@ -152,7 +158,7 @@ export function OpenRolesList() {
             </ul>
             <motion.p
               variants={child}
-              className="text-sm text-neutral-600 mt-8 leading-relaxed"
+              className="text-sm text-neutral-700 mt-8 leading-relaxed"
             >
               Don&apos;t see your role?{" "}
               <Link
@@ -239,6 +245,7 @@ export function WhyPeopleStay() {
           <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
             Why people stay.
           </h2>
+          <Rule className="bg-gold-deep" />
         </motion.div>
 
         <div className="lg:col-span-8">
@@ -246,14 +253,14 @@ export function WhyPeopleStay() {
             <motion.div
               variants={child}
               key={b.title}
-              className={`grid grid-cols-1 md:grid-cols-12 gap-x-6 gap-y-2 py-7 lg:py-8 ${
-                i === 0 ? "" : "border-t border-neutral-200"
+              className={`grid grid-cols-1 md:grid-cols-12 gap-x-6 gap-y-2 py-7 lg:py-8 border-l-2 border-l-transparent hover:border-l-gold-deep hover:pl-5 transition-all duration-300 ${
+                i === 0 ? "" : "border-t border-t-neutral-300"
               }`}
             >
               <h3 className="md:col-span-5 font-sans font-extrabold text-xl lg:text-2xl text-ink leading-tight text-balance">
                 {b.title}
               </h3>
-              <p className="md:col-span-7 text-base text-neutral-700 leading-relaxed">
+              <p className="md:col-span-7 text-base text-neutral-800 leading-relaxed">
                 {b.copy}
               </p>
             </motion.div>
@@ -304,6 +311,7 @@ export function HowWeHire() {
           <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-canvas text-balance">
             How we hire.
           </h2>
+          <Rule className="bg-gold" />
           <p className="text-base lg:text-lg text-canvas/70 leading-relaxed mt-6">
             We read every note. No black-hole portals, no ATS auto-rejections
             ten months after the fact. Here&apos;s the actual sequence.
@@ -379,6 +387,7 @@ export function OfferAndCta() {
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
               The table stakes, the upside, and the access.
             </h2>
+            <Rule className="bg-ink" />
           </motion.div>
 
           <div className="lg:col-span-8">
