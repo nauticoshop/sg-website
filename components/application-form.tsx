@@ -10,6 +10,15 @@ import { trackEvent } from "@/lib/analytics";
  * email the team via the submitApplication server action with the
  * CV attached.
  */
+/**
+ * Vercel rejects request bodies over ~4.5MB at the platform edge (413)
+ * before any of our code runs, so the real ceiling is 4MB — enforced
+ * here at file-pick time and again server-side.
+ */
+const MAX_FILE_BYTES = 4 * 1024 * 1024;
+const FILE_TOO_BIG =
+  "That file is over 4MB. Please compress it or export a smaller PDF and try again.";
+
 export function ApplicationForm({ roleTitle }: { roleTitle: string }) {
   const [isPending, startTransition] = useTransition();
   const [fileName, setFileName] = useState<string | null>(null);
@@ -18,18 +27,47 @@ export function ApplicationForm({ roleTitle }: { roleTitle: string }) {
     message?: string;
   }>({ state: "idle" });
 
+  function onPickFile(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0] ?? null;
+    if (file && file.size > MAX_FILE_BYTES) {
+      e.target.value = "";
+      setFileName(null);
+      setResult({ state: "error", message: FILE_TOO_BIG });
+      return;
+    }
+    setFileName(file?.name ?? null);
+    setResult({ state: "idle" });
+  }
+
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     formData.set("role", roleTitle);
 
+    const cv = formData.get("cv");
+    if (cv instanceof File && cv.size > MAX_FILE_BYTES) {
+      setResult({ state: "error", message: FILE_TOO_BIG });
+      return;
+    }
+
     startTransition(async () => {
-      const res = await submitApplication(formData);
-      if (res.ok) {
-        trackEvent("job_application_submit", { role: roleTitle });
-        setResult({ state: "ok" });
-      } else {
-        setResult({ state: "error", message: res.error });
+      try {
+        const res = await submitApplication(formData);
+        if (res.ok) {
+          trackEvent("job_application_submit", { role: roleTitle });
+          setResult({ state: "ok" });
+        } else {
+          setResult({ state: "error", message: res.error });
+        }
+      } catch {
+        // Transport-level failure (payload rejected, network drop, or a
+        // deploy landing mid-session) — keep the page alive with a
+        // human answer instead of crashing to an error screen.
+        setResult({
+          state: "error",
+          message:
+            "We couldn't send that. If your file is large, compress it under 4MB — then refresh this page and try again.",
+        });
       }
     });
   }
@@ -119,7 +157,7 @@ export function ApplicationForm({ roleTitle }: { roleTitle: string }) {
           className="flex items-center justify-between gap-4 w-full bg-canvas border border-dashed border-neutral-400 px-4 py-4 cursor-pointer hover:border-ink transition-colors"
         >
           <span className="text-sm text-neutral-700 truncate">
-            {fileName ?? "Choose a file (PDF or Word, max 5MB)"}
+            {fileName ?? "Choose a file (PDF or Word, max 4MB)"}
           </span>
           <span className="caption text-gold-deep shrink-0">
             {fileName ? "CHANGE" : "BROWSE"}
@@ -132,7 +170,7 @@ export function ApplicationForm({ roleTitle }: { roleTitle: string }) {
           required
           accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
           className="sr-only"
-          onChange={(e) => setFileName(e.target.files?.[0]?.name ?? null)}
+          onChange={onPickFile}
         />
       </div>
 

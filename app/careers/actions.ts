@@ -10,8 +10,9 @@ import { Resend } from "resend";
  * contact form uses. Env vars are shared with the contact action:
  *   RESEND_API_KEY, CONTACT_TO_EMAIL, CONTACT_FROM_EMAIL.
  *
- * File constraints: PDF or Word docs only, max 5MB. The server
- * action body limit is raised in next.config.ts to allow uploads.
+ * File constraints: PDF or Word docs only, max 4MB (Vercel caps
+ * request bodies at ~4.5MB at the platform edge; next.config.ts
+ * raises the framework's own action body limit to match).
  */
 
 export interface ApplicationResult {
@@ -22,7 +23,9 @@ export interface ApplicationResult {
 const DEFAULT_TO = "interested@surroundingsgroup.com,billy@surroundingsgroup.com";
 const DEFAULT_FROM = "Surroundings Group <interested@surroundingsgroup.com>";
 
-const MAX_FILE_BYTES = 5 * 1024 * 1024; // 5MB
+// Vercel rejects request bodies over ~4.5MB at the platform edge, so
+// anything above 4MB would 413 before this code runs anyway.
+const MAX_FILE_BYTES = 4 * 1024 * 1024;
 const ALLOWED_EXTENSIONS = [".pdf", ".doc", ".docx"];
 const ALLOWED_MIME_PREFIXES = [
   "application/pdf",
@@ -58,7 +61,7 @@ export async function submitApplication(
     return { ok: false, error: "Please attach your resume or CV." };
   }
   if (file.size > MAX_FILE_BYTES) {
-    return { ok: false, error: "File is too large. Please keep it under 5MB." };
+    return { ok: false, error: "File is too large. Please keep it under 4MB." };
   }
   const lowerName = file.name.toLowerCase();
   const extOk = ALLOWED_EXTENSIONS.some((ext) => lowerName.endsWith(ext));
