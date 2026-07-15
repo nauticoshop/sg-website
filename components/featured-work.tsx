@@ -65,7 +65,7 @@ export function FeaturedWork() {
           className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 lg:mb-16 max-w-5xl"
         >
           <div>
-            <motion.p variants={child} className="caption text-gold-deep mb-4">
+            <motion.p variants={child} className="caption text-neutral-500 mb-4">
               STUDIO JOURNAL
             </motion.p>
             <motion.h2
@@ -74,12 +74,12 @@ export function FeaturedWork() {
             >
               Inside the studio.
             </motion.h2>
-            <Rule className="bg-gold-deep mt-6" />
+            <Rule className="bg-ink mt-6" />
           </div>
           <motion.div variants={child}>
             <Link
               href="/journal"
-              className="caption inline-flex items-center gap-2 text-ink hover:text-gold-deep transition-colors duration-300 shrink-0"
+              className="caption inline-flex items-center gap-2 text-ink hover:text-neutral-500 transition-colors duration-300 shrink-0"
             >
               Step inside
               <svg
@@ -153,7 +153,7 @@ function ProjectCard({
           )}
           {/* Subtle gold accent corner */}
           <div
-            className="absolute top-0 right-0 w-16 h-px bg-gold-deep/40 z-10"
+            className="absolute top-0 right-0 w-16 h-px bg-ink/40 z-10"
             aria-hidden
           />
         </div>
@@ -175,7 +175,7 @@ function ProjectCard({
             )}
           </div>
 
-          <h3 className="font-sans font-extrabold text-2xl lg:text-3xl leading-tight mb-4 text-balance group-hover:text-gold-deep transition-colors duration-300">
+          <h3 className="font-sans font-extrabold text-2xl lg:text-3xl leading-tight mb-4 text-balance group-hover:text-neutral-500 transition-colors duration-300">
             {project.client}
           </h3>
 
@@ -183,7 +183,7 @@ function ProjectCard({
             {project.headline}
           </p>
 
-          <span className="caption inline-flex items-center gap-2 text-canvas group-hover:text-gold-deep transition-colors duration-300">
+          <span className="caption inline-flex items-center gap-2 text-canvas group-hover:text-neutral-500 transition-colors duration-300">
             Read entry
             <svg
               width="14"

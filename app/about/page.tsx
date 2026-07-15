@@ -28,7 +28,7 @@ export default function AboutPage() {
       <section className="bg-canvas py-16 lg:py-24 px-6 lg:px-12">
         <div className="max-w-[900px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-            <p className="caption text-gold-deep lg:col-span-1">OUR STORY</p>
+            <p className="caption text-neutral-500 lg:col-span-1">OUR STORY</p>
             <div className="lg:col-span-2 space-y-6 text-base lg:text-lg text-neutral-700 leading-relaxed">
               <p>
                 Surroundings Group started with a simple observation. Most
@@ -71,7 +71,7 @@ export default function AboutPage() {
       <section className="bg-canvas pb-16 lg:pb-24 px-6 lg:px-12">
         <div className="max-w-[1200px] mx-auto">
           <header className="mb-12 lg:mb-16 max-w-3xl">
-            <p className="caption text-gold-deep mb-5">OPERATING PRINCIPLES</p>
+            <p className="caption text-neutral-500 mb-5">OPERATING PRINCIPLES</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl leading-tight tracking-tight text-ink text-balance">
               Four convictions that shape every engagement.
             </h2>
@@ -136,14 +136,14 @@ export default function AboutPage() {
         <div className="max-w-[1200px] mx-auto">
           <header className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
             <div>
-              <p className="caption text-gold-deep mb-4">THE TEAM</p>
+              <p className="caption text-neutral-500 mb-4">THE TEAM</p>
               <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
                 The team behind the work.
               </h2>
             </div>
             <Link
               href="/about/team"
-              className="caption inline-flex items-center gap-2 text-ink hover:text-gold-deep transition-colors shrink-0"
+              className="caption inline-flex items-center gap-2 text-ink hover:text-neutral-500 transition-colors shrink-0"
             >
               Meet the full team
               <Arrow />
@@ -167,7 +167,7 @@ export default function AboutPage() {
                     />
                   )}
                 </div>
-                <p className="caption text-gold-deep mb-2">{m.department}</p>
+                <p className="caption text-neutral-500 mb-2">{m.department}</p>
                 <h3 className="font-sans font-extrabold text-2xl text-ink mb-2">
                   {m.name}
                 </h3>

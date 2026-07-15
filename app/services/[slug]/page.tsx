@@ -88,7 +88,7 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
         <div className="max-w-[1200px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             <div className="lg:col-span-5">
-              <p className="caption text-gold-deep mb-4">THE WORK</p>
+              <p className="caption text-neutral-500 mb-4">THE WORK</p>
               <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink leading-[1.1] text-balance">
                 {service.headlines.intro}
               </h2>
@@ -137,7 +137,7 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
       <section className="bg-canvas py-20 lg:py-28 px-6 lg:px-12">
         <div className="max-w-[1200px] mx-auto">
           <header className="mb-12 lg:mb-16 max-w-3xl">
-            <p className="caption text-gold-deep mb-4">THE DELIVERABLES</p>
+            <p className="caption text-neutral-500 mb-4">THE DELIVERABLES</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink leading-[1.1] text-balance">
               {service.headlines.deliverables}
             </h2>
@@ -146,7 +146,7 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-px bg-neutral-200 border border-neutral-200">
             {service.sampleDeliverables.map((deliverable, i) => (
               <li key={i} className="bg-canvas p-6 lg:p-8 flex items-start gap-4">
-                <span className="caption text-gold-deep pt-1 shrink-0 w-8">
+                <span className="caption text-neutral-500 pt-1 shrink-0 w-8">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <span className="text-base lg:text-lg text-ink leading-snug">
@@ -172,7 +172,7 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
       <section className="bg-neutral-50 py-20 lg:py-28 px-6 lg:px-12 border-y border-neutral-200">
         <div className="max-w-[1200px] mx-auto">
           <header className="text-center mb-12 lg:mb-16 max-w-2xl mx-auto">
-            <p className="caption text-gold-deep mb-4">HOW WE WORK</p>
+            <p className="caption text-neutral-500 mb-4">HOW WE WORK</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
               {service.headlines.process}
             </h2>
@@ -181,7 +181,7 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
           <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {service.processSteps.map((step, i) => (
               <li key={i} className="bg-canvas p-6 lg:p-8">
-                <p className="caption text-gold-deep mb-4">
+                <p className="caption text-neutral-500 mb-4">
                   {String(i + 1).padStart(2, "0")}
                 </p>
                 <h3 className="font-sans font-extrabold text-xl lg:text-2xl text-ink mb-3">
@@ -201,7 +201,7 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
         <section className="bg-canvas py-20 lg:py-28 px-6 lg:px-12">
           <div className="max-w-[1200px] mx-auto">
             <header className="mb-12 lg:mb-16 max-w-3xl">
-              <p className="caption text-gold-deep mb-4">WHERE WE APPLY IT</p>
+              <p className="caption text-neutral-500 mb-4">WHERE WE APPLY IT</p>
               <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink leading-[1.1] text-balance">
                 {service.headlines.apply}
               </h2>
@@ -242,14 +242,14 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
           <div className="max-w-[1200px] mx-auto">
             <header className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
               <div>
-                <p className="caption text-gold-deep mb-4">RECENT WORK</p>
+                <p className="caption text-neutral-500 mb-4">RECENT WORK</p>
                 <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink leading-[1.1] text-balance">
                   {service.name} in the field.
                 </h2>
               </div>
               <Link
                 href="/work"
-                className="caption inline-flex items-center gap-2 text-ink hover:text-gold-deep transition-colors shrink-0"
+                className="caption inline-flex items-center gap-2 text-ink hover:text-neutral-500 transition-colors shrink-0"
               >
                 All work
                 <Arrow />
@@ -348,9 +348,9 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
       <section className="bg-canvas py-16 lg:py-20 px-6 lg:px-12 border-t border-b border-neutral-200">
         <div className="max-w-[1200px] mx-auto">
           <Link href={next.href} className="group block">
-            <p className="caption text-gold-deep mb-4">NEXT SERVICE</p>
+            <p className="caption text-neutral-500 mb-4">NEXT SERVICE</p>
             <div className="flex items-baseline justify-between gap-6">
-              <h3 className="font-sans font-extrabold text-4xl md:text-5xl lg:text-7xl text-ink leading-none tracking-tight group-hover:text-gold-deep transition-colors duration-300">
+              <h3 className="font-sans font-extrabold text-4xl md:text-5xl lg:text-7xl text-ink leading-none tracking-tight group-hover:text-neutral-500 transition-colors duration-300">
                 {next.name}
               </h3>
               <svg
@@ -358,7 +358,7 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
                 height="20"
                 viewBox="0 0 14 10"
                 fill="none"
-                className="text-ink group-hover:text-gold-deep transition-all duration-300 group-hover:translate-x-2 shrink-0"
+                className="text-ink group-hover:text-neutral-500 transition-all duration-300 group-hover:translate-x-2 shrink-0"
                 aria-hidden
               >
                 <path

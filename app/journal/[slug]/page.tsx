@@ -69,7 +69,7 @@ export default async function JournalEntryPage({ params }: RouteParams) {
           <section className="bg-canvas py-20 lg:py-28 px-6 lg:px-12">
             <div className="max-w-[900px] mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-                <p className="caption text-gold-deep lg:col-span-1">
+                <p className="caption text-neutral-500 lg:col-span-1">
                   THE STORY
                 </p>
                 <p className="lg:col-span-2 text-xl lg:text-2xl text-ink leading-snug font-medium text-balance">
@@ -123,7 +123,7 @@ export default async function JournalEntryPage({ params }: RouteParams) {
                 >
                   <div className="lg:col-span-4">
                     {s.eyebrow && (
-                      <p className="caption text-gold-deep mb-4">
+                      <p className="caption text-neutral-500 mb-4">
                         {s.eyebrow}
                       </p>
                     )}
@@ -181,9 +181,9 @@ export default async function JournalEntryPage({ params }: RouteParams) {
       <section className="bg-canvas py-16 lg:py-20 px-6 lg:px-12 border-y border-neutral-200">
         <div className="max-w-[1200px] mx-auto">
           <Link href={next.href} className="group block">
-            <p className="caption text-gold-deep mb-4">NEXT ENTRY</p>
+            <p className="caption text-neutral-500 mb-4">NEXT ENTRY</p>
             <div className="flex items-baseline justify-between gap-6">
-              <h3 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl text-ink leading-tight tracking-tight group-hover:text-gold-deep transition-colors duration-300 text-balance">
+              <h3 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl text-ink leading-tight tracking-tight group-hover:text-neutral-500 transition-colors duration-300 text-balance">
                 {next.client}
               </h3>
               <svg
@@ -191,7 +191,7 @@ export default async function JournalEntryPage({ params }: RouteParams) {
                 height="20"
                 viewBox="0 0 14 10"
                 fill="none"
-                className="text-ink group-hover:text-gold-deep transition-all duration-300 group-hover:translate-x-2 shrink-0"
+                className="text-ink group-hover:text-neutral-500 transition-all duration-300 group-hover:translate-x-2 shrink-0"
                 aria-hidden
               >
                 <path

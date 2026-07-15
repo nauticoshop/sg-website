@@ -103,11 +103,11 @@ export function WhatSetsUsApart() {
     <section className="bg-canvas py-20 lg:py-28 px-6 lg:px-12 border-t border-neutral-200">
       <div className="max-w-[1200px] mx-auto">
         <header className="text-center mb-12 lg:mb-16 max-w-3xl mx-auto">
-          <p className="caption text-gold-deep mb-4">WHY SURROUNDINGS GROUP</p>
+          <p className="caption text-neutral-500 mb-4">WHY SURROUNDINGS GROUP</p>
           <h2 className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-ink text-balance">
             What sets us apart, why it matters, and the proof.
           </h2>
-          <Rule className="bg-gold-deep mx-auto mt-6" />
+          <Rule className="bg-ink mx-auto mt-6" />
         </header>
 
         <ul className="border-t border-neutral-200">
@@ -122,20 +122,20 @@ export function WhatSetsUsApart() {
                   aria-controls={`chapter-body-${chapter.num}`}
                   className="w-full text-left py-7 lg:py-9 flex items-center gap-6 lg:gap-10 group cursor-pointer"
                 >
-                  <span className="caption text-gold-deep shrink-0 w-10">
+                  <span className="caption text-neutral-500 shrink-0 w-10">
                     {chapter.num}
                   </span>
                   <div className="flex-1 min-w-0">
                     <p className="caption text-neutral-500 mb-1.5">
                       {chapter.eyebrow}
                     </p>
-                    <h3 className="font-sans font-extrabold text-2xl md:text-3xl lg:text-4xl leading-[1.1] tracking-tight text-ink text-balance group-hover:text-gold-deep transition-colors duration-300">
+                    <h3 className="font-sans font-extrabold text-2xl md:text-3xl lg:text-4xl leading-[1.1] tracking-tight text-ink text-balance group-hover:text-neutral-500 transition-colors duration-300">
                       {chapter.headline}
                     </h3>
                   </div>
                   <span
                     aria-hidden
-                    className={`shrink-0 w-10 h-10 lg:w-12 lg:h-12 border border-neutral-300 flex items-center justify-center text-ink group-hover:border-gold-deep group-hover:text-gold-deep transition-all duration-300 ${
+                    className={`shrink-0 w-10 h-10 lg:w-12 lg:h-12 border border-neutral-300 flex items-center justify-center text-ink group-hover:border-ink group-hover:text-neutral-500 transition-all duration-300 ${
                       isOpen ? "rotate-45" : ""
                     }`}
                   >

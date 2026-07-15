@@ -158,7 +158,7 @@ function renderHtml(f: ApplicationFields): string {
   const messageBlock = f.message
     ? `<tr><td style="padding: 0 32px 32px 32px;">
         <p style="margin: 0 0 8px 0; color: #6d6760; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;">Note from the applicant</p>
-        <div style="background-color: #faf8f5; border-left: 3px solid #6e4d12; padding: 16px 20px; color: #2e2b27; font-size: 16px; line-height: 1.6; white-space: pre-wrap;">${escapeHtml(f.message)}</div>
+        <div style="background-color: #faf8f5; border-left: 3px solid #0f0f0f; padding: 16px 20px; color: #2e2b27; font-size: 16px; line-height: 1.6; white-space: pre-wrap;">${escapeHtml(f.message)}</div>
       </td></tr>`
     : "";
 
@@ -169,7 +169,7 @@ function renderHtml(f: ApplicationFields): string {
   <table cellpadding="0" cellspacing="0" style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border: 1px solid #e5e1da;">
     <tr>
       <td style="padding: 32px 32px 16px 32px;">
-        <p style="margin: 0 0 8px 0; color: #6e4d12; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em;">New application</p>
+        <p style="margin: 0 0 8px 0; color: #0f0f0f; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em;">New application</p>
         <h1 style="margin: 0 0 24px 0; font-size: 28px; font-weight: 800; line-height: 1.2; color: #0f0f0f;">${escapeHtml(f.name)} applied for ${escapeHtml(f.role || "a role")}.</h1>
       </td>
     </tr>

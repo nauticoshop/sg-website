@@ -60,7 +60,7 @@ export default async function WorkCollectionPage({ params }: RouteParams) {
             <dl className="flex flex-wrap gap-x-12 gap-y-4 mb-10 lg:mb-12 pb-8 border-b border-neutral-200">
               {collection.client && (
                 <div>
-                  <dt className="caption text-gold-deep mb-1">CLIENT</dt>
+                  <dt className="caption text-neutral-500 mb-1">CLIENT</dt>
                   <dd className="font-sans font-extrabold text-base lg:text-lg text-ink">
                     {collection.client}
                   </dd>
@@ -68,7 +68,7 @@ export default async function WorkCollectionPage({ params }: RouteParams) {
               )}
               {collection.location && (
                 <div>
-                  <dt className="caption text-gold-deep mb-1">LOCATION</dt>
+                  <dt className="caption text-neutral-500 mb-1">LOCATION</dt>
                   <dd className="font-sans font-extrabold text-base lg:text-lg text-ink">
                     {collection.location}
                   </dd>
@@ -95,7 +95,7 @@ export default async function WorkCollectionPage({ params }: RouteParams) {
           <div className="flex items-center justify-between mt-12 lg:mt-16 pt-8 border-t border-neutral-200">
             <Link
               href="/work"
-              className="caption inline-flex items-center gap-2 text-neutral-500 hover:text-gold-deep transition-colors duration-300"
+              className="caption inline-flex items-center gap-2 text-neutral-500 hover:text-ink transition-colors duration-300"
             >
               <svg
                 width="14"
@@ -115,7 +115,7 @@ export default async function WorkCollectionPage({ params }: RouteParams) {
             </Link>
             <Link
               href={next.href}
-              className="caption inline-flex items-center gap-2 text-ink hover:text-gold-deep transition-colors duration-300"
+              className="caption inline-flex items-center gap-2 text-ink hover:text-neutral-500 transition-colors duration-300"
             >
               Next: {next.title}
               <svg

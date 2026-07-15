@@ -32,7 +32,7 @@
   --color-info: #2a4d6e;
 
   /* Typography families */
-  --font-sans: var(--font-dm-sans), system-ui, -apple-system, sans-serif;
+  --font-sans: var(--font-archivo), system-ui, -apple-system, sans-serif;
   --font-serif: var(--font-castoro), Georgia, serif;
 
   /* Display type scale (Castoro serif, for editorial moments) */
@@ -52,6 +52,9 @@ body {
   background: var(--color-canvas);
   color: var(--color-ink);
   font-family: var(--font-sans);
+  /* Archivo's wide cut (125%) — the expanded-grotesque look, applied
+     across all type the way Diamond View runs Owners Wide. */
+  font-stretch: 125%;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -27,7 +27,7 @@ export default function WorkIndexPage() {
       <section className="bg-canvas px-6 lg:px-12 pb-16 lg:pb-24">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
           <div className="lg:col-span-5">
-            <p className="caption text-gold-deep mb-5">THE APPROACH</p>
+            <p className="caption text-neutral-500 mb-5">THE APPROACH</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl leading-[1.05] tracking-tight text-ink text-balance">
               Work that earns the attention it gets.
             </h2>
@@ -100,7 +100,7 @@ export default function WorkIndexPage() {
       <section className="bg-canvas pt-16 lg:pt-24 pb-16 lg:pb-24 px-6 lg:px-12">
         <div className="max-w-[1200px] mx-auto">
           <header className="mb-12 lg:mb-16 max-w-3xl">
-            <p className="caption text-gold-deep mb-5">SELECTED COLLECTIONS</p>
+            <p className="caption text-neutral-500 mb-5">SELECTED COLLECTIONS</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl leading-tight tracking-tight text-ink text-balance">
               Recent engagements across the categories we serve.
             </h2>
@@ -118,7 +118,7 @@ export default function WorkIndexPage() {
       <section className="bg-canvas py-20 lg:py-28 px-6 lg:px-12 border-t border-neutral-200">
         <div className="max-w-[1200px] mx-auto">
           <header className="text-center mb-14 lg:mb-20 max-w-3xl mx-auto">
-            <p className="caption text-gold-deep mb-5 tracking-[0.28em]">
+            <p className="caption text-neutral-500 mb-5 tracking-[0.28em]">
               HOW THE WORK GETS MADE
             </p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl leading-tight tracking-tight text-ink text-balance">
@@ -184,7 +184,7 @@ function Phase({
 }) {
   return (
     <li className="border-t border-ink/15 pt-6 lg:pt-8">
-      <p className="caption text-gold-deep mb-4">{num}</p>
+      <p className="caption text-neutral-500 mb-4">{num}</p>
       <h3 className="font-sans font-extrabold text-xl lg:text-2xl text-ink leading-tight mb-4 tracking-tight">
         {title}
       </h3>

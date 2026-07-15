@@ -75,7 +75,7 @@ export function ApplicationForm({ roleTitle }: { roleTitle: string }) {
   if (result.state === "ok") {
     return (
       <div className="bg-canvas border border-neutral-200 p-10 lg:p-12 text-center">
-        <p className="caption text-gold-deep mb-4">RECEIVED</p>
+        <p className="caption text-neutral-500 mb-4">RECEIVED</p>
         <h3 className="font-sans font-extrabold text-3xl lg:text-4xl text-ink mb-4">
           Application in. Thanks.
         </h3>
@@ -109,7 +109,7 @@ export function ApplicationForm({ roleTitle }: { roleTitle: string }) {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
           <label htmlFor="name" className="caption text-neutral-600 mb-2 block">
-            Your name <span className="text-gold-deep">*</span>
+            Your name <span className="text-neutral-500">*</span>
           </label>
           <input
             id="name"
@@ -122,7 +122,7 @@ export function ApplicationForm({ roleTitle }: { roleTitle: string }) {
         </div>
         <div>
           <label htmlFor="email" className="caption text-neutral-600 mb-2 block">
-            Email <span className="text-gold-deep">*</span>
+            Email <span className="text-neutral-500">*</span>
           </label>
           <input
             id="email"
@@ -150,7 +150,7 @@ export function ApplicationForm({ roleTitle }: { roleTitle: string }) {
 
       <div>
         <label htmlFor="cv" className="caption text-neutral-600 mb-2 block">
-          Resume / CV <span className="text-gold-deep">*</span>
+          Resume / CV <span className="text-neutral-500">*</span>
         </label>
         <label
           htmlFor="cv"
@@ -159,7 +159,7 @@ export function ApplicationForm({ roleTitle }: { roleTitle: string }) {
           <span className="text-sm text-neutral-700 truncate">
             {fileName ?? "Choose a file (PDF or Word, max 4MB)"}
           </span>
-          <span className="caption text-gold-deep shrink-0">
+          <span className="caption text-neutral-500 shrink-0">
             {fileName ? "CHANGE" : "BROWSE"}
           </span>
         </label>

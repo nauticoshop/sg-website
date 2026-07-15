@@ -18,7 +18,7 @@ export default function ContactPage() {
       {/* Hero — offset for fixed nav */}
       <section className="bg-canvas pt-36 lg:pt-44 pb-16 lg:pb-20 px-6 lg:px-12">
         <div className="max-w-[1200px] mx-auto">
-          <p className="caption text-gold-deep mb-6">CONTACT</p>
+          <p className="caption text-neutral-500 mb-6">CONTACT</p>
           <h1 className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-ink max-w-3xl text-balance">
             Let&apos;s work together.
           </h1>
@@ -36,12 +36,12 @@ export default function ContactPage() {
           <aside className="lg:col-span-4 order-2 lg:order-1">
             <div className="lg:sticky lg:top-32 space-y-10">
               <div>
-                <h2 className="caption text-gold-deep mb-4">GET IN TOUCH</h2>
+                <h2 className="caption text-neutral-500 mb-4">GET IN TOUCH</h2>
                 <ul className="space-y-3">
                   <li>
                     <a
                       href={`mailto:${site.contact.email}`}
-                      className="text-lg text-ink hover:text-gold-deep transition-colors"
+                      className="text-lg text-ink hover:text-neutral-500 transition-colors"
                     >
                       {site.contact.email}
                     </a>
@@ -49,7 +49,7 @@ export default function ContactPage() {
                   <li>
                     <a
                       href={`tel:${site.contact.phone.replace(/-/g, "")}`}
-                      className="text-lg text-ink hover:text-gold-deep transition-colors"
+                      className="text-lg text-ink hover:text-neutral-500 transition-colors"
                     >
                       {site.contact.phone}
                     </a>
@@ -58,14 +58,14 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <h2 className="caption text-gold-deep mb-4">STUDIO</h2>
+                <h2 className="caption text-neutral-500 mb-4">STUDIO</h2>
                 <address className="not-italic text-base text-neutral-700 leading-relaxed">
                   {site.contact.city}
                 </address>
               </div>
 
               <div>
-                <h2 className="caption text-gold-deep mb-4">FOLLOW</h2>
+                <h2 className="caption text-neutral-500 mb-4">FOLLOW</h2>
                 <ul className="space-y-3">
                   <li>
                     <a

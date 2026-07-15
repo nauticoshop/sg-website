@@ -20,7 +20,7 @@ export function NauticalNetworkProof() {
         {/* Header */}
         <header className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mb-16 lg:mb-20">
           <div className="lg:col-span-7">
-            <p className="caption text-gold-deep mb-6">OWNED DISTRIBUTION</p>
+            <p className="caption text-neutral-500 mb-6">OWNED DISTRIBUTION</p>
             <h2 className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.02] tracking-tight text-ink text-balance">
               We don&apos;t just make content. We have the audience.
             </h2>
@@ -49,7 +49,7 @@ export function NauticalNetworkProof() {
 
         {/* The 4 pillars — what makes NN different */}
         <div className="mb-20 lg:mb-24">
-          <p className="caption text-gold-deep mb-8 text-center">WHAT SETS US APART</p>
+          <p className="caption text-neutral-500 mb-8 text-center">WHAT SETS US APART</p>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             <Pillar
               num="01"
@@ -78,7 +78,7 @@ export function NauticalNetworkProof() {
         <div className="bg-ink text-canvas p-10 lg:p-14 mb-20 lg:mb-24">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
             <div className="lg:col-span-5">
-              <p className="caption text-gold-deep mb-4">THE NETWORK</p>
+              <p className="caption text-neutral-500 mb-4">THE NETWORK</p>
               <h3 className="font-sans font-extrabold text-3xl lg:text-4xl xl:text-5xl leading-tight tracking-tight mb-6 text-balance">
                 Ten brands. One publishing system.
               </h3>
@@ -108,7 +108,7 @@ export function NauticalNetworkProof() {
         {/* What it means for clients */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 mb-16 lg:mb-20">
           <div>
-            <p className="caption text-gold-deep mb-4">WHY IT MATTERS</p>
+            <p className="caption text-neutral-500 mb-4">WHY IT MATTERS</p>
             <h3 className="font-sans font-extrabold text-3xl lg:text-4xl xl:text-5xl tracking-tight text-ink leading-[1.1] text-balance mb-6">
               Owned reach changes the math.
             </h3>
@@ -120,34 +120,34 @@ export function NauticalNetworkProof() {
             </p>
           </div>
           <div>
-            <p className="caption text-gold-deep mb-4">PROVEN RESULTS</p>
+            <p className="caption text-neutral-500 mb-4">PROVEN RESULTS</p>
             <h3 className="font-sans font-extrabold text-3xl lg:text-4xl xl:text-5xl tracking-tight text-ink leading-[1.1] text-balance mb-6">
               The work speaks.
             </h3>
             <ul className="space-y-4 text-base lg:text-lg text-neutral-700 leading-relaxed">
               <li className="flex gap-3">
-                <span className="text-gold-deep font-extrabold shrink-0">·</span>
+                <span className="text-neutral-500 font-extrabold shrink-0">·</span>
                 <span>
                   <span className="font-medium text-ink">$100M+</span> in yacht
                   and boat transactions facilitated through the network
                 </span>
               </li>
               <li className="flex gap-3">
-                <span className="text-gold-deep font-extrabold shrink-0">·</span>
+                <span className="text-neutral-500 font-extrabold shrink-0">·</span>
                 <span>
                   <span className="font-medium text-ink">$24M</span> transaction
                   lead validated in 4 direct messages
                 </span>
               </li>
               <li className="flex gap-3">
-                <span className="text-gold-deep font-extrabold shrink-0">·</span>
+                <span className="text-neutral-500 font-extrabold shrink-0">·</span>
                 <span>
                   Charter clients brought in at{" "}
                   <span className="font-medium text-ink">$700K/week</span>
                 </span>
               </li>
               <li className="flex gap-3">
-                <span className="text-gold-deep font-extrabold shrink-0">·</span>
+                <span className="text-neutral-500 font-extrabold shrink-0">·</span>
                 <span>
                   Ryan Hughes Design:{" "}
                   <span className="font-medium text-ink">$7M+</span> in upsells
@@ -162,7 +162,7 @@ export function NauticalNetworkProof() {
         <div className="border-t border-neutral-200 pt-12 lg:pt-16 text-center">
           <Link
             href="/about/nautical-network"
-            className="caption inline-flex items-center gap-3 text-ink hover:text-gold-deep transition-colors duration-300 text-base"
+            className="caption inline-flex items-center gap-3 text-ink hover:text-neutral-500 transition-colors duration-300 text-base"
           >
             See the full network breakdown
             <svg width="16" height="11" viewBox="0 0 14 10" fill="none" aria-hidden>
@@ -204,7 +204,7 @@ function Pillar({
 }) {
   return (
     <li className="border-t border-neutral-200 pt-6 lg:pt-8">
-      <p className="caption text-gold-deep mb-3">{num}</p>
+      <p className="caption text-neutral-500 mb-3">{num}</p>
       <h3 className="font-sans font-extrabold text-2xl lg:text-3xl text-ink mb-4 text-balance leading-tight">
         {title}
       </h3>

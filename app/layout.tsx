@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { DM_Sans, Castoro } from "next/font/google";
+import { Archivo, Castoro } from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 import { site } from "@/lib/site";
@@ -12,11 +12,10 @@ import {
   websiteSchema,
 } from "@/components/json-ld";
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-  display: "swap",
+  axes: ["wdth"],
 });
 
 const castoro = Castoro({
@@ -58,7 +57,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dmSans.variable} ${castoro.variable} h-full antialiased`}
+      className={`${archivo.variable} ${castoro.variable} h-full antialiased`}
     >
       <GoogleTagManager gtmId={site.gtm} />
       <body className="min-h-full flex flex-col bg-canvas text-ink">

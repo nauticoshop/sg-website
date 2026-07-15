@@ -89,7 +89,7 @@ export default async function VerticalDetailPage({ params }: RouteParams) {
         <div className="max-w-[1200px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             <div className="lg:col-span-5">
-              <p className="caption text-gold-deep mb-4">THE CATEGORY</p>
+              <p className="caption text-neutral-500 mb-4">THE CATEGORY</p>
               <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink leading-[1.1] text-balance">
                 {vertical.headlines.intro}
               </h2>
@@ -103,7 +103,7 @@ export default async function VerticalDetailPage({ params }: RouteParams) {
                   Marine clients also get direct access to{" "}
                   <Link
                     href="/about/nautical-network"
-                    className="text-ink underline hover:text-gold-deep transition-colors"
+                    className="text-ink underline hover:text-neutral-500 transition-colors"
                   >
                     Nautical Network distribution
                   </Link>
@@ -184,7 +184,7 @@ export default async function VerticalDetailPage({ params }: RouteParams) {
       <section className="bg-canvas py-20 lg:py-28 px-6 lg:px-12">
         <div className="max-w-[1200px] mx-auto">
           <header className="mb-12 lg:mb-16 max-w-3xl">
-            <p className="caption text-gold-deep mb-4">SIGNATURE WORK</p>
+            <p className="caption text-neutral-500 mb-4">SIGNATURE WORK</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink leading-[1.1] text-balance">
               {vertical.headlines.work}
             </h2>
@@ -195,7 +195,7 @@ export default async function VerticalDetailPage({ params }: RouteParams) {
               <li key={i} className="bg-canvas">
                 <div className="py-8 lg:py-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-start">
                   <div className="lg:col-span-1">
-                    <span className="caption text-gold-deep">
+                    <span className="caption text-neutral-500">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                   </div>
@@ -220,7 +220,7 @@ export default async function VerticalDetailPage({ params }: RouteParams) {
       <section className="bg-neutral-50 py-20 lg:py-28 px-6 lg:px-12 border-y border-neutral-200">
         <div className="max-w-[1200px] mx-auto">
           <header className="text-center mb-12 lg:mb-16 max-w-2xl mx-auto">
-            <p className="caption text-gold-deep mb-4">CAPABILITIES</p>
+            <p className="caption text-neutral-500 mb-4">CAPABILITIES</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
               {vertical.headlines.capabilities}
             </h2>
@@ -261,14 +261,14 @@ export default async function VerticalDetailPage({ params }: RouteParams) {
         <div className="max-w-[1200px] mx-auto">
           <header className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
             <div>
-              <p className="caption text-gold-deep mb-4">SELECTED WORK</p>
+              <p className="caption text-neutral-500 mb-4">SELECTED WORK</p>
               <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
                 Recent {vertical.name.toLowerCase()} work.
               </h2>
             </div>
             <Link
               href="/work"
-              className="caption inline-flex items-center gap-2 text-ink hover:text-gold-deep transition-colors shrink-0"
+              className="caption inline-flex items-center gap-2 text-ink hover:text-neutral-500 transition-colors shrink-0"
             >
               All work
               <Arrow />
@@ -341,9 +341,9 @@ export default async function VerticalDetailPage({ params }: RouteParams) {
       <section className="bg-canvas py-16 lg:py-20 px-6 lg:px-12 border-t border-neutral-200">
         <div className="max-w-[1200px] mx-auto">
           <Link href={next.href} className="group block">
-            <p className="caption text-gold-deep mb-4">NEXT VERTICAL</p>
+            <p className="caption text-neutral-500 mb-4">NEXT VERTICAL</p>
             <div className="flex items-baseline justify-between gap-6">
-              <h3 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl text-ink leading-tight tracking-tight group-hover:text-gold-deep transition-colors duration-300 text-balance">
+              <h3 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl text-ink leading-tight tracking-tight group-hover:text-neutral-500 transition-colors duration-300 text-balance">
                 {next.name}
               </h3>
               <svg
@@ -351,7 +351,7 @@ export default async function VerticalDetailPage({ params }: RouteParams) {
                 height="20"
                 viewBox="0 0 14 10"
                 fill="none"
-                className="text-ink group-hover:text-gold-deep transition-all duration-300 group-hover:translate-x-2 shrink-0"
+                className="text-ink group-hover:text-neutral-500 transition-all duration-300 group-hover:translate-x-2 shrink-0"
                 aria-hidden
               >
                 <path

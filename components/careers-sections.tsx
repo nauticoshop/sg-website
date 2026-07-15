@@ -75,7 +75,7 @@ export function CareersHero() {
   return (
     <section className="bg-canvas pt-36 lg:pt-44 pb-16 lg:pb-20 px-6 lg:px-12">
       <motion.div {...container} className="max-w-[1200px] mx-auto">
-        <motion.p variants={child} className="caption text-gold-deep mb-6">
+        <motion.p variants={child} className="caption text-neutral-500 mb-6">
           CAREERS
         </motion.p>
         <motion.h1
@@ -88,18 +88,20 @@ export function CareersHero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 mt-10 lg:mt-14">
           <motion.p
             variants={child}
-            className="lg:col-start-6 lg:col-span-7 text-lg lg:text-xl text-neutral-800 leading-relaxed max-w-2xl"
+            className="lg:col-start-6 lg:col-span-7 text-xl lg:text-3xl text-ink leading-[1.25] font-light max-w-2xl text-balance"
           >
             An adaptive-first group of creative humans working in the
-            industries most people only dream about. We bet you&apos;ll fit
-            right in.
+            industries most people only dream about.{" "}
+            <span className="text-ink/55">
+              We bet you&apos;ll fit right in.
+            </span>
           </motion.p>
         </div>
 
         <motion.a
           variants={child}
           href="#roles"
-          className="group caption inline-flex items-center gap-3 text-ink hover:text-gold-deep transition-colors duration-300 mt-12 lg:mt-16"
+          className="group caption inline-flex items-center gap-3 text-ink hover:text-neutral-500 transition-colors duration-300 mt-12 lg:mt-16"
         >
           See open roles
           <Arrow className="rotate-90 transition-transform duration-300 group-hover:translate-y-1" />
@@ -127,11 +129,11 @@ export function OpenRolesList() {
     >
       <motion.div {...container} className="max-w-[1200px] mx-auto">
         <motion.header variants={child} className="mb-8 lg:mb-10">
-          <p className="caption text-gold-deep mb-4">OPEN ROLES</p>
+          <p className="caption text-neutral-500 mb-4">OPEN ROLES</p>
           <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
             Current openings.
           </h2>
-          <Rule className="bg-gold-deep" />
+          <Rule className="bg-ink" />
         </motion.header>
 
         {jobs.length > 0 ? (
@@ -141,15 +143,15 @@ export function OpenRolesList() {
                 <motion.li variants={child} key={job.slug}>
                   <Link
                     href={`/careers/${job.slug}`}
-                    className="group grid grid-cols-1 md:grid-cols-12 md:items-baseline gap-y-2 gap-x-6 py-7 lg:py-9 border-b border-ink/10 hover:border-gold-deep/60 transition-colors duration-300"
+                    className="group grid grid-cols-1 md:grid-cols-12 md:items-baseline gap-y-2 gap-x-6 py-7 lg:py-9 border-b border-ink/10 hover:border-ink/40 transition-colors duration-300"
                   >
-                    <h3 className="md:col-span-7 font-sans font-extrabold text-2xl lg:text-[2.5rem] leading-tight tracking-tight text-ink group-hover:text-gold-deep transition-colors duration-300 text-balance">
+                    <h3 className="md:col-span-7 font-sans font-extrabold text-2xl lg:text-[2.5rem] leading-tight tracking-tight text-ink group-hover:text-neutral-500 transition-colors duration-300 text-balance">
                       {job.title}
                     </h3>
                     <span className="md:col-span-4 caption text-neutral-600">
                       {job.type} · {job.location}
                     </span>
-                    <span className="hidden md:flex md:col-span-1 justify-end text-neutral-400 group-hover:text-gold-deep transition-colors duration-300">
+                    <span className="hidden md:flex md:col-span-1 justify-end text-neutral-400 group-hover:text-neutral-500 transition-colors duration-300">
                       <Arrow className="transition-transform duration-300 group-hover:translate-x-1" />
                     </span>
                   </Link>
@@ -163,7 +165,7 @@ export function OpenRolesList() {
               Don&apos;t see your role?{" "}
               <Link
                 href={mailtoLink("Careers — Introduction")}
-                className="underline text-ink hover:text-gold-deep transition-colors"
+                className="underline text-ink hover:text-neutral-500 transition-colors"
               >
                 Introduce yourself anyway
               </Link>{" "}
@@ -185,7 +187,7 @@ export function OpenRolesList() {
             </p>
             <Link
               href={mailtoLink("Careers — Introduction")}
-              className="caption inline-flex items-center gap-2 text-ink hover:text-gold-deep transition-colors"
+              className="caption inline-flex items-center gap-2 text-ink hover:text-neutral-500 transition-colors"
             >
               Introduce yourself
               <Arrow />
@@ -241,11 +243,11 @@ export function WhyPeopleStay() {
           variants={child}
           className="lg:col-span-4 lg:sticky lg:top-32 lg:self-start"
         >
-          <p className="caption text-gold-deep mb-5">WHY HERE</p>
+          <p className="caption text-neutral-500 mb-5">WHY HERE</p>
           <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
             Why people stay.
           </h2>
-          <Rule className="bg-gold-deep" />
+          <Rule className="bg-ink" />
         </motion.div>
 
         <div className="lg:col-span-8">
@@ -253,7 +255,7 @@ export function WhyPeopleStay() {
             <motion.div
               variants={child}
               key={b.title}
-              className={`grid grid-cols-1 md:grid-cols-12 gap-x-6 gap-y-2 py-7 lg:py-8 border-l-2 border-l-transparent hover:border-l-gold-deep hover:pl-5 transition-all duration-300 ${
+              className={`grid grid-cols-1 md:grid-cols-12 gap-x-6 gap-y-2 py-7 lg:py-8 border-l-2 border-l-transparent hover:border-l-ink hover:pl-5 transition-all duration-300 ${
                 i === 0 ? "" : "border-t border-t-neutral-300"
               }`}
             >
@@ -379,7 +381,7 @@ export function OfferAndCta() {
             variants={child}
             className="lg:col-span-4 lg:sticky lg:top-32 lg:self-start"
           >
-            <p className="caption text-gold-deep mb-5">WHAT WE OFFER</p>
+            <p className="caption text-ink/70 mb-5">WHAT WE OFFER</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
               The table stakes, the upside, and the access.
             </h2>

@@ -25,11 +25,11 @@ export function VerticalsGrid() {
     <section className="pt-10 lg:pt-14 pb-16 lg:pb-20 px-6 lg:px-12 bg-canvas">
       <div className="max-w-[1440px] mx-auto">
         <header className="text-center mb-10 lg:mb-14 max-w-3xl mx-auto">
-          <p className="caption text-gold-deep mb-5">INDUSTRIES WE SERVE</p>
+          <p className="caption text-neutral-500 mb-5">INDUSTRIES WE SERVE</p>
           <h2 className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] tracking-tight text-ink mb-5 text-balance">
             Vertical-focused.
           </h2>
-          <Rule className="bg-gold-deep mx-auto mb-6" />
+          <Rule className="bg-ink mx-auto mb-6" />
           <p className="text-base lg:text-lg text-neutral-600 leading-relaxed max-w-2xl mx-auto">
             We work deeply in premium, high-trust markets. Our clients
             collaborate across them. That&apos;s the difference.

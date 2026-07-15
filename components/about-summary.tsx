@@ -73,12 +73,15 @@ export function AboutSummary() {
           <div className="lg:col-span-8 space-y-6">
             <motion.p
               variants={variants}
-              className="text-xl lg:text-2xl text-ink leading-snug font-medium text-balance"
+              className="text-2xl lg:text-4xl text-ink leading-[1.2] font-light text-balance"
             >
               Surroundings Group is a creative agency for premium brands. One
               in-house team, focused on the premium verticals we know inside
-              out. Our clients collaborate across categories to produce work
-              no single-vertical agency could match.
+              out.{" "}
+              <span className="text-ink/55">
+                Our clients collaborate across categories to produce work no
+                single-vertical agency could match.
+              </span>
             </motion.p>
             <motion.p
               variants={variants}

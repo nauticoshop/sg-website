@@ -31,7 +31,7 @@ export default function VerticalsIndexPage() {
       <section className="bg-canvas px-6 lg:px-12 pb-16 lg:pb-24">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
           <div className="lg:col-span-5">
-            <p className="caption text-gold-deep mb-5">THE NETWORK ADVANTAGE</p>
+            <p className="caption text-neutral-500 mb-5">THE NETWORK ADVANTAGE</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl leading-[1.05] tracking-tight text-ink text-balance">
               Eight categories. One client roster.
             </h2>
@@ -58,7 +58,7 @@ export default function VerticalsIndexPage() {
       <section className="bg-canvas py-16 lg:py-24 px-6 lg:px-12 border-t border-neutral-200">
         <div className="max-w-[1440px] mx-auto">
           <header className="mb-12 lg:mb-16 max-w-3xl">
-            <p className="caption text-gold-deep mb-4">FEATURED VERTICALS</p>
+            <p className="caption text-neutral-500 mb-4">FEATURED VERTICALS</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
               Where we go deepest.
             </h2>
@@ -81,7 +81,7 @@ export default function VerticalsIndexPage() {
       <section className="bg-neutral-50 py-16 lg:py-24 px-6 lg:px-12 border-y border-neutral-200">
         <div className="max-w-[1440px] mx-auto">
           <header className="mb-12 lg:mb-16 max-w-3xl">
-            <p className="caption text-gold-deep mb-4">ALSO SERVING</p>
+            <p className="caption text-neutral-500 mb-4">ALSO SERVING</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
               Adjacent categories with the same discipline applied.
             </h2>
@@ -137,7 +137,7 @@ export default function VerticalsIndexPage() {
       {/* Stats / scale of the network */}
       <section className="bg-canvas py-16 lg:py-20 px-6 lg:px-12 border-t border-neutral-200">
         <div className="max-w-[1200px] mx-auto text-center">
-          <p className="caption text-gold-deep mb-5 tracking-[0.28em]">
+          <p className="caption text-neutral-500 mb-5 tracking-[0.28em]">
             THE SCALE OF THE NETWORK
           </p>
           <ul className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mt-10">
@@ -252,7 +252,7 @@ function CrossoverExample({
 function Stat({ value, label }: { value: string; label: string }) {
   return (
     <li>
-      <p className="font-sans font-extrabold text-5xl md:text-6xl text-gold-deep leading-none mb-4 tracking-tight">
+      <p className="font-sans font-extrabold text-5xl md:text-6xl text-neutral-500 leading-none mb-4 tracking-tight">
         {value}
       </p>
       <p className="text-sm md:text-base text-neutral-700 leading-snug">

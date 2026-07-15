@@ -65,7 +65,7 @@ export default function JournalPage() {
       <section className="bg-canvas px-6 lg:px-12 pb-16 lg:pb-24">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
           <div className="lg:col-span-5">
-            <p className="caption text-gold-deep mb-5">EDITORIAL FIRST</p>
+            <p className="caption text-neutral-500 mb-5">EDITORIAL FIRST</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl leading-[1.05] tracking-tight text-ink text-balance">
               Built like a magazine, not a blog.
             </h2>
@@ -91,7 +91,7 @@ export default function JournalPage() {
       {featured && (
         <section className="bg-canvas pb-16 lg:pb-24 px-6 lg:px-12">
           <div className="max-w-[1200px] mx-auto">
-            <p className="caption text-gold-deep mb-6">FEATURED ENTRY</p>
+            <p className="caption text-neutral-500 mb-6">FEATURED ENTRY</p>
             <Link
               href={featured.href}
               className="group block relative overflow-hidden bg-ink text-canvas"
@@ -171,7 +171,7 @@ export default function JournalPage() {
       {rest.length > 0 && (
         <section className="bg-canvas pb-16 lg:pb-24 px-6 lg:px-12">
           <div className="max-w-[1200px] mx-auto">
-            <p className="caption text-gold-deep mb-6">MORE FROM THE STUDIO</p>
+            <p className="caption text-neutral-500 mb-6">MORE FROM THE STUDIO</p>
             <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               {rest.map((entry) => (
                 <li key={entry.slug}>
@@ -244,7 +244,7 @@ export default function JournalPage() {
       {/* Cross-reference — Nautical Network is the broader editorial home */}
       <section className="bg-canvas py-20 lg:py-28 px-6 lg:px-12">
         <div className="max-w-[1000px] mx-auto text-center">
-          <p className="caption text-gold-deep mb-5 tracking-[0.28em]">
+          <p className="caption text-neutral-500 mb-5 tracking-[0.28em]">
             ALSO PUBLISHING
           </p>
           <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl leading-tight tracking-tight text-ink mb-6 text-balance">

@@ -50,7 +50,7 @@ export default function TeamPage() {
                     </div>
                   )}
                 </div>
-                <p className="caption text-gold-deep mb-2">{m.department}</p>
+                <p className="caption text-neutral-500 mb-2">{m.department}</p>
                 <h3 className="font-sans font-extrabold text-2xl text-ink mb-1">
                   {m.name}
                 </h3>
@@ -66,7 +66,7 @@ export default function TeamPage() {
 
           <div className="mt-16 lg:mt-20 max-w-2xl">
             <p className="text-sm text-neutral-600 leading-relaxed">
-              <span className="caption text-gold-deep mr-2">JOIN US</span>
+              <span className="caption text-neutral-500 mr-2">JOIN US</span>
               Want to build with us?{" "}
               <Link
                 href="/careers"

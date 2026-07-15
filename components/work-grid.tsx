@@ -125,13 +125,13 @@ export function WorkGrid() {
                     className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                   />
                 </div>
-                <p className="caption text-gold-deep mt-5 mb-2">
+                <p className="caption text-neutral-500 mt-5 mb-2">
                   {collection.vertical}
                 </p>
                 <h2 className="font-sans font-extrabold text-xl lg:text-2xl tracking-tight text-ink leading-tight">
                   {collection.title}
                 </h2>
-                <span className="caption inline-flex items-center gap-2 mt-3 text-neutral-500 group-hover:text-gold-deep transition-colors duration-300">
+                <span className="caption inline-flex items-center gap-2 mt-3 text-neutral-500 group-hover:text-neutral-500 transition-colors duration-300">
                   View collection
                   <svg
                     width="14"

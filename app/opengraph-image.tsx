@@ -15,8 +15,8 @@ export const contentType = "image/png";
  */
 export default async function Image() {
   const [bold, medium] = await Promise.all([
-    readFile(join(process.cwd(), "assets/dm-sans-bold.ttf")),
-    readFile(join(process.cwd(), "assets/dm-sans-medium.ttf")),
+    readFile(join(process.cwd(), "assets/archivo-bold.ttf")),
+    readFile(join(process.cwd(), "assets/archivo-medium.ttf")),
   ]);
 
   return new ImageResponse(
@@ -30,7 +30,7 @@ export default async function Image() {
           justifyContent: "space-between",
           background: "#0f0f0f",
           padding: "72px 80px",
-          fontFamily: "DM Sans",
+          fontFamily: "Archivo",
           color: "#f7f4f0",
         }}
       >
@@ -118,9 +118,9 @@ export default async function Image() {
     {
       ...size,
       fonts: [
-        { name: "DM Sans", data: bold, weight: 800, style: "normal" },
-        { name: "DM Sans", data: bold, weight: 700, style: "normal" },
-        { name: "DM Sans", data: medium, weight: 500, style: "normal" },
+        { name: "Archivo", data: bold, weight: 800, style: "normal" },
+        { name: "Archivo", data: bold, weight: 700, style: "normal" },
+        { name: "Archivo", data: medium, weight: 500, style: "normal" },
       ],
     },
   );

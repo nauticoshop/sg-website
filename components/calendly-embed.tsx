@@ -17,7 +17,7 @@ export function CalendlyEmbed({
 }: {
   url?: string;
 }) {
-  const themed = `${url}?hide_gdpr_banner=1&background_color=f7f4f0&text_color=0f0f0f&primary_color=6e4d12`;
+  const themed = `${url}?hide_gdpr_banner=1&background_color=f7f4f0&text_color=0f0f0f&primary_color=0f0f0f`;
 
   return (
     <>
