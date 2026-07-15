@@ -65,6 +65,19 @@ const nextConfig: NextConfig = {
       { source: "/luxury-goods-experiences", destination: "/verticals/luxury-goods", permanent: true },
 
       // -------------------------------------------------------------
+      // Old standalone job pages → new /careers/[slug] pages
+      // -------------------------------------------------------------
+      { source: "/business-development-rep", destination: "/careers/business-development-manager", permanent: true },
+      { source: "/certified-creator", destination: "/careers/photographer-videographer", permanent: true },
+      { source: "/film-maker", destination: "/careers/photographer-videographer", permanent: true },
+      { source: "/email-marketing-specialist", destination: "/careers/email-marketing-specialist", permanent: true },
+      { source: "/intern-business-development-representative", destination: "/careers/intern-business-development", permanent: true },
+      { source: "/intern-social-media", destination: "/careers/intern-social-media", permanent: true },
+      { source: "/paid-media-specialist", destination: "/careers/paid-media-specialist", permanent: true },
+      { source: "/pr-brand-communications-specialist", destination: "/careers/pr-brand-communications-specialist", permanent: true },
+      { source: "/social-media-coordinator", destination: "/careers/social-media-coordinator", permanent: true },
+
+      // -------------------------------------------------------------
       // Legacy WP system paths that occasionally show up in logs
       // -------------------------------------------------------------
       { source: "/wp-admin/:path*", destination: "/", permanent: false },

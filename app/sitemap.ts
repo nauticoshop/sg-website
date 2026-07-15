@@ -4,6 +4,7 @@ import { verticals } from "@/lib/verticals";
 import { services } from "@/lib/services";
 import { featuredProjects } from "@/lib/featured-work";
 import { workCollections } from "@/lib/work";
+import { jobs } from "@/lib/jobs";
 
 /**
  * Auto-generated sitemap at /sitemap.xml.
@@ -60,11 +61,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  const jobRoutes: MetadataRoute.Sitemap = jobs.map((j) => ({
+    url: `${baseUrl}/careers/${j.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
   return [
     ...staticRoutes,
     ...verticalRoutes,
     ...serviceRoutes,
     ...journalRoutes,
     ...workRoutes,
+    ...jobRoutes,
   ];
 }

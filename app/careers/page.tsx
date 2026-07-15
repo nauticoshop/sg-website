@@ -4,6 +4,7 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { PageHero } from "@/components/page-hero";
 import { site } from "@/lib/site";
+import { jobs } from "@/lib/jobs";
 
 export const metadata: Metadata = {
   title: "Careers",
@@ -163,24 +164,71 @@ export default function CareersPage() {
             </h2>
           </header>
 
-          <div className="bg-canvas border border-neutral-200 p-10 lg:p-16 text-center">
-            <p className="caption text-neutral-500 mb-4">UPDATING</p>
-            <p className="font-sans font-extrabold text-2xl lg:text-3xl text-ink mb-4 text-balance max-w-2xl mx-auto">
-              Roles are being refreshed for the current hiring window.
-            </p>
-            <p className="text-sm text-neutral-700 max-w-md mx-auto mb-6 leading-relaxed">
-              If you&apos;re a vertical-fluent practitioner in creative,
-              strategy, social, digital, or operations, send us a note.
-              We&apos;ll talk even when a formal role isn&apos;t listed.
-            </p>
-            <Link
-              href={mailtoLink("Careers — Introduction")}
-              className="caption inline-flex items-center gap-2 text-ink hover:text-gold-deep transition-colors"
-            >
-              Introduce yourself
-              <Arrow />
-            </Link>
-          </div>
+          {jobs.length > 0 ? (
+            <>
+              <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                {jobs.map((job) => (
+                  <li key={job.slug}>
+                    <Link
+                      href={`/careers/${job.slug}`}
+                      className="group block bg-canvas border border-neutral-200 hover:border-gold-deep/50 p-7 lg:p-8 h-full transition-colors duration-300"
+                    >
+                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-5">
+                        <span className="caption text-gold-deep">
+                          {job.type.toUpperCase()}
+                        </span>
+                        <span className="caption text-neutral-400" aria-hidden>
+                          ·
+                        </span>
+                        <span className="caption text-neutral-500">
+                          {job.location.toUpperCase()}
+                        </span>
+                      </div>
+                      <h3 className="font-sans font-extrabold text-2xl lg:text-3xl text-ink leading-tight mb-3 text-balance group-hover:text-gold-deep transition-colors duration-300">
+                        {job.title}
+                      </h3>
+                      <p className="text-sm lg:text-base text-neutral-700 leading-relaxed mb-6">
+                        {job.summary}
+                      </p>
+                      <span className="caption inline-flex items-center gap-2 text-ink group-hover:text-gold-deep transition-colors duration-300">
+                        View role &amp; apply
+                        <Arrow />
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-sm text-neutral-600 mt-10 text-center leading-relaxed">
+                Don&apos;t see your role?{" "}
+                <Link
+                  href={mailtoLink("Careers — Introduction")}
+                  className="underline hover:text-gold-deep transition-colors"
+                >
+                  Introduce yourself anyway
+                </Link>{" "}
+                — we talk even when a formal opening isn&apos;t listed.
+              </p>
+            </>
+          ) : (
+            <div className="bg-canvas border border-neutral-200 p-10 lg:p-16 text-center">
+              <p className="caption text-neutral-500 mb-4">UPDATING</p>
+              <p className="font-sans font-extrabold text-2xl lg:text-3xl text-ink mb-4 text-balance max-w-2xl mx-auto">
+                Roles are being refreshed for the current hiring window.
+              </p>
+              <p className="text-sm text-neutral-700 max-w-md mx-auto mb-6 leading-relaxed">
+                If you&apos;re a vertical-fluent practitioner in creative,
+                strategy, social, digital, or operations, send us a note.
+                We&apos;ll talk even when a formal role isn&apos;t listed.
+              </p>
+              <Link
+                href={mailtoLink("Careers — Introduction")}
+                className="caption inline-flex items-center gap-2 text-ink hover:text-gold-deep transition-colors"
+              >
+                Introduce yourself
+                <Arrow />
+              </Link>
+            </div>
+          )}
         </div>
       </section>
 
