@@ -351,10 +351,6 @@ const offers = [
     body: "Salary calibrated to the discipline and category, plus performance upside tied to engagements you contribute to.",
   },
   {
-    title: "Full medical + dental",
-    body: "Comprehensive coverage for you and your dependents from day one. No tier games.",
-  },
-  {
     title: "PTO that's actually used",
     body: "Built-in time off plus seasonal closures so the team genuinely unplugs. The studio runs because we're rested.",
   },
