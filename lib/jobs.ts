@@ -115,15 +115,15 @@ export const jobs: Job[] = [
   {
     slug: "photographer-videographer",
     title: "Photographer / Videographer",
-    type: "Project-based",
-    location: "Tampa, FL + on location",
+    type: "Full-time",
+    location: "Tampa, FL (in-office or flexible)",
     summary:
       "Shoot and cut premium work, from social reels to short films, across the categories we serve.",
     sections: [
       {
         heading: "The role",
         body: [
-          "Photographer / Videographers create the work our clients hire us for: concepting, shooting, and editing everything from short-form social reels to short films and lifestyle projects. Work runs on a project basis, on location across the categories we serve, at the standard those categories expect.",
+          "Photographer / Videographers create the work our clients hire us for: concepting, shooting, and editing everything from short-form social reels to short films and lifestyle projects. The work runs on location across the categories we serve, at the standard those categories expect.",
         ],
       },
       {
@@ -157,6 +157,8 @@ export const jobs: Job[] = [
         ],
       },
     ],
+    schedule:
+      "Full-time, Monday to Friday during 9:30am–5pm ET business hours. In-office at our Tampa, FL studio or flexible, with on-location shoot days as projects require.",
   },
   {
     slug: "email-marketing-specialist",
