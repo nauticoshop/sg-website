@@ -92,7 +92,7 @@ export default async function JobPage({
       {/* Shared studio intro */}
       <section className="bg-ink text-canvas py-14 lg:py-16 px-6 lg:px-12">
         <div className="max-w-[900px] mx-auto">
-          <p className="caption text-gold mb-5">ABOUT THE STUDIO</p>
+          <p className="caption text-gold mb-5">WHO YOU&apos;D JOIN</p>
           <p className="text-base lg:text-lg text-canvas/85 leading-relaxed">
             Surroundings Group is the creative partner behind the world&apos;s
             premium brands: marine, real estate, private aviation,
