@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion, useReducedMotion } from "motion/react";
 import { jobs } from "@/lib/jobs";
 import { site } from "@/lib/site";
@@ -106,6 +107,24 @@ export function CareersHero() {
           See open roles
           <Arrow className="rotate-90 transition-transform duration-300 group-hover:translate-y-1" />
         </motion.a>
+
+        {/* Team photo — editorial break between the statement and the
+            marquee, annotated DV-style. */}
+        <motion.figure variants={child} className="mt-14 lg:mt-20">
+          <Image
+            src="/images/team/team-photo.jpg"
+            alt="The Surroundings Group team"
+            width={1800}
+            height={896}
+            sizes="(min-width: 1280px) 1200px, 100vw"
+            className="w-full h-auto"
+            priority
+          />
+          <figcaption className="flex items-center justify-between mt-4">
+            <span className="caption text-neutral-500">◆ THE TEAM</span>
+            <span className="caption text-neutral-500">TAMPA, FL</span>
+          </figcaption>
+        </motion.figure>
       </motion.div>
     </section>
   );
