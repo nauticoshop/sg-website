@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
-import { PageHero } from "@/components/page-hero";
 import { site } from "@/lib/site";
 import { jobs } from "@/lib/jobs";
+import { team } from "@/lib/team";
 
 export const metadata: Metadata = {
   title: "Careers",
@@ -49,11 +49,27 @@ export default function CareersPage() {
     <>
       <Nav />
 
-      <PageHero
-        eyebrow="CAREERS"
-        title="Build the agency premium brands actually deserve."
-        subhead="An adaptive-first group of creative humans working in the industries most people only dream about. We bet you'll fit right in."
-      />
+      {/* Hero — dark band with live stats strip */}
+      <section className="bg-ink text-canvas pt-36 lg:pt-44 pb-16 lg:pb-20 px-6 lg:px-12">
+        <div className="max-w-[1200px] mx-auto">
+          <p className="caption text-gold mb-6">CAREERS</p>
+          <h1 className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight max-w-4xl text-balance">
+            Build the agency premium brands actually deserve.
+          </h1>
+          <p className="text-lg lg:text-xl mt-6 max-w-2xl leading-relaxed text-canvas/70">
+            An adaptive-first group of creative humans working in the
+            industries most people only dream about. We bet you&apos;ll fit
+            right in.
+          </p>
+
+          <dl className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 border-t border-canvas/15 mt-14 lg:mt-16 pt-10">
+            <HeroStat value={String(jobs.length)} label="Open roles" />
+            <HeroStat value="255M+" label="Annual owned-media audience" />
+            <HeroStat value={String(team.length)} label="People on the team" />
+            <HeroStat value="Tampa" label="Studio headquarters" />
+          </dl>
+        </div>
+      </section>
 
       {/* Why here — 6 reasons */}
       <section className="bg-canvas py-16 lg:py-24 px-6 lg:px-12">
@@ -69,6 +85,7 @@ export default function CareersPage() {
                 key={i}
                 className="border-t border-neutral-200 pt-6 lg:pt-8"
               >
+                <span aria-hidden className="block w-8 h-[3px] bg-gold-deep mb-5" />
                 <h3 className="font-sans font-extrabold text-xl lg:text-2xl text-ink mb-3 text-balance">
                   {b.title}
                 </h3>
@@ -81,12 +98,12 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* Open roles — placeholder + introduce yourself */}
-      <section className="bg-neutral-50 py-16 lg:py-24 px-6 lg:px-12 border-y border-neutral-200">
+      {/* Open roles — dark band, canvas cards */}
+      <section className="bg-ink py-16 lg:py-24 px-6 lg:px-12">
         <div className="max-w-[1200px] mx-auto">
           <header className="mb-10 lg:mb-12">
-            <p className="caption text-gold-deep mb-4">OPEN ROLES</p>
-            <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance max-w-3xl">
+            <p className="caption text-gold mb-4">OPEN ROLES</p>
+            <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-canvas text-balance max-w-3xl">
               Current openings.
             </h2>
           </header>
@@ -98,7 +115,7 @@ export default function CareersPage() {
                   <li key={job.slug}>
                     <Link
                       href={`/careers/${job.slug}`}
-                      className="group block bg-canvas border border-neutral-200 hover:border-gold-deep/50 p-7 lg:p-8 h-full transition-colors duration-300"
+                      className="group block bg-canvas border border-canvas/0 hover:border-gold p-7 lg:p-8 h-full transition-colors duration-300"
                     >
                       <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-5">
                         <span className="caption text-gold-deep">
@@ -125,11 +142,11 @@ export default function CareersPage() {
                   </li>
                 ))}
               </ul>
-              <p className="text-sm text-neutral-600 mt-10 text-center leading-relaxed">
+              <p className="text-sm text-canvas/70 mt-10 text-center leading-relaxed">
                 Don&apos;t see your role?{" "}
                 <Link
                   href={mailtoLink("Careers — Introduction")}
-                  className="underline hover:text-gold-deep transition-colors"
+                  className="underline text-canvas hover:text-gold transition-colors"
                 >
                   Introduce yourself anyway
                 </Link>{" "}
@@ -201,13 +218,13 @@ export default function CareersPage() {
       </section>
 
       {/* What we offer — transparent benefits strip */}
-      <section className="bg-ink text-canvas py-20 lg:py-28 px-6 lg:px-12 border-t border-canvas/10">
+      <section className="bg-gold text-ink py-20 lg:py-28 px-6 lg:px-12">
         <div className="max-w-[1200px] mx-auto">
           <header className="mb-12 lg:mb-16 max-w-3xl">
-            <p className="caption text-gold mb-5 tracking-[0.28em]">
+            <p className="caption text-gold-deep mb-5 tracking-[0.28em]">
               WHAT WE OFFER
             </p>
-            <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-canvas leading-[1.1] text-balance">
+            <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink leading-[1.1] text-balance">
               The table stakes, the upside, and the access.
             </h2>
           </header>
@@ -270,14 +287,25 @@ function Step({
 
 function Offer({ title, body }: { title: string; body: string }) {
   return (
-    <li className="border-t border-canvas/15 pt-6 lg:pt-8">
-      <h3 className="font-sans font-extrabold text-lg lg:text-xl text-canvas leading-tight mb-3 tracking-tight">
+    <li className="border-t border-ink/15 pt-6 lg:pt-8">
+      <h3 className="font-sans font-extrabold text-lg lg:text-xl text-ink leading-tight mb-3 tracking-tight">
         {title}
       </h3>
-      <p className="text-sm lg:text-base text-canvas/75 leading-relaxed">
+      <p className="text-sm lg:text-base text-ink/75 leading-relaxed">
         {body}
       </p>
     </li>
+  );
+}
+
+function HeroStat({ value, label }: { value: string; label: string }) {
+  return (
+    <div>
+      <dd className="font-sans font-extrabold text-3xl lg:text-4xl text-gold tracking-tight">
+        {value}
+      </dd>
+      <dt className="caption text-canvas/60 mt-2">{label}</dt>
+    </div>
   );
 }
 
