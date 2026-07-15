@@ -350,7 +350,7 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
           <Link href={next.href} className="group block">
             <p className="caption text-neutral-500 mb-4">◆ NEXT SERVICE</p>
             <div className="flex items-baseline justify-between gap-6">
-              <h3 className="font-sans font-extrabold text-4xl md:text-5xl lg:text-7xl text-ink leading-none tracking-tight group-hover:text-neutral-500 transition-colors duration-300">
+              <h3 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl text-ink leading-none tracking-tight group-hover:text-neutral-500 transition-colors duration-300">
                 {next.name}
               </h3>
               <svg

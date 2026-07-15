@@ -21,7 +21,7 @@ export function NauticalNetworkProof() {
         <header className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mb-16 lg:mb-20">
           <div className="lg:col-span-7">
             <p className="caption text-neutral-500 mb-6">◆ OWNED DISTRIBUTION</p>
-            <h2 className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.02] tracking-tight text-ink text-balance">
+            <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl leading-[1.02] tracking-tight text-ink text-balance">
               We don&apos;t just make content. We have the audience.
             </h2>
           </div>
@@ -183,7 +183,7 @@ export function NauticalNetworkProof() {
 function StatBlock({ value, label }: { value: string; label: string }) {
   return (
     <li className="px-6 py-10 lg:px-8 lg:py-14 text-center flex flex-col justify-center min-h-[180px]">
-      <p className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl text-ink leading-none mb-4 tracking-tight">
+      <p className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl text-ink leading-none mb-4 tracking-tight">
         {value}
       </p>
       <p className="text-sm lg:text-base text-neutral-600 leading-snug max-w-[220px] mx-auto">

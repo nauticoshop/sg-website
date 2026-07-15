@@ -61,7 +61,7 @@ export function GlobalReach() {
             </motion.p>
             <motion.h2
               variants={child}
-              className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.02] tracking-tight text-balance"
+              className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl leading-[1.02] tracking-tight text-balance"
             >
               Work that reaches the world.
             </motion.h2>

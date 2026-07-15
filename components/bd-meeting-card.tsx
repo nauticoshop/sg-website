@@ -100,7 +100,7 @@ export function BdMeetingCard({
             <p className="caption text-gold mb-8 lg:mb-10">{eyebrow}</p>
 
             {/* Pull quote — big editorial type */}
-            <blockquote className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-[1.1] tracking-tight text-canvas text-balance mb-10 lg:mb-12">
+            <blockquote className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl leading-[1.1] tracking-tight text-canvas text-balance mb-10 lg:mb-12">
               <span aria-hidden className="text-gold mr-1">&ldquo;</span>
               {quote}
               <span aria-hidden className="text-gold ml-1">&rdquo;</span>

@@ -37,7 +37,7 @@ export function PowerInNumbers() {
       <div className="max-w-[1440px] mx-auto">
         <header className="text-center mb-16 lg:mb-20 max-w-4xl mx-auto">
           <p className="caption text-ink mb-6">◆ PROVEN AT SCALE</p>
-          <h2 className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] tracking-tight text-ink text-balance">
+          <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl leading-[1.05] tracking-tight text-ink text-balance">
             The numbers that separate us from everyone else pitching luxury.
           </h2>
         </header>
@@ -48,7 +48,7 @@ export function PowerInNumbers() {
               key={i}
               className="px-6 py-12 lg:px-8 lg:py-16 text-center flex flex-col justify-center min-h-[220px]"
             >
-              <p className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-ink leading-none mb-5 tracking-tight">
+              <p className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl text-ink leading-none mb-5 tracking-tight">
                 <CountUp value={stat.value} />
               </p>
               <p className="text-sm lg:text-base text-ink/70 leading-snug max-w-[240px] mx-auto">

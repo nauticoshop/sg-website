@@ -252,7 +252,7 @@ function CrossoverExample({
 function Stat({ value, label }: { value: string; label: string }) {
   return (
     <li>
-      <p className="font-sans font-extrabold text-5xl md:text-6xl text-neutral-500 leading-none mb-4 tracking-tight">
+      <p className="font-sans font-extrabold text-4xl md:text-5xl text-neutral-500 leading-none mb-4 tracking-tight">
         {value}
       </p>
       <p className="text-sm md:text-base text-neutral-700 leading-snug">

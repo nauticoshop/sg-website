@@ -46,7 +46,7 @@ export function Process() {
       <div className="max-w-[1440px] mx-auto">
         <header className="text-center mb-16 lg:mb-24 max-w-4xl mx-auto">
           <p className="caption text-gold mb-6">◆ HOW WE WORK</p>
-          <h2 className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] tracking-tight mb-8 text-balance">
+          <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl leading-[1.05] tracking-tight mb-8 text-balance">
             Concept to execution. Every engagement.
           </h2>
           <p className="text-lg md:text-xl lg:text-2xl text-canvas/70 leading-relaxed max-w-3xl mx-auto">

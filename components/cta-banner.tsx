@@ -50,7 +50,7 @@ export function CtaBanner() {
         </motion.p>
         <motion.h2
           variants={child}
-          className="font-sans font-extrabold text-5xl md:text-7xl lg:text-8xl leading-[1.02] tracking-tight text-balance text-canvas"
+          className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl leading-[1.02] tracking-tight text-balance text-canvas"
         >
           Let&apos;s build something worth talking about.
         </motion.h2>

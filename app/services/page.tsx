@@ -112,7 +112,7 @@ export default function ServicesIndexPage() {
                   <p className="caption text-canvas/40 mb-6">
                     {String(i + 1).padStart(2, "0")} / Service
                   </p>
-                  <h3 className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl leading-none tracking-tight mb-6">
+                  <h3 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl leading-none tracking-tight mb-6">
                     {s.name}
                   </h3>
                   <p className="text-base lg:text-lg leading-snug mb-3">

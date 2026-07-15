@@ -21,7 +21,7 @@ export default function DiscoveryCallPage() {
       <section className="bg-canvas pt-36 lg:pt-44 pb-12 lg:pb-16 px-6 lg:px-12">
         <div className="max-w-[1200px] mx-auto">
           <p className="caption text-neutral-500 mb-6">◆ DISCOVERY CALL</p>
-          <h1 className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-ink max-w-3xl text-balance">
+          <h1 className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-ink max-w-3xl text-balance">
             Let&apos;s talk about what you&apos;re building.
           </h1>
           <p className="text-lg lg:text-xl text-neutral-700 mt-6 max-w-2xl leading-relaxed">

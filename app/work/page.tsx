@@ -163,7 +163,7 @@ export default function WorkIndexPage() {
 function Stat({ value, label }: { value: string; label: string }) {
   return (
     <li className="text-center md:text-left">
-      <p className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl text-gold leading-none mb-4 tracking-tight">
+      <p className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl text-gold leading-none mb-4 tracking-tight">
         {value}
       </p>
       <p className="text-sm md:text-base text-canvas/70 leading-snug">

@@ -104,7 +104,7 @@ export function WhatSetsUsApart() {
       <div className="max-w-[1200px] mx-auto">
         <header className="text-center mb-12 lg:mb-16 max-w-3xl mx-auto">
           <p className="caption text-neutral-500 mb-4">◆ WHY SURROUNDINGS GROUP</p>
-          <h2 className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-ink text-balance">
+          <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl leading-[1.05] tracking-tight text-ink text-balance">
             What sets us apart, why it matters, and the proof.
           </h2>
           <Rule className="bg-ink mx-auto mt-6" />

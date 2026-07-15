@@ -80,7 +80,7 @@ export function CareersHero() {
         </motion.p>
         <motion.h1
           variants={child}
-          className="font-sans font-extrabold text-5xl md:text-6xl lg:text-[5.5rem] leading-[1.02] tracking-tight text-ink max-w-5xl text-balance"
+          className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.02] tracking-tight text-ink max-w-5xl text-balance"
         >
           Build the agency premium brands actually deserve.
         </motion.h1>

@@ -33,7 +33,7 @@ export function PageHero({
     >
       <div className="max-w-[1200px] mx-auto">
         <p className={`caption mb-6 ${isDark ? "text-gold" : "text-neutral-500"}`}>◆ {eyebrow}</p>
-        <h1 className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight max-w-4xl text-balance">
+        <h1 className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight max-w-4xl text-balance">
           {title}
         </h1>
         {subhead && (

@@ -56,7 +56,7 @@ export function ServicesGrid() {
           </motion.p>
           <motion.h2
             variants={child}
-            className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.02] tracking-tight text-canvas text-balance"
+            className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl leading-[1.02] tracking-tight text-canvas text-balance"
           >
             What we do.
           </motion.h2>
