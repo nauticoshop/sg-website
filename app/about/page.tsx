@@ -30,19 +30,21 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             <p className="caption text-neutral-500 lg:col-span-1">OUR STORY</p>
             <div className="lg:col-span-2 space-y-6 text-base lg:text-lg text-neutral-700 leading-relaxed">
-              <p>
-                Surroundings Group started with a simple observation. Most
-                agencies pitch the same playbook to a watchmaker, a $50M
-                real estate development, and a private aviation operator,
-                then wonder why none of the campaigns land. We don&apos;t.
+              <p className="text-2xl lg:text-3xl font-light text-ink leading-[1.3] text-balance">
+                Surroundings Group started with a simple observation.{" "}
+                <span className="text-ink/55">
+                  Most agencies pitch the same playbook to a watchmaker, a
+                  $50M real estate development, and a private aviation
+                  operator — then wonder why none of the campaigns land.
+                </span>
               </p>
               <p>
-                We built a different model. Vertical-fluent specialists,
-                fully in-house production, and an owned-media network at
-                a scale no other agency our size has. The proof is in
-                the sister brand we built: Nautical Network reaches more
-                than 180 million marine enthusiasts a year, and that
-                distribution becomes part of every marine engagement.
+                We don&apos;t. We built a different model. Vertical-fluent
+                specialists, fully in-house production, and an owned-media
+                network at a scale no other agency our size has. The proof
+                is the sister brand we built: Nautical Network, the largest
+                multi-platform editorial ecosystem in premium marine, whose
+                distribution becomes part of every marine engagement we run.
               </p>
               <p>
                 Today we work across the premium categories that demand
@@ -117,22 +119,25 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team photo — full-width editorial moment */}
-      <section className="bg-canvas py-16 lg:py-24 px-6 lg:px-12">
-        <div className="max-w-[1200px] mx-auto">
+      {/* Team photo — full-bleed editorial moment with micro-annotation */}
+      <section className="bg-canvas">
+        <div className="relative">
           <Image
             src="/images/team/team-photo.jpg"
             alt="The Surroundings Group team"
             width={1800}
             height={896}
-            sizes="(min-width: 1280px) 1200px, 100vw"
+            sizes="100vw"
             className="w-full h-auto"
           />
+          <p className="absolute bottom-4 left-6 lg:bottom-8 lg:left-12 caption text-canvas [text-shadow:0_1px_8px_rgba(0,0,0,0.45)]">
+            ◆ THE TEAM · TAMPA, FL
+          </p>
         </div>
       </section>
 
       {/* Team preview */}
-      <section className="bg-neutral-50 py-20 lg:py-28 px-6 lg:px-12">
+      <section className="bg-[#EFE7DA] py-20 lg:py-28 px-6 lg:px-12">
         <div className="max-w-[1200px] mx-auto">
           <header className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
             <div>
@@ -152,28 +157,25 @@ export default function AboutPage() {
 
           <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {team.slice(0, 3).map((m) => (
-              <li
-                key={m.slug}
-                className="bg-canvas border border-neutral-200 p-6 lg:p-8"
-              >
-                <div className="relative aspect-[4/5] bg-ink mb-6 overflow-hidden">
+              <li key={m.slug}>
+                <div className="relative aspect-[4/5] bg-ink mb-5 overflow-hidden">
                   {m.photo && (
                     <Image
                       src={m.photo}
                       alt={`${m.name} — ${m.role}`}
                       fill
-                      sizes="(min-width: 1024px) 350px, (min-width: 768px) 50vw, 100vw"
+                      sizes="(min-width: 1024px) 380px, (min-width: 768px) 50vw, 100vw"
                       className="object-cover object-top"
                     />
                   )}
                 </div>
                 <p className="caption text-neutral-500 mb-2">{m.department}</p>
-                <h3 className="font-sans font-extrabold text-2xl text-ink mb-2">
+                <h3 className="font-sans font-extrabold text-xl lg:text-2xl text-ink mb-1">
                   {m.name}
                 </h3>
-                <p className="text-sm text-neutral-600 mb-4">{m.role}</p>
+                <p className="text-sm text-neutral-600">{m.role}</p>
                 {m.bio && (
-                  <p className="text-sm text-neutral-700 leading-relaxed line-clamp-3">
+                  <p className="text-sm text-neutral-700 leading-relaxed line-clamp-3 mt-3">
                     {m.bio}
                   </p>
                 )}
@@ -194,9 +196,9 @@ export default function AboutPage() {
               </h2>
               <p className="text-base lg:text-lg text-canvas/70 leading-relaxed mb-8">
                 Built from a single Instagram into eight social brands
-                reaching 180M+ marine enthusiasts a year. It&apos;s proof
-                of capability and an unfair distribution advantage we
-                extend to every client we work with.
+                publishing daily across premium marine. It&apos;s proof of
+                capability and an unfair distribution advantage we extend
+                to every client we work with.
               </p>
               <Link
                 href="/about/nautical-network"
