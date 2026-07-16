@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
-import { PageHero } from "@/components/page-hero";
 import { CtaBanner } from "@/components/cta-banner";
 import { services } from "@/lib/services";
 import { verticals } from "@/lib/verticals";
@@ -80,12 +79,33 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
         ]}
       />
 
-      <PageHero
-        eyebrow={`SERVICE / ${String(currentIndex + 1).padStart(2, "0")}`}
-        title={service.name}
-        subhead={service.tagline}
-        tone="dark"
-      />
+      {/* Hero — full-bleed service imagery under an ink gradient */}
+      <section className="relative bg-ink text-canvas overflow-hidden">
+        <Image
+          src={`/images/services/${service.slug}.jpg`}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-40"
+          aria-hidden
+        />
+        <div
+          className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-ink/55"
+          aria-hidden
+        />
+        <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12 pt-40 lg:pt-56 pb-20 lg:pb-32">
+          <p className="caption text-gold mb-6">
+            ◆ SERVICE / {String(currentIndex + 1).padStart(2, "0")}
+          </p>
+          <h1 className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl leading-[1.02] tracking-tight max-w-4xl text-balance">
+            {service.name}
+          </h1>
+          <p className="text-lg lg:text-xl mt-6 max-w-2xl leading-relaxed text-canvas/85 font-light">
+            {service.tagline}
+          </p>
+        </div>
+      </section>
 
       {/* Intro / positioning */}
       <section className="bg-canvas py-20 lg:py-28 px-6 lg:px-12">
@@ -180,6 +200,51 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
           </p>
         </div>
       </section>
+
+      {/* Full-bleed work imagery — a photographic breath between the
+          gold statement and the process band, linking into /work */}
+      {service.portfolioImage && (
+        <section className="bg-ink">
+          <Link href="/work" className="group block relative overflow-hidden">
+            <div className="relative h-[420px] lg:h-[560px]">
+              <Image
+                src={service.portfolioImage}
+                alt={service.portfolioAlt ?? "Selected work from the studio"}
+                fill
+                sizes="100vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+              />
+              <div
+                className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent"
+                aria-hidden
+              />
+            </div>
+            <div className="absolute inset-0 flex flex-col justify-end p-8 lg:p-14 text-canvas">
+              <p className="caption text-gold mb-4">◆ SEE THE WORK</p>
+              <div className="flex items-baseline justify-between gap-6">
+                <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-balance group-hover:text-gold transition-colors duration-300">
+                  Explore the portfolio.
+                </h2>
+                <svg
+                  width="32"
+                  height="20"
+                  viewBox="0 0 14 10"
+                  fill="none"
+                  className="text-canvas group-hover:text-gold transition-all duration-300 group-hover:translate-x-2 shrink-0"
+                  aria-hidden
+                >
+                  <path
+                    d="M1 5h12m0 0L9 1m4 4L9 9"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="square"
+                  />
+                </svg>
+              </div>
+            </div>
+          </Link>
+        </section>
+      )}
 
       {/* Service-specific process */}
       <section className="bg-[#EFE7DA] py-20 lg:py-28 px-6 lg:px-12">
@@ -309,51 +374,6 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
               })}
             </ul>
           </div>
-        </section>
-      )}
-
-      {/* Portfolio banner — full-bleed image into /work. Only shown when
-          the page has no recent-work gallery, so the close stays lean. */}
-      {featuredWork.length === 0 && service.portfolioImage && (
-        <section className="bg-ink">
-          <Link href="/work" className="group block relative overflow-hidden">
-            <div className="relative h-[420px] lg:h-[560px]">
-              <Image
-                src={service.portfolioImage}
-                alt={service.portfolioAlt ?? "Selected work from the studio"}
-                fill
-                sizes="100vw"
-                className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-              />
-              <div
-                className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent"
-                aria-hidden
-              />
-            </div>
-            <div className="absolute inset-0 flex flex-col justify-end p-8 lg:p-14 text-canvas">
-              <p className="caption text-gold mb-4">◆ SEE THE WORK</p>
-              <div className="flex items-baseline justify-between gap-6">
-                <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-balance group-hover:text-gold transition-colors duration-300">
-                  Explore the portfolio.
-                </h2>
-                <svg
-                  width="32"
-                  height="20"
-                  viewBox="0 0 14 10"
-                  fill="none"
-                  className="text-canvas group-hover:text-gold transition-all duration-300 group-hover:translate-x-2 shrink-0"
-                  aria-hidden
-                >
-                  <path
-                    d="M1 5h12m0 0L9 1m4 4L9 9"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="square"
-                  />
-                </svg>
-              </div>
-            </div>
-          </Link>
         </section>
       )}
 
