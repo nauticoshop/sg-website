@@ -402,7 +402,7 @@ export function OfferAndCta() {
           >
             <p className="caption text-ink/70 mb-5">◆ WHAT WE OFFER</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
-              The table stakes, the upside, and the access.
+              What we offer.
             </h2>
             <Rule className="bg-ink" />
           </motion.div>

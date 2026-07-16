@@ -40,7 +40,7 @@ export default function TermsPage() {
             without written permission.
           </p>
 
-          <h2>Engagements & proposals</h2>
+          <h2>Engagements + proposals</h2>
           <p>
             Information on this site is for general reference. Specific
             engagements are governed by separately executed proposals or

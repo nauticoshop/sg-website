@@ -67,13 +67,13 @@ export const services: Service[] = [
     description:
       "In-house creative production built for premium markets — from cinematic brand films to listing videos, aerial coverage, and editorial photography. Every frame matches the standard of the brands we serve.",
     capabilities: [
-      "Brand story films & lifestyle video",
-      "Reels & short-form social video",
-      "Listing & walkthrough videos — property, aircraft, yacht",
+      "Brand story films + lifestyle video",
+      "Reels + short-form social video",
+      "Listing + walkthrough videos — property, aircraft, yacht",
       "Location highlight films",
-      "Aerial & drone production",
-      "Editorial, product & headshot photography",
-      "Post-production & color",
+      "Aerial + drone production",
+      "Editorial, product + headshot photography",
+      "Post-production + color",
     ],
     href: "/services/studio",
     headlines: {
@@ -126,13 +126,13 @@ export const services: Service[] = [
     description:
       "Full-service social presence management — strategy, content, community, and growth — executed by a team that understands how premium audiences engage, share, and buy.",
     capabilities: [
-      "Multi-platform management & platform expertise",
-      "Content calendar & consistent publishing",
-      "Community engagement & comment-section presence",
-      "Message management & DM response",
-      "Influencer & creator collaboration",
+      "Multi-platform management + platform expertise",
+      "Content calendar + consistent publishing",
+      "Community engagement + comment-section presence",
+      "Message management + DM response",
+      "Influencer + creator collaboration",
       "Editorial publishing across owned channels",
-      "Strategy & analytical reporting",
+      "Strategy + analytical reporting",
     ],
     href: "/services/social",
     headlines: {
@@ -156,7 +156,7 @@ export const services: Service[] = [
       "For brands that treat their feeds as part of the product and want their accounts to set the bar in their category.",
     processSteps: [
       {
-        title: "Audit & strategy",
+        title: "Audit + strategy",
         copy: "Where the brand stands today, where the category lives online, and what the path to leadership looks like. Specific to the audience and the platforms that matter most.",
       },
       {
@@ -168,7 +168,7 @@ export const services: Service[] = [
         copy: "Publishing, community, DM response, listening, and creator partnerships. Run by the same senior team that planned it.",
       },
       {
-        title: "Growth & report",
+        title: "Growth + report",
         copy: "Monthly reporting against the audience and outcomes we agreed on, plus the iteration that keeps the program improving past month three.",
       },
     ],
@@ -185,12 +185,12 @@ export const services: Service[] = [
     description:
       "Strategy, design, build, and ongoing care for digital properties that convert as well as they look. Mobile-first, performance-obsessed, and tailored to the conventions of your category.",
     capabilities: [
-      "Website strategy & UX",
-      "Custom design & development",
-      "Maintenance & ongoing revisions",
-      "Proactive platform & security updates",
-      "Hosting environment management & monitoring",
-      "SEO & conversion optimization",
+      "Website strategy + UX",
+      "Custom design + development",
+      "Maintenance + ongoing revisions",
+      "Proactive platform + security updates",
+      "Hosting environment management + monitoring",
+      "SEO + conversion optimization",
     ],
     href: "/services/digital",
     headlines: {
@@ -214,7 +214,7 @@ export const services: Service[] = [
       "For brands whose current site is the weak point — buyers landing and bouncing, a design that hasn't been touched in years, or a brand that's evolved past its website.",
     processSteps: [
       {
-        title: "Strategy & sitemap",
+        title: "Strategy + sitemap",
         copy: "Who the site is for, what it needs to do, and the architecture that gets there. Built around the real conversion paths a premium buyer takes.",
       },
       {
@@ -222,11 +222,11 @@ export const services: Service[] = [
         copy: "Brand-aligned, mobile-first, performance-conscious. The visual system extends the brand work, it doesn't reinterpret it.",
       },
       {
-        title: "Build & go live",
+        title: "Build + go live",
         copy: "Webflow, WordPress, or custom Next.js depending on what the client actually needs. We build to the standard the brand requires, then run a seamless launch.",
       },
       {
-        title: "Care & optimize",
+        title: "Care + optimize",
         copy: "Hosting, maintenance, security, SEO, and the conversion work that keeps the site improving past launch. Partners for the long term, not a handoff.",
       },
     ],
@@ -243,14 +243,14 @@ export const services: Service[] = [
     description:
       "Paid advertising, public relations, email, influencers, and owned-media distribution working together as one acquisition engine. Built to reach the audiences that matter, and convert them.",
     capabilities: [
-      "Paid media — Google Search & Display, YouTube, Meta",
+      "Paid media — Google Search + Display, YouTube, Meta",
       "Website retargeting",
-      "Keyword & competitor research",
-      "Landing page creation & ad creative",
-      "Public relations & press placement",
-      "Email marketing & lifecycle automation",
+      "Keyword + competitor research",
+      "Landing page creation + ad creative",
+      "Public relations + press placement",
+      "Email marketing + lifecycle automation",
       "Influencer partnerships",
-      "Owned media & niche branded outlets",
+      "Owned media + niche branded outlets",
     ],
     href: "/services/growth",
     headlines: {
@@ -263,7 +263,7 @@ export const services: Service[] = [
     intro:
       "We run paid ads, PR, email, and influencers as one connected program with one accountable team. Campaigns are built on real keyword and competitor research and pointed at landing pages built to convert. And because we own our own media channels, your spend gets amplified by reach we don't have to buy.",
     sampleDeliverables: [
-      "Paid program across Google Search & Display, Meta, and YouTube for a launch",
+      "Paid program across Google Search + Display, Meta, and YouTube for a launch",
       "Retargeting campaigns that re-engage site visitors and social audiences",
       "PR campaign tied to a new-model release or grand opening",
       "Email and lifecycle programs connected to your CRM and marketing stack — HubSpot, Klaviyo, Salesforce, and more",
@@ -274,7 +274,7 @@ export const services: Service[] = [
       "For brands ready to grow that are tired of juggling separate vendors for ads, PR, and email.",
     processSteps: [
       {
-        title: "Audience & funnel",
+        title: "Audience + funnel",
         copy: "Who actually buys at this end of the market, what the path to purchase looks like, and where the current funnel breaks. Built on keyword, competitor, and audience research.",
       },
       {
@@ -282,7 +282,7 @@ export const services: Service[] = [
         copy: "Paid, PR, email, influencers, and owned media designed as one connected engine. Each channel knows what the others are doing and the work compounds.",
       },
       {
-        title: "Launch & operate",
+        title: "Launch + operate",
         copy: "We run the program, optimize live, and adjust against what the data shows. Real ownership of the outcome, not a monthly report that lobs back to a client meeting.",
       },
       {
@@ -303,12 +303,12 @@ export const services: Service[] = [
     description:
       "Strategy, production, and on-site activation for premium brand experiences — from boat shows to property launches to private client gatherings. We plan it, market it, capture it, and amplify it.",
     capabilities: [
-      "Event strategy & production",
+      "Event strategy + production",
       "Pre-event marketing",
-      "On-site capture & live publishing",
-      "Trade show & exhibitor support",
+      "On-site capture + live publishing",
+      "Trade show + exhibitor support",
       "Member and client gathering production",
-      "Post-event content & recaps",
+      "Post-event content + recaps",
     ],
     href: "/services/experiences",
     headlines: {
@@ -332,7 +332,7 @@ export const services: Service[] = [
       "For openings, launches, and client gatherings that matter enough to do properly — and worth capturing on camera.",
     processSteps: [
       {
-        title: "Concept & brief",
+        title: "Concept + brief",
         copy: "What the moment needs to do for the brand, who it's for, and what the experience has to feel like. Built around the audience, not the venue.",
       },
       {
@@ -361,12 +361,12 @@ export const services: Service[] = [
     description:
       "Custom AI and workflow automation engineered for marketing operations, sales pipelines, and client deliverables. Built by an agency that builds its own software — not one that just talks about AI.",
     capabilities: [
-      "Marketing & sales automation",
-      "Custom AI agents & workflows",
-      "CRM integration & lead routing",
-      "Chatbots & conversational systems",
-      "Internal tools & dashboards",
-      "Data pipelines & reporting infrastructure",
+      "Marketing + sales automation",
+      "Custom AI agents + workflows",
+      "CRM integration + lead routing",
+      "Chatbots + conversational systems",
+      "Internal tools + dashboards",
+      "Data pipelines + reporting infrastructure",
     ],
     href: "/services/intelligence",
     headlines: {
@@ -390,7 +390,7 @@ export const services: Service[] = [
       "For teams that have outgrown spreadsheets — data copy-pasted between tools, leads slipping through cracks, briefs lost in Slack. We build the system that fixes it.",
     processSteps: [
       {
-        title: "Map & audit",
+        title: "Map + audit",
         copy: "Every tool, every data source, every manual handoff. We map the actual operation as it runs today, not the diagram on the org chart.",
       },
       {

@@ -285,7 +285,7 @@ export const workCollections: WorkCollection[] = [
     description:
       "A golden-hour brand shoot pairing a Sanlorenzo SX motor yacht with its orange-accented chase tender in the Hamptons. Aerial running shots, sunset exteriors along wooded shoreline, a beach picnic, and branded cocktail moments give it a lifestyle-editorial feel.",
     client: "M/Y No Time To Die charter",
-    location: "The Hamptons & Miami",
+    location: "The Hamptons + Miami",
     href: "/work/no-time-to-die",
     images: [
       {
@@ -339,7 +339,7 @@ export const workCollections: WorkCollection[] = [
     vertical: "Marine",
     description:
       "A comprehensive charter portfolio for the 58-meter superyacht Skyfall shot near Rose Island off Nassau. Running shots, top-down aerials over gin-clear flats, jacuzzi lifestyle, snorkeling, formal interiors, and twilight deck dining — a flagship marine collection.",
-    client: "Northrop & Johnson",
+    client: "Northrop + Johnson",
     location: "Rose Island, Nassau, Bahamas",
     href: "/work/skyfall",
     images: [
@@ -513,7 +513,7 @@ export const workCollections: WorkCollection[] = [
   {
     slug: "sparkman-wharf",
     title: "Sparkman Wharf",
-    vertical: "Hospitality & Experiences",
+    vertical: "Hospitality + Experiences",
     description:
       "A hospitality campaign for Sparkman Wharf, Tampa's waterfront dining and entertainment district. Drone establishing views of the wharf and skyline, daytime beer-garden energy, golden-hour strolls, chef-driven food detail, and neon-lit nightlife — a full day-to-night arc of the guest experience.",
     client: "Sparkman Wharf",
@@ -782,7 +782,7 @@ export const workCollections: WorkCollection[] = [
   {
     slug: "emerald-bay",
     title: "Emerald Bay",
-    vertical: "Resorts & Travel",
+    vertical: "Resorts + Travel",
     description:
       "A beachfront villa shoot in the Turks and Caicos, pairing architectural coverage of a white modern villa with infinity pool against bone-white sand and turquoise water. Paddleboarding, wakesurfing, a private chef, and sunset cocktails make it a full guest-experience story.",
     client: "Emerald Bay",
@@ -889,11 +889,11 @@ export const workCollections: WorkCollection[] = [
   },
   {
     slug: "los-suenos",
-    title: "Los Sueños Resort & Marina",
-    vertical: "Resorts & Travel",
+    title: "Los Sueños Resort + Marina",
+    vertical: "Resorts + Travel",
     description:
       "A destination campaign for Los Sueños Resort and Marina on Costa Rica's Pacific coast, shot across air, sea, and villa. Sunrise drone work over the marina basin, sportfishing fleets running in formation, and lifestyle from champagne terraces to fighting fish offshore.",
-    client: "Los Sueños Resort & Marina, with Galati Yacht Sales",
+    client: "Los Sueños Resort + Marina, with Galati Yacht Sales",
     location: "Herradura, Costa Rica",
     href: "/work/los-suenos",
     images: [
@@ -1111,8 +1111,8 @@ const VERTICAL_TO_WORK_LABELS: Record<string, string[]> = {
   "real-estate": ["Real Estate"],
   multifamily: ["Multifamily"],
   "private-aviation": ["Private Aviation"],
-  "resorts-travel": ["Resorts & Travel"],
-  "hospitality-experiences": ["Hospitality & Experiences"],
+  "resorts-travel": ["Resorts + Travel"],
+  "hospitality-experiences": ["Hospitality + Experiences"],
   "exotic-automotive": [],
   "luxury-goods": ["Luxury Goods"],
 };

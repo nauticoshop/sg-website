@@ -22,7 +22,7 @@ const disciplines = [
   "Photo / Video",
   "Email Marketing",
   "Paid Media",
-  "PR & Communications",
+  "PR + Communications",
   "Social Media",
   "Internships",
 ];

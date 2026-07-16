@@ -24,7 +24,7 @@ const chapters: Chapter[] = [
   {
     num: "01",
     eyebrow: "What sets us apart",
-    headline: "Vertical-fluent. By design.",
+    headline: "Deep in the categories we serve.",
     body: (
       <>
         <p>
@@ -54,7 +54,7 @@ const chapters: Chapter[] = [
   {
     num: "03",
     eyebrow: "Why it matters",
-    headline: "The math changes for the client.",
+    headline: "Distribution is included.",
     body: (
       <>
         <p>
@@ -70,7 +70,7 @@ const chapters: Chapter[] = [
   {
     num: "04",
     eyebrow: "Proven results",
-    headline: "Numbers, not narratives.",
+    headline: "The numbers.",
     body: (
       <>
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-6">
@@ -105,7 +105,7 @@ export function WhatSetsUsApart() {
         <header className="text-center mb-12 lg:mb-16 max-w-3xl mx-auto">
           <p className="caption text-neutral-500 mb-4">◆ WHY SURROUNDINGS GROUP</p>
           <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl leading-[1.05] tracking-tight text-ink text-balance">
-            What sets us apart, why it matters, and the proof.
+            What sets us apart.
           </h2>
           <Rule className="bg-ink mx-auto mt-6" />
         </header>

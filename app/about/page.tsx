@@ -75,7 +75,7 @@ export default function AboutPage() {
           <header className="mb-12 lg:mb-16 max-w-3xl">
             <p className="caption text-neutral-500 mb-5">◆ OPERATING PRINCIPLES</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl leading-tight tracking-tight text-ink text-balance">
-              Four convictions that shape every engagement.
+              How we work.
             </h2>
           </header>
           <ol className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">

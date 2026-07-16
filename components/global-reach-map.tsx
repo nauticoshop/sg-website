@@ -215,7 +215,7 @@ export function GlobalReachMap() {
         <RegionStat region="Americas" pct="46%" />
         <RegionStat region="Europe" pct="22%" />
         <RegionStat region="Middle East" pct="16%" />
-        <RegionStat region="Asia & Pacific" pct="14%" />
+        <RegionStat region="Asia + Pacific" pct="14%" />
       </div>
     </div>
   );

@@ -45,7 +45,7 @@ export const team: TeamMember[] = [
   {
     slug: "stephen-massaro",
     name: "Stephen Massaro",
-    role: "Director of Web Services & Account Manager",
+    role: "Director of Web Services + Account Manager",
     department: "Digital",
     photo: "/images/team/stephen-massaro.png",
   },
@@ -66,7 +66,7 @@ export const team: TeamMember[] = [
   {
     slug: "arial-pavlock",
     name: "Arial Pavlock",
-    role: "Team Support Manager & Events Coordinator",
+    role: "Team Support Manager + Events Coordinator",
     department: "Operations",
     photo: "/images/team/arial-pavlock.png",
   },
@@ -94,7 +94,7 @@ export const team: TeamMember[] = [
   {
     slug: "joaley-da-silva",
     name: "Joaley Da Silva",
-    role: "Social Media & Events Manager",
+    role: "Social Media + Events Manager",
     department: "Social",
     // photo: add headshot at /images/team/joaley-da-silva.png when ready
   },

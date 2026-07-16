@@ -235,7 +235,7 @@ export const jobs: Job[] = [
   },
   {
     slug: "pr-brand-communications-specialist",
-    title: "PR & Brand Communications Specialist",
+    title: "PR + Brand Communications Specialist",
     type: "Full-time / Part-time / Contract",
     location: "Tampa, FL (in-office or flexible)",
     summary:

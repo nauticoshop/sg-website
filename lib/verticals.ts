@@ -77,10 +77,10 @@ export const verticals: Vertical[] = [
       "From boat builders and brokerages to charter operators and marinas, we serve the entire marine industry with content, social, and distribution at a scale no other agency can match.",
     href: "/verticals/marine",
     headlines: {
-      intro: "Our home water.",
-      who: "Everyone who builds, sells, and runs the water.",
-      work: "The plays we run in marine.",
-      capabilities: "The disciplines behind the marine roster.",
+      intro: "What we do in marine.",
+      who: "Who we work with.",
+      work: "The plays we run.",
+      capabilities: "The services behind it.",
     },
     tier: 1,
     image: "/images/verticals/marine.jpg",
@@ -89,11 +89,11 @@ export const verticals: Vertical[] = [
       "Marine is our deepest category. We've worked in it for years, and we own Nautical Network — a marine media network reaching 180M+ viewers a year. Every marine client gets that distribution included.",
     audienceSegments: [
       {
-        name: "Boat builders & OEMs",
+        name: "Boat builders + OEMs",
         copy: "Launch films, new-model campaigns, and content for dealer networks.",
       },
       {
-        name: "Brokerages & dealers",
+        name: "Brokerages + dealers",
         copy: "Listing video and photography, social that moves inventory, and ads aimed at qualified buyers.",
       },
       {
@@ -101,7 +101,7 @@ export const verticals: Vertical[] = [
         copy: "Fleet films, social that drives bookings, and coverage across Nautical Network's channels.",
       },
       {
-        name: "Marinas, refit yards & service brands",
+        name: "Marinas, refit yards + service brands",
         copy: "Branding, member content, and campaigns for the businesses around the boater.",
       },
     ],
@@ -134,10 +134,10 @@ export const verticals: Vertical[] = [
       "Cinematic project films, editorial storytelling, and integrated paid + PR — for developers building flagship properties, brokerages selling them, and the home services brands working around the luxury home.",
     href: "/verticals/real-estate",
     headlines: {
-      intro: "Built around the luxury home.",
-      who: "From groundbreaking to grand opening.",
-      work: "How we move premium property.",
-      capabilities: "The disciplines behind the listings.",
+      intro: "What we do in real estate.",
+      who: "Who we work with.",
+      work: "The plays we run.",
+      capabilities: "The services behind it.",
     },
     tier: 1,
     image: "/images/verticals/real-estate.jpg",
@@ -150,11 +150,11 @@ export const verticals: Vertical[] = [
         copy: "Pre-sales storytelling, grand-opening campaigns, and ongoing brand presence for flagship developments. From sales-center launch to post-close referral programs.",
       },
       {
-        name: "Brokerages & agents",
+        name: "Brokerages + agents",
         copy: "Listing programs that match the property, agent brand building, and lead systems that bring in qualified buyers.",
       },
       {
-        name: "Builders & design firms",
+        name: "Builders + design firms",
         copy: "Magazine-grade portfolio films and photography for builders and design firms.",
       },
       {
@@ -191,10 +191,10 @@ export const verticals: Vertical[] = [
       "Built for properties competing for discerning residents — content programs, social engines, and paid demand that fills units.",
     href: "/verticals/multifamily",
     headlines: {
-      intro: "Lease-ups are a content business.",
-      who: "From lease-up to stabilized and beyond.",
-      work: "The programs that fill buildings.",
-      capabilities: "The disciplines that drive occupancy.",
+      intro: "What we do in multifamily.",
+      who: "Who we work with.",
+      work: "The plays we run.",
+      capabilities: "The services behind it.",
     },
     tier: 1,
     image: "/images/verticals/multifamily.jpg",
@@ -211,7 +211,7 @@ export const verticals: Vertical[] = [
         copy: "Ongoing lifestyle content, retention programming, and brand presence for properties competing on amenity and lifestyle.",
       },
       {
-        name: "Owner-operators & portfolios",
+        name: "Owner-operators + portfolios",
         copy: "One brand system that covers the whole portfolio — no separate agency for every property.",
       },
       {
@@ -248,10 +248,10 @@ export const verticals: Vertical[] = [
       "Production and distribution for the brands and terminals serving private flight — captured at the standard the category requires.",
     href: "/verticals/private-aviation",
     headlines: {
-      intro: "Work at altitude.",
-      who: "The whole ecosystem around private flight.",
-      work: "The campaigns that move aircraft.",
-      capabilities: "The disciplines behind the fleet.",
+      intro: "What we do in aviation.",
+      who: "Who we work with.",
+      work: "The plays we run.",
+      capabilities: "The services behind it.",
     },
     tier: 1,
     image: "/images/verticals/private-aviation.jpg",
@@ -268,7 +268,7 @@ export const verticals: Vertical[] = [
         copy: "Launch campaigns for new models, ongoing brand presence, and dealer-network content programs for the manufacturers shaping the category.",
       },
       {
-        name: "FBOs & terminals",
+        name: "FBOs + terminals",
         copy: "Brand work and film for terminals, hangars, and member spaces.",
       },
       {
@@ -278,11 +278,11 @@ export const verticals: Vertical[] = [
     ],
     signaturePlays: [
       {
-        title: "Fleet & terminal films",
+        title: "Fleet + terminal films",
         copy: "Cinematic capture of aircraft, terminals, and member spaces. Aerial cinematography, interior coverage, and brand storytelling at the standard private aviation buyers expect.",
       },
       {
-        title: "New-model & route launches",
+        title: "New-model + route launches",
         copy: "Campaign builds tied to a specific event: a new aircraft entering service, a new route opening, a new terminal coming online. Cinematic asset capture plus paid + PR + owned distribution.",
       },
       {
@@ -304,10 +304,10 @@ export const verticals: Vertical[] = [
       "Editorial-grade content and paid distribution for resorts, vacation rentals, and travel brands serving the top of the market.",
     href: "/verticals/resorts-travel",
     headlines: {
-      intro: "Built for the booking window.",
-      who: "The properties, and the people who fill them.",
-      work: "The campaigns that drive direct bookings.",
-      capabilities: "The disciplines behind the stay.",
+      intro: "What we do in travel.",
+      who: "Who we work with.",
+      work: "The plays we run.",
+      capabilities: "The services behind it.",
     },
     tier: 2,
     image: "/images/verticals/resorts-travel.jpg",
@@ -316,15 +316,15 @@ export const verticals: Vertical[] = [
       "The places that get booked are the places that look incredible online. We shoot properties at that standard, run campaigns timed to booking seasons, and put them in front of the people who actually book.",
     audienceSegments: [
       {
-        name: "Boutique resorts & villas",
+        name: "Boutique resorts + villas",
         copy: "Property captures, seasonal campaigns, and direct-booking content programs for resorts and rental portfolios competing on visual and service standard.",
       },
       {
-        name: "Travel brands & tour operators",
+        name: "Travel brands + tour operators",
         copy: "Brand storytelling for the operators selling curated travel. Built around itinerary content, destination editorial, and the lifestyle their guest already lives.",
       },
       {
-        name: "Destinations & tourism boards",
+        name: "Destinations + tourism boards",
         copy: "Campaigns for destinations, built like magazine features.",
       },
     ],
@@ -353,10 +353,10 @@ export const verticals: Vertical[] = [
       "Content and distribution for hospitality brands — boutique hotels, restaurants, private clubs, spas — and the experiential brands building the next generation of premium service.",
     href: "/verticals/hospitality-experiences",
     headlines: {
-      intro: "Every guest interaction is the brand.",
-      who: "Hotels, tables, clubs, and the nights between.",
-      work: "The programs that fill rooms and covers.",
-      capabilities: "The disciplines behind the experience.",
+      intro: "What we do in hospitality.",
+      who: "Who we work with.",
+      work: "The plays we run.",
+      capabilities: "The services behind it.",
     },
     tier: 2,
     image: "/images/verticals/hospitality-experiences.jpg",
@@ -369,15 +369,15 @@ export const verticals: Vertical[] = [
         copy: "Property films, food and drink content, seasonal campaigns, and direct-booking programs.",
       },
       {
-        name: "Restaurants & chef-led concepts",
+        name: "Restaurants + chef-led concepts",
         copy: "Brand systems, food and chef storytelling, opening campaigns, and the ongoing content rhythm that fills covers and supports a concept past its first six months.",
       },
       {
-        name: "Member clubs & private spaces",
+        name: "Member clubs + private spaces",
         copy: "Brand work for the clubs whose discretion is part of the value. Content programs that reflect the membership without compromising it.",
       },
       {
-        name: "Activations & experiential brands",
+        name: "Activations + experiential brands",
         copy: "Event production, on-site capture, and post-event content. From concours to product launches to client gatherings.",
       },
     ],
@@ -406,10 +406,10 @@ export const verticals: Vertical[] = [
       "From new-model launches to ongoing brand presence — cinematic content and audience reach for premium automotive.",
     href: "/verticals/exotic-automotive",
     headlines: {
-      intro: "Cinema for the machines that deserve it.",
-      who: "From the factory floor to the collector's garage.",
-      work: "The campaigns that move metal.",
-      capabilities: "The disciplines behind the reveal.",
+      intro: "What we do in automotive.",
+      who: "Who we work with.",
+      work: "The plays we run.",
+      capabilities: "The services behind it.",
     },
     tier: 2,
     image: "/images/verticals/exotic-automotive.jpg",
@@ -418,11 +418,11 @@ export const verticals: Vertical[] = [
       "We make the films and photography, and we bring the distribution: paid campaigns that reach real buyers, plus placement across our hospitality and aviation rosters, where the same customer lives.",
     audienceSegments: [
       {
-        name: "OEMs & performance brands",
+        name: "OEMs + performance brands",
         copy: "Launch campaigns, model storytelling, and ongoing brand presence for the manufacturers and performance houses defining the category.",
       },
       {
-        name: "Dealers & retail networks",
+        name: "Dealers + retail networks",
         copy: "Branding and content programs for dealerships selling to qualified buyers.",
       },
       {
@@ -430,7 +430,7 @@ export const verticals: Vertical[] = [
         copy: "Auction houses, restoration shops, and the businesses around significant cars.",
       },
       {
-        name: "Aftermarket & service brands",
+        name: "Aftermarket + service brands",
         copy: "Tuners, customization houses, and premium service brands around the high-end car.",
       },
     ],
@@ -459,10 +459,10 @@ export const verticals: Vertical[] = [
       "When the category demands an editorial sensibility, we deliver work that feels like the magazines your customers already read.",
     href: "/verticals/luxury-goods",
     headlines: {
-      intro: "Editorial standard, atelier discipline.",
-      who: "Makers, houses, and the craft between.",
-      work: "The campaigns built like collections.",
-      capabilities: "The disciplines behind the brand.",
+      intro: "What we do in luxury goods.",
+      who: "Who we work with.",
+      work: "The plays we run.",
+      capabilities: "The services behind it.",
     },
     tier: 2,
     image: "/images/verticals/luxury-goods.jpg",
@@ -471,15 +471,15 @@ export const verticals: Vertical[] = [
       "Campaigns for timepieces, fashion, fine spirits, and craftsmanship-led brands — shot and written at the standard of the magazines your customers already read.",
     audienceSegments: [
       {
-        name: "Timepieces & jewelry",
+        name: "Timepieces + jewelry",
         copy: "Brand films, product photography, and collection campaigns.",
       },
       {
-        name: "Fashion & accessories",
+        name: "Fashion + accessories",
         copy: "Lookbooks, campaigns, and content programs for premium fashion brands.",
       },
       {
-        name: "Fine spirits & wine",
+        name: "Fine spirits + wine",
         copy: "Branding, retail and trade campaigns, and editorial features for premium spirits and wine.",
       },
       {
