@@ -62,7 +62,7 @@ export interface Service {
 export const services: Service[] = [
   {
     slug: "studio",
-    name: "Studio",
+    name: "Production",
     tagline: "Premium production for brands that demand it.",
     description:
       "In-house creative production built for premium markets — from cinematic brand films to listing videos, aerial coverage, and editorial photography. Every frame matches the standard of the brands we serve.",
@@ -84,7 +84,7 @@ export const services: Service[] = [
       apply: "Production tuned to every category we serve.",
     },
     intro:
-      "Studio is where the work gets made. We run a fully in-house production team built specifically for premium brands. Directors, cinematographers, photographers, drone operators, and post-production all working under one roof, on one schedule, to one standard. Streamlined sessions and market-leading turnaround mean the path from idea to impact is short. And because the work travels across our distribution network, the films you commission for a launch run across more than just your channels.",
+      "Production is where the work gets made. We run a fully in-house production team built specifically for premium brands. Directors, cinematographers, photographers, drone operators, and post-production all working under one roof, on one schedule, to one standard. Streamlined sessions and market-leading turnaround mean the path from idea to impact is short. And because the work travels across our distribution network, the films you commission for a launch run across more than just your channels.",
     sampleDeliverables: [
       "Cinematic brand story films",
       "Monthly reel and short-form video program for social",
@@ -94,7 +94,7 @@ export const services: Service[] = [
       "Editorial-grade product shoot or professional headshot day",
     ],
     bestForCopy:
-      "Studio is for brands whose work needs to look like the top of the category, not the agencies that pitch it. If a stock-library mood board can describe what you need, you don't need us. If the work needs to feel like a magazine cover or a film, this is where it gets made.",
+      "Production is for brands whose work needs to look like the top of the category, not the agencies that pitch it. If a stock-library mood board can describe what you need, you don't need us. If the work needs to feel like a magazine cover or a film, this is where it gets made.",
     processSteps: [
       {
         title: "Pre-production",
@@ -121,7 +121,7 @@ export const services: Service[] = [
   },
   {
     slug: "social",
-    name: "Social",
+    name: "Social Media",
     tagline: "Where premium brands live online.",
     description:
       "Full-service social presence management — strategy, content, community, and growth — executed by a team that understands how premium audiences engage, share, and buy.",
@@ -143,7 +143,7 @@ export const services: Service[] = [
       apply: "Presence built for the audience each category keeps.",
     },
     intro:
-      "Social is the most-used room in a premium brand. We run it as a full discipline: strategy, daily publishing, community work, paid amplification, and reporting. Our decisions run on data, not feelings, and every post is crafted to serve a purpose. The community side matters as much as the content. Real engagement in the comments and DMs builds the sense of belonging that turns an audience into something greater than a follower count. And the team that runs your social is the same team that publishes our editorial channels, with a working knowledge of premium audiences and the content that earns their attention.",
+      "Social media is the most-used room in a premium brand. We run it as a full discipline: strategy, daily publishing, community work, paid amplification, and reporting. Our decisions run on data, not feelings, and every post is crafted to serve a purpose. The community side matters as much as the content. Real engagement in the comments and DMs builds the sense of belonging that turns an audience into something greater than a follower count. And the team that runs your social is the same team that publishes our editorial channels, with a working knowledge of premium audiences and the content that earns their attention.",
     sampleDeliverables: [
       "Monthly content calendar across Instagram, TikTok, LinkedIn, and Pinterest",
       "Community management, comment engagement, and DM response",
@@ -153,7 +153,7 @@ export const services: Service[] = [
       "Editorial amplification across our owned media channels",
     ],
     bestForCopy:
-      "Social is for brands whose online presence is a real channel, not a checkbox. We work with clients who treat their feeds as part of the product, who care about the standard of what gets published, and who want their account to set the bar in their category instead of meet it.",
+      "Social media is for brands whose online presence is a real channel, not a checkbox. We work with clients who treat their feeds as part of the product, who care about the standard of what gets published, and who want their account to set the bar in their category instead of meet it.",
     processSteps: [
       {
         title: "Audit & strategy",
@@ -180,8 +180,8 @@ export const services: Service[] = [
   },
   {
     slug: "digital",
-    name: "Digital",
-    tagline: "Websites worthy of the brands behind them.",
+    name: "Websites",
+    tagline: "Designed, built, and managed — worthy of the brands behind them.",
     description:
       "Strategy, design, build, and ongoing care for digital properties that convert as well as they look. Mobile-first, performance-obsessed, and tailored to the conventions of your category.",
     capabilities: [
@@ -211,7 +211,7 @@ export const services: Service[] = [
       "Hosting environment management with proactive monitoring",
     ],
     bestForCopy:
-      "Digital is for brands where the current site is the bottleneck. If buyers are landing and bouncing, if the design hasn't been touched in three years, if the brand has evolved and the URL hasn't caught up, this is the team. We treat the site as the most-used brand surface, because it is.",
+      "This is for brands where the current site is the bottleneck. If buyers are landing and bouncing, if the design hasn't been touched in three years, if the brand has evolved and the URL hasn't caught up, this is the team. We treat the site as the most-used brand surface, because it is.",
     processSteps: [
       {
         title: "Strategy & sitemap",
@@ -238,8 +238,8 @@ export const services: Service[] = [
   },
   {
     slug: "growth",
-    name: "Growth",
-    tagline: "Integrated demand for premium markets.",
+    name: "Paid Media & PR",
+    tagline: "Paid ads, PR, and email that fill the pipeline.",
     description:
       "Paid advertising, public relations, email, influencers, and owned-media distribution working together as one acquisition engine. Built to reach the audiences that matter, and convert them.",
     capabilities: [
@@ -261,7 +261,7 @@ export const services: Service[] = [
       apply: "Demand programs fluent in every category we serve.",
     },
     intro:
-      "Growth is how the work reaches the buyer. We run paid, PR, email, influencers, and our owned-media network as one connected acquisition system, not six disconnected channels charged separately. Campaigns are built from in-depth keyword and competitor research, refined against live data, and pointed at custom landing pages designed to turn clicks into committed customers. The advantage at SG: a campaign here doesn't only travel through paid. It runs through editorial channels we own and niche branded outlets with audiences we built, which means every dollar of spend is amplified by reach we didn't have to buy.",
+      "This is how the work reaches the buyer. We run paid, PR, email, influencers, and our owned-media network as one connected acquisition system, not six disconnected channels charged separately. Campaigns are built from in-depth keyword and competitor research, refined against live data, and pointed at custom landing pages designed to turn clicks into committed customers. The advantage at SG: a campaign here doesn't only travel through paid. It runs through editorial channels we own and niche branded outlets with audiences we built, which means every dollar of spend is amplified by reach we didn't have to buy.",
     sampleDeliverables: [
       "Paid program across Google Search & Display, Meta, and YouTube for a launch",
       "Retargeting campaigns that re-engage site visitors and social audiences",
@@ -271,7 +271,7 @@ export const services: Service[] = [
       "Owned-media and branded-outlet distribution across our editorial network",
     ],
     bestForCopy:
-      "Growth is for brands ready to scale demand whose current setup is a stack of disconnected vendors. We run it as one program with one accountable team, so the strategy in paid, PR, email, influencers, and owned media reinforces itself instead of competing for credit.",
+      "This is for brands ready to scale demand whose current setup is a stack of disconnected vendors. We run it as one program with one accountable team, so the strategy in paid, PR, email, influencers, and owned media reinforces itself instead of competing for credit.",
     processSteps: [
       {
         title: "Audience & funnel",
@@ -298,7 +298,7 @@ export const services: Service[] = [
   },
   {
     slug: "experiences",
-    name: "Experiences",
+    name: "Events",
     tagline: "Moments that become marketing.",
     description:
       "Strategy, production, and on-site activation for premium brand experiences — from boat shows to property launches to private client gatherings. We plan it, market it, capture it, and amplify it.",
@@ -329,7 +329,7 @@ export const services: Service[] = [
       "Post-event content programs that extend the brand moment",
     ],
     bestForCopy:
-      "Experiences is for moments that matter enough to do properly. If the brand is opening a flagship property, launching a new model, or building a category-defining client gathering, this is the team. We don't do bare-minimum activations. We do moments worth capturing.",
+      "Events are for the moments that matter enough to do properly. If the brand is opening a flagship property, launching a new model, or building a category-defining client gathering, this is the team. We don't do bare-minimum activations. We do moments worth capturing.",
     processSteps: [
       {
         title: "Concept & brief",
@@ -356,8 +356,8 @@ export const services: Service[] = [
   },
   {
     slug: "intelligence",
-    name: "Intelligence",
-    tagline: "Tech-company leverage for premium brands.",
+    name: "AI & Automation",
+    tagline: "Custom AI agents, automations, and dashboards for your operation.",
     description:
       "Custom AI and workflow automation engineered for marketing operations, sales pipelines, and client deliverables. Built by an agency that builds its own software — not one that just talks about AI.",
     capabilities: [
@@ -377,7 +377,7 @@ export const services: Service[] = [
       apply: "Systems built around each category's stack.",
     },
     intro:
-      "Intelligence is the systems work that makes everything else move faster. Custom AI agents for content briefing and operations, workflow automation for marketing and sales, integration work that ties the tools a brand already uses into one running pipeline. We build for our own studio, then extend the same capability to clients. It's the rare agency offering where the operator is also the customer.",
+      "AI & Automation is the systems work that makes everything else move faster. Custom AI agents for content briefing and operations, workflow automation for marketing and sales, integration work that ties the tools a brand already uses into one running pipeline. We build for our own studio, then extend the same capability to clients. It's the rare agency offering where the operator is also the customer.",
     sampleDeliverables: [
       "Custom AI agent for brand-aligned content briefing",
       "Lead routing and qualification workflow across HubSpot, Salesforce, or custom CRM",
@@ -387,7 +387,7 @@ export const services: Service[] = [
       "Data pipeline and reporting infrastructure for ongoing program work",
     ],
     bestForCopy:
-      "Intelligence is for marketing operations that have outgrown spreadsheets, where the tech stack is held together with manual handoffs. If the same data is being copy-pasted across three tools, if leads are falling through a routing crack, if the team is briefing content in Slack and losing context, this is what we build.",
+      "This is for marketing operations that have outgrown spreadsheets, where the tech stack is held together with manual handoffs. If the same data is being copy-pasted across three tools, if leads are falling through a routing crack, if the team is briefing content in Slack and losing context, this is what we build.",
     processSteps: [
       {
         title: "Map & audit",

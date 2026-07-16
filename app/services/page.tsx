@@ -28,7 +28,7 @@ const integrations: {
   {
     client: "Skyfall",
     vertical: "Marine",
-    stack: ["Studio", "Social", "Growth"],
+    stack: ["Production", "Social Media", "Paid Media & PR"],
     image: "/images/work/skyfall/skyfall-02.jpg",
     alt: "Aerial top-down of Skyfall superyacht with tenders over turquoise water",
     href: "/work/skyfall",
@@ -36,7 +36,7 @@ const integrations: {
   {
     client: "Flexjet",
     vertical: "Private Aviation",
-    stack: ["Studio", "Experiences", "Growth"],
+    stack: ["Production", "Events", "Paid Media & PR"],
     image: "/images/work/flexjet/flexjet-01.jpg",
     alt: "Sikorsky helicopter and private jet on hangar ramp at golden hour",
     href: "/work/flexjet",
@@ -44,7 +44,7 @@ const integrations: {
   {
     client: "Cora Residences",
     vertical: "Multifamily",
-    stack: ["Studio", "Digital", "Social"],
+    stack: ["Production", "Websites", "Social Media"],
     image: "/images/work/cora-residences/cora-residences-01.jpg",
     alt: "Aerial of landscaped rooftop pool deck atop downtown residential tower",
     href: "/work/cora-residences",
