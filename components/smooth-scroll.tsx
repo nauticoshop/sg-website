@@ -42,7 +42,34 @@ export function SmoothScroll() {
     }
     rafId = requestAnimationFrame(raf);
 
+    // Lenis manages scroll position itself, so native `#anchor` jumps
+    // don't fire. Intercept same-page hash links and hand them to Lenis
+    // (offset leaves room for the fixed nav so targets aren't hidden).
+    function onAnchorClick(e: MouseEvent) {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey) {
+        return;
+      }
+      const anchor = (e.target as HTMLElement)?.closest?.(
+        'a[href*="#"]',
+      ) as HTMLAnchorElement | null;
+      if (!anchor) return;
+
+      const url = new URL(anchor.href, window.location.href);
+      // Only same-page hashes (ignore links to other routes).
+      if (url.pathname !== window.location.pathname || !url.hash) return;
+
+      const target = document.querySelector(url.hash);
+      if (!target) return;
+
+      e.preventDefault();
+      lenis.scrollTo(target as HTMLElement, { offset: -96 });
+      history.pushState(null, "", url.hash);
+    }
+
+    document.addEventListener("click", onAnchorClick);
+
     return () => {
+      document.removeEventListener("click", onAnchorClick);
       cancelAnimationFrame(rafId);
       lenis.destroy();
       lenisRef.current = null;
