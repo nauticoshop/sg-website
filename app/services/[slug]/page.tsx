@@ -163,34 +163,6 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
         </div>
       </section>
 
-      {/* Sample deliverables */}
-      <section className="bg-canvas py-20 lg:py-28 px-6 lg:px-12">
-        <div className="max-w-[1200px] mx-auto">
-          <header className="mb-12 lg:mb-16 max-w-3xl">
-            <p className="caption text-neutral-500 mb-4">◆ THE DELIVERABLES</p>
-            <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink leading-[1.1] text-balance">
-              {service.headlines.deliverables}
-            </h2>
-          </header>
-
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-16 border-t border-neutral-200">
-            {service.sampleDeliverables.map((deliverable, i) => (
-              <li
-                key={i}
-                className="flex items-baseline gap-4 lg:gap-6 py-5 lg:py-6 border-b border-neutral-200"
-              >
-                <span className="caption text-neutral-500 shrink-0 w-8">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <span className="text-base lg:text-lg text-ink leading-snug">
-                  {deliverable}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
       {/* Who it's for */}
       <section className="bg-gold text-ink py-16 lg:py-24 px-6 lg:px-12">
         <div className="max-w-[1000px] mx-auto">
@@ -198,6 +170,12 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
           <p className="font-sans font-light text-2xl md:text-3xl lg:text-4xl text-ink leading-[1.25] text-balance">
             {service.bestForCopy}
           </p>
+          <Link
+            href={site.cta.primary.href}
+            className="inline-block mt-10 bg-ink text-canvas px-8 py-4 text-sm font-medium tracking-wide hover:bg-neutral-800 transition-colors duration-300"
+          >
+            {site.cta.primary.label}
+          </Link>
         </div>
       </section>
 
@@ -245,34 +223,6 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
           </Link>
         </section>
       )}
-
-      {/* Service-specific process */}
-      <section className="bg-[#EFE7DA] py-20 lg:py-28 px-6 lg:px-12">
-        <div className="max-w-[1200px] mx-auto">
-          <header className="mb-12 lg:mb-16 max-w-2xl">
-            <p className="caption text-neutral-500 mb-4">◆ HOW WE WORK</p>
-            <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
-              {service.headlines.process}
-            </h2>
-          </header>
-
-          <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
-            {service.processSteps.map((step, i) => (
-              <li key={i} className="border-t border-ink/20 pt-6 lg:pt-8">
-                <p className="caption text-neutral-600 mb-4">
-                  {String(i + 1).padStart(2, "0")}
-                </p>
-                <h3 className="font-sans font-extrabold text-xl lg:text-2xl text-ink mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-sm text-neutral-700 leading-relaxed">
-                  {step.copy}
-                </p>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
 
       {/* Verticals where this service shows up */}
       {verticalsWhereUsed.length > 0 && (

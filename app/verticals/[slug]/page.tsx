@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
-import { PageHero } from "@/components/page-hero";
 import { CtaBanner } from "@/components/cta-banner";
 import Image from "next/image";
 import { verticals } from "@/lib/verticals";
@@ -61,6 +60,10 @@ export default async function VerticalDetailPage({ params }: RouteParams) {
 
   const fullUrl = `${site.url.replace(/\/$/, "")}${vertical.href}`;
 
+  // First sentence carries the statement; the rest fades to muted.
+  const [introFirst, ...introRestParts] = vertical.intro.split(". ");
+  const introRest = introRestParts.join(". ");
+
   return (
     <>
       <Nav />
@@ -73,16 +76,33 @@ export default async function VerticalDetailPage({ params }: RouteParams) {
         ])}
       />
 
-      <PageHero
-        eyebrow={
-          vertical.tier === 1
-            ? `FEATURED VERTICAL / ${String(currentIndex + 1).padStart(2, "0")}`
-            : `VERTICAL / ${String(currentIndex + 1).padStart(2, "0")}`
-        }
-        title={vertical.name}
-        subhead={vertical.tagline}
-        tone="dark"
-      />
+      {/* Hero — full-bleed category imagery under an ink gradient */}
+      <section className="relative bg-ink text-canvas overflow-hidden">
+        <Image
+          src={`/images/verticals/${vertical.slug}.jpg`}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-40"
+          aria-hidden
+        />
+        <div
+          className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-ink/55"
+          aria-hidden
+        />
+        <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12 pt-40 lg:pt-56 pb-20 lg:pb-32">
+          <p className="caption text-gold mb-6">
+            ◆ VERTICAL / {String(currentIndex + 1).padStart(2, "0")}
+          </p>
+          <h1 className="font-sans font-extrabold text-5xl md:text-6xl lg:text-7xl leading-[1.02] tracking-tight max-w-4xl text-balance">
+            {vertical.name}
+          </h1>
+          <p className="text-lg lg:text-xl mt-6 max-w-2xl leading-relaxed text-canvas/85 font-light">
+            {vertical.tagline}
+          </p>
+        </div>
+      </section>
 
       {/* Intro / positioning */}
       <section className="bg-canvas py-20 lg:py-28 px-6 lg:px-12">
@@ -95,8 +115,14 @@ export default async function VerticalDetailPage({ params }: RouteParams) {
               </h2>
             </div>
             <div className="lg:col-span-7 space-y-6">
-              <p className="text-base lg:text-lg text-neutral-700 leading-relaxed">
-                {vertical.intro}
+              <p className="text-xl lg:text-2xl font-light text-ink leading-[1.4] text-balance">
+                {introFirst}
+                {introRest ? (
+                  <>
+                    .{" "}
+                    <span className="text-ink/55">{introRest}</span>
+                  </>
+                ) : null}
               </p>
               {vertical.slug === "marine" && (
                 <p className="text-base lg:text-lg text-neutral-700 leading-relaxed">
@@ -126,19 +152,19 @@ export default async function VerticalDetailPage({ params }: RouteParams) {
             </h2>
           </header>
 
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-px bg-canvas/15">
+          <ul className="border-t border-canvas/15">
             {vertical.audienceSegments.map((segment, i) => (
               <li
                 key={i}
-                className="bg-ink p-8 lg:p-10 flex flex-col"
+                className="grid grid-cols-1 lg:grid-cols-12 gap-x-6 gap-y-2 py-7 lg:py-8 border-b border-canvas/15"
               >
-                <p className="caption text-gold mb-5">
-                  {String(i + 1).padStart(2, "0")} / SEGMENT
-                </p>
-                <h3 className="font-sans font-extrabold text-2xl lg:text-3xl text-canvas leading-tight mb-4 text-balance">
+                <span className="caption text-gold lg:col-span-1">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="font-sans font-extrabold text-2xl lg:text-3xl text-canvas leading-tight lg:col-span-4 text-balance">
                   {segment.name}
                 </h3>
-                <p className="text-base text-canvas/75 leading-relaxed">
+                <p className="text-base text-canvas/75 leading-relaxed lg:col-span-7">
                   {segment.copy}
                 </p>
               </li>
@@ -190,9 +216,9 @@ export default async function VerticalDetailPage({ params }: RouteParams) {
             </h2>
           </header>
 
-          <ul className="space-y-px bg-neutral-200 border-y border-neutral-200">
+          <ul className="border-t border-neutral-200">
             {vertical.signaturePlays.map((play, i) => (
-              <li key={i} className="bg-canvas">
+              <li key={i} className="border-b border-neutral-200">
                 <div className="py-8 lg:py-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-start">
                   <div className="lg:col-span-1">
                     <span className="caption text-neutral-500">
@@ -217,36 +243,29 @@ export default async function VerticalDetailPage({ params }: RouteParams) {
       </section>
 
       {/* Capabilities tuned to this category */}
-      <section className="bg-neutral-50 py-20 lg:py-28 px-6 lg:px-12 border-y border-neutral-200">
+      <section className="bg-[#EFE7DA] py-20 lg:py-28 px-6 lg:px-12">
         <div className="max-w-[1200px] mx-auto">
-          <header className="text-center mb-12 lg:mb-16 max-w-2xl mx-auto">
+          <header className="mb-10 lg:mb-12 max-w-2xl">
             <p className="caption text-neutral-500 mb-4">◆ CAPABILITIES</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
               {vertical.headlines.capabilities}
             </h2>
           </header>
 
-          <ul
-            className={`grid grid-cols-1 gap-4 lg:gap-6 ${
-              relatedServices.length === 4
-                ? "md:grid-cols-2 lg:grid-cols-4"
-                : "md:grid-cols-2 lg:grid-cols-3"
-            }`}
-          >
+          <ul className="border-t border-ink/15">
             {relatedServices.map((s) => (
               <li key={s.slug}>
                 <Link
                   href={s.href}
-                  className="group block bg-canvas p-6 lg:p-8 hover:bg-ink hover:text-canvas transition-colors duration-300 h-full"
+                  className="group grid grid-cols-1 md:grid-cols-12 md:items-baseline gap-x-6 gap-y-1 py-5 lg:py-6 border-b border-ink/10 hover:border-ink/40 transition-colors duration-300"
                 >
-                  <h3 className="font-sans font-extrabold text-2xl lg:text-3xl mb-2">
+                  <h3 className="md:col-span-4 font-sans font-extrabold text-xl lg:text-2xl text-ink group-hover:text-neutral-500 transition-colors duration-300 text-balance">
                     {s.name}
                   </h3>
-                  <p className="text-sm text-neutral-600 group-hover:text-canvas/70 transition-colors duration-300 leading-relaxed mb-4">
+                  <p className="md:col-span-7 text-sm lg:text-base text-neutral-600 leading-snug">
                     {s.tagline}
                   </p>
-                  <span className="caption inline-flex items-center gap-2 text-neutral-500 group-hover:text-gold transition-colors duration-300">
-                    Explore
+                  <span className="hidden md:flex md:col-span-1 justify-end text-neutral-400 group-hover:text-ink transition-colors duration-300">
                     <Arrow />
                   </span>
                 </Link>
