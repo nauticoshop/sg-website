@@ -225,11 +225,11 @@ export function OpenRolesList() {
 const benefits = [
   {
     title: "Vertical-fluent by design.",
-    copy: "You work in the categories you know best. We pick the verticals on purpose and turn down work outside them. Deep category fluency matters more here than a generalist credential.",
+    copy: "You work in the categories you know best. We pick our industries on purpose and turn down work outside them.",
   },
   {
     title: "Real ownership of work.",
-    copy: "Every deliverable that goes out is something you'd put in your portfolio. We don't put our name on work we'd be embarrassed to publish, and we don't make work that gets buried in a deck.",
+    copy: "Everything that goes out the door is something you'd put in your portfolio.",
   },
   {
     title: "Owned media at scale.",
@@ -241,7 +241,7 @@ const benefits = [
   },
   {
     title: "Live the industry.",
-    copy: "Yachts, estates, jets, resorts. You work in the lifestyle most people only see in a feed, and the access is part of the job. Where passion meets opulence.",
+    copy: "Yachts, estates, jets, resorts. You work in places most people only see in a feed, and the access is part of the job.",
   },
   {
     title: "Tampa-rooted.",

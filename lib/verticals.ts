@@ -86,41 +86,41 @@ export const verticals: Vertical[] = [
     image: "/images/verticals/marine.jpg",
     imageAlt: "Sport-fish yacht running across calm coastal water",
     intro:
-      "Marine is the category where Surroundings Group goes deepest. We've spent years building distribution, content systems, and category fluency that no other agency at our size has. Every marine engagement gets the Nautical Network advantage baked in: an owned editorial ecosystem reaching 180M+ marine viewers a year. Most agencies have to buy reach to the marine audience. We built it.",
+      "Marine is our deepest category. We've worked in it for years, and we own Nautical Network — a marine media network reaching 180M+ viewers a year. Every marine client gets that distribution included.",
     audienceSegments: [
       {
         name: "Boat builders & OEMs",
-        copy: "Launch films, new-model campaigns, content systems for dealer networks. We work with the brands defining the next generation of premium boat building.",
+        copy: "Launch films, new-model campaigns, and content for dealer networks.",
       },
       {
         name: "Brokerages & dealers",
-        copy: "Listing video at the standard premium buyers expect, social engines that move inventory, and paid distribution that reaches qualified buyers, not the open market.",
+        copy: "Listing video and photography, social that moves inventory, and ads aimed at qualified buyers.",
       },
       {
         name: "Charter operators",
-        copy: "Visual storytelling for fleets, booking-driven social, and editorial coverage across the Nautical Network channels. Built for the operators serving the top end of the charter market.",
+        copy: "Fleet films, social that drives bookings, and coverage across Nautical Network's channels.",
       },
       {
         name: "Marinas, refit yards & service brands",
-        copy: "Brand systems, member content, and editorial campaigns for the businesses operating around the luxury boater. We understand the marine ecosystem because we publish in it daily.",
+        copy: "Branding, member content, and campaigns for the businesses around the boater.",
       },
     ],
     signaturePlays: [
       {
         title: "New-model launches",
-        copy: "Cinematic launch film, social campaign, paid distribution, and Nautical Network editorial coverage timed to release. Built so a model debut isn't a single moment, it's a quarter of compounding attention.",
+        copy: "Launch film, social campaign, paid ads, and Nautical Network coverage — all timed to the reveal.",
       },
       {
         title: "Brokerage listing programs",
-        copy: "Standardized listing video and photography at the level premium buyers expect, plus a social and email program that moves listings faster than the standard MLS push.",
+        copy: "Consistent listing video and photography for every boat, plus a social and email program that gets listings seen.",
       },
       {
         title: "Editorial integration",
-        copy: "Clients get earned and owned coverage across Nautical Network's eight channels. It's the closest thing to a magazine cover for the marine audience, and it's built into the engagement.",
+        copy: "Coverage across Nautical Network's eight channels, built into every marine engagement.",
       },
       {
         title: "Boat show activation",
-        copy: "Pre-show buildup, on-site content capture, live publishing, and post-show recap. We treat shows like the brand moments they are, not the trade-show booths most agencies make them.",
+        copy: "Pre-show buildup, on-site capture, live publishing, and a post-show recap.",
       },
     ],
     relatedServiceSlugs: ["studio", "social", "growth", "experiences"],
@@ -143,7 +143,7 @@ export const verticals: Vertical[] = [
     image: "/images/verticals/real-estate.jpg",
     imageAlt: "Luxury estate at night — illuminated pool, waterfall feature, dramatic landscape lighting",
     intro:
-      "Real estate at the premium end is a category where craft matters and category fluency is non-negotiable. We work across the full ecosystem around the luxury home: the developers building flagship projects, the brokerages and agents selling them, the builders shaping them, and the design and service brands operating around them. The work is cinematic, the systems are measurable, and the engagements run long.",
+      "We work across everything around the luxury home: developers building flagship projects, the brokerages selling them, the builders shaping them, and the design and service brands around them.",
     audienceSegments: [
       {
         name: "Developers",
@@ -151,11 +151,11 @@ export const verticals: Vertical[] = [
       },
       {
         name: "Brokerages & agents",
-        copy: "Listing programs that match the property, agent brand building, and lead systems that bring qualified buyers, not the open-market tire-kickers.",
+        copy: "Listing programs that match the property, agent brand building, and lead systems that bring in qualified buyers.",
       },
       {
         name: "Builders & design firms",
-        copy: "Editorial portfolio work for the firms whose projects deserve magazine treatment. We make the case for craft to the audiences that care.",
+        copy: "Magazine-grade portfolio films and photography for builders and design firms.",
       },
       {
         name: "Home services brands",
@@ -165,19 +165,19 @@ export const verticals: Vertical[] = [
     signaturePlays: [
       {
         title: "Pre-sales campaigns",
-        copy: "Cinematic project film, renderings transformed into editorial storytelling, paid + PR + email working in concert. Built to drive contracted units before doors open.",
+        copy: "Project film, renderings turned into real content, and paid ads, PR, and email that sell units before doors open.",
       },
       {
         title: "Grand-opening launches",
-        copy: "Editorial campaign timed to opening, on-site capture, social activation, and lasting brand assets. The work that turns an opening into a year of compounding attention.",
+        copy: "A campaign timed to opening day: on-site capture, social, and brand assets the property keeps using.",
       },
       {
         title: "Listing video programs",
-        copy: "Standardized capture and edit at a level premium buyers expect, repeatable across portfolios. Built so brokers get better video on every property without the per-listing creative burden.",
+        copy: "Repeatable capture and edit, so every property gets premium video without starting from scratch each listing.",
       },
       {
         title: "Editorial portfolio work",
-        copy: "Magazine-grade features for builders and design firms whose projects deserve more than a project gallery. Distributed through the design press and the SG editorial channels.",
+        copy: "Magazine-style features for builders and design firms, distributed through the design press and our own channels.",
       },
     ],
     relatedServiceSlugs: ["studio", "growth", "social", "digital"],
@@ -200,11 +200,11 @@ export const verticals: Vertical[] = [
     image: "/images/verticals/multifamily.jpg",
     imageAlt: "Mid-rise residential building at sunset with pool deck below",
     intro:
-      "Multifamily at the premium end is a content business. The properties that lease fastest are the ones whose social presence makes a prospect feel like they already live there. We build the content engine, the social presence, and the paid distribution that takes a property from announcement to stabilized occupancy, and keeps the brand running long after lease-up.",
+      "The properties that lease fastest are the ones people can already picture living in. We build the content, social presence, and paid ads that take a property from announcement to full occupancy.",
     audienceSegments: [
       {
         name: "Lease-up properties",
-        copy: "Pre-opening content programs, leasing campaigns, and resident-acquisition systems built to hit occupancy targets faster than the property pro forma assumes.",
+        copy: "Pre-opening content, leasing campaigns, and resident acquisition built to hit occupancy targets fast.",
       },
       {
         name: "Stabilized properties",
@@ -212,7 +212,7 @@ export const verticals: Vertical[] = [
       },
       {
         name: "Owner-operators & portfolios",
-        copy: "Brand systems and content frameworks that scale across multiple properties. Built so a 12-property portfolio produces premium content without 12 agency relationships.",
+        copy: "One brand system that covers the whole portfolio — no separate agency for every property.",
       },
       {
         name: "Branded residences",
@@ -230,7 +230,7 @@ export const verticals: Vertical[] = [
       },
       {
         title: "Paid lead engines",
-        copy: "Tightly targeted Meta and Google campaigns, lead routing into the leasing CRM, and reporting tied to actual signed leases, not just MQLs.",
+        copy: "Targeted Meta and Google campaigns, leads routed into the leasing CRM, and reporting tied to signed leases.",
       },
       {
         title: "Portfolio brand systems",
@@ -257,7 +257,7 @@ export const verticals: Vertical[] = [
     image: "/images/verticals/private-aviation.jpg",
     imageAlt: "Private jet on tarmac with airstairs down and red carpet",
     intro:
-      "Private aviation is a category where the visual standard is set by the aircraft and the experience around it. We make work at that standard. Cinematic content for the brands and terminals serving private flight, distribution programs that reach actual charter buyers and aircraft owners, and editorial coverage that ties premium aviation into the broader luxury lifestyle.",
+      "Cinematic content for the brands and terminals serving private flight, ads that reach real charter buyers and owners, and editorial coverage that connects aviation to the rest of the luxury lifestyle.",
     audienceSegments: [
       {
         name: "Charter operators",
@@ -269,11 +269,11 @@ export const verticals: Vertical[] = [
       },
       {
         name: "FBOs & terminals",
-        copy: "Brand systems for the ground experience. Cinematic captures of the terminals, hangars, and member spaces that often define a brand more than the aircraft itself.",
+        copy: "Brand work and film for terminals, hangars, and member spaces.",
       },
       {
         name: "Aviation service brands",
-        copy: "Management companies, jet card programs, training operations, and the service ecosystem around private flight. Brand work that places these companies as the category serious operators choose.",
+        copy: "Brand work for management companies, jet card programs, and training operations.",
       },
     ],
     signaturePlays: [
@@ -287,7 +287,7 @@ export const verticals: Vertical[] = [
       },
       {
         title: "Member-acquisition programs",
-        copy: "Paid campaigns and lead systems targeting actual charter and jet-card buyers. Built around real intent signals, not aviation enthusiast traffic that never converts.",
+        copy: "Paid campaigns and lead systems aimed at real charter and jet-card buyers.",
       },
       {
         title: "Cross-category integration",
@@ -313,7 +313,7 @@ export const verticals: Vertical[] = [
     image: "/images/verticals/resorts-travel.jpg",
     imageAlt: "Eye-level view of a Caribbean luxury villa — infinity pool, loungers, dramatic sky",
     intro:
-      "Boutique resorts and premium travel brands win on visual standard. The places that get booked are the places that look the way the guest imagines themselves looking when they're there. We make work at that standard. Cinematic property captures, editorial campaigns timed to season, and distribution that reaches the audience that actually books at this end of the market.",
+      "The places that get booked are the places that look incredible online. We shoot properties at that standard, run campaigns timed to booking seasons, and put them in front of the people who actually book.",
     audienceSegments: [
       {
         name: "Boutique resorts & villas",
@@ -325,17 +325,17 @@ export const verticals: Vertical[] = [
       },
       {
         name: "Destinations & tourism boards",
-        copy: "Editorial-grade campaigns for places, not just properties. We build narrative around destinations the way magazines do.",
+        copy: "Campaigns for destinations, built like magazine features.",
       },
     ],
     signaturePlays: [
       {
         title: "Property capture programs",
-        copy: "Cinematic film and editorial photography on a recurring cadence. Built so a property's content library refreshes seasonally instead of degrading between major reshoots.",
+        copy: "Film and photography on a seasonal schedule, so the content library stays fresh year-round.",
       },
       {
         title: "Seasonal campaigns",
-        copy: "Editorial campaigns timed to booking windows. Built around the cycles guests actually plan trips on, not the agency-quarter calendar.",
+        copy: "Campaigns timed to when guests actually plan their trips.",
       },
       {
         title: "Direct-booking funnels",
@@ -362,11 +362,11 @@ export const verticals: Vertical[] = [
     image: "/images/verticals/hospitality-experiences.jpg",
     imageAlt: "Premium event hospitality activation — branded bar setup at a luxury concours",
     intro:
-      "Premium hospitality is the category where every guest interaction is the brand. We work with hotels, restaurants, member clubs, spas, and the experiential brands shaping how premium service is delivered. The work spans content systems for daily publishing, editorial campaigns for openings and seasonal moments, and on-site activation work that turns events into a year of brand momentum.",
+      "We work with hotels, restaurants, member clubs, and spas — daily content, opening and seasonal campaigns, and on-site event coverage.",
     audienceSegments: [
       {
         name: "Boutique hotels",
-        copy: "Property storytelling, F&B content, seasonal campaigns, and direct-booking programs. Built for hotels competing on experience and visual standard, not on rate.",
+        copy: "Property films, food and drink content, seasonal campaigns, and direct-booking programs.",
       },
       {
         name: "Restaurants & chef-led concepts",
@@ -378,21 +378,21 @@ export const verticals: Vertical[] = [
       },
       {
         name: "Activations & experiential brands",
-        copy: "Event production, on-site capture, and the post-event content that turns a single night into months of brand momentum. From concours to product launches to client gatherings.",
+        copy: "Event production, on-site capture, and post-event content. From concours to product launches to client gatherings.",
       },
     ],
     signaturePlays: [
       {
         title: "Opening campaigns",
-        copy: "Pre-opening tease through grand-opening coverage. Built so an opening event isn't the peak, it's the start of the brand's owned-attention curve.",
+        copy: "Pre-opening tease through grand-opening coverage, with assets the brand keeps publishing long after.",
       },
       {
         title: "Hospitality content systems",
-        copy: "The daily publishing rhythm a premium property requires. Built so the content engine runs on its own without weekly creative briefing.",
+        copy: "Daily publishing for the property, run by us — no weekly creative briefings needed.",
       },
       {
         title: "Event activations",
-        copy: "Strategy, production, and on-site capture for events that are part marketing, part service. We treat them as brand moments and turn the assets into a year of content.",
+        copy: "Strategy, production, and on-site capture — then the event footage becomes months of content.",
       },
     ],
     relatedServiceSlugs: ["studio", "experiences", "social", "growth"],
@@ -415,7 +415,7 @@ export const verticals: Vertical[] = [
     image: "/images/verticals/exotic-automotive.jpg",
     imageAlt: "Mercedes G-Wagen Brabus parked on a coastal road",
     intro:
-      "Exotic automotive is a category that runs on cinematic content and a connected audience. We make the films and the photography, but we also bring the distribution: paid programs that reach actual buyers, editorial integration across our hospitality and aviation rosters, and an audience whose tastes overlap directly with the customer at this end of the market.",
+      "We make the films and photography, and we bring the distribution: paid campaigns that reach real buyers, plus placement across our hospitality and aviation rosters, where the same customer lives.",
     audienceSegments: [
       {
         name: "OEMs & performance brands",
@@ -423,21 +423,21 @@ export const verticals: Vertical[] = [
       },
       {
         name: "Dealers & retail networks",
-        copy: "Brand systems for dealerships whose floor traffic is qualified buyers, plus the content programs that match.",
+        copy: "Branding and content programs for dealerships selling to qualified buyers.",
       },
       {
         name: "Collector ecosystems",
-        copy: "Auction houses, restoration shops, broker-collectors, and the businesses operating around significant cars. Editorial work that places these brands in the buyer's eyeline.",
+        copy: "Auction houses, restoration shops, and the businesses around significant cars.",
       },
       {
         name: "Aftermarket & service brands",
-        copy: "Tuners, customization houses, and the premium service brands operating around the high-end car. Brand work that reflects the work.",
+        copy: "Tuners, customization houses, and premium service brands around the high-end car.",
       },
     ],
     signaturePlays: [
       {
         title: "New-model reveals",
-        copy: "Pre-reveal tease, launch film, social campaign, and editorial integration across automotive press and the SG editorial channels. Built so a reveal compounds across months, not one news cycle.",
+        copy: "Pre-reveal tease, launch film, social campaign, and press coverage — planned to run for months, not one news cycle.",
       },
       {
         title: "Hero film programs",
@@ -468,29 +468,29 @@ export const verticals: Vertical[] = [
     image: "/images/verticals/luxury-goods.jpg",
     imageAlt: "Silver Rolex Day-Date watch on cream backdrop",
     intro:
-      "Luxury goods is a category where the visual language was set by editorial. The brands that win look the way the magazines look, photograph the way fine-art catalogs photograph, and write the way fashion editors write. We work at that standard. For timepieces, fashion houses, fine spirits, and the craftsmanship-led brands shaping the next generation of premium goods.",
+      "Campaigns for timepieces, fashion, fine spirits, and craftsmanship-led brands — shot and written at the standard of the magazines your customers already read.",
     audienceSegments: [
       {
         name: "Timepieces & jewelry",
-        copy: "Brand storytelling, product photography, collection campaigns, and the editorial cadence the category requires. Built to match the magazines collectors already read.",
+        copy: "Brand films, product photography, and collection campaigns.",
       },
       {
         name: "Fashion & accessories",
-        copy: "Lookbook, campaign, and content programs for the brands defining the next generation of premium fashion. Visual standard non-negotiable.",
+        copy: "Lookbooks, campaigns, and content programs for premium fashion brands.",
       },
       {
         name: "Fine spirits & wine",
-        copy: "Brand systems, retail and trade campaigns, and the editorial features that build a category-defining premium spirit instead of an SKU on a shelf.",
+        copy: "Branding, retail and trade campaigns, and editorial features for premium spirits and wine.",
       },
       {
         name: "Craftsmanship-led brands",
-        copy: "Furniture, leather goods, audio, and the categories where the product is the brand and the story is the craft. Editorial work that matches what the maker built.",
+        copy: "Furniture, leather goods, audio — categories where the product is the brand and the story is the craft.",
       },
     ],
     signaturePlays: [
       {
         title: "Editorial campaigns",
-        copy: "Lookbook-grade visual campaigns, art direction matched to the category, and distribution through both paid programs and the SG editorial channels. Magazine standard, agency execution.",
+        copy: "Lookbook-grade campaigns with matched art direction, distributed through paid ads and our own channels.",
       },
       {
         title: "Collection launches",

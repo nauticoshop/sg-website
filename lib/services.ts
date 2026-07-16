@@ -84,7 +84,7 @@ export const services: Service[] = [
       apply: "Production tuned to every category we serve.",
     },
     intro:
-      "Production is where the work gets made. We run a fully in-house production team built specifically for premium brands. Directors, cinematographers, photographers, drone operators, and post-production all working under one roof, on one schedule, to one standard. Streamlined sessions and market-leading turnaround mean the path from idea to impact is short. And because the work travels across our distribution network, the films you commission for a launch run across more than just your channels.",
+      "Our full production team is in-house: directors, cinematographers, photographers, drone operators, and editors, all under one roof. That means fast turnarounds and one standard of quality. And everything we shoot can also run across our own media network, not just your channels.",
     sampleDeliverables: [
       "Cinematic brand story films",
       "Monthly reel and short-form video program for social",
@@ -94,7 +94,7 @@ export const services: Service[] = [
       "Editorial-grade product shoot or professional headshot day",
     ],
     bestForCopy:
-      "Production is for brands whose work needs to look like the top of the category, not the agencies that pitch it. If a stock-library mood board can describe what you need, you don't need us. If the work needs to feel like a magazine cover or a film, this is where it gets made.",
+      "For brands whose photos and films need to look like the top of their category. If the work needs to feel like a magazine cover or a film, this is the team that makes it.",
     processSteps: [
       {
         title: "Pre-production",
@@ -143,7 +143,7 @@ export const services: Service[] = [
       apply: "Presence built for the audience each category keeps.",
     },
     intro:
-      "Social media is the most-used room in a premium brand. We run it as a full discipline: strategy, daily publishing, community work, paid amplification, and reporting. Our decisions run on data, not feelings, and every post is crafted to serve a purpose. The community side matters as much as the content. Real engagement in the comments and DMs builds the sense of belonging that turns an audience into something greater than a follower count. And the team that runs your social is the same team that publishes our editorial channels, with a working knowledge of premium audiences and the content that earns their attention.",
+      "We run social as a full discipline: strategy, daily publishing, community management, paid boosts, and reporting. We answer the comments and DMs, because that's where an audience becomes loyal. And the team running your accounts is the same team publishing our own channels every day.",
     sampleDeliverables: [
       "Monthly content calendar across Instagram, TikTok, LinkedIn, and Pinterest",
       "Community management, comment engagement, and DM response",
@@ -153,7 +153,7 @@ export const services: Service[] = [
       "Editorial amplification across our owned media channels",
     ],
     bestForCopy:
-      "Social media is for brands whose online presence is a real channel, not a checkbox. We work with clients who treat their feeds as part of the product, who care about the standard of what gets published, and who want their account to set the bar in their category instead of meet it.",
+      "For brands that treat their feeds as part of the product and want their accounts to set the bar in their category.",
     processSteps: [
       {
         title: "Audit & strategy",
@@ -211,7 +211,7 @@ export const services: Service[] = [
       "Hosting environment management with proactive monitoring",
     ],
     bestForCopy:
-      "This is for brands where the current site is the bottleneck. If buyers are landing and bouncing, if the design hasn't been touched in three years, if the brand has evolved and the URL hasn't caught up, this is the team. We treat the site as the most-used brand surface, because it is.",
+      "For brands whose current site is the weak point — buyers landing and bouncing, a design that hasn't been touched in years, or a brand that's evolved past its website.",
     processSteps: [
       {
         title: "Strategy & sitemap",
@@ -261,7 +261,7 @@ export const services: Service[] = [
       apply: "Demand programs fluent in every category we serve.",
     },
     intro:
-      "This is how the work reaches the buyer. We run paid, PR, email, influencers, and our owned-media network as one connected acquisition system, not six disconnected channels charged separately. Campaigns are built from in-depth keyword and competitor research, refined against live data, and pointed at custom landing pages designed to turn clicks into committed customers. The advantage at SG: a campaign here doesn't only travel through paid. It runs through editorial channels we own and niche branded outlets with audiences we built, which means every dollar of spend is amplified by reach we didn't have to buy.",
+      "We run paid ads, PR, email, and influencers as one connected program with one accountable team. Campaigns are built on real keyword and competitor research and pointed at landing pages built to convert. And because we own our own media channels, your spend gets amplified by reach we don't have to buy.",
     sampleDeliverables: [
       "Paid program across Google Search & Display, Meta, and YouTube for a launch",
       "Retargeting campaigns that re-engage site visitors and social audiences",
@@ -271,7 +271,7 @@ export const services: Service[] = [
       "Owned-media and branded-outlet distribution across our editorial network",
     ],
     bestForCopy:
-      "This is for brands ready to scale demand whose current setup is a stack of disconnected vendors. We run it as one program with one accountable team, so the strategy in paid, PR, email, influencers, and owned media reinforces itself instead of competing for credit.",
+      "For brands ready to grow that are tired of juggling separate vendors for ads, PR, and email.",
     processSteps: [
       {
         title: "Audience & funnel",
@@ -329,7 +329,7 @@ export const services: Service[] = [
       "Post-event content programs that extend the brand moment",
     ],
     bestForCopy:
-      "Events are for the moments that matter enough to do properly. If the brand is opening a flagship property, launching a new model, or building a category-defining client gathering, this is the team. We don't do bare-minimum activations. We do moments worth capturing.",
+      "For openings, launches, and client gatherings that matter enough to do properly — and worth capturing on camera.",
     processSteps: [
       {
         title: "Concept & brief",
@@ -377,7 +377,7 @@ export const services: Service[] = [
       apply: "Systems built around each category's stack.",
     },
     intro:
-      "AI + Automation is the systems work that makes everything else move faster. Custom AI agents for content briefing and operations, workflow automation for marketing and sales, integration work that ties the tools a brand already uses into one running pipeline. We build for our own studio, then extend the same capability to clients. It's the rare agency offering where the operator is also the customer.",
+      "Custom AI agents, workflow automation, and integrations that tie your existing tools into one system. We build these for our own operation first, then build the same for clients.",
     sampleDeliverables: [
       "Custom AI agent for brand-aligned content briefing",
       "Lead routing and qualification workflow across HubSpot, Salesforce, or custom CRM",
@@ -387,7 +387,7 @@ export const services: Service[] = [
       "Data pipeline and reporting infrastructure for ongoing program work",
     ],
     bestForCopy:
-      "This is for marketing operations that have outgrown spreadsheets, where the tech stack is held together with manual handoffs. If the same data is being copy-pasted across three tools, if leads are falling through a routing crack, if the team is briefing content in Slack and losing context, this is what we build.",
+      "For teams that have outgrown spreadsheets — data copy-pasted between tools, leads slipping through cracks, briefs lost in Slack. We build the system that fixes it.",
     processSteps: [
       {
         title: "Map & audit",
