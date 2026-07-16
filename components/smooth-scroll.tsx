@@ -43,10 +43,12 @@ export function SmoothScroll() {
     rafId = requestAnimationFrame(raf);
 
     // Lenis manages scroll position itself, so native `#anchor` jumps
-    // don't fire. Intercept same-page hash links and hand them to Lenis
-    // (offset leaves room for the fixed nav so targets aren't hidden).
+    // don't fire — and Next's <Link> intercepts the click before a
+    // bubble-phase listener can. Run in the CAPTURE phase so we win the
+    // event first, stop Next from handling it, and hand the scroll to
+    // Lenis (offset leaves room for the fixed nav).
     function onAnchorClick(e: MouseEvent) {
-      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey) {
+      if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) {
         return;
       }
       const anchor = (e.target as HTMLElement)?.closest?.(
@@ -62,14 +64,22 @@ export function SmoothScroll() {
       if (!target) return;
 
       e.preventDefault();
-      lenis.scrollTo(target as HTMLElement, { offset: -96 });
+      e.stopImmediatePropagation(); // keep Next's <Link> from also acting
+      // Instant native scroll — Lenis syncs to it. Neither lenis.scrollTo()
+      // (its scroll limit mis-measures to 0 and clamps) nor native *smooth*
+      // scroll (Lenis overrides each animation frame) moves the page here;
+      // an instant jump is the one thing Lenis reliably follows. Offset
+      // clears the fixed nav.
+      const top =
+        target.getBoundingClientRect().top + window.scrollY - 96;
+      window.scrollTo(0, top);
       history.pushState(null, "", url.hash);
     }
 
-    document.addEventListener("click", onAnchorClick);
+    document.addEventListener("click", onAnchorClick, true);
 
     return () => {
-      document.removeEventListener("click", onAnchorClick);
+      document.removeEventListener("click", onAnchorClick, true);
       cancelAnimationFrame(rafId);
       lenis.destroy();
       lenisRef.current = null;
