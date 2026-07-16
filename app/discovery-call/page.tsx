@@ -24,10 +24,12 @@ export default function DiscoveryCallPage() {
           <h1 className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-ink max-w-3xl text-balance">
             Let&apos;s talk about what you&apos;re building.
           </h1>
-          <p className="text-lg lg:text-xl text-neutral-700 mt-6 max-w-2xl leading-relaxed">
-            30 minutes. No pitch deck. We&apos;ll learn your project,
-            timeline, and what success looks like, and tell you honestly
-            whether we&apos;re the right fit.
+          <p className="text-xl lg:text-2xl font-light text-ink mt-6 max-w-2xl leading-[1.35] text-balance">
+            30 minutes with our team.{" "}
+            <span className="text-ink/55">
+              We&apos;ll learn your project and tell you honestly whether
+              we&apos;re the right fit.
+            </span>
           </p>
         </div>
       </section>
@@ -50,9 +52,9 @@ export default function DiscoveryCallPage() {
       <section id="book" className="bg-canvas py-16 lg:py-24 px-6 lg:px-12 scroll-mt-24">
         <div className="max-w-[1000px] mx-auto">
           <header className="text-center mb-8 lg:mb-10">
-            <p className="caption text-neutral-500 mb-4">◆ PICK A TIME</p>
+            <p className="caption text-neutral-500 mb-4">◆ LIVE AVAILABILITY</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
-              Live availability, right here.
+              Pick a time.
             </h2>
           </header>
           <CalendlyEmbed />
@@ -104,10 +106,9 @@ export default function DiscoveryCallPage() {
           {/* Secondary path — contact form */}
           <div className="lg:col-span-8 order-1 lg:order-2">
             <header className="mb-8 lg:mb-10 pb-6 lg:pb-8 border-b border-neutral-200">
-              <p className="caption text-neutral-500 mb-3">OR SEND A NOTE</p>
+              <p className="caption text-neutral-500 mb-3">◆ OR SEND A NOTE</p>
               <h2 className="font-sans font-extrabold text-3xl lg:text-4xl text-ink leading-tight text-balance">
-                Not ready to grab a time? Tell us what you&apos;re working on
-                and we&apos;ll follow up.
+                Not ready to book? Send a note instead.
               </h2>
             </header>
             <ContactForm />

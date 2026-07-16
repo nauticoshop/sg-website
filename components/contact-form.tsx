@@ -114,6 +114,9 @@ export function ContactForm() {
       >
         {isPending ? "Sending…" : "Send message"}
       </button>
+      <p className="text-sm text-neutral-600">
+        We reply within one business day.
+      </p>
     </form>
   );
 }
