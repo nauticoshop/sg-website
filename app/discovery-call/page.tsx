@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
-import { ContactForm } from "@/components/contact-form";
 import { BdMeetingCard } from "@/components/bd-meeting-card";
 import { DiscoveryQualifier } from "@/components/discovery-qualifier";
+import { Rule } from "@/components/rule";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -66,57 +67,70 @@ export default function DiscoveryCallPage() {
         </div>
       </section>
 
-      {/* What to expect + secondary contact form */}
+      {/* What to expect — the page's only job is getting you on a call,
+          so the duplicate contact form is gone. Anyone who'd rather not
+          book has the phone here and /contact one tap away. */}
       <section className="bg-canvas py-20 lg:py-28 px-6 lg:px-12">
-        <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-          {/* What to expect */}
-          <aside className="lg:col-span-4 order-2 lg:order-1">
-            <div className="lg:sticky lg:top-32 space-y-10">
-              <div>
-                <h2 className="caption text-neutral-500 mb-4">◆ WHAT TO EXPECT</h2>
-                <ol className="space-y-6">
-                  <ExpectationStep
-                    num="01"
-                    title="Answer a few quick questions"
-                    copy="30 seconds so we come prepared, then the calendar opens right there."
-                  />
-                  <ExpectationStep
-                    num="02"
-                    title="30-minute discovery"
-                    copy="No pitch deck. We listen, ask, and tell you honestly whether we're the right fit."
-                  />
-                  <ExpectationStep
-                    num="03"
-                    title="A clear next step"
-                    copy="Either a proposal, a referral to someone better suited, or we revisit in 90 days."
-                  />
-                </ol>
-              </div>
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-x-16 gap-y-10">
+          <div className="lg:col-span-4">
+            <p className="caption text-neutral-500 mb-4">◆ WHAT TO EXPECT</p>
+            <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
+              How this goes.
+            </h2>
+            <Rule className="bg-ink mt-6" />
+          </div>
 
-              <div className="pt-8 border-t border-neutral-200">
-                <h2 className="caption text-neutral-500 mb-4">◆ PREFER TO CALL?</h2>
+          <div className="lg:col-span-8">
+            <ol className="border-t border-neutral-200">
+              <ExpectationStep
+                num="01"
+                title="Answer a few quick questions"
+                copy="30 seconds so we come prepared, then the calendar opens right there."
+              />
+              <ExpectationStep
+                num="02"
+                title="30-minute discovery"
+                copy="No pitch deck. We listen, ask, and tell you honestly whether we're the right fit."
+              />
+              <ExpectationStep
+                num="03"
+                title="A clear next step"
+                copy="Either a proposal, a referral to someone better suited, or we revisit in 90 days."
+              />
+            </ol>
+
+            <div className="mt-10 lg:mt-12 pt-8 border-t border-neutral-200 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
+              <div>
+                <p className="caption text-neutral-500 mb-3">◆ PREFER TO CALL?</p>
                 <a
                   href={`tel:${site.contact.phone.replace(/-/g, "")}`}
                   className="font-sans font-extrabold text-2xl lg:text-3xl text-ink hover:text-neutral-500 transition-colors block"
                 >
                   {site.contact.phone}
                 </a>
-                <p className="text-sm text-neutral-600 mt-2">
-                  Mon–Fri, 9–5 ET
-                </p>
+                <p className="text-sm text-neutral-600 mt-2">Mon–Fri, 9–5 ET</p>
               </div>
+              <Link
+                href="/contact"
+                className="caption inline-flex items-center gap-2 text-ink hover:text-neutral-500 transition-colors shrink-0"
+              >
+                Rather send a note?
+                <svg
+                  width="14"
+                  height="10"
+                  viewBox="0 0 14 10"
+                  fill="none"
+                  aria-hidden
+                >
+                  <path
+                    d="M1 5h12m0 0L9 1m4 4L9 9"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="square"
+                  />
+                </svg>
+              </Link>
             </div>
-          </aside>
-
-          {/* Secondary path — contact form */}
-          <div className="lg:col-span-8 order-1 lg:order-2">
-            <header className="mb-8 lg:mb-10 pb-6 lg:pb-8 border-b border-neutral-200">
-              <p className="caption text-neutral-500 mb-3">◆ OR SEND A NOTE</p>
-              <h2 className="font-sans font-extrabold text-3xl lg:text-4xl text-ink leading-tight text-balance">
-                Not ready to book? Send a note instead.
-              </h2>
-            </header>
-            <ContactForm />
           </div>
         </div>
       </section>
@@ -136,14 +150,14 @@ function ExpectationStep({
   copy: string;
 }) {
   return (
-    <li className="flex gap-4">
-      <span className="caption text-neutral-500 shrink-0 w-6 pt-1">{num}</span>
-      <div>
-        <p className="font-sans font-extrabold text-base text-ink mb-1">
-          {title}
-        </p>
-        <p className="text-sm text-neutral-700 leading-relaxed">{copy}</p>
-      </div>
+    <li className="grid grid-cols-1 md:grid-cols-12 gap-x-6 gap-y-1 py-6 lg:py-7 border-b border-neutral-200">
+      <span className="caption text-neutral-500 md:col-span-1">{num}</span>
+      <p className="md:col-span-4 font-sans font-extrabold text-xl lg:text-2xl text-ink leading-tight text-balance">
+        {title}
+      </p>
+      <p className="md:col-span-7 text-base text-neutral-700 leading-relaxed">
+        {copy}
+      </p>
     </li>
   );
 }
