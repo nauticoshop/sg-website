@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useTransition } from "react";
+import { useEffect, useRef, useState, useTransition } from "react";
 import { submitDiscovery } from "@/app/discovery-call/actions";
 import { CalendlyEmbed } from "@/components/calendly-embed";
 import { trackEvent } from "@/lib/analytics";
@@ -119,17 +119,14 @@ export function DiscoveryQualifier() {
         </select>
       </div>
 
-      <fieldset>
-        <legend className="caption text-neutral-600 mb-3">
-          What are you looking for? <span className="text-neutral-400">(select all that apply)</span>
-        </legend>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-          {services.map((s) => (
-            <Checkbox key={s.slug} value={s.name} label={s.name} />
-          ))}
-          <Checkbox value="Other / not listed" label="Other / not listed" />
-        </div>
-      </fieldset>
+      <div>
+        <label className="caption text-neutral-600 mb-2 block">
+          What are you looking for?
+        </label>
+        <ServicesSelect
+          options={[...services.map((s) => s.name), "Other / not listed"]}
+        />
+      </div>
 
       <div>
         <label htmlFor="timeline" className="caption text-neutral-600 mb-2 block">
@@ -220,32 +217,117 @@ function Field({
   );
 }
 
-function Checkbox({ value, label }: { value: string; label: string }) {
+/**
+ * Multi-select shown as a dropdown that expands into a checklist —
+ * keeps the field compact and consistent with the Industry/Timeline
+ * selects. Selections are tracked in state and submitted via hidden
+ * inputs, so they survive collapsing the panel.
+ */
+function ServicesSelect({ options }: { options: string[] }) {
+  const [open, setOpen] = useState(false);
+  const [selected, setSelected] = useState<string[]>([]);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function onDocMouseDown(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", onDocMouseDown);
+    return () => document.removeEventListener("mousedown", onDocMouseDown);
+  }, []);
+
+  function toggle(value: string) {
+    setSelected((prev) =>
+      prev.includes(value)
+        ? prev.filter((v) => v !== value)
+        : [...prev, value],
+    );
+  }
+
+  const label =
+    selected.length === 0
+      ? "Select all that apply…"
+      : selected.length <= 2
+        ? selected.join(", ")
+        : `${selected.length} selected`;
+
   return (
-    <label className="flex items-center justify-between gap-3 bg-canvas border border-neutral-300 px-4 py-3 cursor-pointer select-none hover:border-ink transition-colors has-[:checked]:border-ink has-[:checked]:bg-ink has-[:checked]:text-canvas">
-      <input
-        type="checkbox"
-        name="services"
-        value={value}
-        className="peer sr-only"
-      />
-      <span className="text-sm font-medium">{label}</span>
-      <svg
-        aria-hidden
-        width="12"
-        height="9"
-        viewBox="0 0 10 8"
-        fill="none"
-        className="shrink-0 opacity-0 peer-checked:opacity-100 text-canvas transition-opacity"
+    <div ref={ref} className="relative">
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        aria-expanded={open}
+        className="w-full flex items-center justify-between gap-3 bg-canvas border border-neutral-300 px-4 py-3 text-left text-base focus:outline-none focus:border-ink hover:border-ink transition-colors"
       >
-        <path
-          d="M1 4l2.5 2.5L9 1"
-          stroke="currentColor"
-          strokeWidth="1.75"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    </label>
+        <span className={selected.length ? "text-ink" : "text-neutral-500"}>
+          {label}
+        </span>
+        <svg
+          width="12"
+          height="8"
+          viewBox="0 0 12 8"
+          fill="none"
+          aria-hidden
+          className={`shrink-0 text-neutral-500 transition-transform duration-200 ${
+            open ? "rotate-180" : ""
+          }`}
+        >
+          <path
+            d="M1 1l5 5 5-5"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </button>
+
+      {open && (
+        <div className="absolute z-20 mt-1 w-full bg-canvas border border-ink shadow-lg max-h-72 overflow-auto">
+          {options.map((opt) => {
+            const isChecked = selected.includes(opt);
+            return (
+              <button
+                type="button"
+                key={opt}
+                onClick={() => toggle(opt)}
+                className={`w-full flex items-center justify-between gap-3 px-4 py-3 text-left text-sm transition-colors ${
+                  isChecked
+                    ? "bg-ink text-canvas"
+                    : "text-ink hover:bg-neutral-100"
+                }`}
+              >
+                <span className="font-medium">{opt}</span>
+                {isChecked && (
+                  <svg
+                    width="12"
+                    height="9"
+                    viewBox="0 0 10 8"
+                    fill="none"
+                    aria-hidden
+                    className="shrink-0 text-canvas"
+                  >
+                    <path
+                      d="M1 4l2.5 2.5L9 1"
+                      stroke="currentColor"
+                      strokeWidth="1.75"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                )}
+              </button>
+            );
+          })}
+        </div>
+      )}
+
+      {/* Hidden inputs carry the selection into the form submission */}
+      {selected.map((v) => (
+        <input key={v} type="hidden" name="services" value={v} />
+      ))}
+    </div>
   );
 }
