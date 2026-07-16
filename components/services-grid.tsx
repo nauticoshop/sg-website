@@ -67,7 +67,7 @@ export function ServicesGrid() {
           >
             Full-service. An extension of your team.{" "}
             <span className="text-canvas/55">
-              Studio, Social, Digital, Growth, Experiences, Intelligence —
+              Production, Social Media, Websites, Paid Media + PR, Events, AI + Automation —
               all under one roof.
             </span>
           </motion.p>

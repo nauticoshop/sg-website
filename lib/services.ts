@@ -238,7 +238,7 @@ export const services: Service[] = [
   },
   {
     slug: "growth",
-    name: "Paid Media & PR",
+    name: "Paid Media + PR",
     tagline: "Paid ads, PR, and email that fill the pipeline.",
     description:
       "Paid advertising, public relations, email, influencers, and owned-media distribution working together as one acquisition engine. Built to reach the audiences that matter, and convert them.",
@@ -356,7 +356,7 @@ export const services: Service[] = [
   },
   {
     slug: "intelligence",
-    name: "AI & Automation",
+    name: "AI + Automation",
     tagline: "Custom AI agents, automations, and dashboards for your operation.",
     description:
       "Custom AI and workflow automation engineered for marketing operations, sales pipelines, and client deliverables. Built by an agency that builds its own software — not one that just talks about AI.",
@@ -377,7 +377,7 @@ export const services: Service[] = [
       apply: "Systems built around each category's stack.",
     },
     intro:
-      "AI & Automation is the systems work that makes everything else move faster. Custom AI agents for content briefing and operations, workflow automation for marketing and sales, integration work that ties the tools a brand already uses into one running pipeline. We build for our own studio, then extend the same capability to clients. It's the rare agency offering where the operator is also the customer.",
+      "AI + Automation is the systems work that makes everything else move faster. Custom AI agents for content briefing and operations, workflow automation for marketing and sales, integration work that ties the tools a brand already uses into one running pipeline. We build for our own studio, then extend the same capability to clients. It's the rare agency offering where the operator is also the customer.",
     sampleDeliverables: [
       "Custom AI agent for brand-aligned content briefing",
       "Lead routing and qualification workflow across HubSpot, Salesforce, or custom CRM",

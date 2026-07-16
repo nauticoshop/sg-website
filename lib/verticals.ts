@@ -127,7 +127,7 @@ export const verticals: Vertical[] = [
   },
   {
     slug: "real-estate",
-    name: "Real Estate & Development",
+    name: "Real Estate + Development",
     tagline:
       "Developers, brokerages, builders, and the home services that bring properties to life.",
     description:
@@ -298,7 +298,7 @@ export const verticals: Vertical[] = [
   },
   {
     slug: "resorts-travel",
-    name: "Resorts & Travel",
+    name: "Resorts + Travel",
     tagline: "Visual storytelling for boutique resorts and luxury travel.",
     description:
       "Editorial-grade content and paid distribution for resorts, vacation rentals, and travel brands serving the top of the market.",
@@ -346,7 +346,7 @@ export const verticals: Vertical[] = [
   },
   {
     slug: "hospitality-experiences",
-    name: "Hospitality & Experiences",
+    name: "Hospitality + Experiences",
     tagline:
       "Hotels, restaurants, member clubs, and the curated experiences that define them.",
     description:

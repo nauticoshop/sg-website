@@ -10,7 +10,7 @@ import { services } from "@/lib/services";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "A diverse suite of specialty areas, all under one roof. Studio, Social, Digital, Growth, Experiences, and Intelligence. Built for premium brands.",
+    "A diverse suite of specialty areas, all under one roof. Production, Social Media, Websites, Paid Media + PR, Events, and AI + Automation. Built for premium brands.",
 };
 
 /**
@@ -28,7 +28,7 @@ const integrations: {
   {
     client: "Skyfall",
     vertical: "Marine",
-    stack: ["Production", "Social Media", "Paid Media & PR"],
+    stack: ["Production", "Social Media", "Paid Media + PR"],
     image: "/images/work/skyfall/skyfall-02.jpg",
     alt: "Aerial top-down of Skyfall superyacht with tenders over turquoise water",
     href: "/work/skyfall",
@@ -36,7 +36,7 @@ const integrations: {
   {
     client: "Flexjet",
     vertical: "Private Aviation",
-    stack: ["Production", "Events", "Paid Media & PR"],
+    stack: ["Production", "Events", "Paid Media + PR"],
     image: "/images/work/flexjet/flexjet-01.jpg",
     alt: "Sikorsky helicopter and private jet on hangar ramp at golden hour",
     href: "/work/flexjet",
@@ -59,7 +59,7 @@ export default function ServicesIndexPage() {
       <PageHero
         eyebrow="WHAT WE DO"
         title="Full-service. An extension of your team."
-        subhead="A diverse suite of specialty areas, all under one roof. Studio, Social, Digital, Growth, Experiences, Intelligence."
+        subhead="A diverse suite of specialty areas, all under one roof. Production, Social Media, Websites, Paid Media + PR, Events, AI + Automation."
       />
 
       {/* Integration story — the SG advantage of running everything in-house */}
