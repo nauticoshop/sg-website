@@ -43,7 +43,7 @@ export default function DiscoveryCallPage() {
         meta="30 minutes. No pitch deck. No follow-up nagging."
         bookingHref="#book"
         bookingLabel="Book 30 min with Phallon"
-        eyebrow="CONNECT DIRECTLY"
+        eyebrow="◆ CONNECT DIRECTLY"
         image="/images/team/phallon-ray-cutout.png"
         imageAlt="Phallon Ray, Director of Business Development at Surroundings Group"
       />

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { ContactForm } from "@/components/contact-form";
+import { BdMeetingCard } from "@/components/bd-meeting-card";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -11,28 +12,19 @@ export const metadata: Metadata = {
     "Talk to Surroundings Group about your next campaign, content program, or website build.",
 };
 
-/** The three ways in — email, call, book. One tap each. */
+/** Secondary ways in — email and phone. One tap each. */
 const channels = [
   {
     label: "Email us",
     value: "interested@surroundingsgroup.com",
     detail: "Best for briefs, press, and partnerships.",
     href: "mailto:interested@surroundingsgroup.com",
-    external: false,
   },
   {
     label: "Call us",
     value: "813-869-0162",
     detail: "Mon–Fri, 9–5 ET.",
     href: "tel:8138690162",
-    external: false,
-  },
-  {
-    label: "Book a discovery call",
-    value: "30 minutes, on the calendar",
-    detail: "Pick a time that works. No back-and-forth.",
-    href: "/discovery-call",
-    external: false,
   },
 ];
 
@@ -57,8 +49,23 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Three ways in — one tap each */}
-      <section className="bg-canvas pb-16 lg:pb-20 px-6 lg:px-12">
+      {/* Primary path — book time with Phallon. A call tells us more
+          about a project than any form field, so it leads the page. */}
+      <BdMeetingCard
+        name="Phallon Ray"
+        title="Director of Business Development"
+        initials="PR"
+        quote="Every great brand starts with a great conversation."
+        meta="30 minutes, straight on my calendar. You'll leave with a clear next step."
+        bookingHref="/discovery-call"
+        bookingLabel="Book a discovery call"
+        eyebrow="◆ THE FASTEST WAY IN"
+        image="/images/team/phallon-ray-cutout.png"
+        imageAlt="Phallon Ray, Director of Business Development at Surroundings Group"
+      />
+
+      {/* Secondary ways in — one tap each */}
+      <section className="bg-canvas py-16 lg:py-20 px-6 lg:px-12">
         <div className="max-w-[1200px] mx-auto">
           <ul className="border-t border-neutral-200">
             {channels.map((c) => (

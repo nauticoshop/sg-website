@@ -119,12 +119,13 @@ export function BdMeetingCard({
               )}
             </div>
 
-            {/* CTA button */}
+            {/* CTA button — new tab only for external scheduling URLs */}
             <div>
               <Link
                 href={bookingHref}
-                target="_blank"
-                rel="noopener noreferrer"
+                {...(bookingHref.startsWith("http")
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
                 className="group inline-flex items-center gap-3 bg-gold text-ink px-8 py-5 text-sm font-bold tracking-wide hover:bg-canvas transition-colors duration-300"
               >
                 {bookingLabel}
