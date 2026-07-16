@@ -57,6 +57,10 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
 
   const fullUrl = `${site.url.replace(/\/$/, "")}${service.href}`;
 
+  // First sentence carries the statement; the rest fades to muted.
+  const [introFirst, ...introRestParts] = service.intro.split(". ");
+  const introRest = introRestParts.join(". ");
+
   return (
     <>
       <Nav />
@@ -94,8 +98,14 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
               </h2>
             </div>
             <div className="lg:col-span-7">
-              <p className="text-base lg:text-lg text-neutral-700 leading-relaxed">
-                {service.intro}
+              <p className="text-xl lg:text-2xl font-light text-ink leading-[1.4] text-balance">
+                {introFirst}
+                {introRest ? (
+                  <>
+                    .{" "}
+                    <span className="text-ink/55">{introRest}</span>
+                  </>
+                ) : null}
               </p>
             </div>
           </div>
@@ -143,10 +153,13 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
             </h2>
           </header>
 
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-px bg-neutral-200 border border-neutral-200">
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-16 border-t border-neutral-200">
             {service.sampleDeliverables.map((deliverable, i) => (
-              <li key={i} className="bg-canvas p-6 lg:p-8 flex items-start gap-4">
-                <span className="caption text-neutral-500 pt-1 shrink-0 w-8">
+              <li
+                key={i}
+                className="flex items-baseline gap-4 lg:gap-6 py-5 lg:py-6 border-b border-neutral-200"
+              >
+                <span className="caption text-neutral-500 shrink-0 w-8">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <span className="text-base lg:text-lg text-ink leading-snug">
@@ -162,26 +175,26 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
       <section className="bg-gold text-ink py-16 lg:py-24 px-6 lg:px-12">
         <div className="max-w-[1000px] mx-auto">
           <p className="caption text-ink mb-6">◆ WHO IT&apos;S FOR</p>
-          <p className="font-sans font-medium text-2xl md:text-3xl lg:text-4xl text-ink leading-[1.2] text-balance">
+          <p className="font-sans font-light text-2xl md:text-3xl lg:text-4xl text-ink leading-[1.25] text-balance">
             {service.bestForCopy}
           </p>
         </div>
       </section>
 
       {/* Service-specific process */}
-      <section className="bg-neutral-50 py-20 lg:py-28 px-6 lg:px-12 border-y border-neutral-200">
+      <section className="bg-[#EFE7DA] py-20 lg:py-28 px-6 lg:px-12">
         <div className="max-w-[1200px] mx-auto">
-          <header className="text-center mb-12 lg:mb-16 max-w-2xl mx-auto">
+          <header className="mb-12 lg:mb-16 max-w-2xl">
             <p className="caption text-neutral-500 mb-4">◆ HOW WE WORK</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
               {service.headlines.process}
             </h2>
           </header>
 
-          <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
             {service.processSteps.map((step, i) => (
-              <li key={i} className="bg-canvas p-6 lg:p-8">
-                <p className="caption text-neutral-500 mb-4">
+              <li key={i} className="border-t border-ink/20 pt-6 lg:pt-8">
+                <p className="caption text-neutral-600 mb-4">
                   {String(i + 1).padStart(2, "0")}
                 </p>
                 <h3 className="font-sans font-extrabold text-xl lg:text-2xl text-ink mb-3">
@@ -211,21 +224,20 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
               </p>
             </header>
 
-            <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+            <ul className="border-t border-neutral-200">
               {verticalsWhereUsed.map((v) => (
                 <li key={v.slug}>
                   <Link
                     href={v.href}
-                    className="group block bg-ink text-canvas p-6 lg:p-8 hover:bg-neutral-800 transition-colors duration-300 h-full"
+                    className="group grid grid-cols-1 md:grid-cols-12 md:items-baseline gap-x-6 gap-y-1 py-5 lg:py-6 border-b border-neutral-200 hover:border-ink/40 transition-colors duration-300"
                   >
-                    <h3 className="font-sans font-extrabold text-xl lg:text-2xl mb-3 text-balance group-hover:text-gold transition-colors duration-300">
+                    <h3 className="md:col-span-4 font-sans font-extrabold text-xl lg:text-2xl text-ink group-hover:text-neutral-500 transition-colors duration-300 text-balance">
                       {v.name}
                     </h3>
-                    <p className="text-sm text-canvas/70 leading-snug mb-4">
+                    <p className="md:col-span-7 text-sm lg:text-base text-neutral-600 leading-snug">
                       {v.tagline}
                     </p>
-                    <span className="caption inline-flex items-center gap-2 text-canvas/80 group-hover:text-gold transition-colors duration-300">
-                      Explore vertical
+                    <span className="hidden md:flex md:col-span-1 justify-end text-neutral-400 group-hover:text-ink transition-colors duration-300">
                       <Arrow />
                     </span>
                   </Link>
@@ -300,8 +312,9 @@ export default async function ServiceDetailPage({ params }: RouteParams) {
         </section>
       )}
 
-      {/* Portfolio banner — full-bleed image into /work */}
-      {service.portfolioImage && (
+      {/* Portfolio banner — full-bleed image into /work. Only shown when
+          the page has no recent-work gallery, so the close stays lean. */}
+      {featuredWork.length === 0 && service.portfolioImage && (
         <section className="bg-ink">
           <Link href="/work" className="group block relative overflow-hidden">
             <div className="relative h-[420px] lg:h-[560px]">
