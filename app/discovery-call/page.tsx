@@ -3,7 +3,7 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { ContactForm } from "@/components/contact-form";
 import { BdMeetingCard } from "@/components/bd-meeting-card";
-import { CalendlyEmbed } from "@/components/calendly-embed";
+import { DiscoveryQualifier } from "@/components/discovery-qualifier";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -48,16 +48,21 @@ export default function DiscoveryCallPage() {
         imageAlt="Phallon Ray, Director of Business Development at Surroundings Group"
       />
 
-      {/* Inline booking calendar — book without leaving the site */}
-      <section id="book" className="bg-canvas py-16 lg:py-24 px-6 lg:px-12 scroll-mt-24">
-        <div className="max-w-[1000px] mx-auto">
-          <header className="text-center mb-8 lg:mb-10">
-            <p className="caption text-neutral-500 mb-4">◆ LIVE AVAILABILITY</p>
+      {/* Qualifying questions gate the calendar — answers email the
+          team, then the live Calendly calendar is revealed in place. */}
+      <section id="book" className="bg-[#EFE7DA] py-16 lg:py-24 px-6 lg:px-12 scroll-mt-24">
+        <div className="max-w-[900px] mx-auto">
+          <header className="mb-8 lg:mb-10">
+            <p className="caption text-neutral-500 mb-4">◆ A FEW QUICK QUESTIONS</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
-              Pick a time.
+              Tell us a little first.
             </h2>
+            <p className="text-base lg:text-lg text-neutral-700 mt-4 max-w-2xl leading-relaxed">
+              So we come to the call already up to speed. Then you&apos;ll pick
+              a time.
+            </p>
           </header>
-          <CalendlyEmbed />
+          <DiscoveryQualifier />
         </div>
       </section>
 
@@ -72,8 +77,8 @@ export default function DiscoveryCallPage() {
                 <ol className="space-y-6">
                   <ExpectationStep
                     num="01"
-                    title="Pick a time on Phallon's calendar"
-                    copy="The calendar above — live availability, no back-and-forth."
+                    title="Answer a few quick questions"
+                    copy="30 seconds so we come prepared, then the calendar opens right there."
                   />
                   <ExpectationStep
                     num="02"
