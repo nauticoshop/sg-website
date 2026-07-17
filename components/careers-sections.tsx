@@ -317,22 +317,13 @@ export function CareersCta() {
           </h2>
           <Rule className="bg-ink" />
         </motion.div>
-        <motion.div
-          variants={child}
-          className="flex flex-col sm:flex-row gap-4 shrink-0"
-        >
+        <motion.div variants={child} className="shrink-0">
           <a
             href="#roles"
-            className="bg-ink text-canvas px-8 py-4 text-sm font-medium tracking-wide hover:bg-neutral-800 transition-colors duration-300 text-center"
+            className="inline-block bg-ink text-canvas px-8 py-4 text-sm font-medium tracking-wide hover:bg-neutral-800 transition-colors duration-300 text-center"
           >
             See the roles
           </a>
-          <Link
-            href={mailtoLink("Talent Pool — Introduction")}
-            className="border border-ink/40 text-ink px-8 py-4 text-sm font-medium tracking-wide hover:bg-ink hover:text-canvas hover:border-ink transition-colors duration-300 text-center"
-          >
-            Get in the pool
-          </Link>
         </motion.div>
       </motion.div>
     </section>
