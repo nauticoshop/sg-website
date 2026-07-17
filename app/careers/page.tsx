@@ -5,9 +5,8 @@ import { Marquee } from "@/components/marquee";
 import {
   CareersHero,
   OpenRolesList,
-  WhyPeopleStay,
-  HowWeHire,
-  OfferAndCta,
+  WhatPeopleLove,
+  CareersCta,
 } from "@/components/careers-sections";
 
 export const metadata: Metadata = {
@@ -34,9 +33,8 @@ export default function CareersPage() {
       <CareersHero />
       <Marquee items={disciplines} tone="dark" duration={35} />
       <OpenRolesList />
-      <WhyPeopleStay />
-      <HowWeHire />
-      <OfferAndCta />
+      <WhatPeopleLove />
+      <CareersCta />
       <Footer />
     </>
   );

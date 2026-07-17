@@ -227,34 +227,34 @@ export function OpenRolesList() {
 /* Why people stay — sticky headline + flowing rows                    */
 /* ------------------------------------------------------------------ */
 
-const benefits = [
+const culture = [
   {
-    title: "Vertical-fluent by design.",
-    copy: "You work in the categories you know best. We pick our industries on purpose and turn down work outside them.",
+    title: "Vertical-focused.",
+    copy: "We go deep in a handful of premium categories instead of chasing everything. You build real fluency in the industries you work in.",
   },
   {
-    title: "Real ownership of work.",
-    copy: "Everything that goes out the door is something you'd put in your portfolio.",
+    title: "Premium markets.",
+    copy: "Yachts, estates, jets, resorts, and the brands at the top of their category. You work in the world most people only see in a feed.",
   },
   {
-    title: "Owned media at scale.",
-    copy: "Every piece of creative travels through editorial channels we run, reaching 255M+ affluent viewers a year. Your work gets distribution most agencies have to buy.",
+    title: "Energetic and active.",
+    copy: "This isn't a heads-down agency. Brainstorms are a team sport, the room runs on real energy, and the work moves fast.",
   },
   {
-    title: "Fun is the fuel.",
-    copy: "Brainstorming here is a team sport. Thinking outside the box is the compass for creativity, innovation is the norm, and the room runs on genuine energy, not mandatory fun.",
+    title: "Collaborative by default.",
+    copy: "One in-house team — no silos, no handoffs to a freelance network. The people in the room are the people making the work.",
   },
   {
-    title: "Live the industry.",
-    copy: "Yachts, estates, jets, resorts. You work in places most people only see in a feed, and the access is part of the job.",
+    title: "Culture is the point.",
+    copy: "We're a culture-first shop. The team, the standard we hold, and the way we treat each other are why people want to be here.",
   },
   {
-    title: "Tampa-rooted.",
-    copy: "Studio is in Tampa. We work with brands nationally, but the team is here, building together in real space, on a real schedule — with quarterly one-on-ones charting where you're headed.",
+    title: "Real ownership.",
+    copy: "Everything that goes out the door is something you'd put in your portfolio, distributed through editorial channels we own.",
   },
 ];
 
-export function WhyPeopleStay() {
+export function WhatPeopleLove() {
   const { child, container } = useReveal(0.08);
 
   return (
@@ -267,15 +267,15 @@ export function WhyPeopleStay() {
           variants={child}
           className="lg:col-span-4 lg:sticky lg:top-32 lg:self-start"
         >
-          <p className="caption text-neutral-500 mb-5">◆ WHY HERE</p>
+          <p className="caption text-neutral-500 mb-5">◆ THE CULTURE</p>
           <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
-            Why people stay.
+            What people love.
           </h2>
           <Rule className="bg-ink" />
         </motion.div>
 
         <div className="lg:col-span-8">
-          {benefits.map((b, i) => (
+          {culture.map((b, i) => (
             <motion.div
               variants={child}
               key={b.title}
@@ -298,161 +298,41 @@ export function WhyPeopleStay() {
 }
 
 /* ------------------------------------------------------------------ */
-/* How we hire — dark editorial band                                   */
+/* Closing CTA — gold finale                                           */
 /* ------------------------------------------------------------------ */
 
-const steps = [
-  {
-    title: "Introduction",
-    body: "You send a note via the path that fits best. A real person at SG reads it within the week and replies — even when a formal role isn't open.",
-  },
-  {
-    title: "Conversation",
-    body: "30-minute call with the discipline lead. We talk about your work, your category fluency, and what you're looking for next.",
-  },
-  {
-    title: "Portfolio review",
-    body: "Walk us through 2-3 projects you'd want associated with your name forever. We're more interested in your taste than in case-study polish.",
-  },
-  {
-    title: "In the pool",
-    body: "You're vetted and on file. When a seat opens in your discipline, you're first in line — a working session with the team, then an offer. No starting from scratch.",
-  },
-];
-
-export function HowWeHire() {
-  const { child, container } = useReveal(0.1);
-
-  return (
-    <section className="bg-ink text-canvas py-20 lg:py-28 px-6 lg:px-12">
-      <motion.div
-        {...container}
-        className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-x-16 gap-y-12"
-      >
-        <motion.div
-          variants={child}
-          className="lg:col-span-4 lg:sticky lg:top-32 lg:self-start"
-        >
-          <p className="caption text-gold mb-5">◆ WHAT TO EXPECT</p>
-          <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-canvas text-balance">
-            How this works.
-          </h2>
-          <Rule className="bg-gold" />
-          <p className="text-base lg:text-lg text-canvas/70 leading-relaxed mt-6">
-            Getting in the pool is a real conversation, not a form into a
-            black hole. We read every note. Here&apos;s the actual sequence.
-          </p>
-        </motion.div>
-
-        <div className="lg:col-span-8">
-          {steps.map((s, i) => (
-            <motion.div
-              variants={child}
-              key={s.title}
-              className={`grid grid-cols-1 md:grid-cols-12 gap-x-6 gap-y-2 py-7 lg:py-8 ${
-                i === 0 ? "" : "border-t border-canvas/10"
-              }`}
-            >
-              <h3 className="md:col-span-5 font-sans font-extrabold text-xl lg:text-2xl text-canvas leading-tight text-balance">
-                {s.title}
-              </h3>
-              <p className="md:col-span-7 text-base text-canvas/70 leading-relaxed">
-                {s.body}
-              </p>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
-    </section>
-  );
-}
-
-/* ------------------------------------------------------------------ */
-/* What we offer + closing CTA — gold finale                           */
-/* ------------------------------------------------------------------ */
-
-const offers = [
-  {
-    title: "Competitive base + performance",
-    body: "Salary calibrated to the discipline and category, plus performance upside tied to engagements you contribute to.",
-  },
-  {
-    title: "PTO that's actually used",
-    body: "Built-in time off plus seasonal closures so the team genuinely unplugs. The studio runs because we're rested.",
-  },
-  {
-    title: "In-house creative pipeline",
-    body: "Best-in-class production gear, editorial tools, and AI workflows wired to the studio. You don't fight your tools to do the work.",
-  },
-  {
-    title: "Industry access",
-    body: "On-location work in the categories we serve — yachts, estates, terminals, member clubs. The job exposes you to rooms most agencies don't get into.",
-  },
-  {
-    title: "Path to leadership",
-    body: "Clear track from practitioner to lead to discipline head. Quarterly reviews tied to growth, not just performance.",
-  },
-];
-
-export function OfferAndCta() {
-  const { child, container } = useReveal(0.08);
+export function CareersCta() {
+  const { child, container } = useReveal(0.12);
 
   return (
     <section className="bg-gold text-ink py-20 lg:py-28 px-6 lg:px-12">
-      <motion.div {...container} className="max-w-[1200px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-16 gap-y-12">
-          <motion.div
-            variants={child}
-            className="lg:col-span-4 lg:sticky lg:top-32 lg:self-start"
-          >
-            <p className="caption text-ink/70 mb-5">◆ WHAT WE OFFER</p>
-            <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
-              What we offer.
-            </h2>
-            <Rule className="bg-ink" />
-          </motion.div>
-
-          <div className="lg:col-span-8">
-            {offers.map((o, i) => (
-              <motion.div
-                variants={child}
-                key={o.title}
-                className={`grid grid-cols-1 md:grid-cols-12 gap-x-6 gap-y-2 py-6 lg:py-7 ${
-                  i === 0 ? "" : "border-t border-ink/15"
-                }`}
-              >
-                <h3 className="md:col-span-5 font-sans font-extrabold text-lg lg:text-xl text-ink leading-tight text-balance">
-                  {o.title}
-                </h3>
-                <p className="md:col-span-7 text-sm lg:text-base text-ink/75 leading-relaxed">
-                  {o.body}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
+      <motion.div
+        {...container}
+        className="max-w-[1200px] mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-10"
+      >
+        <motion.div variants={child} className="max-w-2xl">
+          <p className="caption text-ink/70 mb-5">◆ JOIN US</p>
+          <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
+            Sound like your kind of room?
+          </h2>
+          <Rule className="bg-ink" />
+        </motion.div>
         <motion.div
           variants={child}
-          className="border-t border-ink/20 mt-14 lg:mt-16 pt-10 lg:pt-12 flex flex-col md:flex-row md:items-center md:justify-between gap-8"
+          className="flex flex-col sm:flex-row gap-4 shrink-0"
         >
-          <p className="font-sans font-extrabold text-2xl lg:text-3xl tracking-tight text-ink text-balance max-w-lg">
-            Sound like your kind of room?
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 shrink-0">
-            <a
-              href="#roles"
-              className="bg-ink text-canvas px-8 py-4 text-sm font-medium tracking-wide hover:bg-neutral-800 transition-colors duration-300 text-center"
-            >
-              See the roles
-            </a>
-            <Link
-              href={mailtoLink("Talent Pool — Introduction")}
-              className="border border-ink/40 text-ink px-8 py-4 text-sm font-medium tracking-wide hover:bg-ink hover:text-canvas hover:border-ink transition-colors duration-300 text-center"
-            >
-              Get in the pool
-            </Link>
-          </div>
+          <a
+            href="#roles"
+            className="bg-ink text-canvas px-8 py-4 text-sm font-medium tracking-wide hover:bg-neutral-800 transition-colors duration-300 text-center"
+          >
+            See the roles
+          </a>
+          <Link
+            href={mailtoLink("Talent Pool — Introduction")}
+            className="border border-ink/40 text-ink px-8 py-4 text-sm font-medium tracking-wide hover:bg-ink hover:text-canvas hover:border-ink transition-colors duration-300 text-center"
+          >
+            Get in the pool
+          </Link>
         </motion.div>
       </motion.div>
     </section>
