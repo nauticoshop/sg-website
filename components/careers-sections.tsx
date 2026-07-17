@@ -91,10 +91,10 @@ export function CareersHero() {
             variants={child}
             className="lg:col-start-6 lg:col-span-7 text-xl lg:text-3xl text-ink leading-[1.25] font-light max-w-2xl text-balance"
           >
-            An adaptive-first group of creative humans working in the
-            industries most people only dream about.{" "}
+            We&apos;re not always hiring, but we&apos;re always meeting people.{" "}
             <span className="text-ink/55">
-              We bet you&apos;ll fit right in.
+              Get in our talent pool now — when a seat opens in your
+              discipline, you&apos;re the first call.
             </span>
           </motion.p>
         </div>
@@ -104,7 +104,7 @@ export function CareersHero() {
           href="#roles"
           className="group caption inline-flex items-center gap-3 text-ink hover:text-neutral-500 transition-colors duration-300 mt-12 lg:mt-16"
         >
-          See open roles
+          See the roles we recruit for
           <Arrow className="rotate-90 transition-transform duration-300 group-hover:translate-y-1" />
         </motion.a>
 
@@ -147,12 +147,17 @@ export function OpenRolesList() {
       className="bg-[#EFE7DA] py-20 lg:py-28 px-6 lg:px-12 scroll-mt-20"
     >
       <motion.div {...container} className="max-w-[1200px] mx-auto">
-        <motion.header variants={child} className="mb-8 lg:mb-10">
-          <p className="caption text-neutral-500 mb-4">◆ OPEN ROLES</p>
+        <motion.header variants={child} className="mb-8 lg:mb-10 max-w-3xl">
+          <p className="caption text-neutral-500 mb-4">◆ TALENT POOL</p>
           <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
-            Current openings.
+            The roles we recruit for.
           </h2>
           <Rule className="bg-ink" />
+          <p className="text-base lg:text-lg text-neutral-700 leading-relaxed mt-6">
+            We keep a bench of people we&apos;d hire the moment a seat opens.
+            These are the disciplines we build it around. Get in the pool for
+            yours.
+          </p>
         </motion.header>
 
         {jobs.length > 0 ? (
@@ -181,14 +186,14 @@ export function OpenRolesList() {
               variants={child}
               className="text-sm text-neutral-700 mt-8 leading-relaxed"
             >
-              Don&apos;t see your role?{" "}
+              Don&apos;t see your discipline?{" "}
               <Link
-                href={mailtoLink("Careers — Introduction")}
+                href={mailtoLink("Talent Pool — Introduction")}
                 className="underline text-ink hover:text-neutral-500 transition-colors"
               >
                 Introduce yourself anyway
               </Link>{" "}
-              — we talk even when a formal opening isn&apos;t listed.
+              — we keep every strong introduction on file.
             </motion.p>
           </>
         ) : (
@@ -197,15 +202,15 @@ export function OpenRolesList() {
             className="border-t border-neutral-200 pt-10"
           >
             <p className="font-sans font-extrabold text-2xl lg:text-3xl text-ink mb-4 text-balance max-w-2xl">
-              Roles are being refreshed for the current hiring window.
+              We&apos;re between formal openings — but the pool never closes.
             </p>
             <p className="text-sm text-neutral-700 max-w-md mb-6 leading-relaxed">
               If you&apos;re a vertical-fluent practitioner in creative,
-              strategy, social, digital, or operations, send us a note.
-              We&apos;ll talk even when a formal role isn&apos;t listed.
+              strategy, social, digital, or operations, introduce yourself.
+              We keep every strong introduction on file for when a seat opens.
             </p>
             <Link
-              href={mailtoLink("Careers — Introduction")}
+              href={mailtoLink("Talent Pool — Introduction")}
               className="caption inline-flex items-center gap-2 text-ink hover:text-neutral-500 transition-colors"
             >
               Introduce yourself
@@ -310,8 +315,8 @@ const steps = [
     body: "Walk us through 2-3 projects you'd want associated with your name forever. We're more interested in your taste than in case-study polish.",
   },
   {
-    title: "Team day + offer",
-    body: "A working session with the team you'd join, on the kind of brief you'd actually run here. Decision within a week of the day.",
+    title: "In the pool",
+    body: "You're vetted and on file. When a seat opens in your discipline, you're first in line — a working session with the team, then an offer. No starting from scratch.",
   },
 ];
 
@@ -330,12 +335,12 @@ export function HowWeHire() {
         >
           <p className="caption text-gold mb-5">◆ WHAT TO EXPECT</p>
           <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-canvas text-balance">
-            How we hire.
+            How this works.
           </h2>
           <Rule className="bg-gold" />
           <p className="text-base lg:text-lg text-canvas/70 leading-relaxed mt-6">
-            We read every note. No black-hole portals, no ATS auto-rejections
-            ten months after the fact. Here&apos;s the actual sequence.
+            Getting in the pool is a real conversation, not a form into a
+            black hole. We read every note. Here&apos;s the actual sequence.
           </p>
         </motion.div>
 
@@ -439,13 +444,13 @@ export function OfferAndCta() {
               href="#roles"
               className="bg-ink text-canvas px-8 py-4 text-sm font-medium tracking-wide hover:bg-neutral-800 transition-colors duration-300 text-center"
             >
-              Browse the roles
+              See the roles
             </a>
             <Link
-              href={mailtoLink("Careers — Introduction")}
+              href={mailtoLink("Talent Pool — Introduction")}
               className="border border-ink/40 text-ink px-8 py-4 text-sm font-medium tracking-wide hover:bg-ink hover:text-canvas hover:border-ink transition-colors duration-300 text-center"
             >
-              Introduce yourself
+              Get in the pool
             </Link>
           </div>
         </motion.div>

@@ -66,7 +66,7 @@ export default async function JobPage({
             </svg>
             All openings
           </Link>
-          <p className="caption text-neutral-500 mb-5">◆ OPEN ROLE</p>
+          <p className="caption text-neutral-500 mb-5">◆ WE RECRUIT FOR</p>
           <h1 className="font-sans font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-ink text-balance">
             {job.title}
           </h1>
@@ -84,7 +84,7 @@ export default async function JobPage({
             href="#apply"
             className="inline-block mt-8 bg-ink text-canvas px-8 py-4 text-sm font-medium tracking-wide hover:bg-neutral-800 transition-colors duration-300"
           >
-            Apply for this role
+            Join the talent pool
           </a>
         </div>
       </section>
@@ -149,11 +149,11 @@ export default async function JobPage({
           )}
 
           <div>
-            <h2 className="caption text-neutral-500 mb-5">◆ HIRING TIMELINE</h2>
+            <h2 className="caption text-neutral-500 mb-5">◆ HOW THIS WORKS</h2>
             <p className="text-base lg:text-lg text-neutral-700 leading-relaxed">
-              Hiring runs on a rolling basis. If this role fits, introduce
-              yourself now; when the hiring need opens, we reach out. We read
-              every application and appreciate your patience.
+              We&apos;re not always hiring for this role, but we&apos;re always
+              building the pool. Introduce yourself now, and when a seat opens
+              you&apos;re already vetted and first in line. We read every note.
             </p>
           </div>
 
@@ -176,14 +176,14 @@ export default async function JobPage({
       >
         <div className="max-w-[900px] mx-auto">
           <header className="mb-10 lg:mb-12">
-            <p className="caption text-neutral-500 mb-4">◆ APPLY</p>
+            <p className="caption text-neutral-500 mb-4">◆ GET IN THE POOL</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
               Sound like you?
             </h2>
             <p className="text-base lg:text-lg text-neutral-700 mt-5 max-w-2xl leading-relaxed">
               Attach your resume, drop a portfolio link if you have one, and
-              tell us what you&apos;d bring to the room. It lands directly in
-              our inbox.
+              tell us what you&apos;d bring to the room. It lands in our inbox
+              and stays on file for this role.
             </p>
           </header>
           <ApplicationForm roleTitle={job.title} />

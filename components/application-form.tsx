@@ -75,13 +75,13 @@ export function ApplicationForm({ roleTitle }: { roleTitle: string }) {
   if (result.state === "ok") {
     return (
       <div className="bg-canvas border border-neutral-200 p-10 lg:p-12 text-center">
-        <p className="caption text-neutral-500 mb-4">◆ RECEIVED</p>
+        <p className="caption text-neutral-500 mb-4">◆ YOU&apos;RE IN THE POOL</p>
         <h3 className="font-sans font-extrabold text-3xl lg:text-4xl text-ink mb-4">
-          Application in. Thanks.
+          Got it. Thanks.
         </h3>
         <p className="text-neutral-600 leading-relaxed max-w-md mx-auto">
-          We read every application. Hiring runs on a rolling basis, so
-          when the need opens for this role, we&apos;ll reach out.
+          We read every note and keep it on file. When a seat opens for
+          this role, you&apos;re first in line — we&apos;ll reach out.
         </p>
       </div>
     );
@@ -196,7 +196,7 @@ export function ApplicationForm({ roleTitle }: { roleTitle: string }) {
         disabled={isPending}
         className="w-full sm:w-auto bg-ink text-canvas px-8 py-4 text-sm font-medium tracking-wide hover:bg-neutral-800 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        {isPending ? "Sending…" : `Apply — ${roleTitle}`}
+        {isPending ? "Sending…" : `Join the pool — ${roleTitle}`}
       </button>
     </form>
   );

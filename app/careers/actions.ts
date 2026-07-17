@@ -93,7 +93,7 @@ export async function submitApplication(
       from,
       to,
       replyTo: email,
-      subject: `Application — ${role || "General"} — ${name}`,
+      subject: `Talent pool — ${role || "General"} — ${name}`,
       html: renderHtml({ role, name, email, portfolio, message, fileName: file.name }),
       text: renderText({ role, name, email, portfolio, message, fileName: file.name }),
       attachments: [{ filename: file.name, content: buffer }],

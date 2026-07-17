@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = {
   title: "Careers",
   description:
-    "Build the agency premium brands actually deserve. Surroundings Group hires vertical-fluent practitioners who care about premium work and want to make it.",
+    "We're not always hiring, but we're always meeting people. Join the Surroundings Group talent pool — when a seat opens in your discipline, you're the first call.",
 };
 
 /** Disciplines strip — the signature marquee device as a transition. */
