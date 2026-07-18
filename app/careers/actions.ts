@@ -8,7 +8,8 @@ import { Resend } from "resend";
  * Validates the applicant's details + attached CV, then emails the
  * application (with the CV attached) to the same inbox(es) the
  * contact form uses. Env vars are shared with the contact action:
- *   RESEND_API_KEY, CONTACT_TO_EMAIL, CONTACT_FROM_EMAIL.
+ *   RESEND_API_KEY, CONTACT_FROM_EMAIL. Talent-pool applications route
+ *   to info@ and billy@ by default (override with CAREERS_TO_EMAIL).
  *
  * File constraints: PDF or Word docs only, max 4MB (Vercel caps
  * request bodies at ~4.5MB at the platform edge; next.config.ts
@@ -20,7 +21,7 @@ export interface ApplicationResult {
   error?: string;
 }
 
-const DEFAULT_TO = "interested@surroundingsgroup.com,billy@surroundingsgroup.com";
+const DEFAULT_TO = "info@surroundingsgroup.com,billy@surroundingsgroup.com";
 const DEFAULT_FROM = "Surroundings Group <interested@surroundingsgroup.com>";
 
 // Vercel rejects request bodies over ~4.5MB at the platform edge, so
@@ -85,7 +86,7 @@ export async function submitApplication(
 
   const buffer = Buffer.from(await file.arrayBuffer());
   const resend = new Resend(apiKey);
-  const to = parseRecipients(process.env.CONTACT_TO_EMAIL);
+  const to = parseRecipients(process.env.CAREERS_TO_EMAIL);
   const from = process.env.CONTACT_FROM_EMAIL || DEFAULT_FROM;
 
   try {
