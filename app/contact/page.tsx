@@ -9,8 +9,28 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Book a discovery call with Surroundings Group, or reach us by email or phone. We reply within one business day.",
+    "Book a discovery meeting with Surroundings Group, or reach us by email or phone. We reply within one business day.",
 };
+
+/** What a discovery meeting actually covers — sets expectations. */
+const coverage = [
+  {
+    title: "Your brand and goals",
+    body: "Where you are, where you want to be, and what the year ahead looks like for your category and audience.",
+  },
+  {
+    title: "What's getting in the way",
+    body: "The gaps in content, distribution, or positioning that are holding growth back right now.",
+  },
+  {
+    title: "How we'd approach it",
+    body: "How production, social, paid, and our owned-media network would fit together for your brand.",
+  },
+  {
+    title: "A clear next step",
+    body: "Whether we're the right fit and what working together looks like. If we're not, we'll tell you honestly.",
+  },
+];
 
 /** Direct ways in — email and phone. One tap each. */
 const channels = [
@@ -58,32 +78,55 @@ export default function ContactPage() {
         quote="Every great brand starts with a great conversation."
         meta="30 minutes, straight on my calendar. You'll leave with a clear next step."
         bookingHref="#book"
-        bookingLabel="Book a discovery call"
+        bookingLabel="Book a discovery meeting"
         eyebrow="◆ THE FASTEST WAY IN"
         image="/images/team/phallon-ray-cutout.png"
         imageAlt="Phallon Ray, Director of Business Development at Surroundings Group"
       />
 
-      {/* Booking — a few qualifying questions gate the calendar. Answers
-          email the team, then the live calendar is revealed in place. */}
+      {/* The meeting — what it covers, then the collapsible booking form.
+          The form stays tucked away until "Book a discovery meeting" is
+          clicked (or its toggle), so the section reads clean. */}
       <section
         id="book"
         className="bg-[#EFE7DA] py-16 lg:py-24 px-6 lg:px-12 scroll-mt-24"
       >
-        <div className="max-w-[900px] mx-auto">
-          <header className="mb-8 lg:mb-10">
-            <p className="caption text-neutral-500 mb-4">
-              ◆ A FEW QUICK QUESTIONS
-            </p>
+        <div className="max-w-[1000px] mx-auto">
+          <header className="mb-10 lg:mb-14 max-w-2xl">
+            <p className="caption text-neutral-500 mb-4">◆ THE MEETING</p>
             <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
-              Tell us a little first.
+              What we&apos;ll cover.
             </h2>
-            <p className="text-base lg:text-lg text-neutral-700 mt-4 max-w-2xl leading-relaxed">
-              So we come to the call already up to speed. Then you&apos;ll pick
-              a time.
+            <p className="text-base lg:text-lg text-neutral-700 mt-4 leading-relaxed">
+              A focused 30 minutes, no pitch deck. Here&apos;s what we get
+              through together:
             </p>
           </header>
-          <DiscoveryQualifier />
+
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 border-t border-ink/15 mb-10 lg:mb-14">
+            {coverage.map((c, i) => (
+              <li
+                key={c.title}
+                className="flex items-baseline gap-5 py-6 lg:py-7 border-b border-ink/15"
+              >
+                <span className="caption text-neutral-500 shrink-0">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h3 className="font-sans font-extrabold text-lg lg:text-xl text-ink leading-tight text-balance mb-1">
+                    {c.title}
+                  </h3>
+                  <p className="text-sm lg:text-base text-neutral-700 leading-relaxed">
+                    {c.body}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ul>
+
+          <div className="max-w-[900px]">
+            <DiscoveryQualifier />
+          </div>
         </div>
       </section>
 

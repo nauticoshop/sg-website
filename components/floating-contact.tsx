@@ -59,7 +59,7 @@ export function FloatingContact() {
             />
             <ContactOption
               href={site.cta.primary.href}
-              label="Book a discovery call"
+              label="Book a discovery meeting"
               detail="Schedule a time that works"
               onClick={() => setOpen(false)}
               isInternal

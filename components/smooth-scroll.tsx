@@ -74,6 +74,9 @@ export function SmoothScroll() {
         target.getBoundingClientRect().top + window.scrollY - 96;
       window.scrollTo(0, top);
       history.pushState(null, "", url.hash);
+      // pushState doesn't fire hashchange; dispatch it so components can
+      // react to same-page hash navigation (e.g. auto-expand a section).
+      window.dispatchEvent(new HashChangeEvent("hashchange"));
     }
 
     document.addEventListener("click", onAnchorClick, true);

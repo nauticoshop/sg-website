@@ -24,8 +24,29 @@ const TIMELINES = [
 export function DiscoveryQualifier() {
   const [isPending, startTransition] = useTransition();
   const [booked, setBooked] = useState(false);
+  const [expanded, setExpanded] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const calendarRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  // The form is tucked away by default. It opens when someone hits the
+  // toggle, or when a "Book a discovery meeting" (#book) link fires —
+  // SmoothScroll dispatches a hashchange after scrolling here.
+  useEffect(() => {
+    function openIfBook() {
+      if (window.location.hash === "#book") setExpanded(true);
+    }
+    openIfBook();
+    window.addEventListener("hashchange", openIfBook);
+    return () => window.removeEventListener("hashchange", openIfBook);
+  }, []);
+
+  function expand() {
+    setExpanded(true);
+    requestAnimationFrame(() =>
+      formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }),
+    );
+  }
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -73,8 +94,41 @@ export function DiscoveryQualifier() {
     );
   }
 
+  if (!expanded) {
+    return (
+      <button
+        type="button"
+        onClick={expand}
+        aria-expanded={false}
+        className="group w-full flex items-center justify-between gap-6 bg-canvas border border-ink px-6 lg:px-8 py-6 lg:py-7 text-left hover:bg-ink hover:text-canvas transition-colors duration-300"
+      >
+        <span>
+          <span className="font-sans font-extrabold text-xl lg:text-2xl text-ink group-hover:text-canvas transition-colors duration-300 block">
+            Book a discovery meeting
+          </span>
+          <span className="text-sm lg:text-base text-neutral-600 group-hover:text-canvas/70 transition-colors duration-300 mt-1 block">
+            A few quick questions, then pick a time. Takes 30 seconds.
+          </span>
+        </span>
+        <span
+          aria-hidden
+          className="shrink-0 w-11 h-11 border border-ink group-hover:border-canvas flex items-center justify-center text-ink group-hover:text-canvas transition-colors duration-300"
+        >
+          <svg width="16" height="16" viewBox="0 0 14 14" fill="none">
+            <path
+              d="M7 1v12M1 7h12"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="square"
+            />
+          </svg>
+        </span>
+      </button>
+    );
+  }
+
   return (
-    <form onSubmit={onSubmit} className="space-y-6">
+    <form ref={formRef} onSubmit={onSubmit} className="space-y-6 scroll-mt-24">
       {/* Honeypot */}
       <input
         type="text"
@@ -156,7 +210,7 @@ export function DiscoveryQualifier() {
           name="message"
           rows={4}
           className="w-full bg-canvas border border-neutral-300 px-4 py-3 text-base text-ink focus:outline-none focus:border-ink transition-colors resize-none"
-          placeholder="A few lines about the project, goals, or anything you'd want us to prep before the call."
+          placeholder="A few lines about the project, goals, or anything you'd want us to prep before the meeting."
         />
       </div>
 

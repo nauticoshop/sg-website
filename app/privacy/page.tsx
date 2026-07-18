@@ -28,7 +28,7 @@ export default function PrivacyPage() {
           <h2>Information we collect</h2>
           <p>
             We collect information you provide directly to us when you fill out
-            a contact form, book a discovery call, or email us. This typically
+            a contact form, book a discovery meeting, or email us. This typically
             includes your name, email address, company, and any details you
             share about your project.
           </p>

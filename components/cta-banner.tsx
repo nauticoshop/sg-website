@@ -7,7 +7,7 @@ import { Rule } from "@/components/rule";
 
 /**
  * Closing CTA banner — full-bleed ink statement pushing toward the
- * primary conversion (book a discovery call). The single dark close;
+ * primary conversion (book a discovery meeting). The single dark close;
  * gold lives earlier in the page (AboutSummary) so it stays special.
  *
  * Scroll-reveal: eyebrow → headline → supporting copy → button row
