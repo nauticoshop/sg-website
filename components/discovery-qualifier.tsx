@@ -339,7 +339,7 @@ function ServicesSelect({ options }: { options: string[] }) {
       </button>
 
       {open && (
-        <div className="absolute z-20 mt-1 w-full bg-canvas border border-ink shadow-lg max-h-72 overflow-auto">
+        <div className="absolute z-20 mt-1 w-full bg-canvas border border-ink shadow-lg max-h-[26rem] overflow-auto">
           {options.map((opt) => {
             const isChecked = selected.includes(opt);
             return (
