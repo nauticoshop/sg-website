@@ -97,6 +97,20 @@ const nextConfig: NextConfig = {
       { source: "/wp-login.php", destination: "/", permanent: false },
       { source: "/index.php", destination: "/", permanent: true },
       { source: "/home", destination: "/", permanent: true },
+
+      // -------------------------------------------------------------
+      // Legacy 404 cleanup — old WordPress pages/posts Search Console
+      // still had on file (Jul 2026) with no destination on the new site
+      // -------------------------------------------------------------
+      { source: "/webservices", destination: "/services/digital", permanent: true },
+      { source: "/socialmediamanagement", destination: "/services/social", permanent: true },
+      { source: "/director-of-marketing-and-brand-strategy", destination: "/careers", permanent: true },
+      {
+        source:
+          "/why-high-end-brands-need-a-marketing-partner-who-knows-the-luxury-space-inside-and-out",
+        destination: "/journal",
+        permanent: true,
+      },
     ];
   },
 };
