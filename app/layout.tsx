@@ -6,6 +6,7 @@ import "./globals.css";
 import { site } from "@/lib/site";
 import { AnalyticsEvents } from "@/components/analytics-events";
 import { SmoothScroll } from "@/components/smooth-scroll";
+import { ClarkyTweaks } from "@/components/clarky-tweaks";
 import {
   JsonLd,
   organizationSchema,
@@ -72,6 +73,7 @@ export default function RootLayout({
           src="https://clarky.ai/embed/54eff0a3-e16d-4ebd-a26d-c12fe344e043/chat.js"
           strategy="afterInteractive"
         />
+        <ClarkyTweaks />
       </body>
     </html>
   );
