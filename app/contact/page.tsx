@@ -2,17 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
-import { ContactForm } from "@/components/contact-form";
 import { BdMeetingCard } from "@/components/bd-meeting-card";
+import { DiscoveryQualifier } from "@/components/discovery-qualifier";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Talk to Surroundings Group about your next campaign, content program, or website build.",
+    "Book a discovery call with Surroundings Group, or reach us by email or phone. We reply within one business day.",
 };
 
-/** Secondary ways in — email and phone. One tap each. */
+/** Direct ways in — email and phone. One tap each. */
 const channels = [
   {
     label: "Email us",
@@ -49,24 +49,56 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Primary path — book time with Phallon. A call tells us more
-          about a project than any form field, so it leads the page. */}
+      {/* Primary path — book time with Phallon. A call tells us more about
+          a project than any form field, so it leads the page. */}
       <BdMeetingCard
         name="Phallon Ray"
         title="Director of Business Development"
         initials="PR"
         quote="Every great brand starts with a great conversation."
         meta="30 minutes, straight on my calendar. You'll leave with a clear next step."
-        bookingHref="/discovery-call"
+        bookingHref="#book"
         bookingLabel="Book a discovery call"
         eyebrow="◆ THE FASTEST WAY IN"
         image="/images/team/phallon-ray-cutout.png"
         imageAlt="Phallon Ray, Director of Business Development at Surroundings Group"
       />
 
-      {/* Secondary ways in — one tap each */}
-      <section className="bg-canvas py-16 lg:py-20 px-6 lg:px-12">
+      {/* Booking — a few qualifying questions gate the calendar. Answers
+          email the team, then the live calendar is revealed in place. */}
+      <section
+        id="book"
+        className="bg-[#EFE7DA] py-16 lg:py-24 px-6 lg:px-12 scroll-mt-24"
+      >
+        <div className="max-w-[900px] mx-auto">
+          <header className="mb-8 lg:mb-10">
+            <p className="caption text-neutral-500 mb-4">
+              ◆ A FEW QUICK QUESTIONS
+            </p>
+            <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
+              Tell us a little first.
+            </h2>
+            <p className="text-base lg:text-lg text-neutral-700 mt-4 max-w-2xl leading-relaxed">
+              So we come to the call already up to speed. Then you&apos;ll pick
+              a time.
+            </p>
+          </header>
+          <DiscoveryQualifier />
+        </div>
+      </section>
+
+      {/* Direct ways in + studio info */}
+      <section className="bg-canvas py-16 lg:py-24 px-6 lg:px-12">
         <div className="max-w-[1200px] mx-auto">
+          <header className="mb-8 lg:mb-10">
+            <p className="caption text-neutral-500 mb-4">
+              ◆ OR REACH US DIRECTLY
+            </p>
+            <h2 className="font-sans font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tight text-ink text-balance">
+              Other ways in.
+            </h2>
+          </header>
+
           <ul className="border-t border-neutral-200">
             {channels.map((c) => (
               <li key={c.label}>
@@ -74,9 +106,9 @@ export default function ContactPage() {
                   href={c.href}
                   className="group grid grid-cols-1 md:grid-cols-12 md:items-baseline gap-x-6 gap-y-1 py-6 lg:py-8 border-b border-neutral-200 hover:border-ink/40 transition-colors duration-300"
                 >
-                  <h2 className="md:col-span-4 font-sans font-extrabold text-xl lg:text-2xl text-ink group-hover:text-neutral-500 transition-colors duration-300">
+                  <h3 className="md:col-span-4 font-sans font-extrabold text-xl lg:text-2xl text-ink group-hover:text-neutral-500 transition-colors duration-300">
                     {c.label}
-                  </h2>
+                  </h3>
                   <p className="md:col-span-4 text-base lg:text-lg text-ink break-words">
                     {c.value}
                   </p>
@@ -90,58 +122,40 @@ export default function ContactPage() {
               </li>
             ))}
           </ul>
-        </div>
-      </section>
 
-      {/* Form + studio info */}
-      <section className="bg-[#EFE7DA] py-16 lg:py-24 px-6 lg:px-12">
-        <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-          <div className="lg:col-span-8">
-            <header className="mb-8 lg:mb-10">
-              <p className="caption text-neutral-500 mb-3">◆ OR SEND THE DETAILS</p>
-              <h2 className="font-sans font-extrabold text-3xl lg:text-4xl text-ink leading-tight text-balance">
-                Send a note.
-              </h2>
-            </header>
-            <ContactForm />
-          </div>
-
-          <aside className="lg:col-span-4">
-            <div className="lg:sticky lg:top-32 space-y-10 lg:pt-20">
-              <div>
-                <h2 className="caption text-neutral-500 mb-4">◆ STUDIO</h2>
-                <address className="not-italic text-base text-neutral-700 leading-relaxed">
-                  {site.contact.city}
-                </address>
-              </div>
-
-              <div>
-                <h2 className="caption text-neutral-500 mb-4">◆ FOLLOW</h2>
-                <ul className="space-y-3">
-                  <li>
-                    <a
-                      href={site.social.instagram}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-base text-neutral-700 hover:text-ink transition-colors"
-                    >
-                      Instagram →
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href={site.social.vimeo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-base text-neutral-700 hover:text-ink transition-colors"
-                    >
-                      Vimeo →
-                    </a>
-                  </li>
-                </ul>
-              </div>
+          <div className="mt-10 lg:mt-12 pt-8 border-t border-neutral-200 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-8">
+            <div>
+              <p className="caption text-neutral-500 mb-4">◆ STUDIO</p>
+              <address className="not-italic text-base text-neutral-700 leading-relaxed">
+                {site.contact.city}
+              </address>
             </div>
-          </aside>
+            <div>
+              <p className="caption text-neutral-500 mb-4">◆ FOLLOW</p>
+              <ul className="flex gap-6">
+                <li>
+                  <a
+                    href={site.social.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-base text-neutral-700 hover:text-ink transition-colors"
+                  >
+                    Instagram →
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={site.social.vimeo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-base text-neutral-700 hover:text-ink transition-colors"
+                  >
+                    Vimeo →
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 

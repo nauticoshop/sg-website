@@ -31,14 +31,6 @@ export function Footer() {
                   {site.contact.phone}
                 </a>
               </p>
-              <p>
-                <Link
-                  href="/contact"
-                  className="hover:text-gold transition-colors"
-                >
-                  Send us a note →
-                </Link>
-              </p>
             </address>
           </div>
 

@@ -23,6 +23,12 @@ const nextConfig: NextConfig = {
       { source: "/case-studies/:slug", destination: "/journal/:slug", permanent: true },
 
       // -------------------------------------------------------------
+      // Discovery call folded into the contact page
+      // -------------------------------------------------------------
+      { source: "/discovery-call", destination: "/contact", permanent: true },
+      { source: "/discovery-call/", destination: "/contact", permanent: true },
+
+      // -------------------------------------------------------------
       // WordPress → Next.js URL rewrites
       // (covers the most common WP page slugs and Salient/Elementor
       //  permalink conventions; extend the list as we discover more

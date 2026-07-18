@@ -28,7 +28,9 @@ export function AnalyticsEvents() {
         trackEvent("phone_click", { link_url: href, page_path: pathname });
       } else if (href.startsWith("mailto:")) {
         trackEvent("email_click", { link_url: href, page_path: pathname });
-      } else if (href.startsWith("/discovery-call")) {
+      } else if (href.includes("#book") || href.startsWith("/discovery-call")) {
+        // Booking intent — the discovery flow now lives at /contact#book;
+        // /discovery-call is kept for any legacy links.
         trackEvent("book_cta_click", { page_path: pathname });
       }
     }

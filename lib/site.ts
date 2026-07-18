@@ -46,7 +46,7 @@ export const site = {
   ],
 
   cta: {
-    primary: { label: "Book a discovery call", href: "/discovery-call" },
+    primary: { label: "Book a discovery call", href: "/contact#book" },
     secondary: { label: "Explore our work", href: "/work" },
   },
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, useTransition } from "react";
-import { submitDiscovery } from "@/app/discovery-call/actions";
+import { submitDiscovery } from "@/app/contact/booking-actions";
 import { CalendlyEmbed } from "@/components/calendly-embed";
 import { trackEvent } from "@/lib/analytics";
 import { verticals } from "@/lib/verticals";

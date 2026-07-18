@@ -62,21 +62,12 @@ export function CtaBanner() {
           We work with a small roster of premium brands at a time. If
           you&apos;re one of them, we should talk.
         </motion.p>
-        <motion.div
-          variants={child}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
-        >
+        <motion.div variants={child} className="flex justify-center">
           <Link
             href={site.cta.primary.href}
             className="bg-gold text-ink px-8 py-4 text-sm font-medium tracking-wide hover:bg-gold/85 transition-colors duration-300"
           >
             {site.cta.primary.label}
-          </Link>
-          <Link
-            href="/contact"
-            className="border border-canvas/30 text-canvas px-8 py-4 text-sm font-medium tracking-wide hover:bg-canvas hover:text-ink hover:border-canvas transition-colors duration-300"
-          >
-            Or send us a note
           </Link>
         </motion.div>
       </motion.div>
