@@ -58,10 +58,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${archivo.variable} ${castoro.variable} h-full antialiased`}
+      className={`${archivo.variable} ${castoro.variable} antialiased`}
     >
       <GoogleTagManager gtmId={site.gtm} />
-      <body className="min-h-full flex flex-col bg-canvas text-ink">
+      <body className="min-h-screen flex flex-col bg-canvas text-ink">
         <JsonLd data={[organizationSchema(), websiteSchema()]} />
         <SmoothScroll />
         <AnalyticsEvents />
