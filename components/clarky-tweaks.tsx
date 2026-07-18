@@ -3,13 +3,19 @@
 import { useEffect } from "react";
 
 /**
- * Hides Clarky's auto-greeting bubble (the white "Welcome!..." popup),
- * leaving just the clean launcher icon. Clarky renders inside a shadow
- * DOM, so page CSS can't reach it — we inject a scoped <style> into the
- * shadow root once the widget mounts.
+ * Two fixes for the Clarky chat widget, which renders inside a shadow
+ * DOM (so page CSS can't reach it):
  *
- * If Clarky ever exposes a dashboard toggle for the greeting/welcome
- * message, prefer that and delete this.
+ * 1. Hide the auto-greeting bubble (the white "Welcome!..." popup) —
+ *    inject a scoped <style> into the shadow root, leaving just the icon.
+ * 2. Let the chat's message list scroll. Lenis (our smooth-scroll)
+ *    hijacks wheel events window-wide, so scrolling inside the chat
+ *    scrolled the page instead. `data-lenis-prevent` on the widget host
+ *    tells Lenis to skip wheel events over it (the host is in Lenis's
+ *    composed-path check), restoring native scroll inside the chat.
+ *
+ * If Clarky ever exposes a dashboard toggle for the greeting, prefer
+ * that for #1 and delete the style injection.
  */
 export function ClarkyTweaks() {
   useEffect(() => {
@@ -24,12 +30,17 @@ export function ClarkyTweaks() {
       const host = document.getElementById("chat-widget-container");
       const shadow = host?.shadowRoot;
 
-      if (shadow) {
+      if (host && shadow) {
+        // 1. Hide the greeting bubble.
         if (!shadow.getElementById(STYLE_ID)) {
           const style = document.createElement("style");
           style.id = STYLE_ID;
           style.textContent = css;
           shadow.appendChild(style);
+        }
+        // 2. Let the chat scroll natively (exclude it from Lenis).
+        if (!host.hasAttribute("data-lenis-prevent")) {
+          host.setAttribute("data-lenis-prevent", "");
         }
         clearInterval(interval);
       } else if (tries >= maxTries) {
