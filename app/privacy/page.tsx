@@ -5,6 +5,7 @@ import { PageHero } from "@/components/page-hero";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/privacy" },
   title: "Privacy Policy",
   description:
     "How Surroundings Group collects, uses, and protects information from visitors to surroundingsgroup.com.",

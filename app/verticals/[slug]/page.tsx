@@ -31,6 +31,7 @@ export async function generateMetadata({
   return {
     title: vertical.name,
     description: vertical.tagline,
+    alternates: { canonical: vertical.href },
   };
 }
 

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { Hero } from "@/components/hero";
 import { AboutSummary } from "@/components/about-summary";
@@ -8,6 +9,10 @@ import { WhatSetsUsApart } from "@/components/what-sets-us-apart";
 import { GlobalReach } from "@/components/global-reach";
 import { CtaBanner } from "@/components/cta-banner";
 import { Footer } from "@/components/footer";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 /**
  * Homepage flow.

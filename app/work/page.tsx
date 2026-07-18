@@ -7,6 +7,7 @@ import { CtaBanner } from "@/components/cta-banner";
 import { WorkGrid } from "@/components/work-grid";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/work" },
   title: "Work",
   description:
     "Selected work from Surroundings Group — superyacht charter campaigns, estate and residential shoots, private aviation, resorts, hospitality, and luxury goods.",

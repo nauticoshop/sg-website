@@ -7,6 +7,7 @@ import { DiscoveryQualifier } from "@/components/discovery-qualifier";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/contact" },
   title: "Contact",
   description:
     "Book a discovery meeting with Surroundings Group, or reach us by email or phone. We reply within one business day.",

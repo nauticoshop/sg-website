@@ -7,6 +7,7 @@ import { PageHero } from "@/components/page-hero";
 import { CtaBanner } from "@/components/cta-banner";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/about/nautical-network" },
   title: "Nautical Network",
   description:
     "Surroundings Group's owned-media ecosystem. Eight social brands reaching 180M+ marine enthusiasts a year. The unfair distribution advantage we extend to every client.",

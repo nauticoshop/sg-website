@@ -8,6 +8,7 @@ import { CtaBanner } from "@/components/cta-banner";
 import { featuredProjects, journalTypeLabel } from "@/lib/featured-work";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/journal" },
   title: "The Studio Journal",
   description:
     "Case studies, behind-the-scenes, client updates, and studio news from Surroundings Group — a premium creative agency for luxury brands.",

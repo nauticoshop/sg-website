@@ -10,6 +10,7 @@ import {
 } from "@/components/careers-sections";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/careers" },
   title: "Careers",
   description:
     "We're not always hiring, but we're always meeting people. Join the Surroundings Group talent pool — when a seat opens in your discipline, you're the first call.",

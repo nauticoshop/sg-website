@@ -5,6 +5,7 @@ import { PageHero } from "@/components/page-hero";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/terms" },
   title: "Terms of Service",
   description:
     "Terms governing use of surroundingsgroup.com and engagements with Surroundings Group.",

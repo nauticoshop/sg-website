@@ -8,6 +8,7 @@ import { CtaBanner } from "@/components/cta-banner";
 import { team } from "@/lib/team";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/about/team" },
   title: "Team",
   description:
     "The team behind Surroundings Group. Vertical-fluent practitioners building creative work, content systems, and owned distribution for premium brands.",

@@ -33,6 +33,7 @@ export async function generateMetadata({
   return {
     title: service.name,
     description: service.tagline,
+    alternates: { canonical: service.href },
   };
 }
 

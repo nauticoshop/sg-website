@@ -8,6 +8,7 @@ import { CtaBanner } from "@/components/cta-banner";
 import { verticals, type Vertical } from "@/lib/verticals";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/verticals" },
   title: "Industries",
   description:
     "The premium categories Surroundings Group works in. Marine, real estate and development, multifamily, private aviation, hospitality, resorts and travel, exotic automotive, and luxury goods.",

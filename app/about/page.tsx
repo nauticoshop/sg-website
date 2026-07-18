@@ -8,6 +8,7 @@ import { CtaBanner } from "@/components/cta-banner";
 import { team } from "@/lib/team";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/about" },
   title: "About",
   description:
     "Surroundings Group is a vertical-fluent creative agency for premium brands. Marine, real estate, hospitality, aviation, and the categories around them. Built in-house. Backed by an owned-media network.",

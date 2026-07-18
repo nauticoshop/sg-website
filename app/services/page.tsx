@@ -8,6 +8,7 @@ import { CtaBanner } from "@/components/cta-banner";
 import { services } from "@/lib/services";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/services" },
   title: "Services",
   description:
     "A diverse suite of specialty areas, all under one roof. Production, Social Media, Websites, Paid Media + PR, Events, and AI + Automation. Built for premium brands.",

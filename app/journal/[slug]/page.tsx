@@ -29,6 +29,7 @@ export async function generateMetadata({
   return {
     title: `${entry.client} — ${journalTypeLabel(entry.type)}`,
     description: entry.headline,
+    alternates: { canonical: entry.href },
   };
 }
 
