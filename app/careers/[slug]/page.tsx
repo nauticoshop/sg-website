@@ -187,7 +187,7 @@ export default async function JobPage({
               and stays on file for this role.
             </p>
           </header>
-          <ApplicationForm roleTitle={job.title} />
+          <ApplicationForm roleTitle={job.title} roleSlug={job.slug} />
         </div>
       </section>
 

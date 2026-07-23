@@ -1,6 +1,7 @@
 "use server";
 
 import { Resend } from "resend";
+import { pushApplicantToMonday } from "@/lib/monday";
 
 /**
  * Server action for job applications.
@@ -34,6 +35,35 @@ const ALLOWED_MIME_PREFIXES = [
   "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
 ];
 
+/**
+ * Verifies a Cloudflare Turnstile token server-side. Returns true when
+ * Turnstile isn't configured (no secret) so the form keeps working until
+ * the keys are added in Vercel — and true only on a genuine pass once it
+ * is configured.
+ */
+async function verifyTurnstile(token: string): Promise<boolean> {
+  const secret = process.env.TURNSTILE_SECRET_KEY;
+  if (!secret) return true; // not configured yet — skip the gate
+  if (!token) return false;
+  try {
+    const res = await fetch(
+      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({ secret, response: token }),
+      },
+    );
+    const data = (await res.json()) as { success?: boolean };
+    return data.success === true;
+  } catch (err) {
+    console.error("[Careers] Turnstile verify failed:", err);
+    // Fail open on network error to Cloudflare so we never lock out real
+    // applicants because of a transient outage.
+    return true;
+  }
+}
+
 function parseRecipients(value: string | undefined): string[] {
   const raw = (value ?? DEFAULT_TO).split(",");
   const list = raw.map((s) => s.trim()).filter(Boolean);
@@ -43,13 +73,42 @@ function parseRecipients(value: string | undefined): string[] {
 export async function submitApplication(
   formData: FormData,
 ): Promise<ApplicationResult> {
-  // Honeypot — bots fill hidden fields, real users don't. Silent accept.
+  // --- Bot defense, cheapest checks first, all silent-accept so scripts
+  //     get a "success" and don't learn what tripped them. ---
+
+  // 1) Honeypot — bots fill hidden fields, real users don't.
   const honeypot = String(formData.get("website") ?? "").trim();
   if (honeypot) return { ok: true };
 
+  // 2) Dwell-time trap — the form stamps how long it was on screen before
+  //    submit. No human fills name/email/city/upload/etc. in under 4s;
+  //    an instant submit is a script. (Missing dwell = fail open, since
+  //    the honeypot + Turnstile still cover direct-to-action posts.)
+  const dwell = Number(formData.get("dwell"));
+  if (Number.isFinite(dwell) && dwell >= 0 && dwell < 4000) {
+    return { ok: true };
+  }
+
+  // 3) Cloudflare Turnstile — the real gate. Only enforced once
+  //    TURNSTILE_SECRET_KEY is set; until then this is a no-op so the
+  //    form keeps working. A failed challenge is a visible error (real
+  //    users can retry), not a silent accept.
+  const turnstileOk = await verifyTurnstile(
+    String(formData.get("cf-turnstile-response") ?? ""),
+  );
+  if (!turnstileOk) {
+    return {
+      ok: false,
+      error: "Please complete the verification and try again.",
+    };
+  }
+
   const role = String(formData.get("role") ?? "").trim();
+  const roleSlug = String(formData.get("roleSlug") ?? "").trim();
   const name = String(formData.get("name") ?? "").trim();
   const email = String(formData.get("email") ?? "").trim();
+  const phone = String(formData.get("phone") ?? "").trim();
+  const city = String(formData.get("city") ?? "").trim();
   const portfolio = String(formData.get("portfolio") ?? "").trim();
   const message = String(formData.get("message") ?? "").trim();
   const file = formData.get("cv");
@@ -95,8 +154,8 @@ export async function submitApplication(
       to,
       replyTo: email,
       subject: `Talent pool — ${role || "General"} — ${name}`,
-      html: renderHtml({ role, name, email, portfolio, message, fileName: file.name }),
-      text: renderText({ role, name, email, portfolio, message, fileName: file.name }),
+      html: renderHtml({ role, name, email, phone, city, portfolio, message, fileName: file.name }),
+      text: renderText({ role, name, email, phone, city, portfolio, message, fileName: file.name }),
       attachments: [{ filename: file.name, content: buffer }],
     });
 
@@ -117,6 +176,31 @@ export async function submitApplication(
       messageId: result.data?.id,
     });
 
+    // Also push into the Recruiting Applications Monday board so the
+    // site and the board are one pipeline. Non-fatal: the email above
+    // already delivered the application, so a Monday hiccup never fails
+    // the applicant's submission — we just log it.
+    try {
+      const monday = await pushApplicantToMonday({
+        name,
+        email,
+        phone,
+        city,
+        portfolio,
+        roleSlug,
+        roleTitle: role,
+        message,
+        resume: { filename: file.name, buffer, contentType: file.type },
+      });
+      if (!monday.ok) {
+        console.error("[Careers] Monday push failed:", monday.error);
+      } else if (monday.warnings?.length) {
+        console.warn("[Careers] Monday push warnings:", monday.warnings);
+      }
+    } catch (err) {
+      console.error("[Careers] Monday push threw:", err);
+    }
+
     return { ok: true };
   } catch (err) {
     console.error("[Careers] Unexpected error:", err);
@@ -132,6 +216,8 @@ interface ApplicationFields {
   role: string;
   name: string;
   email: string;
+  phone: string;
+  city: string;
   portfolio: string;
   message: string;
   fileName: string;
@@ -143,6 +229,8 @@ function renderHtml(f: ApplicationFields): string {
     { label: "Name", value: f.name },
     { label: "Email", value: f.email },
   ];
+  if (f.phone) rows.push({ label: "Phone", value: f.phone });
+  if (f.city) rows.push({ label: "City", value: f.city });
   if (f.portfolio) rows.push({ label: "Portfolio", value: f.portfolio });
   rows.push({ label: "Attached", value: f.fileName });
 
@@ -200,6 +288,8 @@ function renderText(f: ApplicationFields): string {
     `Name:     ${f.name}`,
     `Email:    ${f.email}`,
   ];
+  if (f.phone) lines.push(`Phone:    ${f.phone}`);
+  if (f.city) lines.push(`City:     ${f.city}`);
   if (f.portfolio) lines.push(`Portfolio: ${f.portfolio}`);
   lines.push(`Attached: ${f.fileName}`);
   if (f.message) lines.push(``, `Note:`, f.message);

@@ -1,8 +1,12 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useEffect, useRef, useState, useTransition } from "react";
+import Script from "next/script";
 import { submitApplication } from "@/app/careers/actions";
 import { trackEvent } from "@/lib/analytics";
+
+/** Cloudflare Turnstile site key — set to enable the bot challenge. */
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
 /**
  * Job application form — name, email, optional portfolio link and
@@ -19,13 +23,26 @@ const MAX_FILE_BYTES = 4 * 1024 * 1024;
 const FILE_TOO_BIG =
   "That file is over 4MB. Please compress it or export a smaller PDF and try again.";
 
-export function ApplicationForm({ roleTitle }: { roleTitle: string }) {
+export function ApplicationForm({
+  roleTitle,
+  roleSlug,
+}: {
+  roleTitle: string;
+  roleSlug?: string;
+}) {
   const [isPending, startTransition] = useTransition();
   const [fileName, setFileName] = useState<string | null>(null);
   const [result, setResult] = useState<{
     state: "idle" | "ok" | "error";
     message?: string;
   }>({ state: "idle" });
+
+  // When the form first appeared on screen — used for the dwell-time
+  // bot check (a submit under a few seconds is a script, not a person).
+  const mountedAt = useRef<number>(0);
+  useEffect(() => {
+    mountedAt.current = Date.now();
+  }, []);
 
   function onPickFile(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0] ?? null;
@@ -43,6 +60,11 @@ export function ApplicationForm({ roleTitle }: { roleTitle: string }) {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     formData.set("role", roleTitle);
+    if (roleSlug) formData.set("roleSlug", roleSlug);
+    formData.set(
+      "dwell",
+      String(mountedAt.current ? Date.now() - mountedAt.current : 0),
+    );
 
     const cv = formData.get("cv");
     if (cv instanceof File && cv.size > MAX_FILE_BYTES) {
@@ -135,6 +157,36 @@ export function ApplicationForm({ roleTitle }: { roleTitle: string }) {
         </div>
       </div>
 
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div>
+          <label htmlFor="city" className="caption text-neutral-600 mb-2 block">
+            City you live in <span className="text-neutral-500">*</span>
+          </label>
+          <input
+            id="city"
+            name="city"
+            type="text"
+            required
+            autoComplete="address-level2"
+            placeholder="e.g. Tampa, FL"
+            className="w-full bg-canvas border border-neutral-300 px-4 py-3 text-base text-ink focus:outline-none focus:border-ink transition-colors"
+          />
+        </div>
+        <div>
+          <label htmlFor="phone" className="caption text-neutral-600 mb-2 block">
+            Phone (optional)
+          </label>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            autoComplete="tel"
+            placeholder="(813) 555-0100"
+            className="w-full bg-canvas border border-neutral-300 px-4 py-3 text-base text-ink focus:outline-none focus:border-ink transition-colors"
+          />
+        </div>
+      </div>
+
       <div>
         <label htmlFor="portfolio" className="caption text-neutral-600 mb-2 block">
           Portfolio or LinkedIn (optional)
@@ -186,6 +238,24 @@ export function ApplicationForm({ roleTitle }: { roleTitle: string }) {
           placeholder="A few lines about what you'd bring to the room."
         />
       </div>
+
+      {/* Cloudflare Turnstile — renders only when configured. The widget
+          drops a hidden `cf-turnstile-response` input that rides along in
+          the form submission and is verified server-side. */}
+      {TURNSTILE_SITE_KEY && (
+        <>
+          <Script
+            src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+            async
+            defer
+          />
+          <div
+            className="cf-turnstile"
+            data-sitekey={TURNSTILE_SITE_KEY}
+            data-theme="light"
+          />
+        </>
+      )}
 
       {result.state === "error" && (
         <p className="text-sm text-error">{result.message}</p>
