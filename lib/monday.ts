@@ -35,6 +35,7 @@ const COL = {
   link: "link__1",
   resume: "files__1",
   date: "date4",
+  social: "text_mm5h4cfx",
 } as const;
 
 /**
@@ -61,6 +62,8 @@ export interface MondayApplicant {
   phone?: string;
   city?: string;
   portfolio?: string;
+  /** Social handles (Instagram / TikTok / LinkedIn), free text. */
+  social?: string;
   /** Website job slug — used to map to the board's position label. */
   roleSlug?: string;
   /** Human-readable role, used as a fallback label + in the note. */
@@ -143,6 +146,7 @@ export async function pushApplicantToMonday(
   if (a.portfolio) {
     columnValues[COL.link] = { url: a.portfolio, text: a.portfolio };
   }
+  if (a.social) columnValues[COL.social] = a.social;
 
   // 1) Create the item.
   const createQuery = `

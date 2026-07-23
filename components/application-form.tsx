@@ -201,6 +201,19 @@ export function ApplicationForm({
       </div>
 
       <div>
+        <label htmlFor="social" className="caption text-neutral-600 mb-2 block">
+          Social accounts (optional)
+        </label>
+        <input
+          id="social"
+          name="social"
+          type="text"
+          placeholder="@instagram, @tiktok, LinkedIn — anything you'd want us to see"
+          className="w-full bg-canvas border border-neutral-300 px-4 py-3 text-base text-ink focus:outline-none focus:border-ink transition-colors"
+        />
+      </div>
+
+      <div>
         <label htmlFor="cv" className="caption text-neutral-600 mb-2 block">
           Resume / CV <span className="text-neutral-500">*</span>
         </label>

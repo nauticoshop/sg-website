@@ -110,6 +110,7 @@ export async function submitApplication(
   const phone = String(formData.get("phone") ?? "").trim();
   const city = String(formData.get("city") ?? "").trim();
   const portfolio = String(formData.get("portfolio") ?? "").trim();
+  const social = String(formData.get("social") ?? "").trim();
   const message = String(formData.get("message") ?? "").trim();
   const file = formData.get("cv");
 
@@ -154,8 +155,8 @@ export async function submitApplication(
       to,
       replyTo: email,
       subject: `Talent pool — ${role || "General"} — ${name}`,
-      html: renderHtml({ role, name, email, phone, city, portfolio, message, fileName: file.name }),
-      text: renderText({ role, name, email, phone, city, portfolio, message, fileName: file.name }),
+      html: renderHtml({ role, name, email, phone, city, portfolio, social, message, fileName: file.name }),
+      text: renderText({ role, name, email, phone, city, portfolio, social, message, fileName: file.name }),
       attachments: [{ filename: file.name, content: buffer }],
     });
 
@@ -187,6 +188,7 @@ export async function submitApplication(
         phone,
         city,
         portfolio,
+        social,
         roleSlug,
         roleTitle: role,
         message,
@@ -219,6 +221,7 @@ interface ApplicationFields {
   phone: string;
   city: string;
   portfolio: string;
+  social: string;
   message: string;
   fileName: string;
 }
@@ -232,6 +235,7 @@ function renderHtml(f: ApplicationFields): string {
   if (f.phone) rows.push({ label: "Phone", value: f.phone });
   if (f.city) rows.push({ label: "City", value: f.city });
   if (f.portfolio) rows.push({ label: "Portfolio", value: f.portfolio });
+  if (f.social) rows.push({ label: "Social", value: f.social });
   rows.push({ label: "Attached", value: f.fileName });
 
   const rowsHtml = rows
@@ -291,6 +295,7 @@ function renderText(f: ApplicationFields): string {
   if (f.phone) lines.push(`Phone:    ${f.phone}`);
   if (f.city) lines.push(`City:     ${f.city}`);
   if (f.portfolio) lines.push(`Portfolio: ${f.portfolio}`);
+  if (f.social) lines.push(`Social:   ${f.social}`);
   lines.push(`Attached: ${f.fileName}`);
   if (f.message) lines.push(``, `Note:`, f.message);
   lines.push(``, `--`, `Reply to ${f.email} to respond.`);

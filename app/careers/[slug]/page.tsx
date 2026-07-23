@@ -182,9 +182,10 @@ export default async function JobPage({
               Sound like you?
             </h2>
             <p className="text-base lg:text-lg text-neutral-700 mt-5 max-w-2xl leading-relaxed">
-              Attach your resume, drop a portfolio link if you have one, and
-              tell us what you&apos;d bring to the room. It lands in our inbox
-              and stays on file for this role.
+              Fill in as much as you can — email, phone, city, portfolio, and
+              your socials — attach your resume, and tell us what you&apos;d
+              bring to the room. The more complete your profile, the faster we
+              can reach out when a seat opens for this role.
             </p>
           </header>
           <ApplicationForm roleTitle={job.title} roleSlug={job.slug} />
