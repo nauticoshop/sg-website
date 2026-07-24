@@ -214,6 +214,30 @@ export function ApplicationForm({
       </div>
 
       <div>
+        <label htmlFor="hear" className="caption text-neutral-600 mb-2 block">
+          How did you hear about us? <span className="text-neutral-500">*</span>
+        </label>
+        <select
+          id="hear"
+          name="hear"
+          required
+          defaultValue=""
+          className="w-full bg-canvas border border-neutral-300 px-4 py-3 text-base text-ink focus:outline-none focus:border-ink transition-colors"
+        >
+          <option value="" disabled>
+            Select one…
+          </option>
+          <option value="LinkedIn">LinkedIn</option>
+          <option value="Indeed">Indeed</option>
+          <option value="Other job board">Other job board</option>
+          <option value="Instagram or TikTok">Instagram or TikTok</option>
+          <option value="Google search">Google search</option>
+          <option value="Referral">Referral (friend or employee)</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div>
         <label htmlFor="cv" className="caption text-neutral-600 mb-2 block">
           Resume / CV <span className="text-neutral-500">*</span>
         </label>

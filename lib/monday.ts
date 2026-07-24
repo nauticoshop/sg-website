@@ -36,6 +36,7 @@ const COL = {
   resume: "files__1",
   date: "date4",
   social: "text_mm5h4cfx",
+  hear: "color_mm5jzc8v",
 } as const;
 
 /**
@@ -64,6 +65,8 @@ export interface MondayApplicant {
   portfolio?: string;
   /** Social handles (Instagram / TikTok / LinkedIn), free text. */
   social?: string;
+  /** "How did you hear about us?" — maps to a status label. */
+  hear?: string;
   /** Website job slug — used to map to the board's position label. */
   roleSlug?: string;
   /** Human-readable role, used as a fallback label + in the note. */
@@ -147,6 +150,7 @@ export async function pushApplicantToMonday(
     columnValues[COL.link] = { url: a.portfolio, text: a.portfolio };
   }
   if (a.social) columnValues[COL.social] = a.social;
+  if (a.hear) columnValues[COL.hear] = { label: a.hear };
 
   // 1) Create the item.
   const createQuery = `
